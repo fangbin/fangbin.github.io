@@ -1,0 +1,33 @@
+# 文档资源文件夹
+
+此文件夹用于存放文档资源，如 PDF 文件、演示文稿等。
+
+## 使用方法
+
+在文章或页面中引用文档：
+
+```markdown
+[下载论文 PDF](/docs/paper.pdf)
+```
+
+或使用 HTML：
+
+```html
+<a href="/docs/presentation.pdf" download>下载演示文稿</a>
+```
+
+## 文件组织建议
+
+```
+docs/
+├── papers/          # 论文 PDF
+├── presentations/   # 演示文稿
+├── projects/        # 项目文档
+└── other/           # 其他文档
+```
+
+## 注意事项
+
+- 避免上传过大的文件（建议小于 10MB）
+- 使用清晰的文件命名
+- 定期清理不需要的文件

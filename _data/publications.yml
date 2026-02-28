@@ -1,0 +1,20 @@
+# 发表论文列表
+- title: "论文标题示例一"
+  authors: "作者一, 作者二, 作者三"
+  journal: "期刊名称"
+  year: 2024
+  volume: "Vol. 1"
+  pages: "1-10"
+  doi: "10.1000/xxx"
+  abstract: "这是论文摘要示例。"
+  tags: ["机器学习", "深度学习"]
+  
+- title: "论文标题示例二"
+  authors: "作者一, 作者二"
+  journal: "会议名称"
+  year: 2023
+  volume: ""
+  pages: "100-110"
+  doi: ""
+  abstract: "这是会议论文摘要示例。"
+  tags: ["计算机视觉", "图像处理"]

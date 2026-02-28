@@ -1,0 +1,20 @@
+# 教育背景
+- degree: "博士学位"
+  school: "某某大学"
+  department: "计算机科学与技术系"
+  period: "2020 - 2024"
+  description: "研究方向：人工智能与机器学习"
+  advisor: "导师姓名"
+  
+- degree: "硕士学位"
+  school: "某某大学"
+  department: "计算机科学与技术系"
+  period: "2017 - 2020"
+  description: "研究方向：数据挖掘"
+  advisor: "导师姓名"
+  
+- degree: "学士学位"
+  school: "某某大学"
+  department: "计算机科学与技术系"
+  period: "2013 - 2017"
+  description: "专业：计算机科学与技术"

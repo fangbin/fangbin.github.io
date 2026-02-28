@@ -1,0 +1,18 @@
+# 工作经历
+- position: "研究员"
+  company: "某某科技公司"
+  period: "2024 - 至今"
+  description: "负责机器学习算法研发，主导多个核心项目。"
+  location: "北京"
+  
+- position: "算法工程师"
+  company: "某某互联网公司"
+  period: "2020 - 2024"
+  description: "从事推荐系统算法优化工作，提升用户点击率15%。"
+  location: "上海"
+  
+- position: "实习生"
+  company: "某某研究机构"
+  period: "2019 - 2020"
+  description: "参与深度学习项目研究。"
+  location: "深圳"
