@@ -67,6 +67,8 @@ exclude:
   - node_modules
   - vendor
   - README.md
+  - amytis-style
+  - .github
 
 # Include
 include:
