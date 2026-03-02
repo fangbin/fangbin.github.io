@@ -3,88 +3,130 @@ layout: default
 title: 首页
 ---
 
-<!-- 个人信息 -->
-<section id="about" class="section">
-  <div class="container narrow">
-    <div class="profile-academic">
-      <div class="profile-photo-academic">
-        <img src="{{ '/images/profile.jpg' | relative_url }}" alt="{{ site.author }}" onerror="this.parentElement.style.display='none'">
-      </div>
-      <div class="profile-info-academic">
-        <h1>{{ site.author }}</h1>
-        <p class="affiliation">研究员 · 博士</p>
-        <p class="bio">致力于人工智能与机器学习领域的研究，在深度学习、计算机视觉等方向有丰富的经验。</p>
-        <p class="contact-links">
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-          &nbsp;|&nbsp;
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          &nbsp;|&nbsp;
-          <a href="https://scholar.google.com/citations?user=yourid" target="_blank" rel="noopener">Google Scholar</a>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-name">{{ site.author }}</h1>
+        <p class="hero-title">Ph.D. · Researcher</p>
+        <p class="hero-affiliation">华东师范大学 · 巴黎西岱大学</p>
+        <p class="hero-bio">
+          研究方向：形式化方法、程序验证、静态分析
         </p>
+        <div class="hero-links">
+          <a href="mailto:{{ site.email }}" class="link-btn" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Email
+          </a>
+          <a href="https://github.com/fangbin" target="_blank" rel="noopener" class="link-btn" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" rel="noopener" class="link-btn" title="Google Scholar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+            </svg>
+            Scholar
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="{{ '/images/profile.jpg' | relative_url }}" alt="{{ site.author }}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>{{ site.author | slice: 0 }}</div>'">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 教育背景 -->
-<section id="education" class="section">
-  <div class="container narrow">
-    <h2>教育背景</h2>
-    <ul class="cv-list">
+<!-- Education -->
+<section class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title">教育背景</h2>
+    <div class="timeline">
       {% for edu in site.data.education %}
-      <li>
-        <span class="item-title">{{ edu.degree }}</span>
-        <span class="item-meta">{{ edu.school }}{% if edu.department %}, {{ edu.department }}{% endif %}</span>
-        <span class="item-date">{{ edu.period }}</span>
-      </li>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">{{ edu.period }}</span>
+          <h3>{{ edu.degree }}</h3>
+          <p class="timeline-location">{{ edu.school }}{% if edu.department %} · {{ edu.department }}{% endif %}</p>
+          {% if edu.description %}<p class="timeline-desc">{{ edu.description }}</p>{% endif %}
+        </div>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
-<!-- 获奖信息 -->
-<section id="awards" class="section">
-  <div class="container narrow">
-    <h2>获奖信息</h2>
-    <ul class="cv-list">
-      {% for award in site.data.awards %}
-      <li>
-        <span class="item-title">{{ award.title }}</span>
-        <span class="item-meta">{{ award.period }}</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<!-- 工作经历 -->
-<section id="work" class="section">
-  <div class="container narrow">
-    <h2>工作经历</h2>
-    <ul class="cv-list">
+<!-- Work Experience -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">工作经历</h2>
+    <div class="timeline">
       {% for work in site.data.work %}
-      <li>
-        <span class="item-title">{{ work.position }}</span>
-        <span class="item-meta">{{ work.company }}{% if work.location %}, {{ work.location }}{% endif %}</span>
-        <span class="item-date">{{ work.period }}</span>
-      </li>
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">{{ work.period }}</span>
+          <h3>{{ work.position }}</h3>
+          <p class="timeline-location">{{ work.company }}{% if work.location %} · {{ work.location }}{% endif %}</p>
+          {% if work.description %}<p class="timeline-desc">{{ work.description }}</p>{% endif %}
+        </div>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
-<!-- 发表论文 -->
-<section id="publications" class="section">
-  <div class="container narrow">
-    <h2>发表论文</h2>
-    <ol class="pub-list">
+<!-- Publications -->
+<section class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title">发表论文</h2>
+    <div class="publications-list">
       {% for pub in site.data.publications %}
-      <li>
-        <span class="pub-title">{{ pub.title }}</span><br>
-        <span class="pub-authors">{{ pub.authors }}</span><br>
-        <span class="pub-venue"><em>{{ pub.journal }}</em>, {{ pub.year }}</span>
-      </li>
+      <article class="pub-card">
+        <div class="pub-number">{{ forloop.index }}</div>
+        <div class="pub-content">
+          <h3 class="pub-title">{{ pub.title }}</h3>
+          <p class="pub-authors">{{ pub.authors }}</p>
+          <p class="pub-venue">
+            <em>{{ pub.journal }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}
+          </p>
+          {% if pub.tags %}
+          <div class="pub-tags">
+            {% for tag in pub.tags %}
+            <span class="pub-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </article>
       {% endfor %}
-    </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">荣誉奖项</h2>
+    <div class="awards-grid">
+      {% for award in site.data.awards %}
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h3>{{ award.title }}</h3>
+          <p>{{ award.period }}{% if award.location %} · {{ award.location }}{% endif %}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
