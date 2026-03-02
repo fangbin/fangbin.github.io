@@ -1091,6 +1091,68 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* Category Navigation */
+.category-nav {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.category-tab:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.category-tab.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.category-tab .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.category-tab.active .count {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Category Colors */
+.category-tech {
+  background-color: #3498db !important;
+  color: white !important;
+}
+
+.category-essay {
+  background-color: #e67e22 !important;
+  color: white !important;
+}
+
 /* Responsive for Simplified Design */
 @media (max-width: 768px) {
   .profile-with-photo {
@@ -1128,6 +1190,14 @@ a:hover {
 
   .section-title {
     font-size: 1.5rem;
+  }
+
+  .category-nav {
+    flex-direction: column;
+  }
+
+  .category-tab {
+    justify-content: center;
   }
 }
 

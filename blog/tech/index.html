@@ -1,0 +1,70 @@
+---
+layout: default
+title: 技术博客
+description: 技术分享与实践
+category: 技术博客
+---
+
+<section class="section blog-section">
+  <div class="container">
+    <h1 class="page-title">技术博客</h1>
+
+    <!-- 分类导航 -->
+    <div class="category-nav">
+      <a href="{{ '/blog/' | relative_url }}" class="category-tab">
+        全部文章
+        <span class="count">{{ site.posts.size }}</span>
+      </a>
+      <a href="{{ '/blog/tech/' | relative_url }}" class="category-tab active">
+        技术博客
+        <span class="count">{{ site.categories['技术博客'].size | default: 0 }}</span>
+      </a>
+      <a href="{{ '/blog/essays/' | relative_url }}" class="category-tab">
+        随笔杂文
+        <span class="count">{{ site.categories['随笔杂文'].size | default: 0 }}</span>
+      </a>
+    </div>
+
+    <!-- 文章列表 -->
+    <div class="posts-list">
+      {% assign tech_posts = site.categories['技术博客'] | sort: 'date' | reverse %}
+      {% for post in tech_posts %}
+      <article class="post-card">
+        <div class="post-card-header">
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y年%m月%d日" }}
+          </time>
+          <div class="post-categories">
+            <span class="category category-tech">技术博客</span>
+          </div>
+        </div>
+
+        <h2 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+
+        {% if post.excerpt %}
+        <div class="post-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+        {% endif %}
+
+        {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+          <a href="{{ '/blog/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if site.categories['技术博客'].size == 0 %}
+    <div class="no-posts">
+      <p>暂无技术博客文章。</p>
+      <p>创建文章时在 Front Matter 中添加 <code>categories: [技术博客]</code> 即可。</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

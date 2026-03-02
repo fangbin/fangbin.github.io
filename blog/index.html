@@ -7,34 +7,23 @@ description: 思考与研究笔记
 <section class="section blog-section">
   <div class="container">
     <h1 class="page-title">博客文章</h1>
-    
-    <!-- 分类和标签导航 -->
-    <div class="blog-nav">
-      <div class="blog-categories">
-        <h3>分类</h3>
-        {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
-        <ul>
-          {% for category in categories %}
-          {% if category != '' %}
-          <li><a href="{{ '/blog/category/' | append: category | relative_url }}">{{ category }}</a></li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-      
-      <div class="blog-tags">
-        <h3>标签</h3>
-        {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
-        <div class="tag-cloud">
-          {% for tag in tags %}
-          {% if tag != '' %}
-          <a href="{{ '/blog/tag/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
-          {% endif %}
-          {% endfor %}
-        </div>
-      </div>
+
+    <!-- 分类导航 -->
+    <div class="category-nav">
+      <a href="{{ '/blog/' | relative_url }}" class="category-tab {% unless page.category %}active{% endunless %}">
+        全部文章
+        <span class="count">{{ site.posts.size }}</span>
+      </a>
+      <a href="{{ '/blog/tech/' | relative_url }}" class="category-tab {% if page.category == '技术博客' %}active{% endif %}">
+        技术博客
+        <span class="count">{{ site.categories['技术博客'].size | default: 0 }}</span>
+      </a>
+      <a href="{{ '/blog/essays/' | relative_url }}" class="category-tab {% if page.category == '随笔杂文' %}active{% endif %}">
+        随笔杂文
+        <span class="count">{{ site.categories['随笔杂文'].size | default: 0 }}</span>
+      </a>
     </div>
-    
+
     <!-- 文章列表 -->
     <div class="posts-list">
       {% for post in paginator.posts %}
@@ -46,22 +35,26 @@ description: 思考与研究笔记
           {% if post.categories %}
           <div class="post-categories">
             {% for category in post.categories %}
-            <a href="{{ '/blog/category/' | append: category | relative_url }}" class="category">{{ category }}</a>
+            {% if category == '技术博客' %}
+            <a href="{{ '/blog/tech/' | relative_url }}" class="category category-tech">{{ category }}</a>
+            {% elsif category == '随笔杂文' %}
+            <a href="{{ '/blog/essays/' | relative_url }}" class="category category-essay">{{ category }}</a>
+            {% endif %}
             {% endfor %}
           </div>
           {% endif %}
         </div>
-        
+
         <h2 class="post-card-title">
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        
+
         {% if post.excerpt %}
         <div class="post-excerpt">
           {{ post.excerpt | strip_html | truncatewords: 30 }}
         </div>
         {% endif %}
-        
+
         {% if post.tags %}
         <div class="post-tags">
           {% for tag in post.tags %}
@@ -72,24 +65,24 @@ description: 思考与研究笔记
       </article>
       {% endfor %}
     </div>
-    
+
     <!-- 分页 -->
     {% if paginator.total_pages > 1 %}
     <nav class="pagination">
       {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-prev">&larr; 上一页</a>
       {% endif %}
-      
+
       <span class="pagination-info">
         第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页
       </span>
-      
+
       {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-next">下一页 &rarr;</a>
       {% endif %}
     </nav>
     {% endif %}
-    
+
     {% if site.posts.size == 0 %}
     <div class="no-posts">
       <p>暂无文章。</p>

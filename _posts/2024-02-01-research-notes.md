@@ -2,7 +2,7 @@
 layout: post
 title: "机器学习研究心得"
 date: 2024-02-01
-categories: [研究]
+categories: [技术博客]
 tags: [机器学习, 深度学习, 研究方法]
 author: Your Name
 ---

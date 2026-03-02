@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll博客搭建教程"
 date: 2024-01-20
-categories: [技术]
+categories: [技术博客]
 tags: [Jekyll, GitHub Pages, 教程]
 author: Your Name
 ---
