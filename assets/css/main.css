@@ -926,6 +926,187 @@ a:hover {
 }
 
 /* ========================================
+   Simplified Design Styles
+   ======================================== */
+
+/* Simplified Profile */
+.profile-simple {
+  padding: var(--spacing-lg) 0;
+}
+
+.profile-text {
+  max-width: 800px;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.profile-title {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+.profile-bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+.profile-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.profile-links a {
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.profile-links a:hover {
+  color: var(--primary-color);
+}
+
+.profile-links .divider {
+  color: var(--text-lighter);
+}
+
+/* Alternative Background */
+.alt-bg {
+  background-color: var(--bg-light);
+}
+
+/* Simplified Timeline */
+.timeline-simple {
+  margin-bottom: var(--spacing-lg);
+}
+
+.timeline-item-simple {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item-simple:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-left {
+  text-align: right;
+}
+
+.timeline-period {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.timeline-right h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+.timeline-right p {
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+.text-light {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Simplified Publications */
+.publications-simple {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.pub-item-simple {
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-radius: 4px;
+  border-left: 3px solid var(--secondary-color);
+}
+
+.pub-item-simple h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-color);
+  line-height: 1.4;
+}
+
+.pub-item-simple p {
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+.pub-item-simple p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive for Simplified Design */
+@media (max-width: 768px) {
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .timeline-item-simple {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .timeline-left {
+    text-align: left;
+  }
+
+  .timeline-period {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+  }
+
+  .profile-links {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 1.75rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+  }
+
+  .profile-bio {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
    Print Styles
    ======================================== */
 @media print {
@@ -934,12 +1115,12 @@ a:hover {
   .menu-toggle {
     display: none;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.5;
   }
-  
+
   .section {
     page-break-inside: avoid;
   }
