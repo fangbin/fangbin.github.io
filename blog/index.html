@@ -5,23 +5,14 @@ description: 思考与研究笔记
 ---
 
 <section class="section blog-section">
-  <div class="container">
-    <h1 class="page-title">博客文章</h1>
+  <div class="container narrow">
+    <h1>博客文章</h1>
 
     <!-- 分类导航 -->
     <div class="category-nav">
-      <a href="{{ '/blog/' | relative_url }}" class="category-tab active">
-        全部文章
-        <span class="count">{{ site.posts.size | plus: site.tech.size | plus: site.essays.size }}</span>
-      </a>
-      <a href="{{ '/blog/tech/' | relative_url }}" class="category-tab">
-        技术博客
-        <span class="count">{{ site.tech.size | default: 0 }}</span>
-      </a>
-      <a href="{{ '/blog/essays/' | relative_url }}" class="category-tab">
-        随笔杂文
-        <span class="count">{{ site.essays.size | default: 0 }}</span>
-      </a>
+      <a href="{{ '/blog/' | relative_url }}" class="category-tab active">全部</a>
+      <a href="{{ '/blog/tech/' | relative_url }}" class="category-tab">技术博客</a>
+      <a href="{{ '/blog/essays/' | relative_url }}" class="category-tab">随笔杂文</a>
     </div>
 
     <!-- 文章列表 -->
@@ -31,16 +22,12 @@ description: 思考与研究笔记
       <article class="post-card">
         <div class="post-card-header">
           <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%Y年%m月%d日" }}
+            {{ post.date | date: "%Y-%m-%d" }}
           </time>
           {% if post.collection == 'tech' %}
-          <div class="post-categories">
-            <a href="{{ '/blog/tech/' | relative_url }}" class="category category-tech">技术博客</a>
-          </div>
+          <span class="category">技术</span>
           {% elsif post.collection == 'essays' %}
-          <div class="post-categories">
-            <a href="{{ '/blog/essays/' | relative_url }}" class="category category-essay">随笔杂文</a>
-          </div>
+          <span class="category">随笔</span>
           {% endif %}
         </div>
 
@@ -50,15 +37,7 @@ description: 思考与研究笔记
 
         {% if post.excerpt %}
         <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
-        </div>
-        {% endif %}
-
-        {% if post.tags %}
-        <div class="post-tags">
-          {% for tag in post.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
         </div>
         {% endif %}
       </article>
@@ -68,7 +47,6 @@ description: 思考与研究笔记
     {% if all_posts.size == 0 %}
     <div class="no-posts">
       <p>暂无文章。</p>
-      <p>在 <code>_tech</code> 或 <code>_essays</code> 文件夹中添加 Markdown 文件即可创建新文章。</p>
     </div>
     {% endif %}
   </div>

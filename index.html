@@ -4,92 +4,87 @@ title: 首页
 ---
 
 <!-- 个人信息 -->
-<section id="about" class="section about-section">
-  <div class="container">
-    <div class="profile-with-photo">
-      <div class="profile-photo">
-        <img src="{{ '/images/profile.jpg' | relative_url }}" alt="{{ site.author }}" loading="lazy" onerror="this.style.display='none'">
+<section id="about" class="section">
+  <div class="container narrow">
+    <div class="profile-academic">
+      <div class="profile-photo-academic">
+        <img src="{{ '/images/profile.jpg' | relative_url }}" alt="{{ site.author }}" onerror="this.parentElement.style.display='none'">
       </div>
-      <div class="profile-content">
-        <h1 class="profile-name">{{ site.author }}</h1>
-        <p class="profile-title">研究员 · 博士</p>
-        <p class="profile-bio">
-          致力于人工智能与机器学习领域的研究，在深度学习、计算机视觉等方向有丰富的经验。
-        </p>
-        <div class="profile-links">
-          <a href="mailto:{{ site.email }}">邮箱</a>
-          <span class="divider">·</span>
+      <div class="profile-info-academic">
+        <h1>{{ site.author }}</h1>
+        <p class="affiliation">研究员 · 博士</p>
+        <p class="bio">致力于人工智能与机器学习领域的研究，在深度学习、计算机视觉等方向有丰富的经验。</p>
+        <p class="contact-links">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          &nbsp;|&nbsp;
           <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          <span class="divider">·</span>
-          <a href="https://scholar.google.com/citations?user=yourid" target="_blank" rel="noopener">Scholar</a>
-        </div>
+          &nbsp;|&nbsp;
+          <a href="https://scholar.google.com/citations?user=yourid" target="_blank" rel="noopener">Google Scholar</a>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 教育与工作经历 -->
-<section id="background" class="section">
-  <div class="container">
-    <h2 class="section-title">教育背景</h2>
-    <div class="timeline-simple">
+<!-- 教育背景 -->
+<section id="education" class="section">
+  <div class="container narrow">
+    <h2>教育背景</h2>
+    <ul class="cv-list">
       {% for edu in site.data.education %}
-      <div class="timeline-item-simple">
-        <div class="timeline-left">
-          <span class="timeline-period">{{ edu.period }}</span>
-        </div>
-        <div class="timeline-right">
-          <h3>{{ edu.degree }}</h3>
-          <p>{{ edu.school }}{% if edu.department %} · {{ edu.department }}{% endif %}</p>
-          {% if edu.description %}<p class="text-light">{{ edu.description }}</p>{% endif %}
-        </div>
-      </div>
+      <li>
+        <span class="item-title">{{ edu.degree }}</span>
+        <span class="item-meta">{{ edu.school }}{% if edu.department %}, {{ edu.department }}{% endif %}</span>
+        <span class="item-date">{{ edu.period }}</span>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
+  </div>
+</section>
 
-    <h2 class="section-title" style="margin-top: 3rem;">获奖信息</h2>
-    <div class="awards-list">
+<!-- 获奖信息 -->
+<section id="awards" class="section">
+  <div class="container narrow">
+    <h2>获奖信息</h2>
+    <ul class="cv-list">
       {% for award in site.data.awards %}
-      <div class="award-item">
-        <div class="award-icon">🏆</div>
-        <div class="award-content">
-          <h3>{{ award.title }}</h3>
-          <p>{{ award.period }}{% if award.location %} · {{ award.location }}{% endif %}</p>
-        </div>
-      </div>
+      <li>
+        <span class="item-title">{{ award.title }}</span>
+        <span class="item-meta">{{ award.period }}</span>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
+  </div>
+</section>
 
-    <h2 class="section-title" style="margin-top: 3rem;">工作经历</h2>
-    <div class="timeline-simple">
+<!-- 工作经历 -->
+<section id="work" class="section">
+  <div class="container narrow">
+    <h2>工作经历</h2>
+    <ul class="cv-list">
       {% for work in site.data.work %}
-      <div class="timeline-item-simple">
-        <div class="timeline-left">
-          <span class="timeline-period">{{ work.period }}</span>
-        </div>
-        <div class="timeline-right">
-          <h3>{{ work.position }}</h3>
-          <p>{{ work.company }}{% if work.location %} · {{ work.location }}{% endif %}</p>
-          {% if work.description %}<p class="text-light">{{ work.description }}</p>{% endif %}
-        </div>
-      </div>
+      <li>
+        <span class="item-title">{{ work.position }}</span>
+        <span class="item-meta">{{ work.company }}{% if work.location %}, {{ work.location }}{% endif %}</span>
+        <span class="item-date">{{ work.period }}</span>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>
 
 <!-- 发表论文 -->
-<section id="publications" class="section alt-bg">
-  <div class="container">
-    <h2 class="section-title">发表论文</h2>
-    <div class="publications-simple">
+<section id="publications" class="section">
+  <div class="container narrow">
+    <h2>发表论文</h2>
+    <ol class="pub-list">
       {% for pub in site.data.publications %}
-      <div class="pub-item-simple">
-        <h3>{{ pub.title }}</h3>
-        <p>{{ pub.authors }}</p>
-        <p class="text-light"><em>{{ pub.journal }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
-      </div>
+      <li>
+        <span class="pub-title">{{ pub.title }}</span><br>
+        <span class="pub-authors">{{ pub.authors }}</span><br>
+        <span class="pub-venue"><em>{{ pub.journal }}</em>, {{ pub.year }}</span>
+      </li>
       {% endfor %}
-    </div>
+    </ol>
   </div>
 </section>
