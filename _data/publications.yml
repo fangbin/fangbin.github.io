@@ -30,6 +30,12 @@
   publisher: "Springer"
   tags: ["程序分析", "形状抽象"]
 
+- title: "Formal Development of a Real-Time Operating System Memory Manager"
+  authors: "Wen Su, Jean-Raymond Abrial, Geguang Pu, Bin Fang"
+  journal: "20th International Conference on Engineering of Complex Computer Systems (ICECCS)"
+  year: 2015
+  tags: ["形式化方法", "实时操作系统", "内存管理"]
+
 - title: "Automated Coverage-Driven Test Data Generation Using Dynamic Symbolic Execution"
   authors: "Ting Su, Siyuan Jiang, Geguang Pu, Bin Fang, Jifeng He, Jun Yan, Jianjun Zhao"
   journal: "8th International Conference on Software Security and Reliability (SERE)"
