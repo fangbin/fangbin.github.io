@@ -6,8 +6,11 @@ title: 首页
 <!-- 个人信息 -->
 <section id="about" class="section about-section">
   <div class="container">
-    <div class="profile-simple">
-      <div class="profile-text">
+    <div class="profile-with-photo">
+      <div class="profile-photo">
+        <img src="{{ '/images/profile.jpg' | relative_url }}" alt="{{ site.author }}" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="profile-content">
         <h1 class="profile-name">{{ site.author }}</h1>
         <p class="profile-title">研究员 · 博士</p>
         <p class="profile-bio">

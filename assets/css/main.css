@@ -938,6 +938,35 @@ a:hover {
   max-width: 800px;
 }
 
+/* Profile with Photo */
+.profile-with-photo {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+  align-items: start;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-content {
+  min-width: 0;
+}
+
 .profile-name {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-xs);
@@ -1064,6 +1093,16 @@ a:hover {
 
 /* Responsive for Simplified Design */
 @media (max-width: 768px) {
+  .profile-with-photo {
+    grid-template-columns: 120px 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
   .profile-name {
     font-size: 2rem;
   }
@@ -1093,6 +1132,17 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+  .profile-with-photo {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
   .profile-name {
     font-size: 1.75rem;
   }
@@ -1103,6 +1153,10 @@ a:hover {
 
   .profile-bio {
     font-size: 1rem;
+  }
+
+  .profile-links {
+    justify-content: center;
   }
 }
 
