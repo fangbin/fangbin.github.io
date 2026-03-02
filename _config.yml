@@ -19,6 +19,12 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  tech:
+    output: true
+    permalink: /blog/tech/:year/:month/:day/:title/
+  essays:
+    output: true
+    permalink: /blog/essays/:year/:month/:day/:title/
 
 # Defaults
 defaults:
@@ -28,6 +34,20 @@ defaults:
     values:
       layout: "post"
       author: "Your Name"
+  - scope:
+      path: ""
+      type: "tech"
+    values:
+      layout: "post"
+      author: "Your Name"
+      category: "技术博客"
+  - scope:
+      path: ""
+      type: "essays"
+    values:
+      layout: "post"
+      author: "Your Name"
+      category: "随笔杂文"
   - scope:
       path: ""
       type: "pages"

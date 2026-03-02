@@ -1,80 +1,48 @@
 # 博客写作指南
 
-本文档说明如何在 `_posts` 文件夹中添加和管理博客文章。
+本文档说明如何在独立的文件夹中添加和管理博客文章。
+
+## 📁 文件夹结构
+
+博客文章现在分为两个独立的文件夹：
+
+```
+_tech/           # 技术博客文件夹
+├── 2024-01-20-jekyll-tutorial.md
+└── 2024-02-01-research-notes.md
+
+_essays/         # 随笔杂文文件夹
+└── 2024-01-15-welcome.md
+
+_posts/          # 通用博客文件夹（可选）
+└── 其他文章...
+```
 
 ## 📝 快速开始
 
-### 1. 创建新文章
-
-在 `_posts` 文件夹中创建新的 Markdown 文件，命名格式：
-
-```
-YYYY-MM-DD-title.md
-```
-
-例如：`2024-03-01-my-first-post.md`
-
-### 2. 文章结构
-
-每篇文章必须包含 Front Matter（YAML 头部信息）：
-
-```markdown
----
-layout: post
-title: "文章标题"
-date: 2024-03-01
-categories: [技术博客]  # 或 [随笔杂文]
-tags: [标签1, 标签2]
-author: Your Name
----
-
-文章内容使用 Markdown 语法编写...
-```
-
-## 🏷️ 分类说明
-
-博客分为两大类：
-
 ### 技术博客
 
-技术相关文章，包括：
-- 编程教程
-- 技术分享
-- 项目实践
-- 研究笔记
-
-**使用方法**：
-```yaml
-categories: [技术博客]
-```
-
-**分类颜色**：蓝色 (#3498db)
+1. **创建文件**：在 `_tech` 文件夹中创建 Markdown 文件
+2. **命名格式**：`YYYY-MM-DD-title.md`
+3. **URL 格式**：`/blog/tech/YYYY/MM/DD/title/`
 
 ### 随笔杂文
 
-生活感悟与思考，包括：
-- 生活感悟
-- 学习心得
-- 读书笔记
-- 个人见解
-
-**使用方法**：
-```yaml
-categories: [随笔杂文]
-```
-
-**分类颜色**：橙色 (#e67e22)
+1. **创建文件**：在 `_essays` 文件夹中创建 Markdown 文件
+2. **命名格式**：`YYYY-MM-DD-title.md`
+3. **URL 格式**：`/blog/essays/YYYY/MM/DD/title/`
 
 ## 📋 文章模板
 
 ### 技术博客模板
+
+在 `_tech` 文件夹中创建：
 
 ```markdown
 ---
 layout: post
 title: "技术文章标题"
 date: 2024-03-01
-categories: [技术博客]
 tags: [技术标签, 编程语言]
 author: Your Name
 ---
@@ -101,20 +69,19 @@ print("Hello, World!")
 ## 总结
 
 总结内容...
-
-## 参考资料
-
-- [参考链接](url)
 ```
 
+**注意**：技术博客会自动添加 `category: 技术博客`，无需手动指定。
+
 ### 随笔杂文模板
+
+在 `_essays` 文件夹中创建：
 
 ```markdown
 ---
 layout: post
 title: "随笔文章标题"
 date: 2024-03-01
-categories: [随笔杂文]
 tags: [生活, 感悟]
 author: Your Name
 ---
@@ -132,9 +99,41 @@ author: Your Name
 结语内容...
 ```
 
+**注意**：随笔杂文会自动添加 `category: 随笔杂文`，无需手动指定。
+
+## 🎯 分类说明
+
+### 技术博客 (`_tech`)
+
+**适用内容**：
+- 编程教程
+- 技术分享
+- 项目实践
+- 研究笔记
+- 工具使用
+- 问题解决
+
+**URL 示例**：
+- 文件：`_tech/2024-03-01-python-tutorial.md`
+- 访问：`https://yourusername.github.io/blog/tech/2024/03/01/python-tutorial/`
+
+### 随笔杂文 (`_essays`)
+
+**适用内容**：
+- 生活感悟
+- 学习心得
+- 读书笔记
+- 个人见解
+- 旅行游记
+- 心情记录
+
+**URL 示例**：
+- 文件：`_essays/2024-03-01-life-thoughts.md`
+- 访问：`https://yourusername.github.io/blog/essays/2024/03/01/life-thoughts/`
+
 ## 🏷️ 标签使用
 
-标签用于更细粒度的文章分类，建议：
+标签用于更细粒度的文章分类：
 
 - 使用 2-5 个标签
 - 标签要具体、有意义
@@ -143,23 +142,30 @@ author: Your Name
 ### 常用标签示例
 
 **技术博客**：
-- `Jekyll`, `GitHub Pages`, `Web开发`
-- `Python`, `JavaScript`, `机器学习`
+- `Python`, `JavaScript`, `Jekyll`
 - `教程`, `实践`, `优化`
+- `机器学习`, `深度学习`
 
 **随笔杂文**：
 - `生活`, `感悟`, `读书`
 - `学习`, `成长`, `思考`
 
-## 📂 文件组织
+## 📂 文件夹优势
 
-```
-_posts/
-├── 2024-01-15-welcome.md           # 随笔杂文
-├── 2024-01-20-jekyll-tutorial.md   # 技术博客
-├── 2024-02-01-research-notes.md    # 技术博客
-└── 2024-03-01-new-post.md          # 新文章
-```
+✅ **物理分离**
+- 技术博客和随笔杂文完全分开
+- 文件夹结构清晰
+- 便于管理和维护
+
+✅ **独立 URL**
+- 技术博客：`/blog/tech/...`
+- 随笔杂文：`/blog/essays/...`
+- URL 结构清晰，便于分享
+
+✅ **自动分类**
+- 无需在 Front Matter 中指定 categories
+- 系统自动识别文章类型
+- 减少手动配置
 
 ## ✍️ Markdown 语法
 
@@ -200,15 +206,10 @@ def hello():
 ![图片描述](图片路径)
 ```
 
-### 引用
-```markdown
-> 引用内容
-```
-
 ## 💡 写作建议
 
-1. **标题**：简洁明了，概括文章主题
-2. **分类**：根据文章性质选择合适的分类
+1. **选择文件夹**：根据文章性质选择 `_tech` 或 `_essays`
+2. **标题**：简洁明了，概括文章主题
 3. **标签**：使用 2-5 个相关标签
 4. **摘要**：文章开头写一段简短摘要（会自动提取）
 5. **结构**：使用标题组织内容，层次清晰
@@ -217,19 +218,19 @@ def hello():
 
 ## 🚀 发布流程
 
-1. 在 `_posts` 创建 Markdown 文件
-2. 编写文章内容
-3. 本地预览：`bundle exec jekyll serve`
-4. 确认无误后提交到 Git
-5. 推送到 GitHub
-6. 等待自动部署（1-3 分钟）
+1. 选择合适的文件夹（`_tech` 或 `_essays`）
+2. 创建 Markdown 文件（格式：YYYY-MM-DD-title.md）
+3. 编写文章内容
+4. 本地预览：`bundle exec jekyll serve`
+5. 确认无误后提交到 Git
+6. 推送到 GitHub
+7. 等待自动部署（1-3 分钟）
 
 ## 📊 文章访问
 
 - **全部文章**：`/blog/`
 - **技术博客**：`/blog/tech/`
 - **随笔杂文**：`/blog/essays/`
-- **标签页面**：`/blog/tag/标签名/`
 
 ## 🔍 SEO 优化
 
@@ -239,8 +240,29 @@ Jekyll 会自动为每篇文章生成：
 - Open Graph 标签
 - RSS Feed
 
-你只需要专注于内容创作！
+## ⚠️ 注意事项
+
+1. **文件命名**：必须使用 `YYYY-MM-DD-title.md` 格式
+2. **文件夹选择**：
+   - 技术相关 → `_tech`
+   - 生活感悟 → `_essays`
+3. **分类自动添加**：无需手动设置 categories
+4. **兼容性**：原 `_posts` 文件夹仍然可用
+
+## 🔄 迁移说明
+
+如果要将现有文章从 `_posts` 迁移到新结构：
+
+**技术博客**：
+```bash
+mv _posts/tech-article.md _tech/tech-article.md
+```
+
+**随笔杂文**：
+```bash
+mv _posts/essay-article.md _essays/essay-article.md
+```
 
 ---
 
-**祝你写作愉快！** ✍️
+**现在你可以更有条理地管理博客文章了！** ✍️
