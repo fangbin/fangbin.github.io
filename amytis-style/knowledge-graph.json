@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    {
+      "id": "research-notes",
+      "title": "研究笔记",
+      "type": "post",
+      "url": "/posts/research-notes",
+      "connections": 0
+    },
+    {
+      "id": "jekyll-tutorial",
+      "title": "Jekyll博客搭建教程",
+      "type": "post",
+      "url": "/posts/jekyll-tutorial",
+      "connections": 0
+    },
+    {
+      "id": "welcome",
+      "title": "欢迎来到我的博客",
+      "type": "post",
+      "url": "/posts/welcome",
+      "connections": 0
+    }
+  ],
+  "edges": []
+}

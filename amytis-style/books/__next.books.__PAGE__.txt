@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[85122,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/ec1abc8d9481e84a.js"],"default"]
+3:I[41558,["/amytis-style/_next/static/chunks/f0d17f4675c3171d.js","/amytis-style/_next/static/chunks/265a02f7263128df.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"HjeYyKPWCU1wLYZhsBbfe","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-main","children":[["$","$L2",null,{"titleKey":"books","subtitleKey":"series_subtitle","subtitleOneKey":"series_subtitle_one","count":0,"subtitleParams":{"count":0}}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-8","children":[]}]]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/ec1abc8d9481e84a.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

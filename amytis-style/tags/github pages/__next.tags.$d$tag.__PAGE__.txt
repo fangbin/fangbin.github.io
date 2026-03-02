@@ -1,0 +1,125 @@
+1:"$Sreact.fragment"
+2:I[68016,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/2de18025333a6d13.js","/amytis-style/_next/static/chunks/80205a26c1362081.js"],"default"]
+3:I[67771,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/2de18025333a6d13.js","/amytis-style/_next/static/chunks/80205a26c1362081.js"],"default"]
+4:I[52678,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/2de18025333a6d13.js","/amytis-style/_next/static/chunks/80205a26c1362081.js"],"default"]
+6:I[41558,["/amytis-style/_next/static/chunks/f0d17f4675c3171d.js","/amytis-style/_next/static/chunks/265a02f7263128df.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+5:T9c7,本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。
+
+## 什么是 Jekyll？
+
+Jekyll 是一个静态网站生成器，它可以将 Markdown 文件转换为静态 HTML 页面。GitHub Pages 原生支持 Jekyll，因此非常适合搭建个人博客。
+
+## 为什么选择 Jekyll？
+
+- **简单**：只需 Markdown 文件，无需数据库
+- **快速**：静态页面加载速度快
+- **安全**：没有动态脚本，安全性高
+- **免费**：GitHub Pages 提供免费托管
+- **版本控制**：使用 Git 管理内容
+
+## 项目结构
+
+一个典型的 Jekyll 博客项目结构如下：
+
+```
+yourusername.github.io/
+├── _config.yml          # 配置文件
+├── _posts/              # 博客文章
+│   └── 2024-01-15-article.md
+├── _layouts/            # 页面模板
+│   ├── default.html
+│   └── post.html
+├── _includes/           # 可复用组件
+│   ├── header.html
+│   └── footer.html
+├── _data/               # 数据文件
+│   └── members.yml
+├── assets/              # 静态资源
+│   ├── css/
+│   └── js/
+├── images/              # 图片
+├── docs/                # 文档
+└── index.html           # 首页
+```
+
+## 快速开始
+
+### 1. 创建仓库
+
+在 GitHub 创建名为 `username.github.io` 的仓库。
+
+### 2. 安装 Jekyll
+
+```bash
+gem install jekyll bundler
+jekyll new myblog
+cd myblog
+```
+
+### 3. 本地预览
+
+```bash
+bundle exec jekyll serve
+```
+
+访问 `http://localhost:4000` 查看网站。
+
+### 4. 发布到 GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/username.github.io.git
+git push -u origin main
+```
+
+## 自定义配置
+
+编辑 `_config.yml` 文件来自定义你的站点：
+
+```yaml
+title: 我的博客
+email: your.email@example.com
+description: 分享技术与生活
+baseurl: ""
+url: "https://username.github.io"
+```
+
+## 写作技巧
+
+### 使用 Front Matter
+
+每篇文章都需要 Front Matter：
+
+```yaml
+---
+layout: post
+title: "文章标题"
+date: 2024-01-20
+categories: [技术]
+tags: [Jekyll]
+---
+```
+
+### 图片优化
+
+推荐做法：
+
+1. 压缩图片文件
+2. 使用适当的尺寸
+3. 添加 `loading="lazy"` 属性
+
+```html
+<img src="/images/photo.jpg" alt="描述" loading="lazy">
+```
+
+## 总结
+
+Jekyll + GitHub Pages 是搭建个人博客的绝佳选择，简单、快速、免费！
+
+---
+
+如果你有任何问题，欢迎在评论区讨论。0:{"buildId":"HjeYyKPWCU1wLYZhsBbfe","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-container","children":["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] gap-8 items-start","children":[["$","$L2","github pages",{"tags":{"研究":1,"笔记":1,"jekyll":1,"github pages":1,"教程":1,"博客":1,"开篇":1},"activeTag":"github pages"}],["$","div",null,{"className":"flex-1 min-w-0","children":[["$","$L3",null,{"tag":"github pages"}],["$","$L4",null,{"posts":[{"slug":"jekyll-tutorial","title":"Jekyll博客搭建教程","date":"2024-01-20","excerpt":"本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。","category":"Uncategorized","tags":["Jekyll","GitHub Pages","教程"],"authors":["Your Name"],"layout":"post","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"2 min read","content":"$5","headings":[{"id":"什么是-jekyll","text":"什么是 Jekyll？","level":2},{"id":"为什么选择-jekyll","text":"为什么选择 Jekyll？","level":2},{"id":"项目结构","text":"项目结构","level":2},{"id":"快速开始","text":"快速开始","level":2},{"id":"1-创建仓库","text":"1. 创建仓库","level":3},{"id":"2-安装-jekyll","text":"2. 安装 Jekyll","level":3},{"id":"3-本地预览","text":"3. 本地预览","level":3},{"id":"4-发布到-github","text":"4. 发布到 GitHub","level":3},{"id":"自定义配置","text":"自定义配置","level":2},{"id":"写作技巧","text":"写作技巧","level":2},{"id":"使用-front-matter","text":"使用 Front Matter","level":3},{"id":"图片优化","text":"图片优化","level":3},{"id":"总结","text":"总结","level":2}]}],"flows":[]}]]}]]}]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/2de18025333a6d13.js","async":true}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/80205a26c1362081.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+8:null

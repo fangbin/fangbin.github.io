@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[85122,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/e5b65d5aebd1b875.js","/amytis-style/_next/static/chunks/80205a26c1362081.js"],"default"]
+3:I[19956,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/e5b65d5aebd1b875.js","/amytis-style/_next/static/chunks/80205a26c1362081.js"],"default"]
+4:I[41558,["/amytis-style/_next/static/chunks/f0d17f4675c3171d.js","/amytis-style/_next/static/chunks/265a02f7263128df.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"HjeYyKPWCU1wLYZhsBbfe","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-main","children":[["$","$L2",null,{"titleKey":"tags","subtitleKey":"tags_subtitle","subtitleOneKey":"tags_subtitle_one","count":7,"subtitleParams":{"count":7}}],["$","main",null,{"children":["$","$L3",null,{"tags":{"研究":1,"笔记":1,"jekyll":1,"github pages":1,"教程":1,"博客":1,"开篇":1}}]}]]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/e5b65d5aebd1b875.js","async":true}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/80205a26c1362081.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null

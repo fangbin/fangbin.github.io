@@ -1,0 +1,126 @@
+1:"$Sreact.fragment"
+2:I[42259,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/e09120c876cd75ae.js"],"default"]
+3:I[26766,["/amytis-style/_next/static/chunks/ec866354419bfe16.js","/amytis-style/_next/static/chunks/2198cbe63c7916b7.js","/amytis-style/_next/static/chunks/e09120c876cd75ae.js"],"default"]
+7:I[41558,["/amytis-style/_next/static/chunks/f0d17f4675c3171d.js","/amytis-style/_next/static/chunks/265a02f7263128df.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+4:T9c7,本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。
+
+## 什么是 Jekyll？
+
+Jekyll 是一个静态网站生成器，它可以将 Markdown 文件转换为静态 HTML 页面。GitHub Pages 原生支持 Jekyll，因此非常适合搭建个人博客。
+
+## 为什么选择 Jekyll？
+
+- **简单**：只需 Markdown 文件，无需数据库
+- **快速**：静态页面加载速度快
+- **安全**：没有动态脚本，安全性高
+- **免费**：GitHub Pages 提供免费托管
+- **版本控制**：使用 Git 管理内容
+
+## 项目结构
+
+一个典型的 Jekyll 博客项目结构如下：
+
+```
+yourusername.github.io/
+├── _config.yml          # 配置文件
+├── _posts/              # 博客文章
+│   └── 2024-01-15-article.md
+├── _layouts/            # 页面模板
+│   ├── default.html
+│   └── post.html
+├── _includes/           # 可复用组件
+│   ├── header.html
+│   └── footer.html
+├── _data/               # 数据文件
+│   └── members.yml
+├── assets/              # 静态资源
+│   ├── css/
+│   └── js/
+├── images/              # 图片
+├── docs/                # 文档
+└── index.html           # 首页
+```
+
+## 快速开始
+
+### 1. 创建仓库
+
+在 GitHub 创建名为 `username.github.io` 的仓库。
+
+### 2. 安装 Jekyll
+
+```bash
+gem install jekyll bundler
+jekyll new myblog
+cd myblog
+```
+
+### 3. 本地预览
+
+```bash
+bundle exec jekyll serve
+```
+
+访问 `http://localhost:4000` 查看网站。
+
+### 4. 发布到 GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/username.github.io.git
+git push -u origin main
+```
+
+## 自定义配置
+
+编辑 `_config.yml` 文件来自定义你的站点：
+
+```yaml
+title: 我的博客
+email: your.email@example.com
+description: 分享技术与生活
+baseurl: ""
+url: "https://username.github.io"
+```
+
+## 写作技巧
+
+### 使用 Front Matter
+
+每篇文章都需要 Front Matter：
+
+```yaml
+---
+layout: post
+title: "文章标题"
+date: 2024-01-20
+categories: [技术]
+tags: [Jekyll]
+---
+```
+
+### 图片优化
+
+推荐做法：
+
+1. 压缩图片文件
+2. 使用适当的尺寸
+3. 添加 `loading="lazy"` 属性
+
+```html
+<img src="/images/photo.jpg" alt="描述" loading="lazy">
+```
+
+## 总结
+
+Jekyll + GitHub Pages 是搭建个人博客的绝佳选择，简单、快速、免费！
+
+---
+
+如果你有任何问题，欢迎在评论区讨论。0:{"buildId":"HjeYyKPWCU1wLYZhsBbfe","rsc":["$","$1","c",{"children":[["$","div",null,{"children":[["$","$L2",null,{"tagline":{"en":"Personal Blog","zh":"个人博客"},"title":{"en":"Thoughts, Notes & Records","zh":"思考、笔记与记录"},"subtitle":{"en":"A space for sharing ideas and learning.","zh":"分享想法与学习的空间。"},"postCount":3,"seriesCount":0,"bookCount":0,"flowCount":0,"featureNames":{"flow":{"en":"Flow","zh":"随笔"},"posts":{"en":"Articles","zh":"文章"},"series":{"en":"Series","zh":"系列"},"books":{"en":"Books","zh":"书籍"}}}],["$","div",null,{"className":"layout-main pt-0 md:pt-0 [&>*:last-child]:mb-0","children":[["$","$L3","latest-posts",{"posts":[{"slug":"research-notes","title":"研究笔记","date":"2024-02-01","excerpt":"记录近期的研究进展和学习心得。","category":"Uncategorized","tags":["研究","笔记"],"authors":["Your Name"],"layout":"post","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"1 min read","content":"记录近期的研究进展和学习心得。\n\n## 研究方向\n\n目前主要关注以下几个方向：\n\n### 深度学习\n\n深度学习是机器学习的一个重要分支，通过多层神经网络来学习数据的表示。\n\n### 计算机视觉\n\n计算机视觉让机器能够\"看懂\"图像和视频，包括：\n\n- 图像分类\n- 目标检测\n- 语义分割\n- 图像生成\n\n## 近期进展\n\n| 项目 | 状态 | 备注 |\n|------|------|------|\n| 论文阅读 | 进行中 | 已完成3篇 |\n| 代码实践 | 进行中 | PyTorch |\n| 实验记录 | 待开始 | - |\n\n## 下一步计划\n\n1. 完成文献综述\n2. 设计实验方案\n3. 开始编码实现\n\n---\n\n持续更新中...","headings":[{"id":"研究方向","text":"研究方向","level":2},{"id":"深度学习","text":"深度学习","level":3},{"id":"计算机视觉","text":"计算机视觉","level":3},{"id":"近期进展","text":"近期进展","level":2},{"id":"下一步计划","text":"下一步计划","level":2}]},{"slug":"jekyll-tutorial","title":"Jekyll博客搭建教程","date":"2024-01-20","excerpt":"本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。","category":"Uncategorized","tags":["Jekyll","GitHub Pages","教程"],"authors":["Your Name"],"layout":"post","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"2 min read","content":"$4","headings":[{"id":"什么是-jekyll","text":"什么是 Jekyll？","level":2},{"id":"为什么选择-jekyll","text":"为什么选择 Jekyll？","level":2},{"id":"项目结构","text":"项目结构","level":2},{"id":"快速开始","text":"快速开始","level":2},{"id":"1-创建仓库","text":"1. 创建仓库","level":3},{"id":"2-安装-jekyll","text":"2. 安装 Jekyll","level":3},{"id":"3-本地预览","text":"3. 本地预览","level":3},{"id":"4-发布到-github","text":"4. 发布到 GitHub","level":3},{"id":"自定义配置","text":"自定义配置","level":2},{"id":"写作技巧","text":"写作技巧","level":2},{"id":"使用-front-matter","text":"使用 Front Matter","level":3},{"id":"图片优化","text":"图片优化","level":3},{"id":"总结","text":"总结","level":2}]},{"slug":"welcome","title":"欢迎来到我的博客","date":"2024-01-15","excerpt":"欢迎来到我的个人博客！这是第一篇博文，介绍一下这个博客的功能和特点。","category":"Uncategorized","tags":["博客","开篇"],"authors":["Your Name"],"layout":"post","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"1 min read","content":"欢迎来到我的个人博客！这是第一篇博文，介绍一下这个博客的功能和特点。\n\n## 博客功能\n\n这个博客系统具有以下功能：\n\n### 自动文章生成\n\n只需要在 `_posts` 文件夹中添加 Markdown 文件，Jekyll 会自动将其转换为网页。文件命名格式为：\n\n```\nYYYY-MM-DD-title.md\n```\n\n例如：`2024-01-15-welcome.md`\n\n### 分类和标签\n\n每篇文章都可以设置分类和标签：\n\n```yaml\n---\nlayout: post\ntitle: \"文章标题\"\ndate: 2024-01-15\ncategories: [技术]\ntags: [Jekyll, 博客, 教程]\n---\n```\n\n### Markdown 支持\n\n支持完整的 Markdown 语法，包括：\n\n- 标题（H1-H6）\n- 列表（有序和无序）\n- 代码块\n- 引用\n- 链接和图片\n- 表格\n\n#### 代码示例\n\n```python\ndef hello_world():\n    print(\"Hello, World!\")\n    return True\n\nif __name__ == \"__main__\":\n    hello_world()\n```\n\n#### 表格示例\n\n| 功能 | 状态 |\n|------|------|\n| 响应式设计 | ✅ |\n| 博客系统 | ✅ |\n| 分类标签 | ✅ |\n| 移动端适配 | ✅ |\n\n## 开始写作\n\n要创建新文章，只需：\n\n1. 在 `_posts` 文件夹创建新的 `.md` 文件\n2. 添加 Front Matter（YAML 头部信息）\n3. 编写 Markdown 内容\n4. 提交到 GitHub\n\n就是这么简单！\n\n---\n\n感谢访问，希望你能在这里找到有价值的内容。","headings":[{"id":"博客功能","text":"博客功能","level":2},{"id":"自动文章生成","text":"自动文章生成","level":3},{"id":"分类和标签","text":"分类和标签","level":3},{"id":"markdown-支持","text":"Markdown 支持","level":3},{"id":"开始写作","text":"开始写作","level":2}]}],"totalCount":3}]]}]]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+5:["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/e09120c876cd75ae.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null
