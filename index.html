@@ -47,6 +47,19 @@ title: 首页
       {% endfor %}
     </div>
 
+    <h2 class="section-title" style="margin-top: 3rem;">获奖信息</h2>
+    <div class="awards-list">
+      {% for award in site.data.awards %}
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-content">
+          <h3>{{ award.title }}</h3>
+          <p>{{ award.period }}{% if award.location %} · {{ award.location }}{% endif %}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
     <h2 class="section-title" style="margin-top: 3rem;">工作经历</h2>
     <div class="timeline-simple">
       {% for work in site.data.work %}
