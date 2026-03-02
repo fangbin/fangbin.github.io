@@ -1,20 +1,43 @@
 # 发表论文列表
-- title: "论文标题示例一"
-  authors: "作者一, 作者二, 作者三"
-  journal: "期刊名称"
-  year: 2024
-  volume: "Vol. 1"
-  pages: "1-10"
-  doi: "10.1000/xxx"
-  abstract: "这是论文摘要示例。"
-  tags: ["机器学习", "深度学习"]
-  
-- title: "论文标题示例二"
-  authors: "作者一, 作者二"
-  journal: "会议名称"
-  year: 2023
-  volume: ""
-  pages: "100-110"
-  doi: ""
-  abstract: "这是会议论文摘要示例。"
-  tags: ["计算机视觉", "图像处理"]
+
+- title: "Affine Loop Invariant Generation via Matrix Algebra"
+  authors: "Yucheng Ji, Hongfei Fu, Bin Fang, Haibo Chen"
+  journal: "The 34th International Conference on Computer Aided Verification (CAV)"
+  year: 2022
+  venue: "The Technion, Haifa, Israel"
+  tags: ["程序验证", "循环不变式"]
+
+- title: "Formal modelling of list based dynamic memory allocators"
+  authors: "Bin Fang, Mihaela Sighireanu, Geguang Pu, Wen Su, Jean-Raymond Abrial, Mengfei Yang, Lei Qiao"
+  journal: "SCIENCE CHINA Information Sciences"
+  year: 2018
+  volume: "61(12)"
+  pages: "122103:1--122103:16"
+  tags: ["形式化方法", "内存分配"]
+
+- title: "A refinement hierarchy for free list memory allocators"
+  authors: "Bin Fang, Mihaela Sighireanu"
+  journal: "Proceedings of ACM SIGPLAN International Symposium on Memory Management (ISMM)"
+  year: 2017
+  publisher: "IEEE"
+  tags: ["内存管理", "精化层次"]
+
+- title: "Hierarchical Shape Abstraction for Analysis of Free List Memory Allocators"
+  authors: "Bin Fang, Mihaela Sighireanu"
+  journal: "Proceedings of International Symposium on Logic-Based Program Synthesis and Transformation (LOPSTR)"
+  year: 2016
+  volume: "LNCS 10184"
+  publisher: "Springer"
+  tags: ["程序分析", "形状抽象"]
+
+- title: "Automated Coverage-Driven Test Data Generation Using Dynamic Symbolic Execution"
+  authors: "Ting Su, Siyuan Jiang, Geguang Pu, Bin Fang, Jifeng He, Jun Yan, Jianjun Zhao"
+  journal: "8th International Conference on Software Security and Reliability (SERE)"
+  year: 2014
+  tags: ["符号执行", "测试生成"]
+
+- title: "Runtime Verification by Convergent Formula Progression"
+  authors: "Yan Shen, Jianwen Li, Zheng Wang, Ting Su, Bin Fang, Geguang Pu, Wangwei Liu"
+  journal: "21st Asia-Pacific Software Engineering Conference (APSEC)"
+  year: 2014
+  tags: ["运行时验证", "公式推进"]
