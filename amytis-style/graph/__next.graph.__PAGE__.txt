@@ -1,6 +1,7 @@
 1:"$Sreact.fragment"
-3:I[96464,["/amytis-style/_next/static/chunks/1d893000d3f0e447.js","/amytis-style/_next/static/chunks/fa6903552bab9ae0.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"-xIX6EWTo0qXRBwq0LRKZ","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/f198abc2080c8964.js","async":true}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/8be89d7fe828d9e0.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
-5:null
-2:E{"digest":"NEXT_HTTP_ERROR_FALLBACK;404"}
+2:I[64228,["/amytis-style/_next/static/chunks/d94ca6e78963873b.js","/amytis-style/_next/static/chunks/6ea82e3c06d00525.js","/amytis-style/_next/static/chunks/f198abc2080c8964.js","/amytis-style/_next/static/chunks/8be89d7fe828d9e0.js"],"default"]
+3:I[73422,["/amytis-style/_next/static/chunks/d94ca6e78963873b.js","/amytis-style/_next/static/chunks/6ea82e3c06d00525.js","/amytis-style/_next/static/chunks/f198abc2080c8964.js","/amytis-style/_next/static/chunks/8be89d7fe828d9e0.js"],"default"]
+4:I[96464,["/amytis-style/_next/static/chunks/1d893000d3f0e447.js","/amytis-style/_next/static/chunks/fa6903552bab9ae0.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"IE-zT2n_EJPMMRneEy1eG","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-main","children":[["$","$L2",null,{"subtitle":"知识连接的可视化地图。"}],["$","$L3",null,{}]]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/f198abc2080c8964.js","async":true}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/8be89d7fe828d9e0.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null
