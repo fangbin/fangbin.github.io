@@ -43,6 +43,48 @@
       "connections": 1
     },
     {
+      "id": "hoare-logic",
+      "title": "Hoare逻辑",
+      "type": "note",
+      "url": "/notes/hoare-logic",
+      "connections": 0
+    },
+    {
+      "id": "shape-analysis",
+      "title": "形状分析",
+      "type": "note",
+      "url": "/notes/shape-analysis",
+      "connections": 0
+    },
+    {
+      "id": "refinement-calculus",
+      "title": "精化演算",
+      "type": "note",
+      "url": "/notes/refinement-calculus",
+      "connections": 0
+    },
+    {
+      "id": "static-analysis",
+      "title": "静态分析概述",
+      "type": "note",
+      "url": "/notes/static-analysis",
+      "connections": 0
+    },
+    {
+      "id": "loop-invariant",
+      "title": "循环不变式",
+      "type": "note",
+      "url": "/notes/loop-invariant",
+      "connections": 0
+    },
+    {
+      "id": "model-checking",
+      "title": "模型检测",
+      "type": "note",
+      "url": "/notes/model-checking",
+      "connections": 0
+    },
+    {
       "id": "series:formal-methods",
       "title": "形式化方法入门",
       "type": "series",

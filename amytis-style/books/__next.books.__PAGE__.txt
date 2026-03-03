@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[2891,["/amytis-style/_next/static/chunks/728ad8d60424096f.js","/amytis-style/_next/static/chunks/6ea82e3c06d00525.js","/amytis-style/_next/static/chunks/dc0c4fe3a09aea12.js"],"default"]
+2:I[2891,["/amytis-style/_next/static/chunks/f095717eeda31717.js","/amytis-style/_next/static/chunks/6ea82e3c06d00525.js","/amytis-style/_next/static/chunks/dc0c4fe3a09aea12.js"],"default"]
 3:I[96464,["/amytis-style/_next/static/chunks/1d893000d3f0e447.js","/amytis-style/_next/static/chunks/fa6903552bab9ae0.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"HCpzNSOtOz7EV1pLbK5OD","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-main","children":[["$","$L2",null,{"titleKey":"books","subtitleKey":"series_subtitle","subtitleOneKey":"series_subtitle_one","count":0,"subtitleParams":{"count":0}}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-8","children":[]}]]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/dc0c4fe3a09aea12.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"-xIX6EWTo0qXRBwq0LRKZ","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-main","children":[["$","$L2",null,{"titleKey":"books","subtitleKey":"series_subtitle","subtitleOneKey":"series_subtitle_one","count":0,"subtitleParams":{"count":0}}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-8","children":[]}]]}],[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/dc0c4fe3a09aea12.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
