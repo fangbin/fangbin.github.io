@@ -20,7 +20,39 @@
       "type": "post",
       "url": "/posts/welcome",
       "connections": 0
+    },
+    {
+      "id": "02-specification",
+      "title": "形式化规约语言",
+      "type": "post",
+      "url": "/posts/02-specification",
+      "connections": 1
+    },
+    {
+      "id": "01-introduction",
+      "title": "形式化方法概述",
+      "type": "post",
+      "url": "/posts/01-introduction",
+      "connections": 1
+    },
+    {
+      "id": "series:formal-methods",
+      "title": "形式化方法入门",
+      "type": "series",
+      "url": "/series/formal-methods",
+      "connections": 2
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "source": "series:formal-methods",
+      "target": "02-specification",
+      "type": "series"
+    },
+    {
+      "source": "series:formal-methods",
+      "target": "01-introduction",
+      "type": "series"
+    }
+  ]
 }
