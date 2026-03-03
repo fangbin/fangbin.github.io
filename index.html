@@ -89,26 +89,19 @@ title: 首页
 <section class="section alt-bg">
   <div class="container">
     <h2 class="section-title">发表论文</h2>
-    <div class="publications-list">
-      {% for pub in site.data.publications %}
-      <article class="pub-card">
-        <div class="pub-number">{{ forloop.index }}</div>
-        <div class="pub-content">
-          <h3 class="pub-title">{{ pub.title }}</h3>
-          <p class="pub-authors">{{ pub.authors }}</p>
-          <p class="pub-venue">
-            <em>{{ pub.journal }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}
-          </p>
-          {% if pub.tags %}
-          <div class="pub-tags">
-            {% for tag in pub.tags %}
-            <span class="pub-tag">{{ tag }}</span>
-            {% endfor %}
+    <div class="pub-list-card">
+      <ul class="pub-list">
+        {% for pub in site.data.publications %}
+        <li class="pub-item">
+          <span class="pub-number">{{ forloop.index }}.</span>
+          <div class="pub-content">
+            <span class="pub-title">{{ pub.title }}</span>
+            <span class="pub-authors">{{ pub.authors }}</span>
+            <span class="pub-venue"><em>{{ pub.journal }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</span>
           </div>
-          {% endif %}
-        </div>
-      </article>
-      {% endfor %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>

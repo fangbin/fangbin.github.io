@@ -442,6 +442,71 @@ a:hover {
   gap: var(--spacing-md);
 }
 
+.pub-list-card {
+  background: var(--bg-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-lg);
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-item {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pub-item:first-child {
+  padding-top: 0;
+}
+
+.pub-item .pub-number {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-light);
+  flex-shrink: 0;
+  min-width: 24px;
+}
+
+.pub-item .pub-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pub-item .pub-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.4;
+}
+
+.pub-item .pub-authors {
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+.pub-item .pub-venue {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.pub-item .pub-venue em {
+  font-style: italic;
+}
+
 .pub-card {
   display: flex;
   gap: var(--spacing-md);
