@@ -1,6 +1,13 @@
 {
   "nodes": [
     {
+      "id": "formal-methods",
+      "title": "形式化方法入门",
+      "type": "post",
+      "url": "/posts/formal-methods",
+      "connections": 0
+    },
+    {
       "id": "research-notes",
       "title": "研究笔记",
       "type": "post",

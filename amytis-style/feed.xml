@@ -5,9 +5,17 @@
     <link>https://fangbin.github.io/amytis-style</link>
     <description><![CDATA[思考、笔记与记录]]></description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Mar 2026 00:58:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 01:09:01 GMT</lastBuildDate>
     <atom:link href="https://fangbin.github.io/amytis-style/feed.xml" rel="self" type="application/rss+xml" />
     
+        <item>
+          <title><![CDATA[形式化方法入门]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/formal-methods</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/formal-methods</guid>
+          <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[介绍形式化方法的基本概念和应用场景。]]></description>
+          <category>形式化方法</category><category>程序验证</category><category>学术</category>
+        </item>
         <item>
           <title><![CDATA[研究笔记]]></title>
           <link>https://fangbin.github.io/amytis-style/posts/research-notes</link>
