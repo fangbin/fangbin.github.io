@@ -85,6 +85,13 @@
       "connections": 0
     },
     {
+      "id": "pure-type-system",
+      "title": "Pure Type System",
+      "type": "note",
+      "url": "/notes/pure-type-system",
+      "connections": 0
+    },
+    {
       "id": "series:formal-methods",
       "title": "形式化方法入门",
       "type": "series",
