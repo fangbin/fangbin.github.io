@@ -1145,30 +1145,6 @@ a:hover {
   border-left: 1px solid var(--border-color);
 }
 
-.lang-btn {
-  padding: 4px 10px;
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-light);
-  background: transparent;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.lang-btn::after {
-  bottom: 0;
-}
-
-.lang-btn:hover {
-  color: var(--primary-color);
-}
-
-.lang-btn.active {
-  color: var(--primary-color);
-}
-
 @media (max-width: 768px) {
   .lang-switcher {
     margin-left: 0;
