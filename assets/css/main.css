@@ -1145,6 +1145,36 @@ a:hover {
   border-left: 1px solid var(--border-color);
 }
 
+.lang-btn {
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  position: relative;
+}
+
+.lang-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: width 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: var(--primary-color);
+}
+
+.lang-btn:hover::after,
+.lang-btn.active::after {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .lang-switcher {
     margin-left: 0;
