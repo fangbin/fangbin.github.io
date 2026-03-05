@@ -1,12 +1,13 @@
 ---
 layout: default
-title: 首页
+title: Home
+lang: en
 ---
 
 <!-- Language Switcher -->
 <div class="lang-switcher">
-  <a href="{{ '/' | relative_url }}" class="lang-btn active">中文</a>
-  <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn">English</a>
+  <a href="{{ '/' | relative_url }}" class="lang-btn">中文</a>
+  <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn active">English</a>
 </div>
 
 <!-- Hero Section -->
@@ -16,9 +17,9 @@ title: 首页
       <div class="hero-text">
         <h1 class="hero-name">{{ site.author }}</h1>
         <p class="hero-title">Ph.D. · Researcher</p>
-        <p class="hero-affiliation">华东师范大学 · 巴黎西岱大学</p>
+        <p class="hero-affiliation">East China Normal University · Paris Cité University</p>
         <p class="hero-bio">
-          研究方向：形式化方法、程序验证、静态分析
+          Research Interests: Formal Methods, Program Verification, Static Analysis
         </p>
         <div class="hero-links">
           <a href="mailto:{{ site.email }}" class="link-btn" title="Email">
@@ -54,9 +55,9 @@ title: 首页
 <!-- Education -->
 <section class="section alt-bg">
   <div class="container">
-    <h2 class="section-title">教育背景</h2>
+    <h2 class="section-title">Education</h2>
     <div class="timeline">
-      {% for edu in site.data.education %}
+      {% for edu in site.data.education_en %}
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
@@ -74,9 +75,9 @@ title: 首页
 <!-- Work Experience -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">工作经历</h2>
+    <h2 class="section-title">Work Experience</h2>
     <div class="timeline">
-      {% for work in site.data.work %}
+      {% for work in site.data.work_en %}
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
@@ -94,7 +95,7 @@ title: 首页
 <!-- Publications -->
 <section class="section alt-bg">
   <div class="container">
-    <h2 class="section-title">发表论文</h2>
+    <h2 class="section-title">Publications</h2>
     <div class="pub-list-card">
       <ul class="pub-list">
         {% for pub in site.data.publications %}
@@ -115,7 +116,7 @@ title: 首页
 <!-- Awards -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">荣誉奖项</h2>
+    <h2 class="section-title">Honors & Awards</h2>
     <div class="awards-grid">
       {% for award in site.data.awards %}
       <div class="award-card">

@@ -1133,3 +1133,50 @@ a:hover {
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ========================================
+   Language Switcher
+   ======================================== */
+.lang-switcher {
+  position: fixed;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 1000;
+  display: flex;
+  gap: var(--spacing-xs);
+  background: var(--bg-color);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.lang-btn {
+  padding: 6px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+.lang-btn.active {
+  color: white;
+  background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .lang-switcher {
+    top: auto;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+}

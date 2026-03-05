@@ -1,0 +1,18 @@
+# Work Experience
+- position: "Researcher"
+  company: "Tech Company"
+  period: "2024 - Present"
+  description: "Responsible for machine learning algorithm R&D, leading multiple core projects."
+  location: "Beijing"
+  
+- position: "Algorithm Engineer"
+  company: "Internet Company"
+  period: "2020 - 2024"
+  description: "Worked on recommendation system algorithm optimization, improving user click-through rate by 15%."
+  location: "Shanghai"
+  
+- position: "Intern"
+  company: "Research Institute"
+  period: "2019 - 2020"
+  description: "Participated in deep learning research projects."
+  location: "Shenzhen"
