@@ -1163,7 +1163,8 @@ a:hover {
 
 .lang-btn.active {
   color: var(--primary-color);
-  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 768px) {
