@@ -1146,7 +1146,7 @@ a:hover {
 }
 
 .lang-btn {
-  padding: 4px 12px;
+  padding: 4px 10px;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
@@ -1159,12 +1159,11 @@ a:hover {
 
 .lang-btn:hover {
   color: var(--primary-color);
-  background: var(--bg-light);
 }
 
 .lang-btn.active {
-  color: white;
-  background: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
