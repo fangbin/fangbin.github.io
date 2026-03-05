@@ -2,17 +2,22 @@
   <div class="container">
     <nav class="site-nav">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.author | escape }}</a>
-      
+
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger"></span>
       </button>
-      
+
       <ul class="nav-links">
+        {% if page.lang == 'en' %}
+        <li><a href="{{ '/index-en.html' | relative_url }}" class="active">Home</a></li>
+        <li><a href="{{ '/amytis-style/' | relative_url }}">Blog</a></li>
+        {% else %}
         <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>首页</a></li>
         <li><a href="{{ '/amytis-style/' | relative_url }}">博客</a></li>
+        {% endif %}
         <li class="lang-switcher">
-          <a href="{{ '/' | relative_url }}" class="lang-btn{% if page.lang != 'en' %} active{% endif %}">中文</a>
-          <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn{% if page.lang == 'en' %} active{% endif %}">English</a>
+          <a href="{{ '/' | relative_url }}" class="lang-btn{% if page.lang != 'en' %} active{% endif %}">ZH</a>
+          <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn{% if page.lang == 'en' %} active{% endif %}">EN</a>
         </li>
       </ul>
     </nav>
