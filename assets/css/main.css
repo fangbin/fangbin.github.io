@@ -1157,6 +1157,10 @@ a:hover {
   transition: all 0.2s ease;
 }
 
+.lang-btn::after {
+  display: none;
+}
+
 .lang-btn:hover {
   color: var(--primary-color);
 }
@@ -1165,6 +1169,7 @@ a:hover {
   color: var(--primary-color);
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
