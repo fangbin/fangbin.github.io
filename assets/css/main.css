@@ -1138,21 +1138,15 @@ a:hover {
    Language Switcher
    ======================================== */
 .lang-switcher {
-  position: fixed;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  z-index: 1000;
   display: flex;
   gap: var(--spacing-xs);
-  background: var(--bg-color);
-  padding: 4px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  margin-left: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  border-left: 1px solid var(--border-color);
 }
 
 .lang-btn {
-  padding: 6px 16px;
+  padding: 4px 12px;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
@@ -1175,8 +1169,10 @@ a:hover {
 
 @media (max-width: 768px) {
   .lang-switcher {
-    top: auto;
-    bottom: var(--spacing-md);
-    right: var(--spacing-md);
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    justify-content: center;
+    padding: var(--spacing-sm) 0;
   }
 }
