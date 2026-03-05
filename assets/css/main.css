@@ -1157,6 +1157,10 @@ a:hover {
   transition: all 0.2s ease;
 }
 
+.lang-btn::after {
+  bottom: 0;
+}
+
 .lang-btn:hover {
   color: var(--primary-color);
 }
