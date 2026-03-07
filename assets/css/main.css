@@ -1155,25 +1155,9 @@ a:hover {
   transition: color 0.2s;
 }
 
-.lang-switcher a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--secondary-color);
-  transition: width 0.2s;
-}
-
 .lang-switcher a:hover,
 .lang-switcher a.active {
   color: var(--primary-color);
-}
-
-.lang-switcher a:hover::after,
-.lang-switcher a.active::after {
-  width: 100%;
 }
 
 @media (max-width: 768px) {
