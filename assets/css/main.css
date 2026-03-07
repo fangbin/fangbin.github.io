@@ -1139,7 +1139,7 @@ a:hover {
    ======================================== */
 .lang-switcher {
   display: flex;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   margin-left: var(--spacing-md);
   padding-left: var(--spacing-md);
   border-left: 1px solid var(--border-color);
@@ -1152,6 +1152,7 @@ a:hover {
   font-weight: 500;
   padding: var(--spacing-xs) 0;
   position: relative;
+  transition: color 0.2s;
 }
 
 .lang-btn::after {
