@@ -16,8 +16,8 @@
         <li><a href="{{ '/amytis-style/' | relative_url }}">博客</a></li>
         {% endif %}
         <li class="lang-switcher">
-          <a href="{{ '/' | relative_url }}" class="lang-btn{% if page.lang != 'en' %} active{% endif %}">ZH</a>
-          <a href="{{ '/index-en.html' | relative_url }}" class="lang-btn{% if page.lang == 'en' %} active{% endif %}">EN</a>
+          <a href="{{ '/' | relative_url }}"{% if page.lang != 'en' %} class="active"{% endif %}>ZH</a>
+          <a href="{{ '/index-en.html' | relative_url }}"{% if page.lang == 'en' %} class="active"{% endif %}>EN</a>
         </li>
       </ul>
     </nav>
