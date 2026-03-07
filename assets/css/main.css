@@ -1145,7 +1145,7 @@ a:hover {
   border-left: 1px solid var(--border-color);
 }
 
-.lang-btn {
+.lang-switcher a {
   color: var(--text-light);
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -1155,7 +1155,7 @@ a:hover {
   transition: color 0.2s;
 }
 
-.lang-btn::after {
+.lang-switcher a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1166,13 +1166,13 @@ a:hover {
   transition: width 0.2s;
 }
 
-.lang-btn:hover,
-.lang-btn.active {
+.lang-switcher a:hover,
+.lang-switcher a.active {
   color: var(--primary-color);
 }
 
-.lang-btn:hover::after,
-.lang-btn.active::after {
+.lang-switcher a:hover::after,
+.lang-switcher a.active::after {
   width: 100%;
 }
 
