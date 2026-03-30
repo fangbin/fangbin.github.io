@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Background -->
+  <rect width="900" height="620" fill="#fafaf9" rx="12"/>
+  
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1c1917">ProofWright 系统架构</text>
+
+  <!-- Top box: LLM-Generated CUDA Kernels -->
+  <rect x="270" y="58" width="360" height="52" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="450" y="79" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">LLM 生成的 CUDA 内核</text>
+  <text x="450" y="98" text-anchor="middle" font-size="11" fill="#3b82f6">KernelBench L1（100个程序）</text>
+
+  <!-- Arrows from top box to two columns -->
+  <line x1="360" y1="110" x2="225" y2="148" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="540" y1="110" x2="675" y2="148" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+
+  <!-- ===== LEFT COLUMN: VerCors Agent ===== -->
+  <!-- Column header -->
+  <rect x="60" y="148" width="330" height="36" rx="8" fill="#2563eb"/>
+  <text x="225" y="171" text-anchor="middle" font-size="13" font-weight="700" fill="white">VerCors Agent</text>
+
+  <!-- Step 1: Kernel Preprocessing -->
+  <rect x="80" y="202" width="290" height="50" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <text x="225" y="224" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">① 内核预处理</text>
+  <text x="225" y="241" text-anchor="middle" font-size="10.5" fill="#64748b">简化 C++ 语法 / 适配 VerCors</text>
+
+  <!-- Arrow -->
+  <line x1="225" y1="252" x2="225" y2="268" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+
+  <!-- Step 2: VerCors Agent box -->
+  <rect x="80" y="268" width="290" height="80" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="225" y="290" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">② VerCors Agent</text>
+  <!-- Sub items -->
+  <rect x="96" y="297" width="118" height="22" rx="4" fill="#dbeafe"/>
+  <text x="155" y="312" text-anchor="middle" font-size="10" fill="#1e40af">📚 知识库</text>
+  <rect x="226" y="297" width="128" height="22" rx="4" fill="#fef3c7"/>
+  <text x="290" y="312" text-anchor="middle" font-size="10" fill="#92400e">📋 标注指南（动态更新）</text>
+
+  <!-- Circular retry arrow (stylized) -->
+  <path d="M 130 358 Q 100 390 225 395 Q 350 390 320 358" stroke="#93c5fd" fill="none" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arr-blue)"/>
+  <text x="225" y="378" text-anchor="middle" font-size="10" fill="#2563eb">生成注解 → 调用VerCors → 错误? → 修复重试</text>
+
+  <!-- Arrow down -->
+  <line x1="225" y1="400" x2="225" y2="418" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+
+  <!-- Result box -->
+  <rect x="90" y="418" width="270" height="44" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="225" y="438" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">✓ 74% 内核</text>
+  <text x="225" y="454" text-anchor="middle" font-size="10.5" fill="#047857">内存安全 + 线程安全（数学级证明）</text>
+
+  <!-- ===== RIGHT COLUMN: Semantic Equivalence Framework ===== -->
+  <!-- Column header -->
+  <rect x="510" y="148" width="330" height="36" rx="8" fill="#7c3aed"/>
+  <text x="675" y="171" text-anchor="middle" font-size="13" font-weight="700" fill="white">语义等价框架</text>
+
+  <!-- Front-end label -->
+  <text x="675" y="204" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7c3aed">前端（无 LLM，确定性）</text>
+
+  <!-- Step 1: PyTorch Static Analyzer -->
+  <rect x="528" y="210" width="256" height="36" rx="5" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+  <text x="656" y="228" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5b21b6">PyTorch 静态分析器</text>
+  <text x="656" y="242" text-anchor="middle" font-size="10" fill="#6d28d9">提取数据流图 (torch.fx)</text>
+
+  <line x1="656" y1="246" x2="656" y2="258" stroke="#c4b5fd" stroke-width="1" marker-end="url(#arr-purple)"/>
+
+  <!-- Step 2: MLRocq Library -->
+  <rect x="528" y="258" width="256" height="36" rx="5" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+  <text x="656" y="275" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5b21b6">MLRocq 库</text>
+  <text x="656" y="290" text-anchor="middle" font-size="10" fill="#6d28d9">~100 个深度学习算子的形式化定义</text>
+
+  <line x1="656" y1="294" x2="656" y2="306" stroke="#c4b5fd" stroke-width="1" marker-end="url(#arr-purple)"/>
+
+  <!-- Step 3: Translation -->
+  <rect x="528" y="306" width="256" height="36" rx="5" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+  <text x="656" y="323" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5b21b6">PyTorch → Rocq 翻译</text>
+  <text x="656" y="338" text-anchor="middle" font-size="10" fill="#6d28d9">生成 Rocq 定理（可信基础）</text>
+
+  <!-- Divider -->
+  <line x1="528" y1="352" x2="784" y2="352" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="656" y="366" text-anchor="middle" font-size="10.5" font-weight="600" fill="#7c3aed">后端（Rocq Agent，LLM 驱动）</text>
+
+  <line x1="656" y1="342" x2="656" y2="370" stroke="#c4b5fd" stroke-width="1" marker-end="url(#arr-purple)"/>
+
+  <!-- Step 4: Rocq Agent -->
+  <rect x="528" y="370" width="256" height="44" rx="5" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="656" y="390" text-anchor="middle" font-size="12" font-weight="600" fill="#4c1d95">Rocq Agent</text>
+  <text x="656" y="406" text-anchor="middle" font-size="10" fill="#5b21b6">证明 CUDA ≡ PyTorch（定理自动构造）</text>
+
+  <line x1="656" y1="414" x2="656" y2="424" stroke="#a78bfa" stroke-width="1" marker-end="url(#arr-purple)"/>
+
+  <!-- Step 5: Lower to VerCors -->
+  <rect x="528" y="424" width="256" height="36" rx="5" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="656" y="441" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5b21b6">下降为 VerCors 后置条件</text>
+  <text x="656" y="456" text-anchor="middle" font-size="10" fill="#6d28d9">桥接 Rocq 证明 ↔ CUDA 代码</text>
+
+  <!-- Arrow down -->
+  <line x1="656" y1="460" x2="656" y2="475" stroke="#a78bfa" stroke-width="1" marker-end="url(#arr-purple)"/>
+
+  <!-- Result box -->
+  <rect x="540" y="475" width="232" height="44" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="656" y="495" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">✓ 14% 内核</text>
+  <text x="656" y="511" text-anchor="middle" font-size="10.5" fill="#047857">语义等价完全验证（端到端数学证明）</text>
+
+  <!-- Bottom summary -->
+  <rect x="120" y="544" width="660" height="52" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="450" y="565" text-anchor="middle" font-size="12" font-weight="600" fill="#14532d">每个内核约 3 分钟开销 · 在 MacBook M4 Pro 上运行 · 基准：KernelBench L1（Claude-4-Sonnet + GPT-5-Codex 生成）</text>
+  <text x="450" y="584" text-anchor="middle" font-size="11" fill="#166534">26% 未能验证：VerCors 工具局限（不支持原子操作、Tensor Core）或内核存在真实 bug</text>
+
+  <!-- Arrowhead markers -->
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#93c5fd"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#a78bfa"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>
