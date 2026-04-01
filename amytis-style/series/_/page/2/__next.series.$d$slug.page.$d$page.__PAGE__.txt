@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 3:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"GuBK0eCT99WUstogQraeP","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/a9469f3ec74b1f49.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"L0Yw-uJdlNkqBxE_fiBOq","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/a9469f3ec74b1f49.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
 2:E{"digest":"NEXT_HTTP_ERROR_FALLBACK;404"}
