@@ -1,0 +1,135 @@
+1:"$Sreact.fragment"
+2:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+12:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T20b1,## 项目概览
+
+我觉得 DeerFlow 有意思的地方，在于它并不满足于做一个“能聊天、能调工具”的前端壳。它真正想搭的，是一套 **可以被 Web 应用调用、也可以被别的 Python 系统嵌入的 Agent Runtime**。
+
+这件事听上去平常，做起来却不平常。很多智能体项目到了后面都会长成一团：前端、网关、模型工厂、工具系统、权限控制、记忆机制，全都缠在一起。DeerFlow 刻意把这团线拆开了。最上层是 Nginx 统一入口；中间层是 LangGraph Server、Gateway API 与 Next.js Frontend 三个面；底下才是可复用的 `deerflow` harness。
+
+![DeerFlow architecture overview](/images/papers/deerflow-architecture/architecture.png)
+
+如果只用一句话概括它的结构，我会写成：
+
+$$
+\text{Browser} \rightarrow \text{Nginx} \rightarrow \{\text{LangGraph Runtime},\ \text{Gateway API},\ \text{Frontend}\}
+$$
+
+这意味着 DeerFlow 不是把“Agent”理解成一个函数，而是理解成一个**有入口层、控制面、执行面与治理面**的系统。
+
+---
+
+## 核心设计：真正重要的是边界，而不是功能清单
+
+### 1. Harness / App 分层，是它最成熟的一笔
+
+在源码里，`app/` 是 FastAPI Gateway 与通道应用层，`packages/harness/deerflow/` 才是核心 runtime。文档把约束写得很直白：**app 可以 import deerflow，deerflow 不能 import app**。
+
+这条边界看着像工程洁癖，其实非常关键。它保证了 harness 作为一个可发布、可嵌入、可测试的 runtime 核心存在，而 Web 层、上传接口、线程清理、建议生成这些能力，只是外围控制面。很多 Agent 项目后期无法 SDK 化，不是因为模型不够强，而是因为一开始就没守住这条边界。
+
+### 2. DeerFlow 的 middleware 不是洋葱，而是管道
+
+这是我读完整个执行流之后最想强调的一点。DeerFlow 主 agent 默认有 14 个 middleware，但它不是 Koa 那种漂亮对称的洋葱模型。它更接近一条带钩子的流水线：
+
+- `before_agent` 正序执行：ThreadData → Uploads → Sandbox
+- `before_model` 正序执行：ViewImage
+- `after_model` 反序执行：Clarification → LoopDetection → SubagentLimit → Title → Summarization → DanglingToolCall
+- `after_agent` 反序执行：Sandbox release → Memory enqueue
+
+也就是说：
+
+$$
+\text{after\_model order} = \mathrm{reverse}(\text{middleware list})
+$$
+
+因此 **ClarificationMiddleware 虽然放在列表最后，却最先拦截模型输出**。这个细节很能说明 DeerFlow 的思路：它把 middleware 当作“在若干关键节点挂接能力”的机制，而不是强行追求对称嵌套。这样做没那么优雅，但更贴近 Agent runtime 的现实，因为很多能力本来就只需要一个方向的钩子。
+
+### 3. Subagent 不是魔法，而是受限并发
+
+DeerFlow 对 subagent 的处理相当克制。`SubagentExecutor` 并没有做无限分叉，而是明确给出两层线程池：`_scheduler_pool` 和 `_execution_pool`，每层 `max_workers=3`；全局还有 `MAX_CONCURRENT_SUBAGENTS = 3` 的硬限制。
+
+这种设计我很赞成。多智能体最容易滑向一种浪漫主义：仿佛只要 task tool 一开，系统就会自发产生组织秩序。事实上不会。并发、超时、上下文污染、工具权限泄漏，这些问题不会因为名字叫 subagent 就自动消失。DeerFlow 选择的是更现实的路：**先把 subagent 变成一种受配额、受超时、受 middleware 约束的受控执行单元**。
+
+而且它没有把主链整套搬过去。subagent 只保留 ThreadData、Sandbox、Guardrail、ToolErrorHandling 这条精简链，说明作者很清楚：子代理的职责是执行，不是再复制一遍完整的产品表面。
+
+---
+
+## 真正把系统拉开差距的，是执行基座
+
+### Sandbox：从“能跑命令”到“怎么跑命令”
+
+DeerFlow 的 sandbox 抽象做得很像一个正经 runtime substrate。接口层只有 `acquire / get / release`，但实现分成两类：
+
+- `LocalSandboxProvider`：单例、本地直接执行，适合开发
+- `AioSandboxProvider`：容器化、可热复用，适合生产
+
+后者有几个细节值得单独记：Warm Pool、idle timeout、replicas 软上限、LRU 驱逐、线程目录虚拟路径映射。换句话说，它考虑的不是“有没有沙箱”，而是**沙箱的生命周期成本怎么被摊平**。
+
+很多项目一说沙箱，就是容器一启一停，安全姿态倒是像模像样，吞吐和延迟却惨不忍睹。DeerFlow 这里更像在做调度器：release 后容器不立刻销毁，而是进入 warm pool，等下一次线程复用。这个思路让我觉得它确实是把 Agent 当作长期运行系统在设计，而不是当成一次性 demo。
+
+### Skills、MCP 与 RuntimeFeatures：扩展不再靠 if/else
+
+DeerFlow 的扩展面也很清楚：
+
+- skills 递归扫描 `skills/{public,custom}` 下的 `SKILL.md`
+- enabled 状态来自 `extensions_config.json`
+- MCP 走 `MultiServerMCPClient`，支持 stdio / SSE / HTTP 与 OAuth
+- `RuntimeFeatures` 负责开关或替换默认 middleware
+- `@Next` / `@Prev` 允许外置 middleware 以声明式方式插入链中
+
+这一组设计连起来看，意思其实只有一句：**系统不想把扩展能力写死在主循环里。**
+
+我尤其喜欢 `@Next/@Prev` 这个小点子。它不用全局 priority 数字到处抢位置，而是声明“我在谁前面/后面”。这更像依赖关系，而不是抢座位。对 runtime 来说，这种局部约束比全局排序表更耐维护。
+
+### Memory 与 Guardrails：一个负责沉淀，一个负责制动
+
+MemoryMiddleware 在 `after_agent` 阶段异步入队，总结时只保留 user 与 final assistant，过滤掉 tool calls 与 ToolMessage；同时还检测 correction / reinforcement 信号。这说明 DeerFlow 的记忆机制不是简单存聊天全文，而是在做一种**面向长期偏好的压缩记忆**。
+
+Guardrails 则是另一面。它把工具授权放到 `wrap_tool_call`，让每次调用在执行前都先过策略评估。Allowlist、OAP Passport、Custom Provider 三种模式一摆，系统的姿态就非常清楚：**模型可以提议动作，但是否落地，由运行时裁决。**
+
+这其实也是我看完整个代码库后最认可的一个总判断：DeerFlow 的安全观不是“让模型更懂事”，而是“让 runtime 拥有最后决定权”。
+
+---
+
+## 我对 DeerFlow 的判断
+
+我觉得 DeerFlow 最像的，不是一个单独的 agent app，而是一个正在成形的 **Agent OS 内核层**。当然，它还没到“操作系统”那么夸张，但它的许多设计——middleware pipeline、sandbox provider、subagent 配额、skills/MCP 插件面、memory/guardrails 治理层——都已经在朝那个方向长。
+
+它最强的地方有三点：
+
+1. **边界清楚**：harness 与 app 分层明确，Web 面与 runtime 面没有完全糊掉。
+2. **执行现实主义**：subagent、sandbox、guardrail 都在谈配额、生命周期和授权，而不是只谈能力。
+3. **扩展方式成熟**：skills、MCP、RuntimeFeatures、`@Next/@Prev` 让系统更像平台，而不是单体应用。
+
+它的代价也很明显：结构复杂度更高；新读者要同时理解 LangGraph、FastAPI、sandbox、extensions config、skills 注入与 middleware 时序；一旦观测性和文档跟不上，维护门槛会迅速升高。
+
+但这恰恰是我愿意高看它一眼的原因。许多项目的简洁，往往来自把难题先藏起来。DeerFlow 没有完全解决这些难题，但它至少承认这些难题是真实存在的。
+
+---
+
+## 启示与下一步
+
+如果把 DeerFlow 当成一个样本，我觉得它给 Agent 系统设计提了四个很实在的提醒：
+
+1. **先划清 harness 与 app 的边界，再谈 SDK 化。**
+2. **把 middleware 当运行时治理面，不要迷信对称洋葱。**
+3. **subagent 的本质是受控并发，不是自动组织。**
+4. **真正可信的不是模型本身，而是 sandbox、guardrails、memory 与扩展控制面。**
+
+我想，DeerFlow 这套设计最有价值的地方，不在于它今天已经多完美，而在于它证明了一件事：**Agent 不必只是一段提示词包着一堆工具，它也可以被认真地做成一套有边界、有调度、有治理的运行时。**0:{"buildId":"mIVaHlpgMPyeRuPLI1uhh","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"deerflow-architecture","title":"DeerFlow 架构解剖：它不是一个聊天壳，而是一套可拼装的 Agent Runtime","originalTitle":"DeerFlow Architecture Analysis: A Composable Agent Runtime","excerpt":"DeerFlow 最值得看的，不是它又接了多少模型，而是它把一个智能体系统拆成了 Web 入口、可复用 harness、sandbox、subagent、skills、MCP 与 guardrails 这些清晰边界。它不像许多 demo 那样把一切堆进主循环，而是试图把 Agent 做成一套可以治理、可以扩展、也可以嵌入别的应用的运行时。","date":"2026-04-06","architectureImage":"/images/papers/deerflow-architecture/architecture.png","featured":false,"draft":false,"authors":["DeerFlow Contributors"],"year":2026,"venue":"Codebase Analysis","tags":["Agent 架构设计","Agent Framework","Subagent","Sandbox","MCP"],"content":"$3","headings":[{"id":"项目概览","text":"项目概览","level":2},{"id":"核心设计真正重要的是边界而不是功能清单","text":"核心设计：真正重要的是边界，而不是功能清单","level":2},{"id":"1-harness--app-分层是它最成熟的一笔","text":"1. Harness / App 分层，是它最成熟的一笔","level":3},{"id":"2-deerflow-的-middleware-不是洋葱而是管道","text":"2. DeerFlow 的 middleware 不是洋葱，而是管道","level":3},{"id":"3-subagent-不是魔法而是受限并发","text":"3. Subagent 不是魔法，而是受限并发","level":3},{"id":"真正把系统拉开差距的是执行基座","text":"真正把系统拉开差距的，是执行基座","level":2},{"id":"sandbox从能跑命令到怎么跑命令","text":"Sandbox：从“能跑命令”到“怎么跑命令”","level":3},{"id":"skillsmcp-与-runtimefeatures扩展不再靠-ifelse","text":"Skills、MCP 与 RuntimeFeatures：扩展不再靠 if/else","level":3},{"id":"memory-与-guardrails一个负责沉淀一个负责制动","text":"Memory 与 Guardrails：一个负责沉淀，一个负责制动","level":3},{"id":"我对-deerflow-的判断","text":"我对 DeerFlow 的判断","level":2},{"id":"启示与下一步","text":"启示与下一步","level":2}],"readingTime":"7 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true}]
+c:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
