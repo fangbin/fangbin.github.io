@@ -2,7 +2,7 @@
 2:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
 12:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
 13:"$Sreact.suspense"
-3:T381c,## 论文概览
+3:T47d1,## 论文概览
 
 **原文链接：** [arXiv 2506.03030](https://arxiv.org/abs/2506.03030)  
 **项目主页：** [Vampire](https://vprover.github.io/)  
@@ -186,6 +186,41 @@ vampire --mode portfolio --schedule <schedule> --cores 0 <problem>
 
 ---
 
+## 相关系统比较：Vampire 的边界到底在哪里
+
+如果只看功能名词，Vampire、Z3、cvc5、E prover、Leo-III 很容易被混成一类“自动推理器”。但从系统边界看，它们其实代表了几条不同路线。下面这张表，适合把论文里隐含的比较关系一次性看清。
+
+| 系统 | 核心范式 | 最擅长的问题类型 | 与 Vampire 最关键的边界 |
+|---|---|---|---|
+| **Vampire** | **饱和式一阶 ATP**，以 superposition / saturation 为核心，并吸收 theories、induction、AVATAR、SAT/SMT 委派 | 含**量词**、一阶结构、归纳、组合理论、验证友好逻辑表达的问题；尤其适合“多个边界同时出现”的组合推理 | 它的独特处不在于某一单项最强，而在于**把量词推理保留在主循环内部，同时按边界接入 SAT/SMT 与调度学习** |
+| **Z3** | **SMT solver** | 量化较弱或以**quantifier-free / theory-heavy** 为主的验证约束；位向量、数组、线性算术、Horn clauses、程序分析管线 | Z3 更像“理论求解基础设施”。它在 ground / theory reasoning 上通常更直接，但**不是以饱和式量词搜索和归纳整合为主场** |
+| **cvc5** | **SMT solver**（广泛支持 SMT-LIB 理论，并在量词、SyGuS、字符串、数据类型等方面很强） | 工业与研究中的 SMT 工作负载；字符串、数据类型、约束求解、语法制导综合等 | 与 Z3 类似，cvc5 的核心优势在**SMT 生态和理论覆盖**；它可处理量词，但主要仍站在 SMT 传统上，而不是 Vampire 这种一阶 ATP 主循环范式 |
+| **E prover** | **经典一阶饱和式 ATP**，高度优化的 superposition / term ordering / strategy engineering | 纯粹或偏纯粹的**一阶定理证明**、TPTP 风格 ATP 竞赛问题 | E prover 与 Vampire 最近，但更像“把一阶饱和式 ATP 做到极致”的路线；相比之下，Vampire 更强调**verification-oriented theories、induction 与跨层协作** |
+| **Leo-III** | **高阶 ATP**，面向 classical HOL / extensional type theory | 原生**高阶逻辑**推理、HOL 证明任务、相关高阶自动化场景 | Leo-III 的主场是 HOL；Vampire 虽有 HOL branch，但整体定位仍不是“以高阶逻辑为唯一中心”，而是以**验证导向的一阶 + theories + induction 平台化整合**为重点 |
+
+如果把这五个系统压缩成一句话区分，可以这样理解：
+
+- **Z3 / cvc5**：更像“理论求解器”和验证约束后端；
+- **E prover**：更像“纯一阶 ATP 性能机器”；
+- **Leo-III**：更像“原生 HOL ATP”；
+- **Vampire**：则站在中间地带，试图把**量词、一阶饱和搜索、理论扩展、归纳和外部协作**组织成统一平台。
+
+### 再换一种更工程化的看法
+
+如果你面对的是不同类型的问题，可以粗略这样选：
+
+| 问题画像 | 更自然的首选 | 原因 |
+|---|---|---|
+| 量化不多，但位向量、数组、字符串、线性算术很重 | **Z3 / cvc5** | 这是 SMT 求解器最成熟的主战场 |
+| 纯一阶逻辑证明，目标是尽可能强的 ATP 性能 | **E prover / Vampire** | 都属于饱和式 ATP 路线，但 E prover 往往更“纯 ATP” |
+| 同时有量词、归纳、数据类型、算术、验证风格表达 | **Vampire** | 这是论文想证明 Vampire 正在变强的核心场景 |
+| 原生高阶逻辑任务、本体就是 HOL 证明 | **Leo-III** | 高阶逻辑是它的主场，而不是附带扩展 |
+| 既想利用 SAT/SMT，又不想放弃一阶量词主循环 | **Vampire** | 它的特点正是把 SAT/SMT 当协作层，而不是主导层 |
+
+这张比较表真正想澄清的，不是谁“更强”，而是谁在**哪一段推理责任链**上更强。Vampire 的论文价值，恰恰在于它没有试图把自己伪装成另一个 Z3，也没有满足于做另一个 E prover；它要证明的是：**一阶饱和式 ATP 也可以通过清晰的边界分工，长成面向软件验证的统一推理平台。**
+
+---
+
 ## 局限性与边界
 
 这篇论文写得相当克制，局限性并没有被掩盖。
@@ -219,7 +254,7 @@ vampire --mode portfolio --schedule <schedule> --cores 0 <problem>
 - [PDF 原文](https://arxiv.org/pdf/2506.03030)
 - [CAV 2025 论文 DOI](https://doi.org/10.1007/978-3-031-98682-6_4)
 - [Vampire 项目主页](https://vprover.github.io/)
-- [Vampire GitHub 仓库](https://github.com/vprover/vampire)0:{"buildId":"h3YmeD3mRtjNSCT-fomEf","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vampire-diary","title":"The Vampire Diary：Vampire 作为面向软件验证的统一推理平台","originalTitle":"The Vampire Diary","excerpt":"这篇 CAV 2025 工具论文不是一次功能罗列，而是一次系统性回顾：Vampire 如何在保留 superposition / saturation 主循环的同时，把 ALASCA 算术、归纳、FOOL、多态逻辑、AVATAR、SAT/SMT 委派与 Spider 调度组织进统一架构。论文最有价值的地方，不是某个局部技巧，而是证明量词推理、ground theory reasoning 与策略学习可以被清晰分层、协同求解并长期演化。","date":"2026-04-08","architectureImage":"/images/papers/vampire-diary/architecture.png","featured":false,"draft":false,"authors":["Filip Bártek","Ahmed Bhayat","Robin Coutelier","Márton Hajdu","Matthias Hetzenberger","Petra Hozzová","Laura Kovács","Jakob Rath","Michael Rawson","Giles Reger","Martin Suda","Johannes Schoisswohl","Andrei Voronkov"],"year":2025,"venue":"CAV 2025","tags":["AI解读","形式化验证","自动定理证明","一阶逻辑","Vampire"],"doi":"https://doi.org/10.1007/978-3-031-98682-6_4","pdfUrl":"https://arxiv.org/pdf/2506.03030","content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"系统贡献从一阶-atp-到验证推理平台","text":"系统贡献：从一阶 ATP 到验证推理平台","level":2},{"id":"1-用-alasca-把量化算术接入主证明循环","text":"1. 用 ALASCA 把量化算术接入主证明循环","level":3},{"id":"2-把归纳实现为推理规则而非外置-tactic","text":"2. 把归纳实现为推理规则，而非外置 tactic","level":3},{"id":"3-逻辑表达能力向验证需求持续扩张","text":"3. 逻辑表达能力向验证需求持续扩张","level":3},{"id":"系统结构与运行机制按-cav-系统论文视角重拆","text":"系统结构与运行机制：按 CAV 系统论文视角重拆","level":2},{"id":"1-两阶段工作流表示变换先行饱和搜索收尾","text":"1. 两阶段工作流：表示变换先行，饱和搜索收尾","level":3},{"id":"2-预处理不是附属模块而是搜索空间压缩器","text":"2. 预处理不是附属模块，而是搜索空间压缩器","level":3},{"id":"3-avatar-与-smt-delegation把布尔结构和-ground-theory-交给更合适的求解层","text":"3. AVATAR 与 SMT delegation：把布尔结构和 ground theory 交给更合适的求解层","level":3},{"id":"4-一张图看清-vampire-的协作式推理剖面","text":"4. 一张图看清 Vampire 的协作式推理剖面","level":3},{"id":"5-冗余消除与索引结构决定系统是否真正可用","text":"5. 冗余消除与索引结构，决定系统是否真正可用","level":3},{"id":"6-schedule-不是附属脚本而是产品级能力","text":"6. Schedule 不是附属脚本，而是产品级能力","level":3},{"id":"示例的诊断意义为什么论文选择列表求和","text":"示例的诊断意义：为什么论文选择“列表求和”","level":2},{"id":"可迁移的系统设计原则","text":"可迁移的系统设计原则","level":2},{"id":"局限性与边界","text":"局限性与边界","level":2},{"id":"结论vampire-的系统命题","text":"结论：Vampire 的系统命题","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"13 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+- [Vampire GitHub 仓库](https://github.com/vprover/vampire)0:{"buildId":"I8o8G4LlOrgZJOhS05q3c","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vampire-diary","title":"The Vampire Diary：Vampire 作为面向软件验证的统一推理平台","originalTitle":"The Vampire Diary","excerpt":"这篇 CAV 2025 工具论文不是一次功能罗列，而是一次系统性回顾：Vampire 如何在保留 superposition / saturation 主循环的同时，把 ALASCA 算术、归纳、FOOL、多态逻辑、AVATAR、SAT/SMT 委派与 Spider 调度组织进统一架构。论文最有价值的地方，不是某个局部技巧，而是证明量词推理、ground theory reasoning 与策略学习可以被清晰分层、协同求解并长期演化。","date":"2026-04-08","architectureImage":"/images/papers/vampire-diary/architecture.png","featured":false,"draft":false,"authors":["Filip Bártek","Ahmed Bhayat","Robin Coutelier","Márton Hajdu","Matthias Hetzenberger","Petra Hozzová","Laura Kovács","Jakob Rath","Michael Rawson","Giles Reger","Martin Suda","Johannes Schoisswohl","Andrei Voronkov"],"year":2025,"venue":"CAV 2025","tags":["AI解读","形式化验证","自动定理证明","一阶逻辑","Vampire"],"doi":"https://doi.org/10.1007/978-3-031-98682-6_4","pdfUrl":"https://arxiv.org/pdf/2506.03030","content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"系统贡献从一阶-atp-到验证推理平台","text":"系统贡献：从一阶 ATP 到验证推理平台","level":2},{"id":"1-用-alasca-把量化算术接入主证明循环","text":"1. 用 ALASCA 把量化算术接入主证明循环","level":3},{"id":"2-把归纳实现为推理规则而非外置-tactic","text":"2. 把归纳实现为推理规则，而非外置 tactic","level":3},{"id":"3-逻辑表达能力向验证需求持续扩张","text":"3. 逻辑表达能力向验证需求持续扩张","level":3},{"id":"系统结构与运行机制按-cav-系统论文视角重拆","text":"系统结构与运行机制：按 CAV 系统论文视角重拆","level":2},{"id":"1-两阶段工作流表示变换先行饱和搜索收尾","text":"1. 两阶段工作流：表示变换先行，饱和搜索收尾","level":3},{"id":"2-预处理不是附属模块而是搜索空间压缩器","text":"2. 预处理不是附属模块，而是搜索空间压缩器","level":3},{"id":"3-avatar-与-smt-delegation把布尔结构和-ground-theory-交给更合适的求解层","text":"3. AVATAR 与 SMT delegation：把布尔结构和 ground theory 交给更合适的求解层","level":3},{"id":"4-一张图看清-vampire-的协作式推理剖面","text":"4. 一张图看清 Vampire 的协作式推理剖面","level":3},{"id":"5-冗余消除与索引结构决定系统是否真正可用","text":"5. 冗余消除与索引结构，决定系统是否真正可用","level":3},{"id":"6-schedule-不是附属脚本而是产品级能力","text":"6. Schedule 不是附属脚本，而是产品级能力","level":3},{"id":"示例的诊断意义为什么论文选择列表求和","text":"示例的诊断意义：为什么论文选择“列表求和”","level":2},{"id":"可迁移的系统设计原则","text":"可迁移的系统设计原则","level":2},{"id":"相关系统比较vampire-的边界到底在哪里","text":"相关系统比较：Vampire 的边界到底在哪里","level":2},{"id":"再换一种更工程化的看法","text":"再换一种更工程化的看法","level":3},{"id":"局限性与边界","text":"局限性与边界","level":2},{"id":"结论vampire-的系统命题","text":"结论：Vampire 的系统命题","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"16 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
 4:["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
 5:["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
 6:["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true}]
