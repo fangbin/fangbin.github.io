@@ -1,0 +1,231 @@
+1:"$Sreact.fragment"
+2:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+12:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T3256,## 论文概览
+
+**原文链接：** [arXiv 2506.03030](https://arxiv.org/abs/2506.03030)  
+**项目主页：** [Vampire](https://vprover.github.io/)  
+**代码仓库：** [github.com/vprover/vampire](https://github.com/vprover/vampire)  
+**主题：** 自动定理证明、饱和式证明搜索、软件验证、算术与归纳推理
+
+《The Vampire Diary》不是一篇单点算法论文，而是一篇典型的**系统演化报告**。它回顾了 Vampire 自 2013 年上一版工具论文以来的关键变化：从传统的一阶自动定理证明器，逐步扩展为能够处理**常见数据结构组合理论、量化算术、归纳、高阶逻辑扩展与程序综合**的统一推理平台。
+
+论文真正要回答的问题并不是“Vampire 又多支持了什么语法”，而是：**一个以饱和式 superposition 为核心的 ATP，怎样在不丢掉原有证明能力的前提下，吸收 SMT、归纳、验证友好理论和工程调度机制，最终进入现代软件验证工作流。**
+
+其主线可以概括为：
+
+$$
+\text{Input (TPTP / SMT-LIB)} \rightarrow \text{Preprocess} \rightarrow \text{CNF} \rightarrow \text{Saturation Search} \rightarrow \{\Box,\ \text{model},\ \text{counterexample}\}
+$$
+
+但这条公式背后，已经不再是单一推理机，而是一整套围绕理论扩展、外部协作与调度优化构建出来的证明栈。
+
+![Vampire architecture](/images/papers/vampire-diary/architecture.png)
+
+---
+
+## 核心贡献：Vampire 不再只是“一阶证明器”
+
+### 1. 用 ALASCA 把量化算术真正接入 superposition 主体
+
+论文首先强调的是算术能力。传统 superposition 在纯等式推理上很强，但在**带量词的线性算术**前面常常显得笨重。Vampire 通过 ALASCA（Abstracting Linear Arithmetic Superposition Calculus）把不等式链、模线性算术重写、带抽象的合一等机制接入主证明循环，使量化算术不再只是外围补丁，而是进入原生 calculus。
+
+作者随后又把这条路线往前推了一步：
+
+- 支持**混合整数-实数算术**；
+- 通过量词消去过程处理更复杂的组合场景；
+- 用轻量级 arithmetic simplification / generalization 补足 ALASCA 不值得全力启动的情况；
+- 在 ground arithmetic 上，必要时借助 Z3 做 theory instantiation 或 AVATAR modulo theories。
+
+这里最重要的架构判断是：**Vampire 没有放弃原有饱和式证明框架，而是把算术能力嵌入并围绕它组织协作。** 这使它与纯 SMT 求解器保持了明显差异：SMT 往往擅长 theory reasoning，但对高阶量词、归纳和更开放的一阶搜索结构并不天然占优；Vampire 则试图在保留量词主场优势的同时，吸收 SMT 的局部强项。
+
+### 2. 把归纳做成推理规则，而不是外置证明脚本
+
+论文另一个关键点是归纳。Vampire 支持：
+
+- 归纳定义数据类型上的**结构归纳**；
+- 整数有界区间上的归纳；
+- 从递归函数定义中生成的良基归纳原则。
+
+更重要的是，这些归纳并不是在系统外部单独触发的一次性 tactic，而是**在证明搜索中通过理论引理生成机制与其他推理交织执行**。论文特别强调，Vampire 可以在搜索过程中高效处理大量归纳公式，并把归纳步骤与一般 superposition、简化和分裂共同调度。
+
+这件事对自动证明系统很关键。许多系统“支持归纳”的意思只是：能调用一个归纳模板；而 Vampire 的做法更进一步，它把归纳纳入了核心搜索空间管理中。这也是为什么论文在示例问题中能够同时依赖：
+
+- 多态列表数据结构；
+- 列表拼接与递归求和；
+- 实数算术；
+- 至少一次结构归纳。
+
+作者明确指出，像 cvc5 或 Z3 这样的工具在这类组合问题上并不容易直接处理；Vampire 的优势正来自这种**归纳 + 算术 + 多态一阶逻辑**的原生联动。
+
+### 3. 逻辑表达能力向验证需求持续扩张
+
+论文回顾的第三条主线，是表达层的扩展：
+
+- **rank-1 polymorphism**：支撑参数化数据结构与多态理论；
+- **FOOL**：把 `if-then-else`、`let-in` 和 first-class Boolean 等验证常用结构更自然地带入一阶逻辑；
+- **higher-order logic branch**：在保留一阶饱和框架的同时，尝试把高阶推理纳入统一系统；
+- **program synthesis**：从“对任意输入存在某个输出”这类关系规格中，边证明边构造程序。
+
+如果只看功能清单，这像是在不断给证明器加附件；但论文真正传达的是另一层意思：**现代软件验证并不只需要一个会 refute clause set 的内核，还需要能接受更接近程序语义的表达，并能与综合、模型构造、反例生成共同工作。**
+
+因此，Vampire 的演化方向并不是“更学术的 ATP”，而是“更接近验证平台的 ATP”。
+
+---
+
+## 方法与系统机制：这篇论文真正值得细读的部分
+
+### 1. 两阶段工作流：预处理先行，饱和搜索压轴
+
+Vampire 的整体工作流仍然保持清晰的两阶段结构：
+
+1. 解析输入，若存在 conjecture 则先取反；
+2. 转为 CNF，并执行预处理；
+3. 在 clause 空间中做饱和搜索，尝试导出空子句；
+4. 若无法 refute，则可能报告 satisfiable、CounterSatisfiable 或构造有限模型。
+
+论文把内部子句空间划分为三类：
+
+$$
+\mathcal{C} = \mathcal{C}_{new} \cup \mathcal{C}_{passive} \cup \mathcal{C}_{active}
+$$
+
+其中，新生成子句先进入 `new`，经化简后进入 `passive`，再被选作推理前提转入 `active`。这种组织方式本身并不新，但论文强调的是：**随着算术、归纳、HOL、模型构造等能力进入系统，真正决定性能的已经不只是某条 inference rule，而是预处理、索引、冗余消除与子句调度之间的配合。**
+
+### 2. 预处理不是辅助步骤，而是搜索空间压缩器
+
+在“Making It Work”部分，作者把大量篇幅给了预处理，这恰恰说明系统工程的重点所在。Vampire 新增或强化了：
+
+- top-down clausal normal form；
+- blocked clause elimination；
+- 从 Twee 借鉴的 goal-oriented rewriting；
+- 尽量保持线性时间复杂度、避免递归带来的栈溢出风险。
+
+这部分信息非常有价值，因为它直接揭示了一条常被忽视的事实：**自动定理证明系统的上限，不只取决于核心 calculus 的理论强度，还取决于输入在进入 calculus 之前被压缩得多干净。**
+
+### 3. AVATAR：把命题本质交给 SAT / SMT 处理
+
+Vampire 在工程上最成熟的一笔，仍然是 AVATAR 及其后续变体。论文把它描述为：将问题的“命题本质”切分出来，交给 SAT 求解器处理；在 AVATAR modulo theories 中，则进一步把 ground theory 子问题交给 SMT 求解器。
+
+可以把它理解成：
+
+$$
+\text{First-order search} = \text{quantifier reasoning natively} + \text{ground structure delegated externally}
+$$
+
+这种结构避免了两个极端：
+
+- 既没有把整套证明任务全盘交给 SMT；
+- 也没有坚持“所有问题都必须在单一 calculus 内部硬算完”。
+
+这使 Vampire 保留了量词与归纳上的自主性，同时在命题分裂与理论 ground reasoning 上享受 SAT/SMT 的成熟基础设施。
+
+### 4. 冗余消除与索引结构，是性能真正的底盘
+
+在系统论文里，最容易被忽视的通常是“数据结构”章节，但这恰恰是可用性的根。Vampire 使用：
+
+- substitution trees；
+- code trees；
+- term ordering diagrams；
+- SAT-based redundancy checks。
+
+这些设计共同服务于一个目标：**便宜地发现哪些子句不值得继续留在搜索空间中。** 饱和式证明器最怕的不是单次推理慢，而是搜索空间失控；冗余检测、单位等式重写和索引结构，实质上是在不断给推理过程“减重”。
+
+### 5. 200+ 选项不是特性，而是调度难题
+
+论文对“海量选项”采取了很现实的态度。Vampire 的行为由 200 多个选项共同塑造，因此作者明确建议用户：**不要迷信单次直跑，而应使用 portfolio mode 与 schedule。**
+
+推荐调用方式是：
+
+```bash
+vampire --mode portfolio --schedule <schedule> --cores 0 <problem>
+```
+
+这背后的思想很清楚：自动定理证明器的行为高度混沌，哪怕专家也很难凭经验为具体问题手工挑出最优策略。因此 Vampire 借助 Spider，从训练问题集中自动挑选彼此互补的策略，构造成覆盖率高、总运行时间短的 schedule。论文甚至进一步讨论了如何让这些 schedule 对未见问题有更好的泛化能力。
+
+换句话说，**调度系统已经不再是附加脚本，而是证明器产品化的一部分。**
+
+![Vampire timeline](/images/papers/vampire-diary/timeline.png)
+
+---
+
+## 论文里的示例为什么重要
+
+论文使用了一个看似简单的例子：证明“两个实数列表分别求和后相加，等于拼接后再求和”。这个命题本身并不复杂，但它同时涉及：
+
+- 代数数据类型（list）；
+- 递归定义函数（`sum`）；
+- 多态列表拼接；
+- 实数算术；
+- 结构归纳。
+
+这个例子的重要性在于，它不是炫技 benchmark，而是一个压缩版现实场景：**验证问题中的困难，往往不在某一理论本身，而在多个理论边界同时出现。** 论文正是用这个例子说明，Vampire 当前能力的价值在于“组合推理”，而不是只在某一条基准线上刷分。
+
+---
+
+## 论文的工程原则：比功能表更值得记住
+
+综合全文，可以提炼出几条非常清晰的工程原则：
+
+| 工程原则 | 论文中的具体体现 | 实际意义 |
+|---|---|---|
+| 保留核心证明范式 | 仍以 superposition / saturation 为中心 | 避免能力扩展导致系统失去统一性 |
+| 外部工具按边界接入 | AVATAR + SAT/SMT、可选 Z3 | 用外部工具补 ground reasoning，不让其吞掉主循环 |
+| 复杂能力先放分支 | HOL、递归综合先在 branch 上演化 | 降低对主线代码库的破坏性 |
+| 策略靠 schedule 而非人工拍脑袋 | portfolio mode、Spider 自动发现策略 | 承认搜索行为混沌，用数据驱动调度 |
+| 开源改变系统生命力 | BSD 开源后开发团队与用户群扩张 | 证明器不只是算法，也是一种社区基础设施 |
+
+其中尤其值得注意的是“**branch 先行**”这条。论文坦率承认，像高阶逻辑这样的能力会对主代码库造成剧烈影响，因此采用分支长期共演的方式，等足够稳定再考虑并回主线。这种做法和许多现代大型基础设施项目非常相似：先隔离风险，再控制合并成本。
+
+---
+
+## 局限性与边界
+
+这篇论文写得相当克制，局限性并没有被掩盖。
+
+1. **很多强能力仍需精细调度**：200+ 选项意味着系统很强，也意味着系统很难“默认即最优”。
+2. **高阶逻辑仍在 branch 中演进**：说明 HOL 虽然重要，但与主线融合的代价依然很高。
+3. **非线性算术仍需部分外援或近似处理**：Vampire 对复杂理论的支持并不是完全闭环。
+4. **它不是一个纯 SMT 求解器替代品**：在某些 theory-heavy 场景中，专门的 SMT 工具仍然更直接；Vampire 的优势在于量词、归纳和更复杂的一阶结构。
+
+因此，对这篇论文最准确的理解不是“Vampire 已经包打天下”，而是：**Vampire 正在证明，饱和式 ATP 可以在不放弃自身传统优势的前提下，进入过去更像 SMT 或证明助手接口层的问题域。**
+
+---
+
+## 综合判断
+
+《The Vampire Diary》的价值，不在于宣布某项全新理论，而在于它系统性地展示了一种演化路径：
+
+- 以 superposition 为稳定内核；
+- 用 ALASCA、归纳和多态逻辑扩展表达与推理边界；
+- 用 AVATAR 把 SAT/SMT 融入整体架构；
+- 用索引、冗余消除和 schedule 把工程成本压住；
+- 用开源与分支机制维护长期演化能力。
+
+这让 Vampire 从“强大的 ATP 工具”进一步接近“**验证时代的统一推理平台**”。它与证明助手、SMT 求解器、程序综合和反例构造的边界没有消失，但这些边界正在被重新组织：不是谁替代谁，而是谁负责哪一段推理责任。
+
+对自动推理系统设计者而言，这篇论文提供的最重要启示是：**系统竞争力越来越少来自单条 inference rule 的局部胜负，越来越多来自理论扩展、外部协作、调度学习与工程隔离的整体设计。**
+
+## 参考资源
+
+- [arXiv 页面](https://arxiv.org/abs/2506.03030)
+- [PDF 原文](https://arxiv.org/pdf/2506.03030)
+- [CAV 2025 论文 DOI](https://doi.org/10.1007/978-3-031-98682-6_4)
+- [Vampire 项目主页](https://vprover.github.io/)
+- [Vampire GitHub 仓库](https://github.com/vprover/vampire)0:{"buildId":"XaN3uOeS-x40ogXz-9xdc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vampire-diary","title":"The Vampire Diary：Vampire 如何从一阶 ATP 长成验证时代的统一推理平台","originalTitle":"The Vampire Diary","excerpt":"这篇 CAV 2025 工具论文总结了 Vampire 在过去十余年的系统演化：它不再只是传统意义上的一阶自动定理证明器，而是逐步吸收算术、归纳、高阶逻辑、SAT/SMT 协同与策略调度，成为面向软件验证的统一推理平台。真正值得关注的，不是某一个局部技巧，而是这套系统如何把表达能力、证明搜索与工程调度组织成一个可持续扩展的整体。","date":"2026-04-08","architectureImage":"/images/papers/vampire-diary/architecture.png","featured":false,"draft":false,"authors":["Filip Bártek","Ahmed Bhayat","Robin Coutelier","Márton Hajdu","Matthias Hetzenberger","Petra Hozzová","Laura Kovács","Jakob Rath","Michael Rawson","Giles Reger","Martin Suda","Johannes Schoisswohl","Andrei Voronkov"],"year":2025,"venue":"CAV 2025","tags":["AI解读","形式化验证","自动定理证明","一阶逻辑","Vampire"],"doi":"https://doi.org/10.1007/978-3-031-98682-6_4","pdfUrl":"https://arxiv.org/pdf/2506.03030","content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心贡献vampire-不再只是一阶证明器","text":"核心贡献：Vampire 不再只是“一阶证明器”","level":2},{"id":"1-用-alasca-把量化算术真正接入-superposition-主体","text":"1. 用 ALASCA 把量化算术真正接入 superposition 主体","level":3},{"id":"2-把归纳做成推理规则而不是外置证明脚本","text":"2. 把归纳做成推理规则，而不是外置证明脚本","level":3},{"id":"3-逻辑表达能力向验证需求持续扩张","text":"3. 逻辑表达能力向验证需求持续扩张","level":3},{"id":"方法与系统机制这篇论文真正值得细读的部分","text":"方法与系统机制：这篇论文真正值得细读的部分","level":2},{"id":"1-两阶段工作流预处理先行饱和搜索压轴","text":"1. 两阶段工作流：预处理先行，饱和搜索压轴","level":3},{"id":"2-预处理不是辅助步骤而是搜索空间压缩器","text":"2. 预处理不是辅助步骤，而是搜索空间压缩器","level":3},{"id":"3-avatar把命题本质交给-sat--smt-处理","text":"3. AVATAR：把命题本质交给 SAT / SMT 处理","level":3},{"id":"4-冗余消除与索引结构是性能真正的底盘","text":"4. 冗余消除与索引结构，是性能真正的底盘","level":3},{"id":"5-200-选项不是特性而是调度难题","text":"5. 200+ 选项不是特性，而是调度难题","level":3},{"id":"论文里的示例为什么重要","text":"论文里的示例为什么重要","level":2},{"id":"论文的工程原则比功能表更值得记住","text":"论文的工程原则：比功能表更值得记住","level":2},{"id":"局限性与边界","text":"局限性与边界","level":2},{"id":"综合判断","text":"综合判断","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"12 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true}]
+c:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
