@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title><![CDATA[博客]]></title>
+    <link>https://fangbin.github.io/amytis-style</link>
+    <description><![CDATA[思考、笔记与记录]]></description>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Apr 2026 09:18:03 GMT</lastBuildDate>
+    <atom:link href="https://fangbin.github.io/amytis-style/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <item>
+          <title><![CDATA[形式化方法入门]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/formal-methods</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/formal-methods</guid>
+          <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[介绍形式化方法的基本概念和应用场景。]]></description>
+          <category>形式化方法</category><category>程序验证</category><category>学术</category>
+        </item>
+        <item>
+          <title><![CDATA[研究笔记]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/research-notes</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/research-notes</guid>
+          <pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[记录近期的研究进展和学习心得。]]></description>
+          <category>研究</category><category>笔记</category>
+        </item>
+        <item>
+          <title><![CDATA[Jekyll博客搭建教程]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/jekyll-tutorial</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/jekyll-tutorial</guid>
+          <pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。]]></description>
+          <category>Jekyll</category><category>GitHub Pages</category><category>教程</category>
+        </item>
+        <item>
+          <title><![CDATA[欢迎来到我的博客]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/welcome</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/welcome</guid>
+          <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[欢迎来到我的个人博客！这是第一篇博文，介绍一下这个博客的功能和特点。]]></description>
+          <category>博客</category><category>开篇</category>
+        </item>
+        <item>
+          <title><![CDATA[形式化规约语言]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/02-specification</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/02-specification</guid>
+          <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[介绍几种常用的形式化规约语言，包括 Z notation、TLA+ 和 Alloy。]]></description>
+          <category>形式化方法</category><category>规约</category>
+        </item>
+        <item>
+          <title><![CDATA[形式化方法概述]]></title>
+          <link>https://fangbin.github.io/amytis-style/posts/01-introduction</link>
+          <guid>https://fangbin.github.io/amytis-style/posts/01-introduction</guid>
+          <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
+          <description><![CDATA[形式化方法是指用数学方法来描述、分析和验证计算机系统的技术。]]></description>
+          <category>形式化方法</category><category>入门</category>
+        </item>
+  </channel>
+</rss>

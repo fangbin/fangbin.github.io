@@ -1,0 +1,186 @@
+1:"$Sreact.fragment"
+2:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+12:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T28a5,## 一句话总结
+
+> 我觉得这篇论文最重要的判断是：**Agent 生态眼下最缺的，也许不是再多一个框架，而是一种大家都能看懂、也都能执行的共同表示。**
+
+---
+
+## 论文信息
+
+- **机构**：Oracle Corporation
+- **版本**：arXiv v4（2025-11-07）
+- **原文**：[arXiv 2510.04173](https://arxiv.org/abs/2510.04173)
+- **规范文档**：[Open Agent Specification Language Spec](https://oracle.github.io/agent-spec/agentspec/language_spec_25_4_1.html)
+- **工具链**：[PyAgentSpec](https://oracle.github.io/agent-spec/index.html) / [WayFlow](https://github.com/oracle/wayflow)
+
+---
+
+## 背景：今天的 Agent 生态，最麻烦的不是不会做事，而是每家都在用自己的方言
+
+如果把最近两年的 Agent 热潮看成一次工业化前夜，那么我们已经见到很多热闹：MCP 在解决资源和工具接入，A2A、ACP 在讨论 Agent 之间怎么通信，各家框架也都在忙着定义自己的 Agent、Flow、Tool、Memory 和状态管理。
+
+问题在于，这些东西长得都像，却又都不完全一样。你在 LangGraph 里搭出一个图，在 AutoGen 里写一组角色，在 CrewAI 里排一套任务，最后得到的并不是一份可以平移的“Agent 定义”，而更像一套带着方言口音的地方戏。能演，但换个舞台就要重写。
+
+这篇论文有意思的地方就在这里。它不想替你发明新的舞台，而是想先发明一份**谱子**。作者把这份谱子叫做 **Agent Spec**：一套声明式、跨框架、可序列化的统一表示，用来描述 Agent 的组成、控制流、数据流、输入输出、工具依赖和执行语义。这个想法听起来克制，但恰恰因为克制，才显得靠谱。
+
+---
+
+## 核心创新：Agent Spec 想补上的，是 MCP 和 A2A 中间那一层空白
+
+论文里有一个很关键的位置判断：
+
+- **MCP** 负责资源、工具和数据供给；
+- **A2A / ACP** 负责 Agent 间消息交换；
+- **Agent Spec** 负责行为定义与执行语义。
+
+也就是说，它不是和 MCP、A2A 抢活，而是在补一层之前没人真正标准化过的东西：**Agent 到底由哪些部件组成，这些部件怎么流动、怎么衔接、怎么暴露输入输出。**
+
+作者把这件事概括成几条很朴素、但很难得的目标：
+
+1. **定义一次，到处运行**：同一份规范可以映射到 WayFlow、LangGraph、AutoGen、CrewAI 等不同 runtime；
+2. **显式控制流与数据流**：不再把“先做什么、后做什么、哪个输出喂给哪个输入”藏在框架私有逻辑里；
+3. **支持嵌套与复用**：Agent 可以放进 Flow，Flow 也可以再放进更大的 Flow；
+4. **把评测做成内生能力**：不是写完 Agent 再临时搭测试，而是从一开始就用统一表示来比较不同 runtime 的表现。
+
+这让我想到 ONNX 当年给深度学习做的事。它并没有发明新的卷积，也没有替代 PyTorch、TensorFlow；它只是提供了一种大家都认得的中间层。**Agent Spec 的野心，本质上也是这个。**
+
+---
+
+## 方法论：把 Agent 写成一张有语义的图，而不是一堆框架专属对象
+
+论文里可以把 Agent Spec 粗略写成：
+
+$$
+S = (C, E_c, E_d, \Sigma_{in}, \Sigma_{out}, v)
+$$
+
+其中：
+
+- $C$ 是组件集合（Agent、Flow、Node、Tool、LLM 等）；
+- $E_c$ 是控制流边（control-flow edges）；
+- $E_d$ 是数据流边（data-flow edges）；
+- $\Sigma_{in}, \Sigma_{out}$ 是输入输出 schema；
+- $v$ 是版本信息，对应 `agentspec_version`。
+
+这套设计里，我最喜欢三点。
+
+### 1. 输入输出被当成一等公民
+
+很多框架里，I/O 是“顺手传过去”的；而在 Agent Spec 里，输入输出 schema 必须被显式写出来，哪怕某些字段本来可以从配置里自动推导。这个做法表面上有点啰嗦，但它换来的是透明性：**人能看懂，工具能校验，runtime 也能拒绝不一致的定义。**
+
+### 2. 控制流和数据流被拆开了
+
+这其实非常重要。控制流回答的是“下一步能去哪里”，数据流回答的是“值到底从哪里来”。很多 Agent 框架把这两件事揉在一起，于是一旦出现分支、回环、覆写、共享变量，行为就开始变得暧昧。Agent Spec 则把它们拆开写清楚，连循环和分支都能明确建模。
+
+### 3. 规范里不塞可执行代码
+
+论文特别强调：**spec 只描述，不嵌 arbitrary code。** 这听上去像保守，其实是边界感。因为一旦规范本身开始藏代码，它就不再是可交换、可验证的中间表示，而会退化成“另一种写法的框架程序”。
+
+![Agent Spec 架构图](/images/papers/agentspec/agentspec-architecture.png)
+
+*图：我把论文里的思路压缩成了一张图。Agent Spec 站在 authoring 与 runtimes 之间，左连资源协议，右连通信协议，下接统一评测。它更像 Agent 世界的中间表示，而不是新的执行框架。*
+
+如果把它的运行方式写成一个近似“编译器”的关系，我觉得可以这样理解：
+
+$$
+G_f = R_f(S)
+$$
+
+其中 $S$ 是同一份 Agent Spec，$R_f$ 是针对框架 $f$ 的 runtime adapter，输出 $G_f$ 是该框架里的可执行 agent graph。论文的精妙之处，不在于说服你“所有 runtime 都会完全一样”，而在于先把差异放到**一个可比较的坐标系**里。
+
+对应的执行伪代码，大概就是：
+
+```python
+spec = load_json("agent.json")
+validate_io(spec)
+plan = lower_to_runtime(spec, target_runtime)
+result = execute(plan)
+score = evaluate(result, benchmark)
+```
+
+看起来很平平，但平平往往意味着它有机会活下来。
+
+---
+
+## 实验结果：第一次有人把“同一份 Agent 定义在不同框架里差多少”认真摆到台面上
+
+论文在 **四个 runtime** 上做实验：WayFlow、LangGraph、AutoGen、CrewAI；覆盖 **三个 benchmark**：SimpleQA Verified、BIRD-SQL、τ²-Bench。评价指标分别是 F1、SQL execution accuracy（EX）和 Pass^k，同时记录平均查询耗时。
+
+这部分最值得看的，不是某个绝对数字多高，而是**差异终于可见了**。
+
+### 代表性结果
+
+| Benchmark | 设置 | 最优效果 | 我更在意的结论 |
+|---|---|---:|---|
+| SimpleQA Verified | ReAct (GPT-4.1 mini) | **CrewAI 81.1 F1** | 但 CrewAI 也最慢之一（7.21s）；LangGraph / WayFlow 更均衡 |
+| BIRD-SQL | ReAct (GPT-4.1) | **CrewAI 54.3 EX** | 四家几乎咬得很紧，但 CrewAI 明显更慢（12.20s） |
+| τ²-Bench | ReAct (GPT-4.1) | **AutoGen 73.5 Pass^1** | AutoGen 在复杂对话式推理上最强，但代价是更长延迟 |
+
+如果看论文里最有代表性的三组 ReAct 结果：
+
+- **SimpleQA**：WayFlow 79.0、LangGraph 75.5、AutoGen 67.9、CrewAI 81.1；
+- **BIRD-SQL**：WayFlow 54.1、LangGraph 53.7、AutoGen 54.1、CrewAI 54.3；
+- **τ²-Bench**：WayFlow 64.7、LangGraph 71.5、AutoGen 73.5、CrewAI 62.5。
+
+这些数字有个很诚实的结论：**所谓“Agent 能力”，并不只是模型能力，也不只是 prompt 能力，而是 runtime 语义、工具调用方式、系统提示包装方式一起决定的。** 论文甚至点明，不同框架在 prompt wrapping、tool use 请求方式、系统提示拼接上的细节，都能把最终结果拉开。
+
+![Agent Spec 实验结果图](/images/papers/agentspec/agentspec-results.png)
+
+*图：我挑了论文里最能说明问题的三组代表性实验。上排看效果，下排看耗时。你会发现所谓“谁最好”根本不是一个统一答案，而是任务结构、runtime 设计和延迟预算三者共同决定。*
+
+另外还有两个细节很有意思：
+
+1. **SimpleQA 上 Flow-based agentic RAG 明显优于单次 LLM 调用**，说明结构化分解、自反思和检索确实有效；
+2. **BIRD-SQL 上给 Agent 加工具不一定比 baseline 更强**，但 Plan-Generate-Reflect 这种流程化设计更稳定；
+3. **论文目标不是冲榜，而是证明可移植性**，所以它更像一个标准化基础设施论文，而不是 benchmark leaderboard 论文。
+
+---
+
+## 启示与思考：Agent Spec 真正标准化的，不是“Agent 本身”，而是争论 Agent 的方式
+
+我读完之后最大的感受是，这篇论文的价值不只在技术实现，而在它偷偷改了一个问题的问法。
+
+以前我们谈 Agent，常常像在讨论门派：你用 LangGraph 还是 AutoGen？你喜欢 ReAct 还是 Planner？你是 workflow 派还是 multi-agent 派？这些讨论不是没意义，但它们很容易陷进“框架即世界”的局部视角。
+
+Agent Spec 的厉害之处在于，它把问题改写成：**如果同一份行为定义被放到不同 runtime 里执行，它们到底会怎样不同？这些不同能不能被系统性地比较？** 这是一个更成熟的问题，因为它默认了生态会长期多样，而不是幻想某个框架一统天下。
+
+当然，论文也远没有把事情做完。它当前更像一份基础设施宣言，还不是工业标准。至少还有三层难关：
+
+- **语义保真**：同一份 spec 在不同 runtime 中仍会受到系统提示、工具协议和执行器细节影响；
+- **生态 adoption**：没有足够多的 importer / exporter，标准就会停留在纸面；
+- **优化问题**：作者自己在结论里提到，未来还想做像“融合连续 LLMNode”“用 structured generation 减少冗余调用”这样的编译器式优化。
+
+但我还是觉得它值得认真看。因为 Agent 这一行最怕的，不是大家技术路线不同，而是每个人都只能在自己的框架里自说自话。**没有共同表示，就没有真正可复用的经验；没有共同评测，就没有真正可讨论的工程结论。**
+
+说得再直白一点：如果未来 Agent 要从 demo 走向工程，那么它迟早要经历一次“从提示词手艺活，到中间表示与执行语义”的转身。Agent Spec 也许不是那个终局，但它至少把这个方向说对了。
+
+---
+
+## 参考资源
+
+- [arXiv: Open Agent Specification (Agent Spec)](https://arxiv.org/abs/2510.04173)
+- [Agent Spec 语言规范文档](https://oracle.github.io/agent-spec/agentspec/language_spec_25_4_1.html)
+- [PyAgentSpec 文档](https://oracle.github.io/agent-spec/index.html)
+- [WayFlow GitHub 仓库](https://github.com/oracle/wayflow)
+
+---
+
+**标签**：#AI解读 #AIAgent #标准化 #AgentInfra #评测0:{"buildId":"XEdapNwt9F2aW2m6atyPk","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"agentspec","title":"Agent Spec：AI Agent 世界，也开始需要一个 ONNX 了","originalTitle":"Open Agent Specification (Agent Spec): A Unified Representation for AI Agents","excerpt":"这篇论文提出的不是又一个 Agent 框架，而是一层更像 ONNX 的统一中间表示：把 Agent、Flow、Node、Tool、控制流和数据流写成声明式规范，再交给 LangGraph、CrewAI、AutoGen、WayFlow 等不同 runtime 去执行。更重要的是，它把评测也做成规范的一部分，在 SimpleQA Verified、BIRD-SQL 和 τ²-Bench 上第一次让“同一个 Agent 定义在不同框架里到底差多少”这件事变得可量化。","date":"2026-04-01","architectureImage":"/images/papers/agentspec/agentspec-architecture.png","featured":false,"draft":false,"authors":["Soufiane Amini","Yassine Benajiba","Cesare Bernardis","Paul Cayet","Hassan Chafi","Abderrahim Fathan","Louis Faucon","Damien Hilloulin","Sungpack Hong","Ingo Kossyk","Tran Minh Son Le","Rhicheek Patra","Sujith Ravi","Jonas Schweizer","Jyotika Singh","Shailender Singh","Weiyi Sun","Kartik Talamadupula","Jerry Xu"],"year":2025,"venue":"arXiv 2025","tags":["AI解读","AI Agent","标准化","Agent Infra","评测"],"doi":"10.48550/arXiv.2510.04173","pdfUrl":"https://arxiv.org/abs/2510.04173","content":"$3","headings":[{"id":"一句话总结","text":"一句话总结","level":2},{"id":"论文信息","text":"论文信息","level":2},{"id":"背景今天的-agent-生态最麻烦的不是不会做事而是每家都在用自己的方言","text":"背景：今天的 Agent 生态，最麻烦的不是不会做事，而是每家都在用自己的方言","level":2},{"id":"核心创新agent-spec-想补上的是-mcp-和-a2a-中间那一层空白","text":"核心创新：Agent Spec 想补上的，是 MCP 和 A2A 中间那一层空白","level":2},{"id":"方法论把-agent-写成一张有语义的图而不是一堆框架专属对象","text":"方法论：把 Agent 写成一张有语义的图，而不是一堆框架专属对象","level":2},{"id":"1-输入输出被当成一等公民","text":"1. 输入输出被当成一等公民","level":3},{"id":"2-控制流和数据流被拆开了","text":"2. 控制流和数据流被拆开了","level":3},{"id":"3-规范里不塞可执行代码","text":"3. 规范里不塞可执行代码","level":3},{"id":"实验结果第一次有人把同一份-agent-定义在不同框架里差多少认真摆到台面上","text":"实验结果：第一次有人把“同一份 Agent 定义在不同框架里差多少”认真摆到台面上","level":2},{"id":"代表性结果","text":"代表性结果","level":3},{"id":"启示与思考agent-spec-真正标准化的不是agent-本身而是争论-agent-的方式","text":"启示与思考：Agent Spec 真正标准化的，不是“Agent 本身”，而是争论 Agent 的方式","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"9 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true}]
+c:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

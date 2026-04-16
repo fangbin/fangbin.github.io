@@ -1,0 +1,167 @@
+1:"$Sreact.fragment"
+2:I[300055,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","style"]
+:HL["/amytis-style/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"XEdapNwt9F2aW2m6atyPk","c":["","papers","skillos",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","skillos","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/e79008c7f590051a.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+1c:T1eb0,## 一句话总结
+
+> Skills 已不再只是 Prompt 的衍生品，而是 LLM Agent 时代真正的「应用」——而现有系统尚未为此做好准备。
+
+---
+
+## 论文信息
+
+- **机构**：上海交通大学
+- **发表时间**：2026 年 2 月 13 日（预印本）
+- **关键词**：LLM Agents、Operating System、Skill
+
+---
+
+## 背景与动机
+
+在 Cursor、Claude Code、Coze 等主流 LLM Agent 平台上，**Skill（技能）** 的使用量正呈爆炸式增长。Skill 最初只是为了节省 Prompt 上下文长度而引入的「按需加载提示词」，但论文作者认为，Skill 与普通 Prompt 之间已经出现了本质性的分化：
+
+| 维度 | 普通 Prompt | Skill |
+|------|------------|-------|
+| 复用性 | 一次性使用 | 隐含反复调用 |
+| 确定性 | 语义模糊 | 场景具体、可验证 |
+| 环境依赖 | 无特定要求 | 依赖特定运行时环境 |
+
+这三点差异，使 Skill 具备了成为系统级一等公民的条件——正如程序之于操作系统。
+
+---
+
+## 核心数据分析：近 10 万条真实 Skill 的画像
+
+研究团队从公开仓库收集了 **97,754 条** Skill 数据，并从结构、执行模式和系统需求三个维度进行了系统分析，得出了 6 个关键洞察：
+
+### Insight 1：超过 50% 的 Skill 是「过程式」的
+
+Skill 往往不只是简单的一段描述，而是一个包含明确步骤、条件分支和迭代循环的**执行过程**（Procedure）。研究通过启发式规则与本地语言模型相结合的方法对 Skill 进行分类，发现 50% 以上的 Skill 都具有高置信度的过程式结构。
+
+这意味着 Skill 的执行逻辑已经接近「程序」——有控制流、有步骤边界、有中间状态。
+
+### Insight 2：约 70% 的 Skill 包含「半确定性代码块」
+
+Skill 中常常嵌入代码片段、模板或脚本（论文称之为 **semi-deterministic blocks**）。这些内容大多是固定的，却在每次执行时都被完整加载进上下文。这会造成大量 token 浪费——相当于每次运行程序时，都要重新编译所有不会变化的代码。
+
+### Insight 3：语义等价的 Skill 在操作细节上可能不同
+
+即便处理的是完全相同的任务，LLM 生成的执行序列也可能在步骤顺序、参数化方式等方面存在细微差异。这使得「精确匹配式复用」几乎不可行，必须引入语义层面的缓存与复用机制。
+
+### Insight 4：Skill 的关键约束缺乏强保证
+
+Skill 往往通过自然语言来描述运行前提（如「并行任务之间不能相互干扰」「操作需幂等」），但这些约束的落实完全依赖模型的内部推理，并没有系统级的强制保证。其安全风险是切实存在的。
+
+### Insight 5：环境依赖缺失导致大量额外 token 消耗
+
+约 45% 的 Skill 依赖 Shell 命令，31% 依赖 OS 接口，另有相当一部分依赖数据库和网络 API。当这些依赖缺失时，平均会产生**数万到数十万**个额外 token 的诊断开销——而这本是可以在系统层面提前解决的问题。
+
+### Insight 6：跨会话共享的 Skill 缺乏全局管理
+
+同一个 Skill（如「代码测试流程」）可能会在不同任务、不同时间段被反复调用，但当前 Agent 系统通常只能感知当前任务的上下文，无法进行跨会话的全局优化与管理。
+
+---
+
+## 核心提案：Skill OS
+
+基于上述洞察，论文提出了 **Skill OS** 的五大核心能力：
+
+### 1. 局部性利用（Skill Locality）
+
+通过语义缓存，Skill OS 可以识别并存储 Skill 执行轨迹中语义稳定的部分（如半确定性代码块、已解析的工具调用序列和中间结果），以便在后续调用中直接复用，而不是重新生成。
+
+可以类比为 CPU 缓存或操作系统的页面缓存。
+
+### 2. 执行环境构建（Execution Environment Construction）
+
+Skill OS 应当在 Skill 执行前**主动识别并预装**所需依赖，将依赖解析从「运行时模型推理」提升为「系统级提前准备」，从而彻底消除因依赖缺失而导致的大量额外 token 消耗。
+
+### 3. 全局 Skill 管理（Global Skill Management）
+
+由于 Skill OS 运行在高于任何单个 Agent 的特权层，因此它具备系统级视角，能够：
+- 追踪所有 Skill 的使用模式
+- 识别可跨任务共享的无状态 Skill
+- 隔离需要独立环境的 Skill
+- 对多 Agent 并发访问进行调度与去重
+
+### 4. 结构化故障处理（Structured Failure Handling）
+
+借鉴操作系统的异常处理机制（即内核拦截硬件异常 → 分类 → 恢复），Skill OS 应当：
+- 在系统层拦截并分类工具调用失败、API 错误
+- 在步骤边界维护**逻辑检查点**，支持回滚至最近安全点
+- 避免整个 Skill 从头重跑
+
+### 5. 运行时安全（Runtime Security）
+
+当前 Skill 的权限控制完全依赖 Prompt 文本描述与模型推理，本质上仍是一种「口头约束」。Skill OS 应当构建**策略引擎**，实现：
+- 基于 Skill/Agent/Session 粒度的细粒度访问控制
+- 在工具调用发生前进行权限校验（而非事后）
+- 最小权限原则：Skill 只能获取其声明所需的资源
+- 完整的操作审计日志
+
+---
+
+## 更宏观的视角：OS 与 App 边界的历史演进
+
+论文给出了一个精彩的历史类比：
+
+- **传统 PC 时代**：应用程序包揽一切，OS 只提供基础服务
+- **移动互联网时代（Android）**：平台变厚，应用变薄——存储、网络和认证能力都下沉到系统层
+- **Serverless 时代**：应用进一步简化为无状态函数，平台接管弹性伸缩与容错
+- **LLM Agent 时代（Skill OS）**：Skill 成为「意图的薄规约」，OS 负责执行、缓存、并发和恢复
+
+**OS 越来越厚，App 越来越薄。** Skill OS 是这条历史曲线在 AI 系统时代的自然延伸。
+
+---
+
+## 我的思考
+
+这篇论文本身的观察是有说服力的——近 10 万条数据支撑的实证分析表明，Skill 体系中存在的系统性问题是真实的、可测量的。
+
+但在读完之后，我有几个想法值得记录：
+
+**Skill OS 与 Agent Framework 的边界在哪里？** 论文区分了「格式层」（如 Agent Skills 规范、SKILL.md）、「检索编排层」（如 AgentSkillOS）和「执行层」（Skill OS），这一分层是清晰的。但实际上，LangGraph、AutoGen 这类框架已经在处理其中许多问题——缓存、错误处理、并发控制都有所涉及。Skill OS 究竟需要成为一个独立系统，还是更适合作为这些框架的一组最佳实践集合？
+
+**安全问题的复杂性被低估了。** 论文提出的「策略引擎」听起来很直接，但真正的挑战在于：如何形式化 Skill 的意图与实际工具调用之间的映射？自然语言的语义天然是模糊的，把安全策略建立在 Prompt 解析之上，本质上仍没有摆脱对模型推理的依赖。
+
+**「语义等价」的判断是个未解问题。** Insight 3 指出，同一任务的执行序列可能因模型随机性而不同，因此 Skill OS 需要语义级匹配来复用缓存。但如何定义并计算两个执行序列的「语义等价」？这本身就是一个开放性的研究问题，论文并未给出具体答案。
+
+---
+
+## 总结
+
+这是一篇观点鲜明、数据扎实的 Vision 论文。它的价值在于**提出了一个值得认真对待的系统抽象**，并用实证数据说明了为什么「把 Skill 当作 Prompt 来处理」是不够的。Skill OS 的完整实现仍有许多技术问题有待解决，但作为一个研究议程的框架，它已经足够清晰，也相当有说服力。
+
+如果你正在开发或使用 LLM Agent 工具链，这篇论文为思考「Skill 应当如何被系统化管理」提供了一个很好的起点。a:["$","$L1b",null,{"paper":{"slug":"skillos","title":"Skills Are the New Apps — 论 Skill OS 的必然崛起","originalTitle":"Skills Are the New Apps – Now It's Time for Skill OS","excerpt":"上海交大研究团队通过分析近 10 万条真实 Skill 数据，提出 Skill 已成为 LLM Agent 时代的新型「应用」，并由此引出一个新的系统抽象：Skill OS——一个将 Skill 作为一等执行实体进行管理的操作系统层。","date":"2026-03-30","coverImage":"$undefined","architectureImage":"/images/papers/skillos-architecture.png","featured":true,"draft":false,"authors":["Le Chen","Zichang Wang","Wenxin Zheng","Erhu Feng","Dong Du","Yubin Xia","Haibo Chen"],"year":2026,"venue":"Preprints.org","tags":["LLM Agent","操作系统","Skill","系统设计"],"doi":"10.20944/preprints202602.1096.v1","pdfUrl":"https://www.preprints.org/manuscript/202602.1096/v1","content":"$1c","headings":[{"id":"一句话总结","text":"一句话总结","level":2},{"id":"论文信息","text":"论文信息","level":2},{"id":"背景与动机","text":"背景与动机","level":2},{"id":"核心数据分析近-10-万条真实-skill-的画像","text":"核心数据分析：近 10 万条真实 Skill 的画像","level":2},{"id":"insight-1超过-50-的-skill-是过程式的","text":"Insight 1：超过 50% 的 Skill 是「过程式」的","level":3},{"id":"insight-2约-70-的-skill-包含半确定性代码块","text":"Insight 2：约 70% 的 Skill 包含「半确定性代码块」","level":3},{"id":"insight-3语义等价的-skill-在操作细节上可能不同","text":"Insight 3：语义等价的 Skill 在操作细节上可能不同","level":3},{"id":"insight-4skill-的关键约束缺乏强保证","text":"Insight 4：Skill 的关键约束缺乏强保证","level":3},{"id":"insight-5环境依赖缺失导致大量额外-token-消耗","text":"Insight 5：环境依赖缺失导致大量额外 token 消耗","level":3},{"id":"insight-6跨会话共享的-skill-缺乏全局管理","text":"Insight 6：跨会话共享的 Skill 缺乏全局管理","level":3},{"id":"核心提案skill-os","text":"核心提案：Skill OS","level":2},{"id":"1-局部性利用skill-locality","text":"1. 局部性利用（Skill Locality）","level":3},{"id":"2-执行环境构建execution-environment-construction","text":"2. 执行环境构建（Execution Environment Construction）","level":3},{"id":"3-全局-skill-管理global-skill-management","text":"3. 全局 Skill 管理（Global Skill Management）","level":3},{"id":"4-结构化故障处理structured-failure-handling","text":"4. 结构化故障处理（Structured Failure Handling）","level":3},{"id":"5-运行时安全runtime-security","text":"5. 运行时安全（Runtime Security）","level":3},{"id":"更宏观的视角os-与-app-边界的历史演进","text":"更宏观的视角：OS 与 App 边界的历史演进","level":2},{"id":"我的思考","text":"我的思考","level":2},{"id":"总结","text":"总结","level":2}],"readingTime":"8 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"Skills Are the New Apps — 论 Skill OS 的必然崛起 | 博客"}],["$","meta","1",{"name":"description","content":"上海交大研究团队通过分析近 10 万条真实 Skill 数据，提出 Skill 已成为 LLM Agent 时代的新型「应用」，并由此引出一个新的系统抽象：Skill OS——一个将 Skill 作为一等执行实体进行管理的操作系统层。"}],["$","meta","2",{"property":"og:title","content":"Skills Are the New Apps — 论 Skill OS 的必然崛起"}],["$","meta","3",{"property":"og:description","content":"上海交大研究团队通过分析近 10 万条真实 Skill 数据，提出 Skill 已成为 LLM Agent 时代的新型「应用」，并由此引出一个新的系统抽象：Skill OS——一个将 Skill 作为一等执行实体进行管理的操作系统层。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/amytis-style/papers/skillos/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"Skills Are the New Apps — 论 Skill OS 的必然崛起"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"Skills Are the New Apps — 论 Skill OS 的必然崛起"}],["$","meta","13",{"name":"twitter:description","content":"上海交大研究团队通过分析近 10 万条真实 Skill 数据，提出 Skill 已成为 LLM Agent 时代的新型「应用」，并由此引出一个新的系统抽象：Skill OS——一个将 Skill 作为一等执行实体进行管理的操作系统层。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
