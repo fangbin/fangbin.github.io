@@ -1,0 +1,219 @@
+1:"$Sreact.fragment"
+2:I[300055,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+14:I[966732,[],"default"]
+:HL["/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","style"]
+:HL["/amytis-style/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"XVUv4xjzJJyXFq_rMRzpi","c":["","papers","formalizing-agentic-ai-safety",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","formalizing-agentic-ai-safety","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/e79008c7f590051a.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11"],"$L12"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L13",false]],"m":"$undefined","G":["$14",[]],"S":true}
+15:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+16:"$Sreact.suspense"
+18:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+1a:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+11:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true,"nonce":"$undefined"}]
+12:["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]
+13:["$","$1","h",{"children":[null,["$","$L18",null,{"children":"$L19"}],["$","div",null,{"hidden":true,"children":["$","$L1a",null,{"children":["$","$16",null,{"name":"Next.Metadata","children":"$L1b"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1c:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+1d:T2471,## 论文概览
+
+本文要回答一个我思考已久的问题：当多个 AI 智能体通过网络协议协同工作时，我们如何能够确保整个系统的行为是可预测的、安全的、可靠的？
+
+作者来自罗马大学（Sapienza）和普渡大学，指出当前智能体间通信生态的一个根本性缺陷——**碎片化**。MCP（Model Context Protocol）和 A2A（Agent-to-Agent）协议被孤立分析，缺乏统一的语义层，导致架构错位、可利用的协调漏洞等风险长期存在。
+
+本文的核心贡献是提出一个**由两个形式化模型组成的建模框架**：
+
+1. **宿主智能体模型（Host Agent Model）**：形式化与用户交互的顶级实体，该实体分解任务并通过外部智能体和工具编排执行
+2. **任务生命周期模型（Task Lifecycle Model）**：详细描述子任务从创建到完成的状态与转换，提供细粒度的任务管理和错误处理视图
+
+> **原文链接**：[arXiv 2510.14133](https://arxiv.org/abs/2510.14133)
+
+## 核心创新
+
+### 创新点 1：首次为多智能体 AI 系统建立统一的语义框架
+
+过去的研究要么聚焦于 MCP（工具调用），要么聚焦于 A2A（智能体间通信），但没有人在**协议无关的层面**上形式化整个系统的行为模型。本文首次将两个协议纳入同一个语义框架中分析，指出它们之间存在的语义鸿沟：
+
+- **任务交接失败**：从 A2A 委托智能体到 MCP 调用智能体的任务转移容易失败（例如参数格式不兼容）
+- **不一致的状态管理**：没有统一视图，追踪多协议任务的状态变得不可靠
+
+### 创新点 2：30 个形式化属性的系统化定义
+
+在两个模型的基础上，论文定义了**16 个宿主智能体属性**和**14 个任务生命周期属性**，分为四类：
+
+- **活性（Liveness）**：确保系统最终取得进展
+- **安全性（Safety）**：确保智能体永远不会进入全局无效或有害状态
+- **完整性（Completeness）**：保证系统能找到有效的解决方案
+- **公平性（Fairness）**：确保所有外部操作最终终止
+
+所有属性均用**时序逻辑**（CTL/LTL）表达，使得形式化验证成为可能。
+
+### 创新点 3：案例研究验证对抗性攻击的防御点
+
+论文通过一个自动化金融规划器场景，展示了 4 个控制点如何协同防御：
+
+- **宿主智能体核心（HAC）**：意图澄清阶段作为提示注入攻击的守卫
+- **注册表（Registry）**：作为信任锚，缓解供应链风险
+- **编排器（Orchestrator）**：运行时监控委托依赖 DAG
+- **通信层（CL）**：零信任架构，每条调用需要可验证身份
+
+## 方法论详解
+
+### 宿主智能体模型
+
+宿主智能体模型 $\mathcal{H}$ 是一个七元组：
+
+$$
+\mathcal{H} = (\mathcal{A}, \mathcal{E}, \mathcal{T}, \mathcal{R}, \mathcal{C}, \mathcal{O}, \mathcal{C}_L, \mathcal{S}_{\mathcal{H}})
+$$
+
+其中每个组件都有明确的语义：
+
+| 组件 | 定义 | 作用 |
+|------|------|------|
+| $\mathcal{A}$ | 自主智能体集合 | A2A 协议中的服务器节点 |
+| $\mathcal{E}$ | 外部实体集合 | 包括功能工具（MCP）和 $\mathcal{A}$ |
+| $\mathcal{R}$ | 注册表 | 维护外部实体到能力配置文件的映射 |
+| $\mathcal{C}$ | 宿主智能体核心（HAC） | 负责意图解析：$\mathcal{C}: Req_U \times \mathcal{S}_{SM} \to \mathcal{I}_U$ |
+| $\mathcal{O}$ | 编排器 | 任务分解与聚合：$\mathcal{O}_{decomp}: \mathcal{I}_U \times \mathcal{R}(\mathcal{E}) \to \mathcal{D}$ |
+| $\mathcal{C}_L$ | 通信层 | 协议无关的安全交互：$\mathsf{CL.invoke}(EE, prot, payload) \to resp$ |
+
+核心执行流程：
+
+```python
+# 宿主智能体执行序列
+def execute(user_request: Req_U):
+    # 1. 意图解析
+    intent = hac.interpret(user_request)
+
+    # 2. 任务分解：LLM 构建 DAG
+    dag = orchestrator.build_task_dag(intent, registry.discover())
+
+    # 3. 分布式执行
+    for sub_task in dag.topological_order():
+        if sub_task.protocol == "A2A":
+            result = cl.invoke_a2a(sub_task.agent, sub_task.payload)
+        else:  # MCP
+            result = cl.invoke_mcp(sub_task.tool, sub_task.payload)
+
+    # 4. 结果聚合
+    return orchestrator.aggregate(results)
+```
+
+### 任务生命周期模型
+
+任务生命周期模型 $\mathcal{L}$ 是一个有限状态机，定义了子任务从创建到终止的完整轨迹：
+
+$$
+\mathcal{L} = (\mathcal{S}_t, s_0, \mathcal{E}_t, \delta)
+$$
+
+**状态空间** $\mathcal{S}_t$ 包含 11 种状态：
+
+```
+CREATED → AWAITING_DEPENDENCY → READY → DISPATCHING → IN_PROGRESS
+                                              ↓
+                                     COMPLETED / FAILED
+                                              ↓
+                                 RETRY_SCHEDULED / FALLBACK_SELECTED
+                                              ↓
+                                 ERROR / CANCELED (terminal)
+```
+
+**关键状态约束**（以 CTL 公式表达）：
+
+- **TL₇**（进入 DISPATCHING 的合法性）：
+$$AG(state=DISPATCHING \to previous\_state \in \{READY, FALLBACK\_SELECTED, RETRY\_SCHEDULED\})$$
+
+- **TL₉**（ERROR 状态不可逆）：
+$$AG((state=ERROR) \to AX(state=ERROR))$$
+
+- **TL₁₂**（无回退的 FAILED 转换路径）：
+$$AG((state=FAILED \land \neg has\_fallbacks) \to AX(state \in \{RETRY, ERROR, CANCELED\}))$$
+
+这些约束共同确保了任务在任意状态下的转换都是合法且可追踪的。
+
+![宿主智能体架构图](/images/papers/formalizing-agentic-ai-safety/architecture.png)
+
+*图 1：宿主智能体模型的核心组件与数据流向*
+
+![任务生命周期状态机](/images/papers/formalizing-agentic-ai-safety/lifecycle.png)
+
+*图 2：任务生命周期模型的 11 种状态及转换关系*
+
+## 关键属性分类
+
+### 宿主智能体属性（16 个）
+
+**活性属性（HP₁–HP₆）**确保系统最终完成工作：
+
+- HP₁：每个用户提示最终收到宿主智能体的响应
+- HP₂：HAC 最终澄清每个用户提示的意图
+- HP₃：意图澄清后，LLM 最终构建任务 DAG
+- HP₄：任务 DAG 中所有子任务最终被调用
+- HP₅：每个被调用的子任务最终产生结果
+- HP₆：所有子任务结果最终被编排器聚合
+
+**安全性属性（HP₇–HP₁₁）**防止非法行为：
+
+- HP₇：任务 DAG 仅在实体被注册表发现后才构建
+- HP₈：子任务仅在 DAG 明确包含时才被调用
+- HP₉：任务调用以 EE 完成系统预定义验证为条件
+- HP₁₀：子任务仅在无未完成依赖时才被调用
+- HP₁₁：宿主智能体响应仅在所有子任务调用后才返回
+
+### 任务生命周期属性（14 个）
+
+**活性属性（TL₁–TL₆）**确保任务推进：
+
+- TL₁：每个 CREATED 子任务最终终止于 COMPLETED/ERROR/CANCELED
+- TL₅：子任务不能无限期停留在 AWAITING DEPENDENCY
+- TL₆：依赖满足的 AWAITING DEPENDENCY 最终转换到 READY
+
+**安全性属性（TL₇–TL₁₁）**确保状态转换合法：
+
+- TL₈：子任务仅在先前状态为 IN PROGRESS 时才能进入 COMPLETED
+- TL₁₀：子任务仅在其先前状态为 FAILED 时才能进入 RETRY SCHEDULED
+
+## 启示与思考
+
+读完这篇论文，我有几个感受。
+
+第一，这项工作填补了一个我之前没有清晰意识到的空白。我一直在关注单个智能体的安全问题（提示注入、越狱），但忽略了**多智能体协作层面**的系统性风险。当一个智能体可以委托另一个智能体，而后者又调用外部工具时，攻击面是指数级增长的。这篇论文让我意识到，协议碎片化本身就是一种安全风险——不是某个协议有漏洞，而是协议之间缺乏统一的语义层。
+
+第二，我对作者选择的时序逻辑框架感到信服。CTL/LTL 是成熟的模型检测工具（如 NuSMV、UPPAAL）所支持的语言，这意味着论文中定义的 30 个属性**可以直接被形式化验证工具检查**。这不是一篇纯理论论文——它为工程实践铺设了坚实的桥梁。
+
+第三，论文的局限性也值得注意。目前的属性是**规范层面的**（描述"应该"怎样），而不是**实现层面的**（检查"实际"系统是否满足）。作者在结论中提到未来将从代码自动导出形式化模型，这是一个更有挑战性的方向——静态分析 LLM 生成的任务 DAG 可不比模型检测简单。
+
+最后，我想说，这篇论文的工作量是惊人的——系统性地定义了 30 个属性，覆盖两个协议、两个模型、四类属性维度。这不是一个简单的工作，而是一个真正为领域奠定基础的框架性研究。对于任何正在构建多智能体系统的人来说，这是一篇必读论文。
+
+## 参考资源
+
+- **原文**：[arXiv 2510.14133v2](https://arxiv.org/abs/2510.14133)
+- **MCP 协议**：[Model Context Protocol (Anthropic)](https://modelcontextprotocol.io/)
+- **A2A 协议**：[Agent-to-Agent Protocol (Google Cloud)](https://googlecloud.github.io/gapic-generator-python/a2a/)
+- **OWASP AgentAI 安全风险 Top 10**：[链接](https://owasp.org/www-project/agentic-ai-security-risks-top-10/)
+
+---
+
+**标签**：#AI解读 #Agent架构设计 #形式化验证 #多智能体系统 #AI安全a:["$","$L1c",null,{"paper":{"slug":"formalizing-agentic-ai-safety","title":"形式化智能体AI系统的安全性与功能性属性","originalTitle":"Formalizing the Safety, Security, and Functional Properties of Agentic AI Systems","excerpt":"本文针对当前 AI 智能体协议碎片化问题，提出宿主智能体模型与任务生命周期模型，为多 AI 智能体系统提供统一的语义框架，并形式化定义了 30 个关键属性（16 个宿主智能体属性 + 14 个任务生命周期属性），涵盖活性、安全性、完整性与公平性四大类别。","date":"2026-04-18","coverImage":"$undefined","architectureImage":"$undefined","featured":false,"draft":false,"authors":["Edoardo Allegrini","Ananth Shreekumar","Z. Berkay Celik"],"year":2026,"venue":"arXiv","tags":["AI解读","Agent 架构设计","形式化验证","多智能体系统","AI安全"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1d","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"创新点-1首次为多智能体-ai-系统建立统一的语义框架","text":"创新点 1：首次为多智能体 AI 系统建立统一的语义框架","level":3},{"id":"创新点-230-个形式化属性的系统化定义","text":"创新点 2：30 个形式化属性的系统化定义","level":3},{"id":"创新点-3案例研究验证对抗性攻击的防御点","text":"创新点 3：案例研究验证对抗性攻击的防御点","level":3},{"id":"方法论详解","text":"方法论详解","level":2},{"id":"宿主智能体模型","text":"宿主智能体模型","level":3},{"id":"任务生命周期模型","text":"任务生命周期模型","level":3},{"id":"关键属性分类","text":"关键属性分类","level":2},{"id":"宿主智能体属性16-个","text":"宿主智能体属性（16 个）","level":3},{"id":"任务生命周期属性14-个","text":"任务生命周期属性（14 个）","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"8 min read"}}]
+19:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1e:I[491142,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+17:null
+1b:[["$","title","0",{"children":"形式化智能体AI系统的安全性与功能性属性 | 博客"}],["$","meta","1",{"name":"description","content":"本文针对当前 AI 智能体协议碎片化问题，提出宿主智能体模型与任务生命周期模型，为多 AI 智能体系统提供统一的语义框架，并形式化定义了 30 个关键属性（16 个宿主智能体属性 + 14 个任务生命周期属性），涵盖活性、安全性、完整性与公平性四大类别。"}],["$","meta","2",{"property":"og:title","content":"形式化智能体AI系统的安全性与功能性属性"}],["$","meta","3",{"property":"og:description","content":"本文针对当前 AI 智能体协议碎片化问题，提出宿主智能体模型与任务生命周期模型，为多 AI 智能体系统提供统一的语义框架，并形式化定义了 30 个关键属性（16 个宿主智能体属性 + 14 个任务生命周期属性），涵盖活性、安全性、完整性与公平性四大类别。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/amytis-style/papers/formalizing-agentic-ai-safety/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"形式化智能体AI系统的安全性与功能性属性"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"形式化智能体AI系统的安全性与功能性属性"}],["$","meta","13",{"name":"twitter:description","content":"本文针对当前 AI 智能体协议碎片化问题，提出宿主智能体模型与任务生命周期模型，为多 AI 智能体系统提供统一的语义框架，并形式化定义了 30 个关键属性（16 个宿主智能体属性 + 14 个任务生命周期属性），涵盖活性、安全性、完整性与公平性四大类别。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1e","16",{}]]
