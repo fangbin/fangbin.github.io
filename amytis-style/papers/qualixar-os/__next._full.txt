@@ -1,0 +1,232 @@
+1:"$Sreact.fragment"
+2:I[300055,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","style"]
+:HL["/amytis-style/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/amytis-style/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"_-aqw-dFIV4xHJRTW1QFV","c":["","papers","qualixar-os",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","qualixar-os","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/amytis-style/_next/static/chunks/9e943cc96c3237f8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/e79008c7f590051a.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/amytis-style/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/amytis-style/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/amytis-style/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/amytis-style/_next/static/chunks/7c88363978358c88.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/amytis-style/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/amytis-style/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/amytis-style/_next/static/chunks/e79008c7f590051a.js","/amytis-style/_next/static/chunks/aef63fa2037c1212.js","/amytis-style/_next/static/chunks/41517dddc5bf1f98.js","/amytis-style/_next/static/chunks/b555f15d2fc972d9.js","/amytis-style/_next/static/chunks/d219943f0c38e436.js","/amytis-style/_next/static/chunks/53b4e4ee47441a7b.js","/amytis-style/_next/static/chunks/677eab8f02355603.js","/amytis-style/_next/static/chunks/0ada055b956424bd.js","/amytis-style/_next/static/chunks/8d4627ce3cb2dd7d.js","/amytis-style/_next/static/chunks/7c88363978358c88.js","/amytis-style/_next/static/chunks/c4349fc3c4c7cffb.js","/amytis-style/_next/static/chunks/e6304cd10ee4e15d.js","/amytis-style/_next/static/chunks/d84f551a534a34f9.js","/amytis-style/_next/static/chunks/e35730516b96fe21.js","/amytis-style/_next/static/chunks/af9e8b20679ca4b8.js"],"default"]
+1c:T2aa2,> **原始标题**：Qualixar OS: A Universal Operating System for AI Agent Orchestration
+> **作者**：Varun Pratap Bhardwaj（独立研究者，Solution Architect，印度）
+> **发表**：arXiv 2604.06392，2026
+> **原文**：[PDF 链接](https://arxiv.org/pdf/2604.06392) | [GitHub](https://github.com/qualixar/qualixar-os)
+
+## 论文概览
+
+AI Agent 生态正在变得像 20 世纪 90 年代的编程语言战场——AutoGen、CrewAI、MetaGPT、LangGraph 各有一套 agent 定义、执行模型和工具链，一个框架里写的 agent 没法直接跑在另一个框架里。更要命的是，这些框架都不提供成本追踪、质量保证或者管理仪表板。
+
+Qualixar OS 的核心论点是：**AI Agent 生态需要的是一个操作系统，而不是又一个框架**。就像 Linux 为应用程序提供通用运行时（不管用啥语言），agent OS 也应该为编排提供通用运行时（不管用啥框架）。这不是在底层做资源调度——那是 AIOS 在 COLM 2025 的工作。Qualixar OS 走的是**应用层路线**，专注于编排原语、用户体验和生态兼容性。
+
+## 核心创新
+
+1. **12 种多 Agent 拓扑执行语义**：从顺序链、DAG、网格到森林、Maker 模式，定义了最完整的开源拓扑集合
+2. **Forge：LLM 驱动的团队设计引擎**：根据自然语言任务描述自动生成完整的 agent 团队，包含角色分配、拓扑选择、工具挂载和模型分配
+3. **三层模型路由**：结合 Q-learning 元学习、5 种路由策略和 Bayesian POMDP，在 10 个提供商中动态选择最优模型
+4. **8 模块质量保障管道**：包括共识判断、Goodhart 检测、漂移监控、三难困境逃生舱和行为契约
+5. **四层内容归属系统**：可见署名、HMAC 签名、隐写水印和区块链时间戳
+6. **通用兼容性**：Claw Bridge 支持导入 OpenClaw、NemoClaw、DeerFlow、GitAgent 四种格式，原生支持 MCP 和 A2A 协议
+
+## 方法论详解
+
+### 系统架构：六层结构
+
+Qualixar OS 采用六层架构设计：
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Presentation Layer: 24-Tab React Dashboard            │
+├─────────────────────────────────────────────────────────┤
+│  Transport Layer: HTTP/MCP/CLI/WebSocket/Discord...    │
+├─────────────────────────────────────────────────────────┤
+│  Orchestration Layer: 12-Step Pipeline                 │
+│  (Forge → Swarm → Judge → Router → RL → Cost)          │
+├─────────────────────────────────────────────────────────┤
+│  Execution Layer: SwarmEngine + Agent Registry          │
+│  (12 Topologies, 5-State Lifecycle)                    │
+├─────────────────────────────────────────────────────────┤
+│  Infrastructure: SLM-Lite | Tool Registry | Claw Bridge │
+├─────────────────────────────────────────────────────────┤
+│  Persistence: SQLite (49 tables, FTS5, Event Sourcing)  │
+└─────────────────────────────────────────────────────────┘
+```
+
+### 12 步编排管道
+
+每个任务都经过 12 步管道处理：
+
+1. **Initialize**：预算检查、任务注册、转向设置
+2. **Memory Injection**：通过 `autoInvoke()` 注入 SLM-Lite 上下文
+3. **Forge Design**：自动团队组合
+4. **Simulation**：可选的预执行模拟（仅 Power 模式）
+5. **Security Validation**：策略评估
+6. **Swarm Execution**：按拓扑分发 agent
+7. **Judge Assessment**：多标准质量评估
+8. **Redesign Loop**：拒绝时返回步骤 3（最多 5 次迭代）
+9. **RL Learning**：记录复合奖励信号
+10. **Behavior Capture**：存储 per-agent 行为模式
+11. **Output Formatting**：结果组装和持久化
+12. **Finalize**：数据库更新、事件发送、检查点清理
+
+### 三层模型路由
+
+三层路由架构实现了智能模型选择：
+
+**Meta-Layer**：ε-贪心上下文 bandit，选择最优**路由策略**
+- 状态编码：`taskTypeHash_modelCountBucket_budgetClass`
+- Q 表持久化到 SQLite
+
+**Strategy Layer**：5 种路由策略
+- **Cascade**：按质量降序尝试模型
+- **Cheapest**：选择满足质量阈值的最低成本模型
+- **Quality**：选择最高质量分数
+- **Balanced**：质量和成本加权组合
+- **POMDP**：贝叶斯信念状态模型选择
+
+**Belief Layer**：POMDP 维护三个隐藏状态的信念分布（低/中/高质量上下文）
+
+![Qualixar OS 系统架构图](/images/papers/qualixar-os/architecture.png)
+
+## 12 种拓扑详解
+
+| # | 拓扑 | 执行语义 | 终止条件 |
+|---|------|----------|----------|
+| 1 | Sequential | 链式 A→B→C | 最后一个 agent 完成 |
+| 2 | Parallel | Promise.allSettled | 全部完成 |
+| 3 | Hierarchical | 经理分解→工人→合并 | 经理批准 |
+| 4 | DAG | 拓扑排序、层级并行 | 所有叶子节点完成 |
+| 5 | Mixture | N-1 生成器→1 聚合器 | 聚合器完成 |
+| 6 | Debate | 提议者-批评者轮次 | 共识或最大轮次 |
+| 7 | Mesh | 全对全广播 | 无新消息或最大轮次 |
+| 8 | Star | Hub→Spokes→Hub | Hub 声明完成 |
+| 9 | Circular | 环状传递 | 稳定输出或最大轮次 |
+| 10 | Grid | 2D 矩阵，4 邻域迭代 | 所有格子稳定或最大轮次 |
+| 11 | Forest | 多树递归子→父合成 | 所有根完成 |
+| 12 | Maker | 提议→投票（≥66% 通过） | 投票通过或最大轮次 |
+
+### 创新拓扑
+
+**Grid（网格）拓扑**：Agent 排列成 2D 矩阵，根据 4 邻域上下文迭代精炼输出——类似细胞自动机动态应用于 LLM 推理。
+
+**Maker（创客）拓扑**：灵感来自民主决策，提议 agent 生成方案，投票 agent 用结构化 JSON 反馈评估（approved/rejected + 反馈文本），直到达到可配置多数阈值（默认 66%）。
+
+## 质量保障管道
+
+8 模块评估栈是 Qualixar OS 的核心技术亮点之一：
+
+### 共识判断管道
+
+4 种内置评估配置：Default、Code、Research、Creative，每种有不同权重。
+
+3 种共识算法：
+- **加权多数**：按模型能力层级加权
+- **BFT 风格**：要求 ⌊2n/3⌋+1 同意
+- **Raft 风格**：首个判断者作为 leader
+
+### Goodhart 检测
+
+Goodhart 定律——「当一个指标变成目标，它就不再是好指标」——对 LLM-as-Judge 系统构成直接威胁。Qualixar OS 监控 4 个信号：
+
+1. **跨模型熵**：相同输出在不同判断模型上得分高度分歧时触发
+2. **校准增量**：自报置信度和观察准确度之间的差距
+3. **分数通胀**：判断分数超过 RL 奖励模型预测的改进率
+4. **多样性崩溃**：检测重设计团队是否收敛到狭窄的「讨好判断者」配置
+
+### 漂移监控
+
+使用 Jensen-Shannon 散度追踪判断可靠性：
+
+$$JSD(P_0 \| P_t) = \frac{1}{2} D_{KL}(P_0 \| M) + \frac{1}{2} D_{KL}(P_t \| M)$$
+
+阈值 $\Theta = 0.877$，超过此值时触发干预。
+
+### 自进化三难困境
+
+Chen et al. 证明：没有对齐方法能同时实现强优化、完美价值捕获和鲁棒泛化。Qualixar OS 实现了 4 个逃生舱：
+
+1. **有界改进**：RL 奖励信号有上限（∆Q ≤ 0.15/次迭代）
+2. **安全防火墙**：安全策略评估在自改进循环**外部**
+3. **对齐锚定**：判断配置冻结在显式人工批准之间
+4. **人工升级**：5 次迭代或 3× 预算后升级人工审查
+
+## 实验与结果
+
+### 系统规模
+
+| 指标 | 值 |
+|------|-----|
+| 源文件 (.ts + .tsx) | 150+ |
+| 测试用例 | 2,821 |
+| 数据库表 | 49 (+1 FTS5) |
+| API 端点 | 60+ |
+| 仪表板标签页 | 24 |
+| 事件类型 | 217 |
+| 支持拓扑 | 12 |
+| 支持提供商 | 10 |
+| 实时发现模型 | 236 (Azure AI Foundry) |
+| 通信通道 | 7 |
+| Marketplace 条目 | 25 |
+
+### 评估结果
+
+在自定义 20 任务评估套件上，使用 GPT-5.4-mini 达到 **100% 准确率**，每任务平均成本仅 **$0.000039**。
+
+![实验结果对比](/images/papers/qualixar-os/results.png)
+
+### 与现有系统对比
+
+| 特性 | AIOS | AutoGen | CrewAI | LangGraph | Qualixar OS |
+|------|------|---------|--------|-----------|-------------|
+| 拓扑数量 | N/A | 2 | 2 | 1 | **12** |
+| 自动团队设计 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| 成本路由 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| 模型发现 | ✗ | ✗ | ✗ | ✗ | **10 提供商** |
+| 质量判断 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| Goodhart 检测 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| 漂移监控 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| 行为契约 | ✗ | ✗ | ✗ | ✗ | **✓** |
+| 仪表板 | ✗ | ✗ | ✗ | ✗ | **24 标签页** |
+| Marketplace | ✗ | ✗ | ✗ | ✗ | **25 条目** |
+
+## 启示与思考
+
+我觉得这 paper 最有意思的地方在于它提出的「**通用 Type-C 原则**」——就像 USB Type-C 统一了充电、数据和视频，一个 agent OS 也应该用单一命令协议统一 CLI、MCP、HTTP、WebSocket 和 Docker 的交互方式。这听起来像是一个工程上的常识，但把它形式化成一个设计原则还是很有启发性的。
+
+不过我也有些保留意见。首先，论文承认自改进循环的基准测试**没有显示统计显著收敛**（p = 0.578），这是一个诚实但令人失望的结果。其次，100% 的评估准确率来自一个精心策划的 20 任务套件，并不包括网页浏览、文件操作或多工具编排——这意味着在实际复杂场景中的表现还有待验证。
+
+最后，论文作者其实是同一个人写了 AgentAssert、AgentAssay、SkillFortify、SuperLocalMemory v2/v3 和 Qualixar OS 六篇论文——这是一个相当有个人风格的研究项目，贡献了非常完整的技术栈，但也让人好奇这些工作之间的独立验证情况。
+
+无论如何，Qualixar OS 在**多框架兼容性**和**生产就绪度**上的努力值得肯定。如果你想在一个统一的系统里同时跑 AutoGen、CrewAI 和 LangGraph 的 agent，它可能是目前最好的选择。
+
+## 参考资源
+
+- [Qualixar OS 论文 (arXiv)](https://arxiv.org/pdf/2604.06392)
+- [GitHub 仓库](https://github.com/qualixar/qualixar-os)
+- [DOI: 10.5281/zenodo.19454219](https://doi.org/10.5281/zenodo.19454219)a:["$","$L1b",null,{"paper":{"slug":"qualixar-os","title":"Qualixar OS：AI Agent 编排的通用操作系统","originalTitle":"Qualixar OS: A Universal Operating System for AI Agent Orchestration","excerpt":"首个为 AI Agent 编排构建的应用层操作系统，支持 12 种多 Agent 拓扑、10 个 LLM 提供商、8+ 框架，集成质量保障管道、成本路由和 24 标签页仪表板。","date":"2026-04-21","coverImage":"$undefined","architectureImage":"$undefined","featured":false,"draft":false,"authors":["Varun Pratap Bhardwaj"],"year":2026,"venue":"arXiv","tags":["AI解读","Agent架构设计","多Agent系统","LLM操作系统"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论详解","text":"方法论详解","level":2},{"id":"系统架构六层结构","text":"系统架构：六层结构","level":3},{"id":"12-步编排管道","text":"12 步编排管道","level":3},{"id":"三层模型路由","text":"三层模型路由","level":3},{"id":"12-种拓扑详解","text":"12 种拓扑详解","level":2},{"id":"创新拓扑","text":"创新拓扑","level":3},{"id":"质量保障管道","text":"质量保障管道","level":2},{"id":"共识判断管道","text":"共识判断管道","level":3},{"id":"goodhart-检测","text":"Goodhart 检测","level":3},{"id":"漂移监控","text":"漂移监控","level":3},{"id":"自进化三难困境","text":"自进化三难困境","level":3},{"id":"实验与结果","text":"实验与结果","level":2},{"id":"系统规模","text":"系统规模","level":3},{"id":"评估结果","text":"评估结果","level":3},{"id":"与现有系统对比","text":"与现有系统对比","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考资源","text":"参考资源","level":2}],"readingTime":"8 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/amytis-style/_next/static/chunks/655a359a8659a84f.js","/amytis-style/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"Qualixar OS：AI Agent 编排的通用操作系统 | 博客"}],["$","meta","1",{"name":"description","content":"首个为 AI Agent 编排构建的应用层操作系统，支持 12 种多 Agent 拓扑、10 个 LLM 提供商、8+ 框架，集成质量保障管道、成本路由和 24 标签页仪表板。"}],["$","meta","2",{"property":"og:title","content":"Qualixar OS：AI Agent 编排的通用操作系统"}],["$","meta","3",{"property":"og:description","content":"首个为 AI Agent 编排构建的应用层操作系统，支持 12 种多 Agent 拓扑、10 个 LLM 提供商、8+ 框架，集成质量保障管道、成本路由和 24 标签页仪表板。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/amytis-style/papers/qualixar-os/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"Qualixar OS：AI Agent 编排的通用操作系统"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"Qualixar OS：AI Agent 编排的通用操作系统"}],["$","meta","13",{"name":"twitter:description","content":"首个为 AI Agent 编排构建的应用层操作系统，支持 12 种多 Agent 拓扑、10 个 LLM 提供商、8+ 框架，集成质量保障管道、成本路由和 24 标签页仪表板。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/amytis-style/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
