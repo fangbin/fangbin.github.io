@@ -9,10 +9,18 @@
 
       <ul class="nav-links">
         {% if page.lang == 'en' %}
-        <li><a href="{{ '/index-en.html' | relative_url }}" class="active">Home</a></li>
+        <li><a href="{{ '/index-en.html' | relative_url }}"{% if page.url == '/index-en.html' %} class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/index-en.html' | relative_url }}#about">About Me</a></li>
+        <li><a href="{{ '/index-en.html' | relative_url }}#experience">Experiences</a></li>
+        <li><a href="{{ '/index-en.html' | relative_url }}#publications">Publications</a></li>
+        <li><a href="{{ '/index-en.html' | relative_url }}#projects">Projects</a></li>
         <li><a href="{{ '/amytis-style/' | relative_url }}">Blog</a></li>
         {% else %}
         <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>首页</a></li>
+        <li><a href="{{ '/' | relative_url }}#about">关于我</a></li>
+        <li><a href="{{ '/' | relative_url }}#experience">经历</a></li>
+        <li><a href="{{ '/' | relative_url }}#publications">论文</a></li>
+        <li><a href="{{ '/' | relative_url }}#projects">项目</a></li>
         <li><a href="{{ '/amytis-style/' | relative_url }}">博客</a></li>
         {% endif %}
         <li class="lang-switcher">
