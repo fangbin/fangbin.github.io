@@ -1,8 +1,8 @@
 # Site settings
 title: 个人主页
-description: 个人学术主页 - 研究与思考
-author: Your Name
-email: your.email@example.com
+description: Bin Fang - Research Engineer, Formal Verification & AI Safety
+author: Bin Fang
+email: contact@fangbin.dev
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
@@ -33,20 +33,20 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Bin Fang"
   - scope:
       path: ""
       type: "tech"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Bin Fang"
       category: "技术博客"
   - scope:
       path: ""
       type: "essays"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Bin Fang"
       category: "随笔杂文"
   - scope:
       path: ""

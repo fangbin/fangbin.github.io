@@ -1,11 +1,23 @@
 # 发表论文列表
 
+- title: "Enabling Semantic Evolutionary Analysis of Application via High-Precision Binary Diffing"
+  authors: "Bin Fang et al."
+  journal: "Under Submission"
+  year: 2026
+  tags: ["binary analysis", "semantic diffing"]
+
+- title: "AgentVerify: Compositional Formal Verification of AI Agent Safety Properties via LTL Model Checking"
+  authors: "Bin Fang et al."
+  journal: "Preprint"
+  year: 2025
+  tags: ["AI safety", "formal verification", "agent"]
+
 - title: "Affine Loop Invariant Generation via Matrix Algebra"
   authors: "Yucheng Ji, Hongfei Fu, Bin Fang, Haibo Chen"
   journal: "The 34th International Conference on Computer Aided Verification (CAV)"
   year: 2022
-  venue: "The Technion, Haifa, Israel"
-  tags: ["程序验证", "循环不变式"]
+  venue: "Haifa, Israel"
+  tags: ["program verification", "loop invariant"]
 
 - title: "Formal modelling of list based dynamic memory allocators"
   authors: "Bin Fang, Mihaela Sighireanu, Geguang Pu, Wen Su, Jean-Raymond Abrial, Mengfei Yang, Lei Qiao"
@@ -13,37 +25,37 @@
   year: 2018
   volume: "61(12)"
   pages: "122103:1--122103:16"
-  tags: ["形式化方法", "内存分配"]
+  tags: ["formal methods", "memory allocation"]
 
 - title: "A refinement hierarchy for free list memory allocators"
   authors: "Bin Fang, Mihaela Sighireanu"
-  journal: "Proceedings of ACM SIGPLAN International Symposium on Memory Management (ISMM)"
+  journal: "ACM SIGPLAN International Symposium on Memory Management (ISMM)"
   year: 2017
   publisher: "IEEE"
-  tags: ["内存管理", "精化层次"]
+  tags: ["memory management", "refinement"]
 
 - title: "Hierarchical Shape Abstraction for Analysis of Free List Memory Allocators"
   authors: "Bin Fang, Mihaela Sighireanu"
-  journal: "Proceedings of International Symposium on Logic-Based Program Synthesis and Transformation (LOPSTR)"
+  journal: "International Symposium on Logic-Based Program Synthesis and Transformation (LOPSTR)"
   year: 2016
   volume: "LNCS 10184"
   publisher: "Springer"
-  tags: ["程序分析", "形状抽象"]
+  tags: ["program analysis", "shape abstraction"]
 
 - title: "Formal Development of a Real-Time Operating System Memory Manager"
   authors: "Wen Su, Jean-Raymond Abrial, Geguang Pu, Bin Fang"
-  journal: "20th International Conference on Engineering of Complex Computer Systems (ICECCS)"
+  journal: "International Conference on Engineering of Complex Computer Systems (ICECCS)"
   year: 2015
-  tags: ["形式化方法", "实时操作系统", "内存管理"]
+  tags: ["formal methods", "RTOS"]
 
 - title: "Automated Coverage-Driven Test Data Generation Using Dynamic Symbolic Execution"
   authors: "Ting Su, Siyuan Jiang, Geguang Pu, Bin Fang, Jifeng He, Jun Yan, Jianjun Zhao"
-  journal: "8th International Conference on Software Security and Reliability (SERE)"
+  journal: "International Conference on Software Security and Reliability (SERE)"
   year: 2014
-  tags: ["符号执行", "测试生成"]
+  tags: ["symbolic execution", "test generation"]
 
 - title: "Runtime Verification by Convergent Formula Progression"
   authors: "Yan Shen, Jianwen Li, Zheng Wang, Ting Su, Bin Fang, Geguang Pu, Wangwei Liu"
-  journal: "21st Asia-Pacific Software Engineering Conference (APSEC)"
+  journal: "Asia-Pacific Software Engineering Conference (APSEC)"
   year: 2014
-  tags: ["运行时验证", "公式推进"]
+  tags: ["runtime verification"]

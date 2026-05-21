@@ -1,0 +1,28 @@
+# Projects
+- title: "AI-Assisted R&D"
+  period: "2025 - Present"
+  description: "Exploring Formal Specification guided AI-assisted software development paradigm"
+
+- title: "AI Safety"
+  period: "2025 - Present"
+  description: "Exploring Agent safety mechanisms including dynamic permission control and runtime security"
+
+- title: "HarmonyOS Kernel/TEE Formal Verification"
+  period: "2019 - Present"
+  role: "Project Manager · Architect · SE"
+  description: "Large-scale automated formal verification for OS kernels. Developed verification tools and program analysis platforms. Published at CAV. Presented at Huawei HDC Keynote"
+
+- title: "HarmonyOS Kernel EAL5+/EAL6+ Security Certification"
+  period: "2018 - 2021"
+  role: "Project Manager · Security Engineer · Formal SE"
+  description: "Led formal verification engineering for CC EAL5+ and EAL6+ certification. Built formal proof platform evaluated by European certification body. Enabled HarmonyOS to achieve first commercial OS CCEAL6+ certification"
+
+- title: "HarmonyOS Kernel ISO 26262 Functional Safety Certification"
+  period: "2019 - 2020"
+  role: "Project Manager · Safety Manager · TUV Certified Safety Engineer"
+  description: "Managed end-to-end functional safety certification. Established ISO 26262 software product certification process. Achieved ASIL-D certification"
+
+- title: "Program Analysis & RTOS Formal Verification"
+  period: "2013 - 2018"
+  role: "Core Developer"
+  description: "Developed static analysis tools based on abstract interpretation (heap-manipulating programs, pointer arithmetic, memory safety). Participated in RTOS formal verification in collaboration with J.-R. Abrial (European Academy of Sciences)"

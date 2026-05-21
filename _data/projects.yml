@@ -1,0 +1,28 @@
+# 项目经历
+- title: "AI 辅助研发研究"
+  period: "2025 - 至今"
+  description: "探索形式化规约（Formal Spec）引导的 AI 辅助研发范式"
+
+- title: "AI 安全项目"
+  period: "2025 - 至今"
+  description: "探索 Agent 安全机制，包括动态权限管控、Agent 行为运行时安全等技术"
+
+- title: "鸿蒙内核/TEE 形式化验证"
+  period: "2019 - 至今"
+  role: "项目经理 · 架构师 · SE"
+  description: "探索大规模代码自动化形式化验证技术，开发形式化验证工具和程序分析平台，加固基础软件安全。部分技术发表于 CAV，成果上华为 HDC 发布会 KN"
+
+- title: "鸿蒙内核 EAL5+/6+ 信息安全认证"
+  period: "2018 - 2021"
+  role: "项目经理 · 安全工程师 · 形式化技术 SE"
+  description: "主导鸿蒙内核 CC EAL5+ 和 EAL6+ 信息安全认证形式化验证工程，开发形式化证明平台，通过欧洲认证机构评估。支持鸿蒙内核获得 CCEAL6+ 首个商用 OS 类产品认证，成果上手机发布会 KN"
+
+- title: "鸿蒙内核 ISO 26262 功能安全认证"
+  period: "2019 - 2020"
+  role: "项目经理 · Safety Manager · TUV 认证安全工程师"
+  description: "负责鸿蒙内核端到端功能安全认证，制定 ISO 26262 软件产品功能安全认证流程，完成 ASIL-D 认证"
+
+- title: "程序分析与 RTOS 形式化验证"
+  period: "2013 - 2018"
+  role: "核心研发"
+  description: "开发基于抽象解释的静态分析工具（heap-manipulating 程序、指针运算、内存安全）；参与 RTOS 形式化安全验证，与 B 方法发明人 Abrial（欧洲科学院院士）合作"
