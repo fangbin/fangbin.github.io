@@ -34,10 +34,10 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Copy amytis-style blog
+      - name: Copy blog
         run: |
-          rm -rf _site/amytis-style
-          cp -r amytis-style _site/amytis-style
+          rm -rf _site/blog
+          cp -r blog _site/blog
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
