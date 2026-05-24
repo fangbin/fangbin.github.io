@@ -62,7 +62,7 @@ cd /Users/ericbinder/Documents/repos/githubpage/amytis-blog
 bun run dev
 ```
 
-访问 http://localhost:3000/amytis-style/
+访问 http://localhost:3000/blog/
 
 ### 预览主页 + 博客
 
@@ -74,7 +74,7 @@ bundle exec jekyll serve
 # 终端2：构建并复制博客
 cd /Users/ericbinder/Documents/repos/githubpage/amytis-blog
 bun run build
-cp -r out /Users/ericbinder/Documents/repos/githubpage/fangbin.github.io/_site/amytis-style
+cp -r out /Users/ericbinder/Documents/repos/githubpage/fangbin.github.io/_site/blog
 ```
 
 访问 http://127.0.0.1:4000/
@@ -90,11 +90,11 @@ bun run build
 
 # 2. 更新主页仓库中的博客目录
 cd /Users/ericbinder/Documents/repos/githubpage/fangbin.github.io
-rm -rf amytis-style
-cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out amytis-style
+rm -rf blog
+cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out blog
 
 # 3. 提交并推送
-git add amytis-style
+git add blog
 git commit -m "更新博客文章: 文章标题"
 git push
 ```
@@ -108,9 +108,9 @@ git push
 cd /Users/ericbinder/Documents/repos/githubpage/amytis-blog
 bun run build
 cd /Users/ericbinder/Documents/repos/githubpage/fangbin.github.io
-rm -rf amytis-style
-cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out amytis-style
-git add amytis-style
+rm -rf blog
+cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out blog
+git add blog
 git commit -m "$1"
 git push
 ```

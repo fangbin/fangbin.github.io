@@ -12,7 +12,7 @@ githubpage/
 │   ├── _includes/              # Jekyll 包含文件
 │   ├── _data/                  # 数据文件
 │   ├── assets/                 # 静态资源
-│   └── amytis-style/           # 博客部署目录（由 amytis-blog 构建）
+│   └── blog/                    # 博客部署目录（由 amytis-blog 构建）
 │
 ├── amytis-blog/                # 博客本地开发环境
 │   ├── content/                # 博客内容
@@ -60,7 +60,7 @@ fangbin.github.io/
 ├── images/                     # 图片资源
 ├── index.html                  # 中文主页
 ├── index-en.html               # 英文主页
-└── amytis-style/               # 博客静态文件（构建产物）
+└── blog/                       # 博客静态文件（构建产物）
 ```
 
 ### 2.3 核心配置说明
@@ -79,7 +79,7 @@ plugins:
 
 # 排除目录（不处理）
 exclude:
-  - amytis-style     # 博客目录单独管理
+  - blog             # 博客目录单独管理
 ```
 
 ### 2.4 模板系统
@@ -143,7 +143,7 @@ amytis-blog/
 **next.config.ts 关键配置：**
 ```typescript
 const nextConfig = {
-  basePath: "/amytis-style",    // 部署子路径
+  basePath: "/blog",           // 部署子路径
   trailingSlash: true,          // URL 尾部斜杠
   output: "export",             // 静态导出模式
   images: {
@@ -155,7 +155,7 @@ const nextConfig = {
 **site.config.ts 关键配置：**
 ```typescript
 export const siteConfig = {
-  baseUrl: "https://fangbin.github.io/amytis-style",
+  baseUrl: "https://fangbin.github.io/blog",
   i18n: {
     defaultLocale: 'zh',
     locales: ['zh'],
@@ -200,13 +200,13 @@ bun run build
 cd /Users/ericbinder/Documents/repos/githubpage/fangbin.github.io
 
 # 4. 删除旧的博客目录
-rm -rf amytis-style
+rm -rf blog
 
-# 5. 复制构建产物到 amytis-style 目录
-cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out amytis-style
+# 5. 复制构建产物到 blog 目录
+cp -r /Users/ericbinder/Documents/repos/githubpage/amytis-blog/out blog
 
 # 6. 提交并推送
-git add amytis-style
+git add blog
 git commit -m "add content"
 git push
 ```
@@ -223,7 +223,7 @@ git push
                                                          ▼
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  GitHub Pages   │◀────│   git push      │◀────│ fangbin.github  │
-│   (线上部署)     │     │                 │     │  /amytis-style  │
+│   (线上部署)     │     │                 │     │     /blog      │
 └─────────────────┘     └─────────────────┘     └─────────────────┘
 ```
 
@@ -237,9 +237,9 @@ git push
 |-----|------|------|
 | `https://fangbin.github.io/` | Jekyll 主页 | 中文主页 |
 | `https://fangbin.github.io/index-en.html` | Jekyll 主页 | 英文主页 |
-| `https://fangbin.github.io/amytis-style/` | Next.js 博客 | 博客首页 |
-| `https://fangbin.github.io/amytis-style/posts/` | Next.js 博客 | 文章列表 |
-| `https://fangbin.github.io/amytis-style/flows/` | Next.js 博客 | 随笔列表 |
+| `https://fangbin.github.io/blog/` | Next.js 博客 | 博客首页 |
+| `https://fangbin.github.io/blog/posts/` | Next.js 博客 | 文章列表 |
+| `https://fangbin.github.io/blog/flows/` | Next.js 博客 | 随笔列表 |
 
 ### 5.2 导航关联
 
@@ -247,7 +247,7 @@ git push
 ```html
 <!-- 中文页面 -->
 <li><a href="/">首页</a></li>
-<li><a href="/amytis-style/">博客</a></li>
+<li><a href="/blog/">博客</a></li>
 <li><a href="/">ZH</a></li>
 <li><a href="/index-en.html">EN</a></li>
 ```
