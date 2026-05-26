@@ -1,0 +1,95 @@
+1:"$Sreact.fragment"
+2:I[925655,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+3:I[784978,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+4:I[40314,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+6:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+5:Tdb2,## 核心思想
+
+De Bruijn 索引是一种在 **lambda 演算** 和 **形式化逻辑** 中用于表示变量绑定的方法。它用数字（索引）代替变量名，从而避免了变量名冲突和 $\alpha$-等价（重命名）的麻烦。
+
+在传统的 lambda 演算中，变量用名称表示，例如：
+
+```
+λx. λy. x y
+```
+
+这会导致"名称无关性"问题：`λx. x` 和 `λy. y` 本质是同一个函数（恒等函数），但名称不同。
+
+De Bruijn 索引的解决方案是：
+
+- **移除所有变量名**。
+- 用 **数字** 表示变量，数字表示"指向第几层外围的 λ 绑定"。
+- **索引从 0 开始**，0 表示当前最内层的 λ 绑定，1 表示向外一层的绑定，依此类推。
+
+## 示例
+
+### 传统表示
+
+```
+λx. λy. x (λz. x z y)
+```
+
+### De Bruijn 索引表示
+
+```
+λ. λ. 1 (λ. 2 0 1)
+```
+
+**解析**（从内层 `λ. 2 0 1` 向外看）：
+
+- `0` → 指向当前最内层 λ 绑定的变量（即 `z`）。
+- `1` → 指向向外一层的 λ 绑定的变量（即 `y`）。
+- `2` → 指向再向外一层的 λ 绑定的变量（即 `x`）。
+
+外层两个 `λ` 没有名称，只用 `λ.` 表示。
+
+## 为什么需要 De Bruijn 索引？
+
+1. **消除名称歧义**
+   - 无需处理变量重命名（α-转换），`λ. 0` 永远表示恒等函数。
+
+2. **便于机器处理**
+   - 实现求值器、类型检查器或证明助手时，无需维护复杂的名称环境，只需管理索引。
+
+3. **适合形式化验证**
+   - 在 Coq、Agda 等证明助手中，De Bruijn 索引常用于内部表示，简化了元理论（如替换引理）的证明。
+
+## De Bruijn 索引的优缺点
+
+| 优点 | 缺点 |
+|------|------|
+| 无需 α-转换，实现简单 | 对人类可读性差 |
+| 变量绑定关系由结构唯一确定 | 当项结构改变时（如插入 λ），所有索引可能需要更新 |
+| 适合递归处理和形式化证明 | 调试时难以理解 |
+
+## 实际应用
+
+- **证明助手**：Coq、Agda 的内部核心语言常用 De Bruijn 索引。
+- **编译器实现**：某些函数式语言的编译器中间表示（IR）使用它。
+- **解释器实现**：简化替换操作。
+
+## 扩展：De Bruijn 层级（De Bruijn Levels）
+
+这是另一种变体，索引从外层向内计数（与 De Bruijn 索引方向相反）。它在某些情况下（如并行求值）更方便，但核心思想相同。
+
+## 在 λ-Cube 和 PTS 中的角色
+
+在 [Pure Type System](/posts/2026-01-01-pts-intro) 和 [λ-Cube](/posts/2026-01-02-lambda-cube) 的实现中，De Bruijn 索引是一个关键技术选择：
+
+- **内部表示**：Coq、Lean 等证明助理的核心类型检查器使用 De Bruijn 索引表示绑定变量
+- **替换操作**：使用 De Bruijn 索引后，替换 $t[x := u]$ 变成了纯粹的索引移位操作
+- **α-等价免费**：两个 De Bruijn 项相等当且仅当它们语法相同，无需额外定义 α-等价关系
+
+### 替换操作示例
+
+传统表示中，$(\lambda x. x\ y)[y := x]$ 需要小心避免变量捕获，可能需要重命名。而在 De Bruijn 表示中：
+
+```
+(λ. 0 1)[1 := 0]  -- 只需做索引移位，无捕获问题
+```
+
+## 总结
+
+De Bruijn 索引是一种 **用数字代替变量名** 的表示法，它通过结构位置唯一标识变量，消除了名称管理的复杂性。虽然对人类不友好，但非常适用于机器处理和形式化系统的实现。如果你在编写解释器、编译器或研究类型论/证明理论，很可能会遇到它。0:{"buildId":"xchLscWtOFGXXe5T-eZYy","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-container","children":["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] gap-8 items-start","children":[["$","$L2","λ演算",{"tags":{"类型系统":6,"pts":2,"依赖类型":3,"λ-cube":2,"coc":2,"cic":2,"curry-howard":2,"λ演算":1,"形式化验证":2,"de bruijn":1,"归纳类型":1,"coq":1,"system f":1,"形式化方法":6,"规约":1,"入门":1,"研究":2,"阅读":1,"论文":1,"技术":1,"工具":1,"内存管理":1,"程序验证":2,"程序分析":2,"静态分析":1,"程序开发":1,"编译原理":1,"算法":1,"验证":1},"activeTag":"λ演算"}],["$","div",null,{"className":"flex-1 min-w-0","children":[["$","$L3",null,{"tag":"λ演算"}],["$","$L4",null,{"posts":[{"slug":"de-bruijn-index","title":"De Bruijn 索引：用数字代替变量名","date":"2026-01-04","excerpt":"De Bruijn 索引是一种在 lambda 演算和形式化逻辑中用于表示变量绑定的方法，它用数字代替变量名，消除了变量名冲突和 α-等价的麻烦。","category":"Uncategorized","tags":["类型系统","λ演算","形式化验证","De Bruijn"],"authors":["Bin Fang"],"layout":"post","series":"类型系统","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"3 min read","content":"$5","headings":[{"id":"核心思想","text":"核心思想","level":2},{"id":"示例","text":"示例","level":2},{"id":"传统表示","text":"传统表示","level":3},{"id":"de-bruijn-索引表示","text":"De Bruijn 索引表示","level":3},{"id":"为什么需要-de-bruijn-索引","text":"为什么需要 De Bruijn 索引？","level":2},{"id":"de-bruijn-索引的优缺点","text":"De Bruijn 索引的优缺点","level":2},{"id":"实际应用","text":"实际应用","level":2},{"id":"扩展de-bruijn-层级de-bruijn-levels","text":"扩展：De Bruijn 层级（De Bruijn Levels）","level":2},{"id":"在-λ-cube-和-pts-中的角色","text":"在 λ-Cube 和 PTS 中的角色","level":2},{"id":"替换操作示例","text":"替换操作示例","level":3},{"id":"总结","text":"总结","level":2}]}],"flows":[]}]]}]]}]}],[["$","script","script-0",{"src":"/blog/_next/static/chunks/a64afc46fad40892.js","async":true}],["$","script","script-1",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+8:null

@@ -5,40 +5,48 @@
     <link>https://fangbin.github.io/blog</link>
     <description><![CDATA[思考、笔记与记录]]></description>
     <language>en</language>
-    <lastBuildDate>Mon, 25 May 2026 09:13:17 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 06:14:57 GMT</lastBuildDate>
     <atom:link href="https://fangbin.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     
         <item>
-          <title><![CDATA[形式化方法入门]]></title>
-          <link>https://fangbin.github.io/blog/posts/formal-methods</link>
-          <guid>https://fangbin.github.io/blog/posts/formal-methods</guid>
-          <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
-          <description><![CDATA[介绍形式化方法的基本概念和应用场景。]]></description>
-          <category>形式化方法</category><category>程序验证</category><category>学术</category>
+          <title><![CDATA[Pure Type System 教程：从基础到进阶]]></title>
+          <link>https://fangbin.github.io/blog/posts/pts-tutorial</link>
+          <guid>https://fangbin.github.io/blog/posts/pts-tutorial</guid>
+          <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+          <description><![CDATA[本教程为读者提供一个从基础到进阶的 Pure Type System 学习路径，涵盖 PTS 核心定义、λ-Cube 谱系、构造演算 CoC、归纳构造演算 CIC，以及 Curry-Howard 同构。]]></description>
+          <category>类型系统</category><category>PTS</category><category>依赖类型</category><category>λ-Cube</category><category>CoC</category><category>CIC</category><category>Curry-Howard</category>
         </item>
         <item>
-          <title><![CDATA[研究笔记]]></title>
-          <link>https://fangbin.github.io/blog/posts/research-notes</link>
-          <guid>https://fangbin.github.io/blog/posts/research-notes</guid>
-          <pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate>
-          <description><![CDATA[记录近期的研究进展和学习心得。]]></description>
-          <category>研究</category><category>笔记</category>
+          <title><![CDATA[De Bruijn 索引：用数字代替变量名]]></title>
+          <link>https://fangbin.github.io/blog/posts/de-bruijn-index</link>
+          <guid>https://fangbin.github.io/blog/posts/de-bruijn-index</guid>
+          <pubDate>Sun, 04 Jan 2026 00:00:00 GMT</pubDate>
+          <description><![CDATA[De Bruijn 索引是一种在 lambda 演算和形式化逻辑中用于表示变量绑定的方法，它用数字代替变量名，消除了变量名冲突和 α-等价的麻烦。]]></description>
+          <category>类型系统</category><category>λ演算</category><category>形式化验证</category><category>De Bruijn</category>
         </item>
         <item>
-          <title><![CDATA[Jekyll博客搭建教程]]></title>
-          <link>https://fangbin.github.io/blog/posts/jekyll-tutorial</link>
-          <guid>https://fangbin.github.io/blog/posts/jekyll-tutorial</guid>
-          <pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate>
-          <description><![CDATA[本教程将介绍如何使用 Jekyll 和 GitHub Pages 搭建个人博客。]]></description>
-          <category>Jekyll</category><category>GitHub Pages</category><category>教程</category>
+          <title><![CDATA[CIC 理论介绍：归纳构造演算]]></title>
+          <link>https://fangbin.github.io/blog/posts/cic-intro</link>
+          <guid>https://fangbin.github.io/blog/posts/cic-intro</guid>
+          <pubDate>Sat, 03 Jan 2026 00:00:00 GMT</pubDate>
+          <description><![CDATA[CIC（Calculus of Inductive Constructions）是现代交互式定理证明器的核心理论基础。它在 CoC 的基础上增加了归纳类型，统一地表达程序、数学命题和证明。]]></description>
+          <category>类型系统</category><category>CIC</category><category>归纳类型</category><category>Coq</category><category>Curry-Howard</category>
         </item>
         <item>
-          <title><![CDATA[欢迎来到我的博客]]></title>
-          <link>https://fangbin.github.io/blog/posts/welcome</link>
-          <guid>https://fangbin.github.io/blog/posts/welcome</guid>
-          <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
-          <description><![CDATA[欢迎来到我的个人博客！这是第一篇博文，介绍一下这个博客的功能和特点。]]></description>
-          <category>博客</category><category>开篇</category>
+          <title><![CDATA[λ-Cube：类型系统谱系]]></title>
+          <link>https://fangbin.github.io/blog/posts/lambda-cube</link>
+          <guid>https://fangbin.github.io/blog/posts/lambda-cube</guid>
+          <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
+          <description><![CDATA[λ-Cube 由 8 个 PTS 组成，它们通过不同的规则集 R 区分，分别对应从简单类型到全依赖类型的各种演算，是理解现代证明助理理论根基的关键。]]></description>
+          <category>类型系统</category><category>λ-Cube</category><category>依赖类型</category><category>System F</category><category>CoC</category>
+        </item>
+        <item>
+          <title><![CDATA[Pure Type System (PTS) 详解]]></title>
+          <link>https://fangbin.github.io/blog/posts/pts-intro</link>
+          <guid>https://fangbin.github.io/blog/posts/pts-intro</guid>
+          <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+          <description><![CDATA[Pure Type System 是一种用于定义依赖类型 λ 演算的通用框架。通过三元组 (S, A, R) 统一描述从简单类型到全依赖类型的各种演算。]]></description>
+          <category>类型系统</category><category>形式化验证</category><category>依赖类型</category><category>PTS</category>
         </item>
         <item>
           <title><![CDATA[形式化规约语言]]></title>

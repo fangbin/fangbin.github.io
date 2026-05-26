@@ -1,0 +1,440 @@
+1:"$Sreact.fragment"
+2:I[925655,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+3:I[784978,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+4:I[40314,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+9:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+5:T469a,## CIC 是什么？
+
+CIC 是一种**依赖类型 λ 演算**，它在 **CoC (Calculus of Constructions)** 的基础上，增加了**归纳类型 (Inductive Types)** 的原语和推导规则。这使得 CIC 能够：
+
+1. **统一地表达程序、数学命题和证明**（继承自 CoC 和 Curry-Howard 同构）。
+2. **自然地定义递归数据结构**（如自然数、链表、树）。
+3. **对数据结构进行递归计算和归纳证明**（提供结构归纳法和递归函数定义）。
+
+简单说，**CIC = CoC + Inductive Types**。
+
+### 前序阅读路线
+
+1. 类型系统基础：[Pure Type System 详解](/posts/2026-01-01-pts-intro)
+2. 不同类型系统的派生：[λ-Cube 类型系统谱系](/posts/2026-01-02-lambda-cube)
+
+## CIC 的核心组成部分
+
+结合前面的笔记，我们可以将 CIC 的核心分解为四个紧密衔接的层次：
+
+### 1. 基础：λ-演算与依赖类型
+
+- **语法**：使用 PTS 的极简语法：项 $\mathcal{T} ::= \mathcal{S} \ |\ \mathcal{V} \ |\ \Pi \mathcal{V} : \mathcal{T} . \mathcal{T} \ |\ \lambda \mathcal{V} : \mathcal{T} . \mathcal{T} \ |\ \mathcal{T}\ \mathcal{T}$。
+- **依赖乘积类型**：$\Pi x:A. B$ 是核心类型构造器。它既是函数类型（当 $B$ 不依赖 $x$ 时退化为 $A \to B$），也是逻辑中的全称量化 $\forall x:A, B(x)$。
+- **计算**：基于 $\beta$-规约，$(\lambda x. t)\ u \rightarrow t[x:=u]$。
+- **作用**：这是系统的"基础语法"，统一了函数、类型和逻辑命题。
+
+### 2. 逻辑核心：命题即类型，证明即程序 (Curry-Howard Correspondence)
+
+- **核心对应**：
+    - **命题 (Proposition)** $\longleftrightarrow$ **类型 (Type)**
+    - **证明 (Proof)** $\longleftrightarrow$ **程序项 (Term)**
+    - **证明命题 $A$** $\longleftrightarrow$ **构造类型 $A$ 的一个项**
+- **例子**：命题 $A \to B$ 对应函数类型 $A \to B$。证明这个命题就是写一个函数 $\lambda (a:A). \text{(构造一个B的项)}$。
+- **作用**：这是**连接逻辑与计算的桥梁**。在 CIC 中，做数学证明完全等同于编写一个特定类型的程序。
+
+### 3. 关键扩展：归纳类型 (Inductive Types)
+
+这是 CIC 超越 CoC 的关键。归纳类型允许我们通过有限的**构造子 (Constructors)** 来定义数据类型和逻辑谓词。
+
+- **定义方式**：一个归纳类型由一组构造子定义。例如，自然数 $\text{Nat}$ 可以定义为：
+
+```coq
+Inductive Nat : Type :=
+| O : Nat                    (* 零 *)
+| S : Nat -> Nat.           (* 后继函数 *)
+```
+
+这表示：`Nat` 类型有两种构造方式：直接从 `O` 得到，或者从一个已有的 `Nat` `n` 通过 `S` 得到 `S n`。
+
+- **关键特性**：
+    1. **良基性**：每个值都是通过有限次应用构造子从基础构造子（如 `O`）构建的。没有"无限循环"的构造。
+    2. **归纳原理**：类型系统会为每个归纳类型**自动生成**一个**归纳法原理**。对于 `Nat`，这个原理是：
+
+$$\forall P: \text{Nat} \to \text{Prop}, (P\ O) \to (\forall n, P\ n \to P\ (S\ n)) \to \forall n, P\ n$$
+
+这正好就是数学归纳法！它允许我们对所有自然数证明性质 $P$。
+
+    3. **递归函数**：通过 `Fixpoint` 或结构递归，我们可以定义在归纳类型上计算的函数（如加法 `plus`）。系统的规约规则保证了递归总会终止（对于结构递归），这对应了证明中必须使用良基归纳。
+
+- **更复杂的例子**：链表、二叉树、甚至逻辑谓词（如"偶数"）都可以定义为归纳类型：
+
+```coq
+Inductive Even : Nat -> Prop :=
+| Even_O : Even O
+| Even_SS : forall n, Even n -> Even (S (S n)).
+```
+
+这定义了"偶数"这个性质：0是偶数；如果n是偶数，那么n+2也是偶数。
+
+### 4. 类型层级：宇宙 (Sorts / Universes)
+
+为了避免逻辑悖论（如罗素悖论），CIC 有一个层次化的类型宇宙。
+
+- **基本宇宙**：通常有 `Prop` 和 `Type(i)`（其中 $i \in \mathbb{N}$）。
+    - `Prop`：命题宇宙。其元素是逻辑命题（也是类型）。`Prop` 中的项（证明）在计算时可以被擦除，以优化程序。
+    - `Type(i)`（或 `Set`）：数据类型宇宙。其元素是普通的数据类型（如 `Nat`, `Bool`）。`Type(i)` 本身也有类型：`Prop : Type(0)`, `Type(i) : Type(i+1)`。
+- **层级关系**：形成一个累积的层级：`Prop : Type(0) : Type(1) : Type(2) : ...`。
+- **作用**：形成一个**严谨的、层次分明的类型宇宙**，防止"类型的类型是其自身"这样的悖论。
+
+## CIC 中的编程与证明：一个完整例子
+
+让我们在 CIC 中定义自然数加法并证明其结合律。
+
+1. **定义自然数（归纳类型）**：
+
+```coq
+Inductive Nat : Type :=
+| O : Nat
+| S : Nat -> Nat.
+```
+
+2. **定义加法（递归函数）**：
+
+```coq
+Fixpoint plus (n m : Nat) : Nat :=
+  match n with
+  | O => m
+  | S n' => S (plus n' m)
+  end.
+```
+
+这里 `plus (S n') m` 递归调用 `plus n' m`，因为 `n'` 是 `n` 的直接子结构，保证了终止性。
+
+3. **陈述结合律命题**：
+
+```coq
+Theorem plus_assoc : forall (a b c : Nat),
+    plus a (plus b c) = plus (plus a b) c.
+```
+
+类型 `forall (a b c : Nat), ...` 是一个依赖乘积类型 $\Pi a:\text{Nat}. \Pi b:\text{Nat}. \Pi c:\text{Nat}. \text{等式类型}$。证明这个定理就是构造这个类型的一个项。
+
+4. **证明结合律（归纳证明）**：
+
+```coq
+Proof.
+  intros a b c.          (* 引入全称量词变量 *)
+  induction a as [| a' IH]. (* 对 a 进行归纳 *)
+  - simpl. reflexivity.  (* 情况 a = O：计算，两边相等 *)
+  - simpl. rewrite IH. reflexivity. (* 情况 a = S a'：化简，用归纳假设重写 *)
+Qed.
+```
+
+这个证明过程，在底层实际上是在**构造一个 λ 项**。`induction` 策略应用了 `Nat` 的归纳原理。最终的证明项是一个复杂的 λ 表达式，但类型检查器能验证它确实具有类型 `forall a b c, plus a (plus b c) = plus (plus a b) c`。
+
+## CIC 的核心：Gallina 语言中的体现
+
+Gallina 是 Coq 的核心语言，它直接实现了 CIC。让我们通过 Gallina 代码来理解 CIC 的各个组成部分。
+
+### 1. 依赖类型 (Dependent Types)
+
+在 Gallina 中，依赖类型通过 `forall` 关键字表示（对应 CIC 中的 $\Pi$ 类型）。
+
+```coq
+(* 简单函数类型：Nat -> Nat *)
+Definition simple_func : Nat -> Nat := fun n => n.
+
+(* 依赖函数类型：forall n : Nat, Vector n *)
+(* 这里返回类型 Vector n 依赖于输入值 n *)
+Definition dep_func : forall n : Nat, Vector n :=
+  fun n => (* 根据 n 构造长度为 n 的向量 *)
+```
+
+**逻辑对应**：`forall x : A, B x` 对应逻辑中的全称量化 $\forall x \in A, B(x)$。
+
+### 2. 归纳类型 (Inductive Types) — CIC 的关键扩展
+
+这是 CIC 超越 CoC 的核心。让我们看几个例子：
+
+**例1：自然数 (Nat)**
+
+```coq
+Inductive Nat : Set :=
+| O : Nat                    (* 零，基础构造子 *)
+| S : Nat -> Nat.           (* 后继，递归构造子 *)
+```
+
+这个定义自动生成了：
+1. **类型**：`Nat : Set`
+2. **构造子**：`O : Nat` 和 `S : Nat -> Nat`
+3. **归纳原理**：
+
+```coq
+Nat_ind : forall P : Nat -> Prop,
+  P O ->
+  (forall n : Nat, P n -> P (S n)) ->
+  forall n : Nat, P n
+```
+
+这正是数学归纳法！
+
+**例2：链表 (List)**
+
+```coq
+Inductive List (A : Type) : Type :=
+| nil : List A
+| cons : A -> List A -> List A.
+```
+
+这是一个**参数化归纳类型**，`A` 是类型参数。
+
+**例3：逻辑谓词 (Even)**
+
+```coq
+Inductive Even : Nat -> Prop :=
+| Even_O : Even O
+| Even_SS : forall n : Nat, Even n -> Even (S (S n)).
+```
+
+这是一个**索引化归纳类型**（或归纳谓词），定义了"偶数"性质。
+
+### 3. 递归函数 (Recursive Functions)
+
+在 CIC 中，递归函数必须保证终止性（对应证明的良基性）。Coq 通过结构递归来保证：
+
+```coq
+Fixpoint plus (n m : Nat) : Nat :=
+  match n with
+  | O => m
+  | S n' => S (plus n' m)  (* 递归调用在更小的 n' 上 *)
+  end.
+```
+
+**终止性检查**：Coq 会检查递归调用只在**严格子项**上进行（这里 `n'` 是 `n` 的直接子结构）。
+
+### 4. 命题即类型，证明即程序
+
+让我们看一个完整的证明例子：
+
+```coq
+(* 命题：加法交换律 *)
+Theorem plus_comm : forall n m : Nat, plus n m = plus m n.
+Proof.
+  (* 证明过程：构造一个类型为 forall n m, plus n m = plus m n 的项 *)
+  intros n m.                    (* 引入全称量词 *)
+  induction n as [| n' IHn].     (* 对 n 进行归纳 *)
+  - simpl.                       (* 情况 n = O *)
+    induction m as [| m' IHm].   (* 对 m 进行归纳 *)
+    + reflexivity.               (* m = O，两边都是 O *)
+    + simpl. rewrite <- IHm. reflexivity.
+  - simpl.                       (* 情况 n = S n' *)
+    rewrite IHn.
+    (* 这里需要更多步骤，但展示了归纳证明的结构 *)
+Qed.
+```
+
+**底层证明项**：用 `Print plus_comm.` 可以看到 Coq 实际构造的 λ 项：
+
+```coq
+plus_comm =
+fun (n m : Nat) =>
+  nat_ind (fun n0 : Nat => plus n0 m = plus m n0)
+    (nat_ind (fun m0 : Nat => plus O m0 = plus m0 O)
+        eq_refl
+        (fun (m0 : Nat) (IHm : plus O m0 = plus m0 O) =>
+         eq_ind_r (fun n0 : Nat => S n0 = S (plus m0 O))
+           (eq_ind_r (fun n0 : Nat => S (plus m0 O) = n0) eq_refl IHm)
+           (f_equal S IHm)))
+    (fun (n0 : Nat) (IHn : plus n0 m = plus m n0) =>
+     eq_ind_r (fun n1 : Nat => S n1 = S (plus m n0))
+       (eq_ind_r (fun n1 : Nat => S (plus m n0) = n1) eq_refl
+          (f_equal S IHn)) (f_equal S IHn))
+    n
+     : forall n m : Nat, plus n m = plus m n
+```
+
+这个复杂的 λ 项正是 `plus_comm` 命题的**证明**，也是类型为 `forall n m, plus n m = plus m n` 的**程序**。
+
+### 5. 宇宙层级 (Universe Hierarchy)
+
+在 Coq 中，宇宙层级是隐式管理的，但我们可以显式查看：
+
+```coq
+Check Prop.      (* Prop : Type *)
+Check Type.      (* Type : Type *)
+Check Type 0.    (* Type 0 : Type 1 *)
+Check Type 1.    (* Type 1 : Type 2 *)
+```
+
+**宇宙累积性**：
+
+```coq
+(* Prop 可以提升到 Type *)
+Definition prop_to_type : Type := Prop.
+
+(* 但 Type 不能降级到 Prop *)
+(* 以下会报错：
+Definition type_to_prop : Prop := Type.
+*)
+```
+
+### 6. CIC 在 Coq 中的完整示例
+
+让我们看一个更复杂的例子，展示 CIC 的所有特性：
+
+```coq
+(* 1. 定义依赖类型：长度索引的向量 *)
+Inductive Vector (A : Type) : Nat -> Type :=
+| vnil : Vector A O
+| vcons : forall n : Nat, A -> Vector A n -> Vector A (S n).
+
+(* 2. 定义依赖函数：向量连接 *)
+Fixpoint vappend {A : Type} {n m : Nat}
+         (v1 : Vector A n) (v2 : Vector A m) : Vector A (plus n m) :=
+  match v1 with
+  | vnil => v2
+  | vcons n' x v1' => vcons (plus n' m) x (vappend v1' v2)
+  end.
+
+(* 3. 证明性质：连接的长度正确 *)
+Theorem vappend_length :
+  forall (A : Type) (n m : Nat) (v1 : Vector A n) (v2 : Vector A m),
+    let v3 := vappend v1 v2 in
+    length v3 = plus n m.
+Proof.
+  intros A n m v1 v2.
+  induction v1 as [| n' x v1' IH].
+  - simpl. reflexivity.  (* v1 = vnil *)
+  - simpl. f_equal. apply IH.  (* v1 = vcons ... *)
+Qed.
+```
+
+这个例子展示了：
+1. **依赖归纳类型**：`Vector A n` 的类型依赖于值 `n`
+2. **依赖函数**：`vappend` 的返回类型 `Vector A (plus n m)` 依赖于输入值
+3. **归纳证明**：对向量的结构进行归纳
+4. **Curry-Howard**：证明 `vappend_length` 就是构造一个特定类型的程序
+
+### 7. CIC 的计算规则
+
+CIC 的核心计算规则是 **β-规约** 和 **ι-规约**：
+
+```coq
+(* β-规约：函数应用 *)
+Eval compute in (fun x : Nat => S x) O.  (* => S O *)
+
+(* ι-规约：模式匹配/递归展开 *)
+Eval compute in plus (S O) (S O).
+(* => S (plus O (S O))
+   => S (S O) *)
+```
+
+**强规范性**：在 CIC 中，每个良类型的项都有唯一的正规形式，这保证了逻辑的一致性。
+
+## 从 CoC 到 CIC：关键补充
+
+### Calculus of Construction（CoC）
+
+要弄清楚 CIC，需要先了解什么是构造演算 Calculus of Construction（CoC）。CoC 本质上是一种 purely functional language，被定义为一种 pure type system，一种 typed lambda-calculus，可以表示 terms 和 types。
+
+构造演算可以被视为 Curry-Howard 同构的扩展。Curry-Howard 同构将简单类型 lambda 演算中的一个项与直觉主义**命题逻辑**中的每个自然演绎证明关联起来。构造演算将这种同构扩展到完整的直觉主义**谓词演算**中的证明，其中包括量化语句的证明。
+
+### CoC 的 Term 定义
+
+A term in the calculus of constructions is constructed using the following rules:
+
+- The set of Sorts $\mathcal{S} =\{ T \cup P\}$
+  - T is a term (also called *type*);
+  - P is a term (also called *prop*, the type of all propositions);
+- Variables $\mathcal{V}$(x,y,…)are terms;
+- If A and B are terms, then so is (AB)
+- If A and B are terms and x is a variable, then the following are also terms:
+    - (λx:A.B)
+    - (∀x:A.B)
+
+In other words, the term syntax, in Backus–Naur form, is then:
+
+$$\mathcal{T}::= \mathcal{S} \ |\ \mathcal{V} \ |\ \mathcal{T} \mathcal{T}\  |\ \forall \mathcal{V} :T. T\ \ |\ \lambda \mathcal{V} :\mathcal{T} .\mathcal{T}$$
+
+The calculus of constructions has five kinds of objects:
+
+1. *proofs*, which are terms whose types are *propositions*;
+2. *propositions*, which are also known as *small types*;
+3. *predicates*, which are functions that return propositions;
+4. *large types*, which are the types of predicates (P is an example of a large type);
+5. T itself, which is the type of large types.
+
+### Sort 的层级
+
+abstractions 类型是一个（dependent）product，$\Pi x:A, t:B$。t 的类型取决于 x。
+
+在我们熟悉的编程过程中，针对变量，我们可以定义变量的类型，比如 `int x`。但是针对类型本身（`int`, `double`），它的类型是什么呢？类型的类型被定义为 **Sort**。
+
+在 CoC 系统中，会有无限个 Sort:
+
+$$\mathcal{S} \overset{\mathrm{def}}{=} \{Prop\} \cup {\bigcup}_{i\in \mathbb{N}} \{Type_i\}$$
+
+其中，Prop 是逻辑系统中命题（proposition）的类型，比如 $A\to B$ 的类型就是 $Prop$。$Prop$ 的类型为 $Type$。$Type$ 的类型为 $Type_1$，$Type_1$ 的类型为 $Type_2$，以此类推。
+
+```ocaml
+// run lean online editor
+// https://leanprover-community.github.io/lean-web-editor/
+
+#check Prop // Prop : Type
+#check Type // Type : Type 1
+#check Type1 // Type1 : Type 2
+
+variable A: Prop.
+variable B: Prop.
+#check A -> B. // A → B : Prop
+```
+
+### Curry–Howard Correspondence
+
+一个命题 proposition 就是一个类型 type，对这个命题的证明 proof 就是构造该类型的一个项 term（程序）。
+
+**理解命题就是类型**：
+
+1. **命题即类型**
+    - 在逻辑中，`A`、`B`、`(A → B)`、`(A ∧ B)` 等都是**命题**；
+    - 在类型论中，`A`、`B`、`(A -> B)`、`(A × B)` 等都是**类型**；
+    - **对应**：一个逻辑命题 `P` 对应一个类型 `P`。命题 `P` 为真，**当且仅当** 类型 `P` 是可实例化的，即存在一个具有该类型的程序（项）。
+
+2. **证明即程序**
+    - 在逻辑中，要证明命题 `A → B`，你需要一个**证明**：假设 `A` 成立，然后推导出 `B` 成立。
+    - 在程序语言中，要构造类型 `A -> B` 的项，你需要一个**函数**：它接受一个类型为 `A` 的参数，并返回一个类型为 `B` 的值。
+    - **对应**：命题 `A → B` 的**证明**，精确地对应于类型 `A -> B` 的一个**函数程序**。
+
+Curry–Howard Correspondence 包含两部分：
+
+- 命题（formulas）和类型（type）的对应：跟具体的 proof system 和 model of computation 无关
+    - implication $\to$ := function type
+    - conjunction $\land$ := product type
+    - disjunction $\lor$ := sum type
+- 证明（proof）和程序（program）的对应：跟具体的 proof system 和 model of computation 有关
+
+| Logic side                     | Programming side              |
+| ------------------------------ | ----------------------------- |
+| formula                        | type                          |
+| proof                          | term                          |
+| formula is true                | type has an element           |
+| formula is false               | type does not have an element |
+| logical constant ⊤ (truth)     | unit type                     |
+| logical constant ⊥ (falsehood) | empty type                    |
+| implication                    | function type                 |
+| conjunction                    | product type                  |
+| disjunction                    | sum type                      |
+| universal quantification       | dependent product type        |
+| existential quantification     | dependent sum type            |
+
+## CIC 的意义与应用
+
+1. **形式化数学的基础**：CIC 为数学提供了一个坚实、可计算的基础。许多复杂的数学定理（如四色定理、费马大定理的部分引理）已在 Coq 中形式化证明。
+2. **程序验证**：由于程序就是证明，我们可以编写一个功能程序，同时也就证明了该程序满足其类型所规定的规范。这是**形式化方法**的最高形式。
+3. **元理论工具**：CIC 本身的性质（如强规范性、逻辑一致性）可以在其内部或更弱的系统中被研究。
+4. **现代证明助理的核心**：Coq、Lean、Agda 的内核都是 CIC 或其变体。它们提供了更友好的策略语言和开发环境，但底层逻辑是 CIC。
+
+## 总结
+
+**CIC 是一个将构造性数学、类型理论和计算融合为一体的强大系统。** 通过 Curry-Howard 同构，它将证明转化为可计算的对象；通过归纳类型，它获得了定义和推理递归结构的能力；通过层次化的宇宙，它保持了逻辑的一致性。这使得 CIC 不仅是一个理论模型，更是一个能够实际用于验证复杂软件系统和进行数学研究的实用工具。0:{"buildId":"xchLscWtOFGXXe5T-eZYy","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-container","children":["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] gap-8 items-start","children":[["$","$L2","coq",{"tags":{"类型系统":6,"pts":2,"依赖类型":3,"λ-cube":2,"coc":2,"cic":2,"curry-howard":2,"λ演算":1,"形式化验证":2,"de bruijn":1,"归纳类型":1,"coq":1,"system f":1,"形式化方法":6,"规约":1,"入门":1,"研究":2,"阅读":1,"论文":1,"技术":1,"工具":1,"内存管理":1,"程序验证":2,"程序分析":2,"静态分析":1,"程序开发":1,"编译原理":1,"算法":1,"验证":1},"activeTag":"coq"}],["$","div",null,{"className":"flex-1 min-w-0","children":[["$","$L3",null,{"tag":"coq"}],["$","$L4",null,{"posts":[{"slug":"cic-intro","title":"CIC 理论介绍：归纳构造演算","date":"2026-01-03","excerpt":"CIC（Calculus of Inductive Constructions）是现代交互式定理证明器的核心理论基础。它在 CoC 的基础上增加了归纳类型，统一地表达程序、数学命题和证明。","category":"Uncategorized","tags":["类型系统","CIC","归纳类型","Coq","Curry-Howard"],"authors":["Bin Fang"],"layout":"post","series":"类型系统","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"11 min read","content":"$5","headings":[{"id":"cic-是什么","text":"CIC 是什么？","level":2},{"id":"前序阅读路线","text":"前序阅读路线","level":3},{"id":"cic-的核心组成部分","text":"CIC 的核心组成部分","level":2},{"id":"1-基础λ-演算与依赖类型","text":"1. 基础：λ-演算与依赖类型","level":3},{"id":"2-逻辑核心命题即类型证明即程序-curry-howard-correspondence","text":"2. 逻辑核心：命题即类型，证明即程序 (Curry-Howard Correspondence)","level":3},{"id":"3-关键扩展归纳类型-inductive-types","text":"3. 关键扩展：归纳类型 (Inductive Types)","level":3},{"id":"4-类型层级宇宙-sorts--universes","text":"4. 类型层级：宇宙 (Sorts / Universes)","level":3},{"id":"cic-中的编程与证明一个完整例子","text":"CIC 中的编程与证明：一个完整例子","level":2},{"id":"cic-的核心gallina-语言中的体现","text":"CIC 的核心：Gallina 语言中的体现","level":2},{"id":"1-依赖类型-dependent-types","text":"1. 依赖类型 (Dependent Types)","level":3},{"id":"2-归纳类型-inductive-types--cic-的关键扩展","text":"2. 归纳类型 (Inductive Types) — CIC 的关键扩展","level":3},{"id":"3-递归函数-recursive-functions","text":"3. 递归函数 (Recursive Functions)","level":3},{"id":"4-命题即类型证明即程序","text":"4. 命题即类型，证明即程序","level":3},{"id":"5-宇宙层级-universe-hierarchy","text":"5. 宇宙层级 (Universe Hierarchy)","level":3},{"id":"6-cic-在-coq-中的完整示例","text":"6. CIC 在 Coq 中的完整示例","level":3},{"id":"7-cic-的计算规则","text":"7. CIC 的计算规则","level":3},{"id":"从-coc-到-cic关键补充","text":"从 CoC 到 CIC：关键补充","level":2},{"id":"calculus-of-constructioncoc","text":"Calculus of Construction（CoC）","level":3},{"id":"coc-的-term-定义","text":"CoC 的 Term 定义","level":3},{"id":"sort-的层级","text":"Sort 的层级","level":3},{"id":"curryhoward-correspondence","text":"Curry–Howard Correspondence","level":3},{"id":"cic-的意义与应用","text":"CIC 的意义与应用","level":2},{"id":"总结","text":"总结","level":2}]}],"flows":[]}]]}]]}]}],["$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+6:["$","script","script-0",{"src":"/blog/_next/static/chunks/a64afc46fad40892.js","async":true}]
+7:["$","script","script-1",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
+b:null

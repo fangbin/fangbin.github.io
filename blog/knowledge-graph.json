@@ -1,32 +1,39 @@
 {
   "nodes": [
     {
-      "id": "formal-methods",
-      "title": "形式化方法入门",
+      "id": "pts-tutorial",
+      "title": "Pure Type System 教程：从基础到进阶",
       "type": "post",
-      "url": "/posts/formal-methods",
-      "connections": 0
+      "url": "/posts/pts-tutorial",
+      "connections": 1
     },
     {
-      "id": "research-notes",
-      "title": "研究笔记",
+      "id": "de-bruijn-index",
+      "title": "De Bruijn 索引：用数字代替变量名",
       "type": "post",
-      "url": "/posts/research-notes",
-      "connections": 0
+      "url": "/posts/de-bruijn-index",
+      "connections": 1
     },
     {
-      "id": "jekyll-tutorial",
-      "title": "Jekyll博客搭建教程",
+      "id": "cic-intro",
+      "title": "CIC 理论介绍：归纳构造演算",
       "type": "post",
-      "url": "/posts/jekyll-tutorial",
-      "connections": 0
+      "url": "/posts/cic-intro",
+      "connections": 1
     },
     {
-      "id": "welcome",
-      "title": "欢迎来到我的博客",
+      "id": "lambda-cube",
+      "title": "λ-Cube：类型系统谱系",
       "type": "post",
-      "url": "/posts/welcome",
-      "connections": 0
+      "url": "/posts/lambda-cube",
+      "connections": 1
+    },
+    {
+      "id": "pts-intro",
+      "title": "Pure Type System (PTS) 详解",
+      "type": "post",
+      "url": "/posts/pts-intro",
+      "connections": 1
     },
     {
       "id": "02-specification",
@@ -92,6 +99,13 @@
       "connections": 0
     },
     {
+      "id": "series:类型系统",
+      "title": "类型系统",
+      "type": "series",
+      "url": "/series/类型系统",
+      "connections": 5
+    },
+    {
       "id": "series:formal-methods",
       "title": "形式化方法入门",
       "type": "series",
@@ -100,6 +114,31 @@
     }
   ],
   "edges": [
+    {
+      "source": "series:类型系统",
+      "target": "pts-tutorial",
+      "type": "series"
+    },
+    {
+      "source": "series:类型系统",
+      "target": "de-bruijn-index",
+      "type": "series"
+    },
+    {
+      "source": "series:类型系统",
+      "target": "cic-intro",
+      "type": "series"
+    },
+    {
+      "source": "series:类型系统",
+      "target": "lambda-cube",
+      "type": "series"
+    },
+    {
+      "source": "series:类型系统",
+      "target": "pts-intro",
+      "type": "series"
+    },
     {
       "source": "series:formal-methods",
       "target": "02-specification",

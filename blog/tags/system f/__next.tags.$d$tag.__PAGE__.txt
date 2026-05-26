@@ -1,0 +1,112 @@
+1:"$Sreact.fragment"
+2:I[925655,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+3:I[784978,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+4:I[40314,["/blog/_next/static/chunks/1e9ea4f6fbf06407.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/a64afc46fad40892.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js"],"default"]
+9:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+5:T1a4b,## λ-Cube：类型系统谱系
+
+**λ-Cube** 是一个由 8 个 PTS（见 Pure Type System 介绍）组成的立方体，它们共享相同的基础集合 $\mathcal{S} = \{*,\ \square\}$ 和公理 $\mathcal{A} = \{* : \square\}$（其中 $*$ 通常代表命题宇宙 `Prop`，$\square$ 代表类型宇宙 `Type`），但通过不同的规则集 $\mathcal{R}$ 来区分。每个系统都代表了在简单类型 λ 演算基础上增加不同"维度"的依赖关系。
+
+立方体的三个轴分别代表三种不同的依赖关系：
+
+- **x 轴（项依赖项）**：允许类型依赖于项（值）。这是**谓词逻辑**的特征；
+- **y 轴（类型依赖项）**：允许类型依赖于类型。这是**多态性**（类型构造子）的特征；
+- **z 轴（项依赖类型）**：允许项依赖于类型。这是**类型依赖项**的更高阶形式，在 CoC 中完全实现。
+
+### 1. λ→（Simply Typed Lambda Calculus）— 简单类型 λ 演算
+
+- **位置**：立方体原点 (0,0,0)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *)\}$
+- **描述**：最基础的系统。只允许形成**命题（类型）之间的函数类型**，对应命题逻辑中的蕴含（$A \to B$）。
+- **能力**：可以表达命题逻辑的证明（Curry-Howard）。但不能表达多态（如 `List<T>`）或依赖类型（如 `Vector n`）。
+- **对应逻辑**：直觉主义命题逻辑。
+
+### 2. λ2（System F）— 二阶多态 λ 演算
+
+- **位置**：y 轴顶端 (0,1,0)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (\square, *, *)\}$
+- **新增规则**：$(\square, *, *)$。允许对"类型变量" $X$（其类型是 $\square$，即"类型宇宙"）进行全称量化，得到一个命题 $P$。
+- **能力**：引入了**参数多态性**。可以定义像 `∀X. X -> X`（恒等函数）这样的多态类型。这是 Haskell、ML 等语言多态性的理论基础。
+- **对应逻辑**：二阶命题逻辑（可以量化命题变量）。
+
+### 3. λP（LF — Logical Framework）— 依赖类型
+
+- **位置**：x 轴顶端 (1,0,0)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (*, \square, \square)\}$
+- **新增规则**：$(*, \square, \square)$。允许形成 $\Pi x:A. B$ 这样的类型，其中 $A:*$（一个命题/小类型），$B:\square$（一个大类型）。
+- **能力**：引入了**依赖类型**。类型可以依赖于项。例如，可以定义 `Π n:Nat. Vector n`。对应谓词逻辑中的全称量化 $\forall x \in A, B(x)$。
+- **对应逻辑**：一阶谓词逻辑。
+- **著名应用**：Twelf 逻辑框架。
+
+### 4. λω（System Fω）— 高阶类型
+
+- **位置**：z 轴顶端 (0,0,1)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (\square, \square, \square)\}$
+- **新增规则**：$(\square, \square, \square)$。允许形成 $\Pi X:\square. Y$ 这样的类型，允许定义**类型构造子**（从类型到类型的函数）。
+- **能力**：引入了高阶类型操作。可以定义如 `List : * -> *` 这样的类型构造子。是 Haskell 中高阶类型（如 `Functor`, `Monad`）的基础。
+- **对应逻辑**：弱高阶命题逻辑。
+
+### 5. λP2（System FP）— 多态依赖类型
+
+- **位置**：x-y 平面右上角 (1,1,0)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (\square, *, *), (*, \square, \square)\}$
+- **描述**：结合了 λ2（多态）和 λP（依赖类型）的能力。
+- **能力**：既可以对类型进行量化（多态），又可以让类型依赖于项。例如，可以定义多态依赖类型 `∀X. Π n:Nat. Vector X n`。
+- **对应逻辑**：二阶谓词逻辑。
+
+### 6. λPω（Dependent Fω）— 依赖高阶类型
+
+- **位置**：x-z 平面右上角 (1,0,1)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (*, \square, \square), (\square, \square, \square)\}$
+- **描述**：结合了 λP（依赖类型）和 λω（高阶类型）的能力。
+- **能力**：类型可以依赖于项，并且可以操作高阶类型构造子。
+
+### 7. λω（Full）— 高阶多态
+
+- **位置**：y-z 平面右上角 (0,1,1)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (\square, *, *), (\square, \square, \square)\}$
+- **描述**：结合了 λ2（多态）和 λω（高阶类型）的能力。
+- **能力**：完整的 System Fω，支持高阶多态，是 Haskell 等语言类型系统的理论基础。
+
+### 8. λC（Calculus of Constructions, CoC）— 构造演算
+
+- **位置**：立方体最远的顶点 (1,1,1)。
+- **规则集 $\mathcal{R}$**：$\{(*, *, *), (\square, *, *), (*, \square, \square), (\square, \square, \square)\}$
+- **描述**：**包含了所有可能的规则**。允许所有形式的依赖：项依赖项、类型依赖项、项依赖类型、类型依赖类型。
+- **能力**：表达能力最强的系统。它统一了命题、证明、类型和计算。
+- **对应逻辑**：高阶谓词逻辑（构造性）。
+- **重要性**：这是 Coq 证明助理早期版本的核心演算。CIC（Calculus of Inductive Constructions）就是在 CoC 的基础上，增加了归纳类型（Inductive Types）原语。
+
+#### CoC 的局限性
+
+1. **缺乏原生归纳类型**：需用高阶编码表示数据结构（如自然数、链表），导致代码冗长。
+2. **证明复杂性高**：归纳证明需手动实现归纳原理：
+
+```coq
+NatInd := λP:Nat→Prop.
+          P O →
+          (∀n:Nat. P n → P (S n)) →
+          ∀n:Nat. P n
+```
+
+3. **终止性无保证**：允许非终止递归（如 `ω := λx. x x`），可能破坏逻辑一致性。
+
+### 总结
+
+| 系统 | 坐标 | 关键规则 | 核心能力 | 对应逻辑 |
+| :--- | :--- | :--- | :--- | :--- |
+| **λ→** | (0,0,0) | $(*, *, *)$ | 简单函数类型 | 命题逻辑 |
+| **λ2** | (0,1,0) | $(\square, *, *)$ | 参数多态 | 二阶命题逻辑 |
+| **λP** | (1,0,0) | $(*, \square, \square)$ | 依赖类型 | 一阶谓词逻辑 |
+| **λω** | (0,0,1) | $(\square, \square, \square)$ | 高阶类型 | 弱高阶逻辑 |
+| **λP2** | (1,1,0) | $(\square, *, *), (*, \square, \square)$ | 多态依赖类型 | 二阶谓词逻辑 |
+| **λPω** | (1,0,1) | $(*, \square, \square), (\square, \square, \square)$ | 依赖高阶类型 | — |
+| **λω (Full)** | (0,1,1) | $(\square, *, *), (\square, \square, \square)$ | 高阶多态 | 高阶命题逻辑 |
+| **λC (CoC)** | (1,1,1) | **全部规则** | 全依赖，统一逻辑与计算 | 高阶谓词逻辑 |
+
+**λ-Cube 的意义**在于，它清晰地展示了类型系统如何通过逐步增加不同维度的"依赖"能力，从一个简单的逻辑系统（λ→）演进为一个足以作为数学基础（λC/CoC）的强大系统。理解 λ-Cube 是理解现代依赖类型理论和证明助理（如 Coq, Lean）理论根基的关键一步。0:{"buildId":"xchLscWtOFGXXe5T-eZYy","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"layout-container","children":["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)] gap-8 items-start","children":[["$","$L2","system f",{"tags":{"类型系统":6,"pts":2,"依赖类型":3,"λ-cube":2,"coc":2,"cic":2,"curry-howard":2,"λ演算":1,"形式化验证":2,"de bruijn":1,"归纳类型":1,"coq":1,"system f":1,"形式化方法":6,"规约":1,"入门":1,"研究":2,"阅读":1,"论文":1,"技术":1,"工具":1,"内存管理":1,"程序验证":2,"程序分析":2,"静态分析":1,"程序开发":1,"编译原理":1,"算法":1,"验证":1},"activeTag":"system f"}],["$","div",null,{"className":"flex-1 min-w-0","children":[["$","$L3",null,{"tag":"system f"}],["$","$L4",null,{"posts":[{"slug":"lambda-cube","title":"λ-Cube：类型系统谱系","date":"2026-01-02","excerpt":"λ-Cube 由 8 个 PTS 组成，它们通过不同的规则集 R 区分，分别对应从简单类型到全依赖类型的各种演算，是理解现代证明助理理论根基的关键。","category":"Uncategorized","tags":["类型系统","λ-Cube","依赖类型","System F","CoC"],"authors":["Bin Fang"],"layout":"post","series":"类型系统","sort":"date-desc","featured":false,"pinned":false,"draft":false,"latex":false,"toc":true,"externalLinks":[],"readingTime":"6 min read","content":"$5","headings":[{"id":"λ-cube类型系统谱系","text":"λ-Cube：类型系统谱系","level":2},{"id":"1-λsimply-typed-lambda-calculus-简单类型-λ-演算","text":"1. λ→（Simply Typed Lambda Calculus）— 简单类型 λ 演算","level":3},{"id":"2-λ2system-f-二阶多态-λ-演算","text":"2. λ2（System F）— 二阶多态 λ 演算","level":3},{"id":"3-λplf--logical-framework-依赖类型","text":"3. λP（LF — Logical Framework）— 依赖类型","level":3},{"id":"4-λωsystem-fω-高阶类型","text":"4. λω（System Fω）— 高阶类型","level":3},{"id":"5-λp2system-fp-多态依赖类型","text":"5. λP2（System FP）— 多态依赖类型","level":3},{"id":"6-λpωdependent-fω-依赖高阶类型","text":"6. λPω（Dependent Fω）— 依赖高阶类型","level":3},{"id":"7-λωfull-高阶多态","text":"7. λω（Full）— 高阶多态","level":3},{"id":"8-λccalculus-of-constructions-coc-构造演算","text":"8. λC（Calculus of Constructions, CoC）— 构造演算","level":3},{"id":"总结","text":"总结","level":3}]}],"flows":[]}]]}]]}]}],["$L6","$L7"],"$L8"]}],"loading":null,"isPartial":false}
+6:["$","script","script-0",{"src":"/blog/_next/static/chunks/a64afc46fad40892.js","async":true}]
+7:["$","script","script-1",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
+b:null
