@@ -50,6 +50,76 @@
       "connections": 1
     },
     {
+      "id": "walk-thoughts",
+      "title": "散步随想录",
+      "type": "post",
+      "url": "/posts/walk-thoughts",
+      "connections": 0
+    },
+    {
+      "id": "moon-conspiracies",
+      "title": "一些密谋被月亮识破",
+      "type": "post",
+      "url": "/posts/moon-conspiracies",
+      "connections": 0
+    },
+    {
+      "id": "some-reading",
+      "title": "一些阅读",
+      "type": "post",
+      "url": "/posts/some-reading",
+      "connections": 0
+    },
+    {
+      "id": "autumn-mountain",
+      "title": "秋日山野",
+      "type": "post",
+      "url": "/posts/autumn-mountain",
+      "connections": 0
+    },
+    {
+      "id": "tilt-with-earth",
+      "title": "随地球倾斜",
+      "type": "post",
+      "url": "/posts/tilt-with-earth",
+      "connections": 0
+    },
+    {
+      "id": "march-sculpture",
+      "title": "三月的雕塑",
+      "type": "post",
+      "url": "/posts/march-sculpture",
+      "connections": 0
+    },
+    {
+      "id": "midsummer-story",
+      "title": "盛夏故事",
+      "type": "post",
+      "url": "/posts/midsummer-story",
+      "connections": 0
+    },
+    {
+      "id": "every-wind-is-fate",
+      "title": "每一阵风都是命运",
+      "type": "post",
+      "url": "/posts/every-wind-is-fate",
+      "connections": 0
+    },
+    {
+      "id": "into-clouds",
+      "title": "在夜空中钻进云里",
+      "type": "post",
+      "url": "/posts/into-clouds",
+      "connections": 0
+    },
+    {
+      "id": "appear-and-leave",
+      "title": "出现又离开",
+      "type": "post",
+      "url": "/posts/appear-and-leave",
+      "connections": 0
+    },
+    {
       "id": "hoare-logic",
       "title": "Hoare逻辑",
       "type": "note",

@@ -5,7 +5,7 @@
     <link>https://fangbin.github.io/blog</link>
     <description><![CDATA[思考、笔记与记录]]></description>
     <language>en</language>
-    <lastBuildDate>Thu, 28 May 2026 02:03:30 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 16:18:34 GMT</lastBuildDate>
     <atom:link href="https://fangbin.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
     
         <item>
@@ -63,6 +63,86 @@
           <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
           <description><![CDATA[形式化方法是指用数学方法来描述、分析和验证计算机系统的技术。]]></description>
           <category>形式化方法</category><category>入门</category>
+        </item>
+        <item>
+          <title><![CDATA[散步随想录]]></title>
+          <link>https://fangbin.github.io/blog/posts/walk-thoughts</link>
+          <guid>https://fangbin.github.io/blog/posts/walk-thoughts</guid>
+          <pubDate>Sat, 27 May 2023 00:00:00 GMT</pubDate>
+          <description><![CDATA[远处的环山在傍晚逐渐变成䒌靘之后，没有人能发现路边低矮叶子上还藏着初夏一些悲哀的雨滴。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category>
+        </item>
+        <item>
+          <title><![CDATA[一些密谋被月亮识破]]></title>
+          <link>https://fangbin.github.io/blog/posts/moon-conspiracies</link>
+          <guid>https://fangbin.github.io/blog/posts/moon-conspiracies</guid>
+          <pubDate>Tue, 16 May 2023 00:00:00 GMT</pubDate>
+          <description><![CDATA[夜晚总是迷幻的，月亮竖起耳朵，偷听我们对时间的抱怨，一些密谋都被月亮识破。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>时间</category>
+        </item>
+        <item>
+          <title><![CDATA[一些阅读]]></title>
+          <link>https://fangbin.github.io/blog/posts/some-reading</link>
+          <guid>https://fangbin.github.io/blog/posts/some-reading</guid>
+          <pubDate>Sat, 18 Feb 2023 00:00:00 GMT</pubDate>
+          <description><![CDATA[明朝世俗小说达到巅峰，民间百姓爱读，犹如现在的小视频，尤其是兰陵笑笑生的《金瓶梅词话》，被称为第一奇书。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>阅读</category><category>文学</category>
+        </item>
+        <item>
+          <title><![CDATA[秋日山野]]></title>
+          <link>https://fangbin.github.io/blog/posts/autumn-mountain</link>
+          <guid>https://fangbin.github.io/blog/posts/autumn-mountain</guid>
+          <pubDate>Tue, 24 Jan 2023 00:00:00 GMT</pubDate>
+          <description><![CDATA[我们站在一座山的山腰，看着远方云朵在另一座山上投下阴影，头上偶尔几只飞鸟飞过。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>旅行</category>
+        </item>
+        <item>
+          <title><![CDATA[随地球倾斜]]></title>
+          <link>https://fangbin.github.io/blog/posts/tilt-with-earth</link>
+          <guid>https://fangbin.github.io/blog/posts/tilt-with-earth</guid>
+          <pubDate>Sun, 04 Sep 2022 00:00:00 GMT</pubDate>
+          <description><![CDATA[我的脑袋里仿佛放了一块石头，沉重无比。空气传播着语言，树根凝固着时间。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>时间</category><category>美</category><category>城市</category>
+        </item>
+        <item>
+          <title><![CDATA[三月的雕塑]]></title>
+          <link>https://fangbin.github.io/blog/posts/march-sculpture</link>
+          <guid>https://fangbin.github.io/blog/posts/march-sculpture</guid>
+          <pubDate>Mon, 28 Mar 2022 00:00:00 GMT</pubDate>
+          <description><![CDATA[镜子的回忆就包含着回忆，令人遗憾的是遗憾本身。诗人想尽办法把语言的悖论溶解，威尼斯的情人说，三月的音乐凝固成了雕塑。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>疫情</category><category>隔离</category>
+        </item>
+        <item>
+          <title><![CDATA[盛夏故事]]></title>
+          <link>https://fangbin.github.io/blog/posts/midsummer-story</link>
+          <guid>https://fangbin.github.io/blog/posts/midsummer-story</guid>
+          <pubDate>Fri, 18 Sep 2020 00:00:00 GMT</pubDate>
+          <description><![CDATA[天地氤氲，时间独奏，连下三十余天忽大忽小的梅雨雷雨毛毛雨台风雨。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>夏天</category><category>上海</category>
+        </item>
+        <item>
+          <title><![CDATA[每一阵风都是命运]]></title>
+          <link>https://fangbin.github.io/blog/posts/every-wind-is-fate</link>
+          <guid>https://fangbin.github.io/blog/posts/every-wind-is-fate</guid>
+          <pubDate>Fri, 28 Jun 2019 00:00:00 GMT</pubDate>
+          <description><![CDATA[存在是一种虚无，每一阵风都是命运，醒来之时，就会告别哲学家身份。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>生命</category><category>夏天</category>
+        </item>
+        <item>
+          <title><![CDATA[在夜空中钻进云里]]></title>
+          <link>https://fangbin.github.io/blog/posts/into-clouds</link>
+          <guid>https://fangbin.github.io/blog/posts/into-clouds</guid>
+          <pubDate>Mon, 27 May 2019 00:00:00 GMT</pubDate>
+          <description><![CDATA[初夏应该骑上车，穿过半个小镇和还没热起来的风，去看望想你去又不想你去的初恋或者老相好。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>夏天</category><category>初恋</category><category>阅读</category>
+        </item>
+        <item>
+          <title><![CDATA[出现又离开]]></title>
+          <link>https://fangbin.github.io/blog/posts/appear-and-leave</link>
+          <guid>https://fangbin.github.io/blog/posts/appear-and-leave</guid>
+          <pubDate>Thu, 09 May 2019 00:00:00 GMT</pubDate>
+          <description><![CDATA[天上的月亮变旧了。小区楼下的街道还算干净，路边的树每天止不住得撑开一点。]]></description>
+          <category>散文</category><category>随笔</category><category>月庄文字</category><category>爱情</category><category>杭州</category><category>上海</category>
         </item>
   </channel>
 </rss>
