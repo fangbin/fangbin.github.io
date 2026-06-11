@@ -1,0 +1,190 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+12:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/c411927e4244f8ae.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"dw13LkwjoHnSmRIZzfs0T","c":["","papers","claw-swe-bench",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","claw-swe-bench","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/c411927e4244f8ae.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/92af3790b5b31134.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf"],"$L10"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L11",false]],"m":"$undefined","G":["$12",[]],"S":true}
+13:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+16:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+18:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+10:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+11:["$","$1","h",{"children":[null,["$","$L16",null,{"children":"$L17"}],["$","div",null,{"hidden":true,"children":["$","$L18",null,{"children":["$","$14",null,{"name":"Next.Metadata","children":"$L19"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1a:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1b:T265d,## 论文概览
+
+**Claw-SWE-Bench** 是 TokenRhythm Technologies 与 Infinigence AI 联合提出的多语言 SWE-bench 风格基准与适配器协议，arXiv 于 2026 年 6 月 10 日发布（2606.12344）。
+
+问题的起点很直接：以 OpenClaw 为代表的通用 Agent 越来越多地被用于生产力工具、浏览器自动化和科学辅助场景，但它们的仓库级编程能力几乎没有直接的量化证据。现有 SWE-bench 风格的评估通常将提示模板、Agent 循环、工具接口、超时策略和补丁提取逻辑打包成一个发布系统，使得最终解决率同时混合了三个因果上完全不同的因素：**被评估的 LLM**、**将 LLM 转化为 Agent 的框架**、以及**被解决的任务实例本身**。当一套系统的 Pass@1 比另一套高 10 pp 时，我们无法判断是模型更好、还是框架更好、还是恰好跑了更容易的实例。
+
+Claw-SWE-Bench 的核心贡献是将这三个变量分开——用一套共享的适配器协议和编排器把不同 Agent 框架约束到相同的执行合约，从而使框架本身成为可以独立控制的实验变量。
+
+---
+
+## 核心创新
+
+### 1. 适配器协议：让异构框架共享同一合约
+
+Claw-SWE-Bench 的第一层是**适配器协议（Adapter Protocol）**。每个支持的框架实现相同的五个抽象方法：
+
+```python
+create_agent()    # 启动 Agent 实例
+send_task()       # 发送任务（固定提示模板）
+backup_session()  # 备份会话状态
+delete_agent()    # 清理 Agent 实例
+get_docker_args() # 返回 Docker 工作空间配置
+```
+
+共享编排器只通过这五个方法驱动运行，不需要了解底层用的是 Node.js、Python 还是 Rust。更重要的是，候选补丁**从仓库状态收集**（`git diff base_commit`），而非从 Agent 的最终消息中解析——这把"模型能不能写出格式正确的 unified diff"这个无关因素彻底消除。
+
+这个设计直接产生了一个关键对比：**裸适配器（Bare Adapter）vs 完整适配器（Full Adapter）**。
+
+| 配置 | Pass@1 | 补丁应用失败率 |
+|------|--------|--------------|
+| 裸适配器（仅发送 issue，要求模型直接输出 diff） | **19.1%** | **69.1%** |
+| 完整适配器（基于 Git 状态导出补丁） | **73.4%** | **<1.5%** |
+
+裸适配器的瓶颈不在于模型无法修改代码，而在于 unified diff 格式极度脆弱：行号差一个、块头多一个空格、尾部换行缺失，补丁就会应用失败。完整适配器把"写 diff 文本"的责任转移给运行器而非模型，应用失败率从 69.1% 骤降至 1.5% 以下，Pass@1 从 19.1% 跳升至 73.4%。这 54.3 pp 的差距，完全来自输出合约的设计，与模型能力无关。
+
+### 2. 成本感知、排名感知的 Lite 子集构建
+
+全量 350 实例跑一次需要约 15.9 天（3 线程并发），对快速迭代来说成本过高。Claw-SWE-Bench 发布了 **Lite-80**——从 8 种语言各选 10 个实例，满足以下优化目标：
+
+$$\min_{x \in \{0,1\}^{350}} \underbrace{\sum_{c,l} |P_c^{(l)}(\text{lite}) - P_c^{(l)}(\text{full})|}_{\text{解决率奇偶性}} + \lambda \underbrace{\sum_{c,c'} \max(0, \text{rank violation margin})}_{\text{成对排名铰链}} + \alpha \underbrace{\sum_c |\log \text{cost}_c^{\text{lite}} - \log \text{cost}_c^{\text{full}}|}_{\text{成本奇偶性}}$$
+
+其中 $x_i \in \{0,1\}$ 为实例 $i$ 是否选入 Lite，17 列校准数据（9 个 OpenClaw 模型列 + 8 个跨框架列）提供优化信号。优化方法是每种语言 200 次重启的四分位内 1-swap 局部搜索。
+
+结果令人满意：Lite-80 运行成本约为 Full-350 的 **22.9%**，但聚合 Pass@1 误差仅 **0.4 pp**。跨框架验证显示平均绝对差异 **1.88 pp**，最大差异 **3.68 pp**（nanobot × Qwen 3.6-flash）。
+
+### 3. 未来提交清理（Future Commit Contamination Fix）
+
+SWE-bench-Multilingual 的 300 个非 Python 实例中，存在未来提交（base_commit 之后的可达 Git 提交）在某些框架下可被访问的问题，这会虚高解决率。Claw-SWE-Bench 对每个实例移除可达的未来提交，并通过对比 9 个模型验证其效果：
+
+- 清理后 Pass@1 对所有模型均不高于清理前（方向符合预期）
+- 影响不均匀：Claude Opus 4.7 下降最多（**-8.0 pp**：84.7% → 76.7%），Kimi K2.6 下降 5.0 pp，部分模型变化约 1 pp
+
+这表明不同模型利用未来提交的程度存在显著差异，统一清理是公平比较的必要前提。
+
+---
+
+## 方法论
+
+### 数据集构成
+
+完整基准由两个上游来源组成：
+
+| 来源 | 贡献 | 语言 |
+|------|------|------|
+| SWE-bench-Multilingual | 300 个实例 | Java, Go, Rust, JS/TS, C/C++, Ruby, PHP |
+| SWE-bench-Verified-Mini | 50 个实例 | Python |
+| **合计** | **350 个实例** | **8 种语言，43 个仓库** |
+
+### 五个评估框架
+
+| Claw | 实现 | 特点 |
+|------|------|------|
+| **OpenClaw** | Node.js | 唯一具有结构化 JSON 输出协议和工具拒绝列表 |
+| **Hermes-agent** | Python（无状态） | 每次调用完全无状态，无智能体生命周期 |
+| **ZeroClaw** | Rust 单二进制 | ~37 MB，无运行时依赖，原生成本日志 |
+| **Nanobot** | Python | 工作空间污染 + 清理（创建 AGENTS.md 等元数据文件） |
+| **GenericAgent** | Python | 开源基线，固定函数调用工具集 |
+
+### 标准化运行配置
+
+所有框架共享相同的外部约束：
+- 每实例 **3600 秒**挂钟超时
+- 每实例运行 **1 次**
+- **3 线程**并发
+- 每实例从**相同任务提示模板**实例化
+- 禁止 `git add / git commit`，禁止修改测试文件
+- 禁止网络检索
+
+![Claw-SWE-Bench 系统架构图](/images/papers/claw-swe-bench/clawswe-architecture.png)
+
+---
+
+## 实验结果
+
+### LLM 轴：固定框架，改变模型（+29.4 pp）
+
+OpenClaw × 9 个模型的扫描结果揭示了令人印象深刻的成本-性能权衡：
+
+| 模型 | Pass@1 | 成本 ($) | 挂钟时长 (s) |
+|------|--------|---------|------------|
+| GPT 5.5 | **78.0%** | 1399.1 | 603.7 |
+| Claude Opus 4.7 | 77.1% | 1082.0 | 424.6 |
+| GLM 5.1 | 73.4% | 277.0 | 586.8 |
+| DeepSeek-V4 Pro | 71.7% | 81.3 | 662.3 |
+| DeepSeek-V4 Flash | 70.3% | **8.2** | 430.0 |
+| Qwen 3.6-flash | 66.0% | 71.5 | 636.0 |
+| Kimi K2.6 | 66.9% | 633.7 | 1235.3 |
+| MiniMax M2.7 | 61.4% | 196.7 | 1165.6 |
+| Seed 2.0-mini | 48.6% | 19.4 | 1153.0 |
+
+值得关注的是 DeepSeek-V4 Flash：70.3% Pass@1，成本仅 **$8.2**，比 GPT 5.5 的成本低 170 倍，性能仅低 7.7 pp。相似的解决率可以对应相差数量级的评估成本，这正是报告 API 成本与 Pass@1 并列的价值所在。
+
+### 框架轴：固定模型，改变框架（+27.4 pp）
+
+5 个框架 × 2 个模型的扫描是本文最核心的发现：
+
+| Claw | GLM 5.1 Pass@1 | Qwen 3.6-flash Pass@1 | GLM 成本 ($) |
+|------|---------------|----------------------|-------------|
+| OpenClaw | **73.4%** | **66.0%** | 277.0 |
+| Hermes-agent | 71.1% | 62.6% | 330.6 |
+| ZeroClaw | 70.3% | 58.3% | **383.4** |
+| GenericAgent | 63.1% | 38.6% | **85.8** |
+| Nanobot | 60.9% | 47.4% | 768.8 |
+
+在 Qwen 3.6-flash 下，5 个框架产生的 Pass@1 范围是 38.6% ~ 66.0%，**差距达 27.4 pp**——这比相邻的 Flagship 模型层级之间的差距（如 DeepSeek-V4 Flash 和 Seed 2.0-mini 之间 21.7 pp）更大。
+
+框架的工具接口设计、Agent 循环策略、停止逻辑和工作空间管理方式，单独产生的影响已经能够重新排列系统排名，而不仅仅是压缩或拉伸排名。
+
+![模型轴与框架轴的性能对比](/images/papers/claw-swe-bench/clawswe-results.png)
+
+---
+
+## 启示与思考
+
+我觉得这篇论文做了一件很朴素但非常必要的事情：**把"框架"从隐性变量变成显性变量**。
+
+过去我们谈 LLM 在软件工程上的进展，通常是"GPT-4o 的 SWE-bench 解决率是 X%"这样的表述，隐含假设是框架只是一个透明的载体。但 Claw-SWE-Bench 的数据清楚地表明，框架的贡献量级与模型本身相当——27.4 pp 的框架轴差距，已经是一个完整模型代际的量级。
+
+这有几个层面的含义：
+
+**对评估社区的含义**：任何 SWE-bench 风格的评测报告，都应该把框架作为一等受控变量明确列出。只报告 Pass@1 不报告框架配置，就像药物临床试验只报告疗效不报告给药方式一样，信息是不完整的。
+
+**对框架开发者的含义**：补丁提取策略、工具接口设计和停止逻辑这些"工程细节"，对最终解决率的贡献不亚于底层模型的选择。从裸适配器 19.1% 到完整适配器 73.4% 的跳跃——54.3 pp——完全来自输出合约的重新设计，模型一行都没换。这说明框架工程还有大量可以挖掘的空间。
+
+**对模型开发者的含义**：DeepSeek-V4 Flash 以 $8.2 的成本实现 70.3% Pass@1，与 $1399 的 GPT 5.5 差距仅 7.7 pp。这一数据暗示，在编程 Agent 场景下，推理效率（缓存命中率、输出 token 效率）可能比原始能力更能决定实际部署的经济可行性。
+
+我唯一觉得值得商榷的地方是单次运行的统计可靠性问题——作者也在局限性部分坦诚地提到这一点。几个百分点的差异在单次运行下无法判断是否显著。未来加入多次运行的方差估计，会让排名结论更加可信。但论文披露的原始 token 数据和缓存命中率，已经为第三方重新计算和审计提供了充分的基础。
+
+---
+
+## 参考资料
+
+- arXiv: [2606.12344](https://arxiv.org/abs/2606.12344)
+- 数据集: [GitHub](https://github.com/opensquilla/claw-swe-bench) | [HuggingFace](https://huggingface.co/datasets/TokenRhythm/Claw-SWE-Bench)
+- SWE-bench-Multilingual: [GitHub](https://github.com/multi-swe-bench/multi-swe-bench)a:["$","$L1a",null,{"paper":{"slug":"claw-swe-bench","title":"Claw-SWE-Bench：让通用 Agent 框架在编程任务上可比较","originalTitle":"Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks","excerpt":"TokenRhythm 与 Infinigence AI 提出 Claw-SWE-Bench，一个多语言 SWE-bench 风格基准和适配器协议，将通用 Agent 框架（OpenClaw、Hermes、ZeroClaw 等）约束到相同的执行合约下公平比较。实验揭示一个关键事实：固定模型下，仅改变 Agent 框架可产生最高 27.4 pp 的 Pass@1 差距——与相邻模型层级带来的差距相当甚至更大，这说明框架本身是一等的因果变量，不该被隐藏在模型分数背后。","date":"2026-06-10","coverImage":"$undefined","architectureImage":"/images/papers/claw-swe-bench/clawswe-architecture.png","featured":false,"draft":false,"authors":["Mengyu Zheng","Kai Han","Boxun Li","Haiyang Xu","Yuchuan Tian","Wei He","Yunhe Wang","Yu Wang"],"year":2026,"venue":"arXiv 2606.12344","tags":["AI解读","Agent 架构设计","Agent Framework","Benchmark","软件工程"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1b","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-适配器协议让异构框架共享同一合约","text":"1. 适配器协议：让异构框架共享同一合约","level":3},{"id":"2-成本感知排名感知的-lite-子集构建","text":"2. 成本感知、排名感知的 Lite 子集构建","level":3},{"id":"3-未来提交清理future-commit-contamination-fix","text":"3. 未来提交清理（Future Commit Contamination Fix）","level":3},{"id":"方法论","text":"方法论","level":2},{"id":"数据集构成","text":"数据集构成","level":3},{"id":"五个评估框架","text":"五个评估框架","level":3},{"id":"标准化运行配置","text":"标准化运行配置","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"llm-轴固定框架改变模型294-pp","text":"LLM 轴：固定框架，改变模型（+29.4 pp）","level":3},{"id":"框架轴固定模型改变框架274-pp","text":"框架轴：固定模型，改变框架（+27.4 pp）","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考资料","text":"参考资料","level":2}],"readingTime":"2 min read"}}]
+17:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1c:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+15:null
+19:[["$","title","0",{"children":"Claw-SWE-Bench：让通用 Agent 框架在编程任务上可比较 | 博客"}],["$","meta","1",{"name":"description","content":"TokenRhythm 与 Infinigence AI 提出 Claw-SWE-Bench，一个多语言 SWE-bench 风格基准和适配器协议，将通用 Agent 框架（OpenClaw、Hermes、ZeroClaw 等）约束到相同的执行合约下公平比较。实验揭示一个关键事实：固定模型下，仅改变 Agent 框架可产生最高 27.4 pp 的 Pass@1 差距——与相邻模型层级带来的差距相当甚至更大，这说明框架本身是一等的因果变量，不该被隐藏在模型分数背后。"}],["$","meta","2",{"property":"og:title","content":"Claw-SWE-Bench：让通用 Agent 框架在编程任务上可比较"}],["$","meta","3",{"property":"og:description","content":"TokenRhythm 与 Infinigence AI 提出 Claw-SWE-Bench，一个多语言 SWE-bench 风格基准和适配器协议，将通用 Agent 框架（OpenClaw、Hermes、ZeroClaw 等）约束到相同的执行合约下公平比较。实验揭示一个关键事实：固定模型下，仅改变 Agent 框架可产生最高 27.4 pp 的 Pass@1 差距——与相邻模型层级带来的差距相当甚至更大，这说明框架本身是一等的因果变量，不该被隐藏在模型分数背后。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/claw-swe-bench/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"Claw-SWE-Bench：让通用 Agent 框架在编程任务上可比较"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"Claw-SWE-Bench：让通用 Agent 框架在编程任务上可比较"}],["$","meta","13",{"name":"twitter:description","content":"TokenRhythm 与 Infinigence AI 提出 Claw-SWE-Bench，一个多语言 SWE-bench 风格基准和适配器协议，将通用 Agent 框架（OpenClaw、Hermes、ZeroClaw 等）约束到相同的执行合约下公平比较。实验揭示一个关键事实：固定模型下，仅改变 Agent 框架可产生最高 27.4 pp 的 Pass@1 差距——与相邻模型层级带来的差距相当甚至更大，这说明框架本身是一等的因果变量，不该被隐藏在模型分数背后。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1c","16",{}]]
