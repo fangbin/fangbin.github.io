@@ -1,0 +1,163 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T2a53,## 论文概览
+
+**arXiv 2603.19469** | UC Santa Cruz + UC Berkeley + Duke University
+
+这篇论文的问题意识非常精准：**Agent 安全本质上是情境性的（inherently contextual）**。同一个动作——删除文件、查询数据库、发送邮件——在不同情境下可能是完全合法的操作，也可能是严重的安全违规。然而现有攻击定义几乎都是基于动作内容本身，完全忽略了情境。结果是：防御系统陷入"精确-效用两难"——拦截所有外部来源的指令会误判大量合法操作，而允许外部指令则让攻击者有机可乘。
+
+作者来自 UC Santa Cruz（Siu、Montgomery、Chenguang Wang）、UC Berkeley（He、Zhun Wang、Dawn Song）和 Duke University（Neil Gong）。本文是一篇**系统化知识（Systematization of Knowledge, SoK）**性质的论文：不做实验，而是系统梳理和形式化已有攻击与防御，综合分析了 87 篇相关论文。
+
+**核心论点**：防御失效，不是因为技术做得不够好，而是因为对"情境授权到底需要什么信息"从未形式化过。
+
+---
+
+## 核心创新
+
+### 创新一：执行情境 Ct 的形式化
+
+框架将 Agent 安全建立在精确定义的**执行情境（Execution Context）**之上：
+
+$$C_t = (p, Tr_{t-1}, M_t, E_t, S_{auth,t}, G)$$
+
+其中 $p$ 是用户提示，$Tr_{t-1}$ 是迄今为止的动作-观测轨迹，$M_t$ 是持久化记忆，$E_t$ 是环境状态，$S_{auth,t}$ 是已认证来源集合，$G = (S, R)$ 是来源权限图。
+
+这个六元组捕捉了授权决策所需的全部信息。两个执行过程可以产生内容完全相同的动作，但若 $C_t$ 不同，一个合法一个违规——这就是为什么纯内容过滤必然失败。
+
+### 创新二：五个 Oracle 函数
+
+Oracle 函数类似于密码协议分析中的"理想功能"，它们定义了安全验证在理论上**需要哪些信息**，即使完美实现可能不现实：
+
+| Oracle | 签名 | 含义 |
+|--------|------|------|
+| $\mathcal{I}$ | $(a_t, f, M_t, p, Tr_{t-1}) \to x$ | **指令归因**：哪些输入导致了动作 $a_t$？ |
+| $\mathcal{L}$ | $x \to s$ | **来源归因**：该输入来自哪个来源？ |
+| $H_p$ | $p \to o$ | **提示目标**：用户提示表达了什么目标？ |
+| $H_{Tr}$ | $(Tr_{t-1}, o_0) \to \{0,1\}$ | **轨迹对齐**：轨迹整体是否服务于目标 $o_0$？ |
+| $H_a$ | $(a_t, Tr_{t-1}, o_0) \to \{0,1\}$ | **动作对齐**：这一步动作是否服务于 $o_0$？ |
+
+**指令归因 $\mathcal{I}$** 是其中最难实现的，本质是一个神经网络可解释性问题——它不是问"哪个 token 影响了输出"，而是问"哪个输入**充当了指令**"。这一区分很关键：信息性输入和指令性输入在语言层面可能无法区分，必须从行为因果链路入手。
+
+### 创新三：四个安全性质与统一谓词
+
+基于 Oracle 函数，框架定义四个安全性质，并写出精确的安全谓词：
+
+$$\text{secure}(a_t, C_t) \Leftrightarrow$$
+$$o_0 \in \mathcal{O} \wedge H_{Tr}(Tr_{t-1}, o_0) = 1 \quad \text{(任务对齐)}$$
+$$\wedge H_a(a_t, Tr_{t-1}, o_0) = 1 \quad \text{(动作对齐)}$$
+$$\wedge \forall x \in \mathbf{x}, \forall s \in \mathcal{L}(x): s \in S_{auth,t} \vee H_a(a_t, Tr_{t-1}, o_0) = 1 \quad \text{(来源授权)}$$
+$$\wedge \forall s \in \mathcal{L}(x), \forall s' \in s': (s, s') \in R \quad \text{(数据隔离)}$$
+
+**来源授权条件**用了析取（OR）而非合取（AND）：外部未认证来源触发的动作，若该动作独立满足动作对齐（$H_a = 1$），则不构成违规。这精准捕捉了用户主动委托外部内容的情境——比如"按这个食谱做"，食谱来自未认证网站，但遵循其烘焙指令是合法的。
+
+---
+
+## 方法论：九类攻击的重新形式化
+
+框架对已有九类攻击进行情境化重定义，每一类都精确映射到一个或多个安全性质的违反：
+
+| 攻击类型 | 违反的安全性质 | 关键区分 |
+|---------|-------------|---------|
+| **间接提示注入** | 来源授权 + 动作对齐（双重违反） | 外部来源 AND 动作不服务目标，缺一不可 |
+| **直接提示注入** | 任务对齐 | 已认证用户要求违反系统约束 |
+| **越狱（Jailbreak）** | 任务对齐 | 目标 $o_0 \notin \mathcal{O}$（超出许可目标空间） |
+| **困惑代理（Confused Deputy）** | 来源授权 | 代理用自己的提升权限执行用户无权限操作 |
+| **任务漂移（Task Drift）** | 任务对齐 | 轨迹 $H_{Tr} = 0$，无外部攻击者驱使 |
+| **代理错位（Agentic Misalignment）** | 来源授权 + 任务对齐 | 代理将自身推理作为指令来源 |
+| **能力滥用（Capability Misuse）** | 动作对齐 | 具备权限但动作 $H_a = 0$ |
+| **跨情境信息泄露** | 数据隔离 | $(s, s') \notin R$ |
+| **记忆投毒（Memory Poisoning）** | 来源授权（跨时间步） | $t_1$ 注毒，$t_2$ 触发授权错误 |
+
+**间接提示注入的重定义**最有力度。旧定义（Liu et al.）：只要外部数据输入包含提示，就是注入攻击。框架的重定义：需要**同时**违反来源授权（外部未认证）**且**动作不对齐（$H_a = 0$）。这意味着，用户说"按这个网页食谱做"，食谱里的"在 350°F 烘焙"来自外部，但 $H_a = 1$，因此**不是**注入攻击。这个定义终于能区分合法委托和恶意注入。
+
+---
+
+## 对现有防御的系统分析
+
+框架将防御分为两类：
+
+**预防型（Prevention）**：提升 Oracle 近似质量
+- 提示工程（指令层级、分隔符）→ 近似 $H_p$，但无法解决指令归因问题
+- 模型训练（防御微调、RLHF）→ 近似 $\mathcal{I}$ 和 $\mathcal{L}$，但微调不等于因果归因
+- 策略规范（AgentSpec、GuardAgent）→ 编码 $R$ 和 $\mathcal{O}$，但需要手动规范且对动态情境应对有限
+
+**检测型（Detection）**：实现安全性质检查
+- 输入过滤（DataSentinel、PromptArmor）→ 近似来源授权，但缺乏 $\mathcal{I}$，本质是模式匹配而非因果检测
+- 轨迹验证（TaskShield、Circuit Breaking）→ 近似 $H_a$ 和 $H_{Tr}$
+- 数据隔离：**极少有防御覆盖**，仅有粗粒度沙箱
+
+**AgentDojo 实证数据**验证了框架的预测：
+- 最直接近似 $H_a$ 的防御（PI Detector、Tool Filter）——ASR 下降 **86%** 和 **88%**
+- 仅近似 $\mathcal{I}$ 或 $\mathcal{L}$ 的防御（Delimiting、Repeat Prompt）——ASR 下降最多 **28%**
+- 代价：PI Detector 将有效任务完成率从 **69.0%** 降至 **41.5%**——因为 Oracle 近似不精确导致误判
+
+这个数据精准验证了框架的核心论断：不是防御力度不够，是 Oracle 近似质量制约了上限。
+
+---
+
+## 架构图
+
+![Agent Security Framework Architecture](/images/papers/agent-security-framework/agent-security-framework-architecture.png)
+
+*图1：LLM Agent 情境安全框架——执行情境、Oracle 函数与四个安全性质之间的关系*
+
+![Attack Classification and Defense Analysis](/images/papers/agent-security-framework/agent-security-framework-attacks.png)
+
+*图2：左：九类攻击与四个安全性质的违反矩阵；右：AgentDojo 实证数据中各类防御的 ASR 降低率与有效性保留对比*
+
+---
+
+## 开放问题与未来方向
+
+论文坦率地列出了框架的局限和需要解决的问题：
+
+**Oracle 实现**是最核心的工程挑战。指令归因 $\mathcal{I}$ 是一个开放的可解释性问题——当前注意力机制和影响函数只能给出粗近似。目标评估 Oracle（$H_p, H_{Tr}, H_a$）需要可靠的语义判断，LLM judge 可以近似但对对抗输入不稳健。
+
+**组合安全**是框架当前未完全覆盖的：单独各自安全的动作组合后可能造成违规（比如先复制敏感文件到仓库，再执行 `chmod -R 777`）。$H_a$ 的当前定义评估单步动作是否服务目标，但未建模环境状态随动作序列的累积变化。
+
+**多 Agent 委托**框架当前只覆盖单 Agent 场景，未处理 Agent A 委托 Agent B 执行子任务时的授权传递问题——来源权限图 $R$ 需要扩展为委托链建模。
+
+**TOCTOU 攻击**：安全性质可能在验证时成立、执行时已被破坏（文件在 $t_1$ 验证，$t_2$ 执行前被替换）。时序安全是现有工作普遍忽视的维度。
+
+**基准缺失**：现有基准重置任务间上下文，使跨会话的数据隔离违规不可见；且缺少授权情境规范（哪些来源已认证、哪些目标已授权、$R$ 长什么样），导致无法评估完整的安全性质。
+
+---
+
+## 启示与思考
+
+我觉得这篇论文提出了一个在工程实践中被长期忽视的基础问题：**"安全"到底是动作的性质，还是动作+情境的关系？**
+
+直觉上，"删除文件"听起来危险——所以很多系统就把"删除文件"列入黑名单。但这个做法本质上是把判断建立在了语法内容层面，而跳过了情境层面：是谁下令的？为了什么目标？这个动作服务于目标吗？信息流有没有越权？
+
+Oracle 函数的设计让我印象深刻，特别是指令归因 $\mathcal{I}$ 和来源归因 $\mathcal{L}$ 的分离。很多防御系统混淆了这两个问题——它们能检测"某输入来自外部"（即 $\mathcal{L}$ 的一个近似），但无法判断"这个外部输入是否在因果层面产生了这个动作"（$\mathcal{I}$ 才能回答的问题）。于是对抗性攻击者可以通过改写注入方式绕过基于 $\mathcal{L}$ 的检测，但 $\mathcal{I}$ 层面的因果信号并未改变。
+
+论文 87 篇文献的梳理加上 Oracle 框架，让我觉得这可以作为 AARM 框架中安全监控规则设计的一个理论锚点。现有 AgentMonitor 做的是行为 Hook——如果能对应到 Oracle 函数的近似，比如：Hook 工具调用 → 近似 $H_a$，跟踪调用链 → 近似 $\mathcal{I}$，记录输入来源 → 近似 $\mathcal{L}$，就能用框架的语言精确说明每个监控点覆盖了哪个 Oracle，哪些还是盲区。
+
+当然，框架本身在两个地方还欠缺：数据隔离性质的实用近似几乎没有，论文自己也承认防御覆盖率极低；多 Agent 场景下授权传递的形式化处理目前也完全是空白。这两个方向对实际部署的复杂 Agent 系统来说是最紧迫的。
+
+---
+
+## 参考信息
+
+- **论文**：[arXiv 2603.19469](https://arxiv.org/abs/2603.19469)
+- **作者团队**：UC Santa Cruz（Vincent Siu 等） + UC Berkeley（Dawn Song 等） + Duke University（Neil Gong）
+- **发表状态**：arXiv 预印本，2026 年 3 月
+- **论文类型**：SoK（Systematization of Knowledge），无实验，综合分析 87 篇文献
+- **相关工作**：AgentSpec、TaskShield、AgentDojo、PromptArmor、DataSentinel0:{"buildId":"QnKgjm4-P0NT-Uy8c9pr5","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"agent-security-framework","title":"形式化 LLM Agent 安全：情境感知的四维框架","originalTitle":"A Framework for Formalizing LLM Agent Security","excerpt":"UC Santa Cruz/UC Berkeley/Duke 联合提出 LLM Agent 安全的形式化框架，将 Agent 安全定义为情境属性而非内容属性。四个安全性质（任务对齐、动作对齐、来源授权、数据隔离）加五个 Oracle 函数，彻底重新形式化了间接提示注入、直接提示注入、越狱、困惑代理等九类攻击，并系统揭示现有防御的结构性盲点——本质是对 Oracle 函数近似质量不足，而非努力不够。","date":"2026-06-18","architectureImage":"/images/papers/agent-security-framework/agent-security-framework-architecture.png","featured":false,"draft":false,"authors":["Vincent Siu","Jingxuan He","Kyle Montgomery","Zhun Wang","Neil Gong","Chenguang Wang","Dawn Song"],"year":2026,"venue":"arXiv","tags":["AI解读","AI Agent","Agent 安全","形式化方法","提示注入","Agent 规范与安全"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"创新一执行情境-ct-的形式化","text":"创新一：执行情境 Ct 的形式化","level":3},{"id":"创新二五个-oracle-函数","text":"创新二：五个 Oracle 函数","level":3},{"id":"创新三四个安全性质与统一谓词","text":"创新三：四个安全性质与统一谓词","level":3},{"id":"方法论九类攻击的重新形式化","text":"方法论：九类攻击的重新形式化","level":2},{"id":"对现有防御的系统分析","text":"对现有防御的系统分析","level":2},{"id":"架构图","text":"架构图","level":2},{"id":"开放问题与未来方向","text":"开放问题与未来方向","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考信息","text":"参考信息","level":2}],"readingTime":"10 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
