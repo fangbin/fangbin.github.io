@@ -1,0 +1,99 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T16d4,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+《Survey on Vision-Language-Action Models》是 2025 年 2 月提交到 arXiv 的一篇综述。根据其摘要自述，该文是**由大语言模型（LLM）生成的文献回顾**，仅用于演示目的，不代表原创研究。arXiv 管理员于 2025 年 6 月将其**撤回（withdrawn）**，理由是严重违反 arXiv 可接受投稿政策。
+
+我们提取的 PDF（v1, 126KB）也印证了这一点：14 页的内容混杂了不相关的段落（如 Actra、ProSim-Instruct-520k 等显然来自其他论文的文本），章节之间缺乏连贯性，参考文献格式混乱，无法作为可靠的学术综述使用。
+
+因此，本文不会按照常规综述进行深度解读，而是：
+1. 说明该论文的真实状态；
+2. 基于 arXiv 摘要和 PDF 提取片段，记录其试图覆盖的主题；
+3. 补充 VLA 模型的通用背景、典型架构与核心挑战，帮助读者建立基础认知。
+
+## 核心说明
+
+**该论文不适合作为 VLA 领域的主要参考文献。** 其问题包括：
+
+- **内容非原创且由 AI 生成**：摘要明确承认全文由 LLM 生成，用于展示如何自动化文献综述。
+- **事实与引用不可靠**：PDF 中出现了与 VLA 无关的方法（如 Actra、VoxPoser 等被错误拼接），无法保证引用准确性。
+- **已被 arXiv 官方撤回**：v3 版本仅 1KB，显示 "This submission has been withdrawn"，不再提供 PDF 下载。
+
+这也提醒我们：在利用大模型辅助学术写作时，**准确性、引用可信度和上下文理解**仍是核心挑战。自动化文献综述需要更严格的结构化框架和人工校验机制。
+
+## VLA 模型通用背景
+
+Vision-Language-Action（VLA）模型是一类将视觉感知、语言理解与机器人动作输出统一在一个端到端框架中的模型。其目标是让机器人能够根据自然语言指令和视觉观测，直接生成可执行的动作序列或目标位姿。
+
+### 典型架构
+
+VLA 模型的输入通常包括三类模态：
+
+- **视觉输入**：RGB 图像、深度图、点云或视频序列，提供环境状态信息。
+- **语言指令**：自然语言描述的任务目标，如"把红色积木放到蓝色托盘里"。
+- **本体感知信息**：机器人关节状态、末端执行器位姿、力觉反馈等。
+
+这些输入经过统一的多模态骨干网络（早期以 Transformer 为主，近来也探索 Diffusion、Mamba 等架构）编码后，直接输出机器人动作。动作表示可以是末端执行器位姿、关节角度、轨迹点或更底层的控制信号。
+
+![VLA 典型架构](/images/papers/survey-vla-models/architecture.png)
+
+### 发展脉络
+
+VLA 领域的发展大致经历了以下阶段：
+
+- **2022 年前后**：以 RT-1 为代表，将机器人控制建模为序列到序列任务，使用 Transformer 处理多任务演示数据。
+- **2023 年**：RT-2 将视觉-语言模型（VLM）与动作输出结合，实现了端到端的视觉-语言-动作生成，展现出较强的泛化能力。
+- **2024 年**：开源模型（如 OpenVLA、π0）和更高效的训练策略推动了领域民主化；同时，扩散模型被引入动作生成（如 Diffusion Policy），以更好表达动作的多模态分布。
+- **2025 年**：统一架构（Unified VLA）、世界模型与 VLA 的耦合、以及可扩展的数据引擎成为主要方向。
+
+![VLA 发展简史](/images/papers/survey-vla-models/timeline.png)
+
+## 核心挑战
+
+尽管 VLA 模型在仿真和受控真实环境中取得了显著进展，以下挑战仍然突出：
+
+![VLA 挑战](/images/papers/survey-vla-models/challenges.png)
+
+1. **数据稀缺**：高质量、跨任务、跨环境的机器人操作数据远少于互联网图文数据。如何有效利用仿真数据、人类视频和少量真实机器人数据进行训练是关键问题。
+
+2. **长程任务规划**：复杂任务通常需要多步推理和子目标分解。纯端到端 VLA 在处理长程依赖时仍显不足，常需结合 LLM 规划器或世界模型。
+
+3. **Sim-to-Real 迁移**：仿真环境难以完全复现真实世界的物理、光照和接触动力学，导致策略在真实部署时性能下降。
+
+4. **多模态对齐**：视觉、语言和动作三种模态的语义空间差异显著，如何实现细粒度对齐（如语言中的"轻轻放"对应动作的低速低力）仍是开放问题。
+
+5. **实时推理**：机器人控制通常需要高频率（10-50Hz）的动作输出，而大模型推理延迟较高，如何在保持能力的同时提升推理速度是工程难点。
+
+6. **安全与可信**：VLA 模型在开放环境中可能产生不可预测的行为，需要可解释的决策过程和可靠的安全约束机制。
+
+## 启示与思考
+
+这篇被撤回的"综述"本身不是一个有价值的研究对象，但它揭示了一个更值得讨论的现象：**AI 生成学术内容的边界与责任**。
+
+大模型确实可以加速文献整理和初稿撰写，但如果缺乏事实核查、引用验证和领域专家的把关，生成内容可能迅速传播并污染知识库。arXiv 的撤回决定表明，学术社区对这类内容持警惕态度。
+
+对于真正希望了解 VLA 的读者，建议参考以下类型的可靠来源：
+- 由领域专家撰写的综述，如《A Survey on Vision-Language-Action Models for Embodied AI》（arXiv:2405.14093）；
+- 代表性原始论文，如 RT-1、RT-2、OpenVLA、π0、Diffusion Policy；
+- 开源代码和数据集，如 Open X-Embodiment、BridgeData、DROID。
+
+本篇内容的图片基于 VLA 领域通用知识绘制，并非来自原论文。我们将其作为占位说明，帮助读者在无法使用原始论文的情况下，仍能对 VLA 有一个基础且准确的认知。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"survey-vla-models","title":"Vision-Language-Action 模型调研：一份被撤回的 AI 生成综述","originalTitle":"Survey on Vision-Language-Action Models","excerpt":"这篇 arXiv 论文已被管理员撤回，原因系严重违反 arXiv 投稿政策。其正文由大语言模型生成，内容混杂且缺乏可靠引用。本文基于 arXiv 摘要和 PDF 提取内容，说明该论文的状态，并补充 VLA 模型的通用背景、典型架构与发展脉络，供读者参考。","date":"2026-06-29","architectureImage":"/images/papers/survey-vla-models/architecture.png","featured":false,"draft":false,"authors":["Adilzhan Adilkhanov","Amir Yelenov","Assylkhan Seitzhanov","Ayan Mazhitov","Zhanat Kappassov"],"year":2025,"venue":"arXiv 2502.06851（已撤回）","tags":["AI解读","具身智能","VLA"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心说明","text":"核心说明","level":2},{"id":"vla-模型通用背景","text":"VLA 模型通用背景","level":2},{"id":"典型架构","text":"典型架构","level":3},{"id":"发展脉络","text":"发展脉络","level":3},{"id":"核心挑战","text":"核心挑战","level":2},{"id":"启示与思考","text":"启示与思考","level":2}],"readingTime":"6 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

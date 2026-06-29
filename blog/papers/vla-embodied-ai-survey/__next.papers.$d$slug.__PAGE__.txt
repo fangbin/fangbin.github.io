@@ -1,0 +1,126 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T1baa,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+《A Survey on Vision-Language-Action Models for Embodied AI》由香港中文大学、布里斯托大学和华为诺亚方舟实验室的研究者联合撰写，发表于 IEEE Transactions on Neural Networks and Learning Systems。这是**首批全面综述 VLA 模型**的学术工作之一，作者团队还维护了一个配套资源仓库 [Awesome-VLA](https://github.com/yueen-ma/Awesome-VLA)。
+
+论文将 VLA 定义为：能够处理视觉和语言多模态输入，并生成机器人动作以完成具身任务的模型。与对话式 AI 不同，具身 AI 需要控制物理实体与环境交互，而 VLA 正是连接"感知—理解—动作"的桥梁。
+
+## 核心创新
+
+本文的核心贡献在于其**清晰的分类体系**：
+
+1. **VLA 组件层**：分析构建 VLA 所需的关键模块，包括预训练视觉表示、视频表示、动力学学习、世界模型、推理能力和策略引导。
+2. **低层控制策略**：根据架构差异将控制策略分为非 Transformer、Transformer、扩散、3D 视觉、基于点的动作和大 VLA（LVLA）等类别。
+3. **高层任务规划器**：将任务规划器分为单体式（Monolithic）和模块化（Modular），后者又细分为基于语言和基于代码两类。
+4. **资源汇总**：系统整理了数据集、仿真器、基准测试和自动数据采集方法。
+
+![VLA 分类体系](/images/papers/vla-embodied-ai-survey/architecture.png)
+
+## 方法论
+
+### VLA 组件
+
+论文首先拆解了 VLA 系统的关键组件：
+
+- **预训练视觉表示（PVR）**：如 R3M、MVP、VC-1 等，利用大规模人类视频或机器人数据预训练视觉编码器，为策略学习提供良好初始化。
+- **视频表示**：学习时序一致的视觉表示，帮助模型理解动态环境。
+- **动力学学习与世界模型**：Dreamer、TWM、SMART 等工作学习环境动力学，支持基于模型的规划和数据增强。
+- **推理能力**：通过 LLM 诱导的推理或视觉推理增强决策能力。
+- **策略引导（Policy Steering）**：利用价值函数、奖励模型或人类反馈引导策略生成更安全、更符合目标的动作。
+
+### 低层控制策略
+
+控制策略是 VLA 最直接输出动作的部分。论文将其分为多个流派：
+
+#### 1. 非 Transformer 方法
+
+早期方法如 BC-Z 使用 ResNet18 编码视觉信息，通过 MLP 或 FiLM 层输出连续动作。这类方法简单高效，但泛化能力有限。
+
+#### 2. Transformer 方法
+
+RT-1 是这一流派的里程碑，使用 EfficientNet 视觉编码器和 Transformer 解码器，在大量真实机器人数据上训练，实现了多任务泛化。后续 Q-Transformer 引入自回归 Q 函数，RT-Trajectory 用轨迹草图替代语言条件。
+
+#### 3. 大 VLA（LVLA）
+
+RT-2、RT-X、OpenVLA、π0、RDT-1B 等模型将大规模 VLM 或 LLM 直接适配到机器人控制。RT-2 首次提出"VLA"术语，利用互联网规模预训练知识显著提升物体泛化能力；OpenVLA 以 7B 参数在多项真实任务上超过 55B 参数的 RT-2-X。
+
+#### 4. 扩散方法
+
+Diffusion Policy、Octo、3D Diffuser Actor、CogACT、DexVLA 等方法将动作生成建模为去噪过程，能更好表达动作的多模态分布。π0 使用流匹配（Flow Matching）而非离散 BC，进一步提升了连续动作生成的质量。
+
+#### 5. 3D 视觉方法
+
+RVT、RVT-2、RoboPoint、3D Diffuser Actor 等利用 3D 场景理解辅助动作预测，在 RLBench 等需要精确空间推理的基准上表现出色。
+
+![控制策略分类](/images/papers/vla-embodied-ai-survey/policies.png)
+
+### 高层任务规划器
+
+对于长程复杂任务，VLA 通常需要结合任务规划器：
+
+- **单体式规划器**：如 PaLM-E、EmbodiedGPT、LEO、3D-LLM、ShapeLLM，将视觉编码器与 LLM 端到端训练，直接生成任务计划。
+- **模块化规划器**：
+  - **基于语言**：如 SayCan、Inner Monologue、ReAct、LLM-Planner，利用自然语言作为高层指令与低层策略之间的接口。
+  - **基于代码**：如 VoxPoser、CaP、AutoTAMP，将 LLM 生成的代码调用预封装好的视觉或控制 API，实现更灵活的任务执行。
+
+## 实验结果
+
+论文作为综述，主要通过横向比较揭示领域趋势：
+
+- **大规模预训练带来显著泛化提升**：RT-2 和 OpenVLA 表明，基于 VLM 的 VLA 在未见物体和指令上明显优于纯机器人数据训练的策略。
+
+- **开源模型正在缩小与闭源模型的差距**：OpenVLA 以 7B 参数超越 RT-2-X；Octo 作为开源通用机器人策略，支持多种机器人平台的微调部署。
+
+- **扩散与流匹配成为动作生成新范式**：相比离散的下一个动作预测，扩散策略和流匹配能够生成更平滑、更多样的动作轨迹，在需要精细操作的任务上表现更好。
+
+- **3D 视觉显著提升空间推理**：在 RLBench 等结构化操作基准上，利用 3D 表示的方法（如 RVT-2、3D Diffuser Actor）通常优于纯 2D 方法。
+
+![发展里程碑](/images/papers/vla-embodied-ai-survey/timeline.png)
+
+## 启示与思考
+
+这篇综述为理解 VLA 领域提供了一个非常清晰的框架。它让我意识到，VLA 不是一个单一模型，而是一个**分层系统**：底层是感知和动作生成，上层是推理和任务规划。
+
+几个值得深入思考的方向：
+
+### 1. 分层 vs 端到端
+
+当前最成功的系统多采用"高层规划器 + 低层策略"的分层架构。这种设计各司其职，但也增加了系统复杂性和失败点。未来能否用单一端到端大模型同时完成规划和控制？WorldVLA、UniVLA 等已经在这条路上探索。
+
+### 2. 数据规模 vs 数据质量
+
+VLA 的发展高度依赖数据。Open X-Embodiment 聚合了 60 多个数据集，但不同数据集之间存在动作空间、相机配置和任务描述的不一致。如何标准化、清洗和对齐多源数据是构建真正通用 VLA 的前提。
+
+### 3. 安全性是首要约束
+
+机器人直接作用于物理世界，安全性至关重要。论文强调需要建立安全护栏、风险评估框架和人机交互协议。RLHF 和"不执行即可评估"（evaluation without execution）是降低安全风险的重要途径。
+
+### 4. 多模态对齐的深层问题
+
+ImageBind、LanguageBind 等方法将不同模态对齐到统一嵌入空间，但这是否足够？对于机器人而言，语言中的抽象概念（如"轻拿轻放"）需要与力觉、触觉和视觉细节精确对应，这远超简单的嵌入对齐。
+
+### 5. 实时性瓶颈
+
+大模型推理延迟与机器人控制频率之间存在矛盾。如何在保持模型能力的同时提升推理速度，是 VLA 从实验室走向真实应用的关键工程问题。
+
+总的来说，这篇综述不仅系统梳理了 VLA 的现状，更重要的是指出了通往通用具身智能的必经之路：更强的基础模型、更丰富多样的数据、更可靠的推理与规划、以及更严格的安全保障。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vla-embodied-ai-survey","title":"面向具身 AI 的视觉-语言-动作模型综述","originalTitle":"A Survey on Vision-Language-Action Models for Embodied AI","excerpt":"这篇发表于 IEEE TNNLS 的综述是首批系统梳理 VLA 模型的工作之一。论文提出三层分类体系：VLA 组件、低层控制策略和高层任务规划器，涵盖预训练视觉表示、世界模型、Transformer/扩散/3D 视觉控制策略，以及端到端与模块化任务规划器，并讨论了数据集、基准与未来挑战。","date":"2026-06-29","architectureImage":"/images/papers/vla-embodied-ai-survey/architecture.png","featured":false,"draft":false,"authors":["Yueen Ma","Zixing Song","Yuzheng Zhuang","Jianye Hao","Irwin King"],"year":2024,"venue":"IEEE TNNLS / arXiv 2405.14093","tags":["AI解读","具身智能","VLA","机器人学习"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"vla-组件","text":"VLA 组件","level":3},{"id":"低层控制策略","text":"低层控制策略","level":3},{"id":"高层任务规划器","text":"高层任务规划器","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"1-分层-vs-端到端","text":"1. 分层 vs 端到端","level":3},{"id":"2-数据规模-vs-数据质量","text":"2. 数据规模 vs 数据质量","level":3},{"id":"3-安全性是首要约束","text":"3. 安全性是首要约束","level":3},{"id":"4-多模态对齐的深层问题","text":"4. 多模态对齐的深层问题","level":3},{"id":"5-实时性瓶颈","text":"5. 实时性瓶颈","level":3}],"readingTime":"7 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

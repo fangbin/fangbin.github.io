@@ -1,0 +1,76 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T207a,## 论文概览
+
+Vision-Language-Action（VLA）模型正以惊人的速度推动机器人领域的范式变革——机器不再仅仅是执行预编程动作的自动化设备，而是能够理解自然语言指令、感知复杂视觉环境、并自主执行物理动作的智能体。然而，这个领域的爆炸式增长也带来了一个现实问题：如何系统性地理解这一快速演进的学术前沿？
+
+来自 IROOTECH、帝国理工学院、伦敦国王学院、香港理工大学、达姆施塔特工业大学等机构的联合研究团队，在这篇面向 IEEE TPAMI 投稿的综述中，给出了一份迄今最清晰的"VLA 解剖学"指南。文章的独特之处在于其三层金字塔式的组织结构：基础模块（Modules）构建共享术语体系，里程碑（Milestones）追溯历史演进脉络，核心挑战（Challenges）深度剖析前沿问题空间。这种设计模拟了研究者从入门到前沿的自然学习路径——先理解 VLA "由什么构成"，再看它"如何演进至今"，最后深入"尚待解决的关键问题"。
+
+![综述金字塔结构](/images/papers/anatomy-vla-models/pyramid.png)
+
+文章的核心贡献在于将通常被放在结论部分的挑战分析提升为全文核心支柱，识别出五大关键挑战并针对每个挑战深入比较了替代解决方案，勾画了明确的未来研究方向。同时，项目页面承诺持续更新，使这项工作成为一个"活文档"。
+
+## 核心创新
+
+本文的创新不在于提出某个新模型，而在于提供了理解整个 VLA 生态的元分析框架。以下几个方面构成了文章的独特价值：
+
+**基础模块的系统解构**是进入 VLA 领域的第一把钥匙。感知模块经历了从 CNN 到 ViT 再到语言对齐 Transformer（如 CLIP/SigLIP）的根本性转变，现代 VLA 系统（如 OpenVLA、UniVLA）越来越普遍地采用 SigLIP + DINOv2 的混合视觉编码器，兼顾语义理解与几何精度。语言编码从独立的 Transformer 演进到 LLM（Llama、Gemma）再到原生 VLM（PaliGemma、Qwen-VL），反映出将语言能力深度嵌入感知-决策管线的趋势。
+
+大脑（Brain）模块呈现出四条技术路线的融合：纯 Transformer 提供了端到端的感知到动作映射（如 RT-2、GR-2）；扩散 Transformer（DiT）将生成式建模引入动作空间（如 RDT-1B、TriVLA）；混合架构（如 π0、Octo）组合了 VLM 语义推理与流匹配/扩散动作生成；基于 VLM 的方案（如 OpenVLA、DeeR-VLA）则直接将预训练视觉语言模型作为决策核心。动作模块面临"表现力 vs. 可学习性"的根本权衡——离散表示自然适配自回归 Transformer，连续表示（扩散/流匹配策略）产生更平滑精确的控制，而混合方案（如 π0.5）在不同控制层面采用不同表示。
+
+![VLA架构图](/images/papers/anatomy-vla-models/architecture.png)
+
+**里程碑式的演进叙事**将 VLA 的历史编织成一条清晰的脉络：2017-2019 年的具身问答与视觉语言导航确立了感知-动作闭环的雏形；2020-2021 年 CLIPort 等里程碑证明了互联网规模知识可赋能零样本机器人操作；2022 年 SayCan 和 RT-1/2 标志着真正统一 VLA 框架的诞生；2023 年 PaLM-E 和 Open X-Embodiment 推动了多模态统一与跨平台数据规模化；2024 年 OpenVLA 的开源和 π0 的流匹配动作生成设定了新的架构范本；2025 年则进入多元化演进阶段，Humanoid-VLA 将框架拓展到全身人形控制，GEN-0 揭示了机器人领域的缩放定律。
+
+## 方法论
+
+文章采用了一种"以挑战为中心"的分析方法，将 VLA 的发展路线图映射到通用智能体的成熟路径：建立基础感知-动作循环 → 跨场景跨平台规模化 → 确保可信部署。
+
+**多模态对齐与物理世界建模**构成了最底层的挑战。文章将其分解为三个递进的子层次：(1) 弥合语义鸿沟——从 OTTER 的特征感知提取到 ACT-LLM 的符号推理再到 CLIP-RT 的共享中间表示；(2) 构建时空表示——从 2.5D 深度图增强到 PointVLA 的点云注入再到 4D 轨迹预测的时序感知；(3) 构建预测性世界模型——从 TriVLA 的像素级未来帧预测到 LUMOS 的潜空间世界模拟再到 MinD 的分层多尺度预测。文章指出当前大多数方案采用"补丁策略"——通过后期融合和外部模块来弥补模态与物理的鸿沟，但根源性的解决方案需要原生多模态架构和融合潜空间-物理-语义的世界模型。
+
+**指令理解与执行**聚焦于从高级语义到低级控制的转化难题。文章将指令解析的困难分为开放形式（图文混合指令如 OE-VLA、Interleave-VLA）和歧义性（AskAct 训练智能体主动追问缺失信息）。分层任务分解通过中间表示（潜空间目标/子任务/3D 关键点）来桥接高层意图与底层控制，π0.5 的层级 Transformer 架构是这方面的代表。
+
+**泛化与适应**面临模仿学习的分布外脆弱性这一经典问题。VLA-RL 将在线强化学习扩展到预训练 VLA，GEN-0 揭示了跨平台泛化的缩放定律，而持续学习策略和 sim-to-real 迁移方法仍是活跃的研究前沿。
+
+![五大核心挑战](/images/papers/anatomy-vla-models/challenges.png)
+
+## 实验结果
+
+作为综述，本文整合了大量 SOTA 系统的实证发现：
+
+在基础模块层面，SigLIP 主导了最新系统的视觉编码选择（π0、RDT-1B、TriVLA），而 DINOv2 的几何精度使其在精密操作任务中不可或缺。在动作生成方面，流匹配和扩散策略已证明在复杂连续控制任务中优于纯自回归方案。π0.5 的层级架构在长时程任务中显著超越了纯端到端基线。
+
+在挑战应对方面，世界模型增强的策略在需要前向预测的任务中表现更优：CoT-VLA 的视觉链式思考使能了显式子目标推理，LUMOS 的世界模型 + 在线 RL 组合克服了模仿学习的数据分布限制。安全 VLA（SafeVLA）和可解释 VLA 系统在受控实验中展示了约束满足和决策透明的初步能力，但在开放世界中仍需大量验证。
+
+数据方面，Open X-Embodiment 数据集极大地推动了跨平台泛化研究，而 MultiGen 等仿真数据生成方法为稀缺模态（如触觉、力觉）的预训练提供了新的数据来源。
+
+## 启示与思考
+
+这篇综述不仅是一份文献汇总，更是对整个 VLA 领域的战略反思：
+
+**模块化思维 vs. 端到端统一**是贯穿全文的核心张力。当前主流偏向于将预训练的视觉、语言、动作组件"拼接"起来，但这种策略在处理物理交互的根本复杂性方面可能已经触及天花板。文章明确指出的"原生多模态架构"方向——在训练初期就将视觉和物理数据转化为与语言共享的 token 空间——代表了一个潜在的范式转换。
+
+**VLA 的"语言中心主义"值得反思。** 当前 VLA 过度依赖语言作为统一的接口和推理媒介，但物理世界的交互（接触力、摩擦力、弹性）本质上不是语言可以充分表征的。构建融合物理学的世界模型——内部同时表征 3D 几何、物理动力学、语义属性——是从"会看会说"走向"会做"的关键一步。
+
+**安全与可解释性不应是事后补丁。** 当 VLA 系统开始部署在真实家庭和工业环境时，安全不再是一个技术细节而是系统设计的前提。本文将安全列为与感知和执行同等重要的一级挑战，这一视角对领域的健康发展至关重要。
+
+**数据瓶颈正在被重塑。** 从手工标注到大规模跨平台数据集（Open X-Embodiment），再到仿真生成，数据获取范式在快速演变。但真正值得关注的是 GEN-0 揭示的缩放定律——当交互数据达到临界量级时，可能出现"相位转变"式的泛化能力跃迁。这暗示着，VLA 的下一个突破可能更多来自工程和数据基础设施建设，而非纯粹的算法创新。
+
+总之，这篇综述以其"解剖学"式的精细分析，为 VLA 研究者提供了一份不可多得的导航地图。无论你是刚入门的研究生还是深耕多年的专家，都能从中获得系统化的视角和富有洞察力的未来方向指引。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"anatomy-vla-models","title":"VLA模型解剖学：从模块到里程碑与挑战","originalTitle":"An Anatomy of Vision-Language-Action Models: From Modules to Milestones and Challenges","excerpt":"Vision-Language-Action(VLA)模型正在引发机器人领域的革命。本文提供了一份VLA领域的结构化指南，以金字塔式框架组织：从构成任何VLA模型的基础模块出发，追溯VLA发展史上的关键里程碑，最后深入剖析定义当前研究前沿的五大核心挑战——多模态对齐、指令执行、泛化适应、安全可解释性以及数据评估。文章不仅适合新手建立系统认知，也为资深研究者提供了战略性的未来方向指引。","date":"2026-06-29","architectureImage":"/images/papers/anatomy-vla-models/architecture.png","featured":false,"draft":false,"authors":["Chao Xu","Suyu Zhang","Yang Liu","Baigui Sun","Weihong Chen","Bo Xu","Qi Liu","Juncheng Wang","Shujun Wang","Shan Luo","Jan Peters","Athanasios V. Vasilakos","Stefanos Zafeiriou","Jiankang Deng"],"year":2025,"venue":"arXiv","tags":["AI解读","VLA","具身智能","基础模型"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"实验结果","text":"实验结果","level":2},{"id":"启示与思考","text":"启示与思考","level":2}],"readingTime":"8 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

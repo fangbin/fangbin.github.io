@@ -1,0 +1,104 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T1b0b,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+《Generative Artificial Intelligence in Robotic Manipulation: A Survey》是由香港大学、香港科技大学、香港理工大学、浙江大学、清华大学等机构的研究者联合撰写的综述论文。论文围绕一个核心问题展开：**生成式 AI 如何系统性地解决机器人操作中的数据稀缺、长程任务规划与多模态策略学习三大瓶颈？**
+
+作者团队维护了一个配套资源仓库 [AwesomeGAIManipulation](https://github.com/GAI4Manipulation/AwesomeGAIManipulation)，持续收集相关论文、开源数据与项目，为社区提供了便利的入口。
+
+这篇综述的最大特色在于其**分层架构视角**：不是简单罗列生成模型在机器人中的应用，而是将各种方法组织成"基础层—中间层—策略层"的递进结构，清晰展现了从数据合成到高层推理再到低层控制的完整技术链路。
+
+## 核心创新
+
+论文提出了三个核心创新点：
+
+1. **三层分层框架**：将生成式 AI 在机器人操作中的应用划分为基础层（Foundation Layer）、中间层（Intermediate Layer）和策略层（Policy Layer），每层对应不同的生成目标和机器人能力。
+
+2. **生成范式全景梳理**：系统比较了 GAN、VAE、扩散模型、概率流模型和自回归模型五种主流生成范式在机器人操作中的优势与局限。
+
+3. **从数据到控制的完整链路**：不仅讨论数据生成和奖励生成，还涵盖语言/代码/视觉/状态生成，以及最终的抓取和轨迹生成，形成闭环。
+
+![三层架构图](/images/papers/genai-robotic-manipulation/architecture.png)
+
+## 方法论
+
+### 基础层：数据与奖励生成
+
+机器人操作的数据驱动方法（如模仿学习和强化学习）普遍面临**数据饥渴**问题。生成式模型通过三种路径缓解这一瓶颈：
+
+- **基于仿真的数据生成**：利用 PyBullet、MuJoCo、NVIDIA Omniverse 等物理引擎构建可控训练环境，结合域随机化（Domain Randomization）缩小 Sim-to-Real 差距。
+- **基于生成模型的数据生成**：包括场景生成（如 GRUtopia、Gen2Sim、HOLODECK）和演示生成（如 MimicGen、CyberDemo、RoboGen）。
+- **数据增强**：利用 LLM/VLM（如 ROSIE、DIAL、RACER）或扩散模型（如 GenAug、CACATI）对现有数据进行语义和视觉增强。
+
+在奖励生成方面，论文区分了两类应用：
+- **监督信号生成**：利用 VLM 为失败轨迹重新标注语言指令（如基于 HER 的 DIAL），或生成奖励代码（如 EUREKA）。
+- **策略评分**：将 VLM 作为在线奖励函数，用于模型预测控制（MPC）中的动作选择。
+
+### 中间层：桥接感知与动作
+
+中间层负责将高层任务指令转化为结构化、可执行的中间表示，主要包括四个方向：
+
+- **语言生成**：LLM 被广泛用于长程任务分解。例如，将"整理桌面"分解为"捡起杯子→移动到托盘→放下"等子任务。代表性工作包括利用 Chain-of-Thought 推理增强可解释性和执行成功率。
+
+- **代码生成**：从自然语言直接生成可执行机器人代码。VoxPoser 通过 3D 价值图约束代码生成，ReKep 引入关系关键点约束，Language-to-Rewards 将语言转化为奖励函数。
+
+- **视觉生成**：包括视频生成（UniPi、GR-1/GR-2）、图像生成（SuSIE、CoTDiffusion）和 3D 生成（TAX-Pose、GNFactor、ManiGaussian）。这些方法让机器人能够在虚拟环境中"想象"未来状态，从而更安全地规划动作。
+
+- **状态生成**：通过学习世界模型或动力学模型，预测未来状态。关键在于动作条件一致性（action-conditioned consistency），即预测的未来必须忠实于待执行动作。
+
+### 策略层：抓取与轨迹生成
+
+策略层直接输出机器人可执行的动作，包括目标末端执行器姿态或完整轨迹：
+
+- **抓取生成**：生成模型能够学习多模态抓取分布，捕捉同一物体的多种可行抓取方式。VAE 方法（如 GraspNet、Contact-GraspNet）擅长从点云生成稳定抓取；扩散方法（如 SE(3)-DiF、DexDiffuser、DexGraspNet 2.0）在 SE(3) 空间中生成 6-DoF 或灵巧抓取姿态。
+
+- **轨迹生成**：扩散策略（Diffusion Policy）是这一方向的代表，通过将动作序列建模为去噪过程，生成平滑且多模态的轨迹。相较于确定性策略，扩散策略能更好地表达"同一状态下多个合理动作"的分布特性。
+
+![生成范式热度](/images/papers/genai-robotic-manipulation/paradigms.png)
+
+## 实验结果
+
+作为一篇综述，本文并未提出单一基准上的全新实验，而是对大量代表性工作进行了横向比较和归类。几个关键结论包括：
+
+- **扩散模型成为主流**：在抓取生成和轨迹生成中，扩散模型因其对多模态分布的建模能力和可扩展性，逐渐成为首选范式。
+
+- **VLM/LLM 作为奖励和规划器仍处于早期**：尽管大模型在语言规划和奖励代码生成上展现出零样本泛化能力，但奖励对齐（reward alignment）和 grounding 问题仍是开放挑战。
+
+- **分层方法优于端到端的单一模型**：当前最优系统往往是模块化的，将数据生成、任务规划、视觉预测和底层控制分离，以便分别优化。
+
+![研究分布](/images/papers/genai-robotic-manipulation/distribution.png)
+
+## 启示与思考
+
+这篇综述让我意识到，生成式 AI 对机器人操作的价值不仅是"生成更多数据"，而是**重新组织了机器人学习的层次结构**。基础层解决"学什么"的数据问题，中间层解决"怎么做"的表示问题，策略层解决"动手做"的控制问题。
+
+几个值得关注的未来方向：
+
+1. **物理一致性生成**：当前视觉生成模型能生成看似合理的未来帧，但未必符合真实物理规律。如何让生成模型具备因果物理一致性，是安全部署的关键。
+
+2. **奖励函数的自动对齐**：EUREKA 等自动生成奖励函数的工作令人兴奋，但奖励误导（reward hacking）和稀疏奖励场景下的稳定性仍需改进。
+
+3. **Sim-to-Real 的生成式桥接**：场景生成和域随机化仍是缩小仿真与现实差距的核心路径，但需要更高效的材质、光照和接触物理建模。
+
+4. **多模态动作分布的表达**：机器人操作中真正的难点不是找到"一个正确动作"，而是表达"多个都合理但适用于不同后续任务的动作"。扩散模型和流模型在这方面有天然优势。
+
+总的来说，这篇综述为研究生成式 AI 与机器人操作的交叉领域提供了一个清晰的地图。随着 VLA 模型和世界模型的快速发展，生成式方法有望从"辅助工具"进化为机器人学习系统的核心基础设施。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"genai-robotic-manipulation","title":"生成式人工智能在机器人操作中的全面综述","originalTitle":"Generative Artificial Intelligence in Robotic Manipulation: A Survey","excerpt":"这篇综述系统梳理了生成式 AI 在机器人操作中的最新进展，提出三层架构视角：基础层（数据与奖励生成）、中间层（语言/代码/视觉/状态生成）和策略层（抓取与轨迹生成），覆盖 GAN、VAE、扩散模型、流模型与自回归模型五大范式，并探讨了数据稀缺、长程任务规划与多模态策略学习等核心挑战。","date":"2026-06-29","architectureImage":"/images/papers/genai-robotic-manipulation/architecture.png","featured":false,"draft":false,"authors":["Kun Zhang","Peng Yun","Jun Cen","Junhao Cai","Didi Zhu","Hangjie Yuan","Chao Zhao","Tao Feng","Michael Yu Wang","Qifeng Chen","Jia Pan","Wei Zhang","Bo Yang","Hua Chen"],"year":2025,"venue":"arXiv 2503.03464","tags":["AI解读","具身智能","VLA","生成式 AI","机器人操作"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"基础层数据与奖励生成","text":"基础层：数据与奖励生成","level":3},{"id":"中间层桥接感知与动作","text":"中间层：桥接感知与动作","level":3},{"id":"策略层抓取与轨迹生成","text":"策略层：抓取与轨迹生成","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"启示与思考","text":"启示与思考","level":2}],"readingTime":"7 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

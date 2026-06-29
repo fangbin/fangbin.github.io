@@ -1,0 +1,59 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+f:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+10:"$Sreact.suspense"
+3:T165e,## 论文概览
+
+在VLA（Vision-Language-Action）模型出现之前，机器人学与人工智能的进展主要发生在各自独立的领域——视觉系统负责识别图像，语言系统负责理解文本，动作系统负责控制运动。这些孤立系统虽然各自表现出色，但难以协同工作，更无法泛化到新的场景。来自康奈尔大学和香港科技大学的研究团队在这篇综述中系统梳理了VLA模型的整个生态系统，从概念基础到最新进展，再到应用与挑战，为这一快速演进的领域提供了一份全面的路线图。
+
+论文以严谨的文献综述框架覆盖了超过80个近年发布的VLA模型，并按照五个主题支柱组织分析：概念基础、架构创新与训练效率、应用领域、核心挑战、以及未来路线图。作者提出的核心主张是：VLA模型代表了从"能看"、"能说"、"能做"的分离式AI向统一的、能够动态适应物理世界的具身智能体的根本性转变。
+
+![VLA模型演进](/images/papers/vla-concepts-progress/architecture.png)
+
+## 核心创新
+
+本文的学术价值体现在三个层面。首先，**系统化地建立VLA模型的概念体系**——从多模态集成、Token化编码、学习范式到自适应控制，每个概念维度都有明确的定义和演进脉络。其次，**提供了训练效率的全面分析**——覆盖数据高效学习、参数高效建模和模型加速策略，这些对于VLA系统在真实世界中的规模化部署至关重要。第三，**批判性地审视了VLA面临的挑战**——包括实时推理瓶颈、安全性、高计算需求、泛化局限和伦理风险，并针对每个挑战分析了潜在的解决方案。
+
+VLA模型的核心架构由三个关键模块组成：多模态输入处理模块（处理视觉、语言和动作数据）、跨模态融合模块（使用交叉注意力机制在共享语义空间中对齐不同模态特征），以及动作解码模块（输出连续控制信号或离散动作序列）。以Google DeepMind的RT-2为代表的开创性工作首次将视觉-语言模型扩展为包含动作Token的端到端框架，使机器人能够在非结构化环境中理解新语言指令并执行多步推理。
+
+![VLA核心架构](/images/papers/vla-concepts-progress/vla-arch.png)
+
+## 方法论
+
+### 从分离到统一的演进路径
+
+VLA模型的发展可追溯到2021-2022年，其核心理念是将视觉输入、语言理解和运动控制能力整合到单一框架中。此前，计算机视觉模型依赖CNN进行特定任务（如目标检测、分类），需要大量标注数据且在环境变化时需要重新训练；语言模型虽能实现文本理解和生成，但无法感知物理世界；动作系统依赖手工策略或强化学习，难以泛化到预设场景之外。
+
+VLA模型的突破在于实现了**动作Token化**——将机器人运动指令转化为数值或符号表示，使其与视觉Token和语言Token处于同一表示空间。这一方法论创新极大地提升了机器人在未见过的物体、新的语言指令和多步推理任务上的泛化能力。
+
+### 学习范式
+
+VLA模型融合了多种学习范式。**模仿学习**从专家示范轨迹中学习策略，是最常见的训练方式；**强化学习**通过环境交互和奖励反馈优化行为；**RAG（检索增强生成）**模块被用于改善样本效率和泛化能力；**少样本学习**和**零样本迁移**则借助大规模预训练模型的语义知识。
+
+### 架构创新
+
+近年来涌现了众多VLA架构变体：3D-VLA将3D感知和推理能力集成到VLA中，增强在复杂环境中的操作能力；Dual Process VLA将复杂推理过程与实时运动控制分离以提高效率；SpatialVLA引入了以自我为中心的3D位置编码模块；Bi-VLA为双臂机器人提供了灵活的操作系统。VLABench等大规模基准测试数据集推动了VLA模型的标准化评估。
+
+## 应用领域
+
+VLA模型已在多个领域展示了变革性潜力：**自动驾驶**中实现视觉-语言-控制的端到端决策；**医疗机器人**中支持手术机器人实时处理外科医生指令并精确抓取手术器械；**工业机器人**中通过语言指令驱动柔性装配过程；**精准农业**中实现水果采摘等精细操作；**人形机器人**中支持通用操作能力；以及**AR交互导航**中的智能界面控制。
+
+## 启示与思考
+
+这篇综述对我们理解VLA模型的发展脉络和未来方向具有重要启发。首先，VLA模型的兴起标志着AI从"感知智能"向"具身智能"的决定性转变——不再满足于识别图像中的苹果或理解"摘苹果"的语义，而是将感知和语言理解转化为物理世界中的实际动作。这一转变不仅是技术层面的融合，更代表了我们对智能本质认识的深化。
+
+其次，论文指出的"泛化缺口"值得特别关注。尽管VLA模型在特定任务上表现出色，但跨形态泛化（cross-embodiment generalization）——即让训练好的策略在不同机器人形态之间迁移——仍然是一个开放难题。这一问题关系到VLA能否真正成为通用具身智能的基础。
+
+此外，论文提出的未来方向极具前瞻性：分层神经符号规划（hierarchical neuro-symbolic planning）有望结合深度学习的感知能力和符号推理的逻辑严谨性；世界模型（world models）将赋予VLA物理因果推理能力；而自监督终身学习将实现持续适应。从更广阔的视角看，VLA模型的发展路径与AGI（通用人工智能）的追求高度一致——一个真正的通用智能体，必须能够感知、理解和行动，三者缺一不可。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vla-concepts-progress","title":"Vision-Language-Action模型：概念、进展、应用与挑战","originalTitle":"Vision-Language-Action (VLA) Models: Concepts, Progress, Applications and Challenges","excerpt":"本文系统综述了VLA模型从分离式多模态系统到统一感知-推理-控制框架的演进历程，涵盖超过80个VLA模型的架构创新、训练策略、实时推理加速，以及在自动驾驶、医疗机器人、工业制造、精准农业等领域的应用。","date":"2026-06-29","architectureImage":"/images/papers/vla-concepts-progress/architecture.png","featured":false,"draft":false,"authors":["Ranjan Sapkota","Yang Cao","Konstantinos I. Roumeliotis","Manoj Karkee"],"year":2025,"venue":"arXiv","tags":["AI解读","具身智能","VLA模型","多模态AI"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"从分离到统一的演进路径","text":"从分离到统一的演进路径","level":3},{"id":"学习范式","text":"学习范式","level":3},{"id":"架构创新","text":"架构创新","level":3},{"id":"应用领域","text":"应用领域","level":2},{"id":"启示与思考","text":"启示与思考","level":2}],"readingTime":"6 min read"}}],[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}],"$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld"],"$Le"]}],"loading":null,"isPartial":false}
+4:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+5:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+6:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+7:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+8:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+9:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+a:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+b:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+c:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+d:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+e:["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]
+11:null

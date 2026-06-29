@@ -1,0 +1,83 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+10:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+11:"$Sreact.suspense"
+3:T147f,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+这篇综述是我看到的首篇系统性梳理 VLA 在自动驾驶领域应用的综述，由麦吉尔大学、清华大学、威斯康星大学和小米公司联合完成。论文以 19 页的篇幅覆盖了 20+ 代表性 VLA4AD 模型，从三个维度展开：架构构建块的统一抽象、从 VLM 解释器到 VLA 推理模型的演进、以及数据集和基准的系统整理。
+
+论文的核心贡献：
+1. **首次全面的 VLA4AD 概述**：填补了自动驾驶与 VLA 交叉领域的综述空白
+2. **三步演进路线图**：传统端到端 → VLM 增强感知 → VLA 统一架构
+3. **安全视角**：强调 VLA 在自动驾驶场景中独特的安全挑战——幻觉缓解、形式化验证、实时性
+
+配套 GitHub 仓库持续追踪领域进展，为研究人员和工程师提供了实用的参考资源。
+
+## 三步演进：从 E2E 到 VLA
+
+### 第一阶段：传统端到端驾驶
+
+传统端到端自动驾驶系统将传感器输入直接映射到规划/控制信号，典型的范式包括基于 BEV 特征的架构（如 UniAD、VAD）和全稀疏架构（如 SparseDrive）。这些方法的优势在于统一优化，但根本性缺陷同样明显：**语义脆弱性**（对罕见场景和长尾案例的泛化极差）、**推理不透明**（黑盒决策无法进行安全审计）、**语言能力缺失**（无法理解自然语言指令）。
+
+论文特别指出，即使数据规模持续增长，在闭环评估中性能提升的边际效应正在递减——纯数据扩展不足以实现 L4+ 自主驾驶。
+
+### 第二阶段：VLM 增强式感知推理
+
+GPT-Driver 等工作展示了冻结的 VLM 如何处理多视角图像和文本提示，生成轨迹规划并同时产生可读的推理过程。这种方案在常识推理和边界情况理解上表现出色，但存在一个根本性缺陷——论文称之为**"动作鸿沟"**：VLM 能够推理场景但无法决定做什么，其语言输出与底层控制系统之间缺乏紧密耦合。
+
+后续研究从三个方向进行了改进：**空间理解增强**（BEVDriver 集成 BEV 特征与语言、TOKEN 使用以对象为中心的 Token 表示）、**延迟降低**（双系统架构、知识蒸馏）、**幻觉缓解**（Dilu 的记忆库机制、AgentDriver 的工具增强链式思维）。
+
+### 第三阶段：VLA 统一架构
+
+受具身智能领域 RT-2、π₀ 等工作的启发，VLA 范式将相机流、自然语言指令和低层驱动信号融合到单一策略中。论文识别了 VLA4AD 的四个核心特征：
+
+- **指令遵循**：响应"给救护车让行"等自由形式指令
+- **内化推理**：以语言 Token 形式输出推理过程用于事后验证
+- **常识先验**：利用互联网规模的语料库在罕见情况下进行推断
+- **闭环控制**：推理输出直接耦合到动作空间
+
+## 数据集与评估
+
+论文整合了 VLA4AD 领域的关键数据资源：nuScenes（多模态感知）、Waymo Open Dataset（大规模行车数据）、CARLA（仿真环境）和 NAVSIM（闭环评估）。评估协议强调**安全性、准确性和解释质量**的联合度量——这是传统自动驾驶评测中少有的多维度视角。
+
+## 核心挑战
+
+论文识别了 VLA4AD 面临的五个关键挑战：
+
+**鲁棒性与长尾处理**：纯数据扩展的边际收益递减意味着需要新的方法论突破。
+
+**实时推理效率**：大型 VLM/LLM 的推理延迟与自动驾驶毫秒级响应需求之间的张力是所有 VLA4AD 系统的基础性约束。
+
+**空间理解的深度**：从 2D 图像理解到 3D 空间推理和时序预测的鸿沟仍未完全弥合。
+
+**安全与形式化验证**：VLA 模型的黑盒特性使传统的安全验证方法失效，需要新的验证范式。
+
+**幻觉缓解**：在自动驾驶场景中，LLM 的一次幻觉可能导致物理碰撞——这个代价比其他应用领域高出数个数量级。
+
+## 启示与思考
+
+VLA4AD 最让我关注的维度是**安全验证的方法论空白**。传统的自动驾驶安全验证依赖于模块化测试——分别验证感知、预测、规划模块的正确性。VLA 架构将所有这些功能压缩到单一黑盒中，使逐模块验证的策略失去了物理基础。
+
+这让我联想到 AI Agent 安全研究中的类似问题——当一个复杂系统从多个可验证模块的组合演变为单一大型模型时，我们如何保证整体安全性？论文提出的**形式化验证**方向暗示了一个可能路径：为 VLA 模型建立形式化的输入-输出规范，即使模型内部不可解释，其行为也必须保持在外在约束范围内。
+
+另一个有趣的观察是 VLA4AD 与传统自动驾驶之间关于"可解释性"的不同定义。传统系统中，可解释性意味着"我能理解每个模块为什么输出这个结果"；而在 VLA 系统中，可解释性更多是"模型能否自己解释它的决策"。后者在安全审计中的可靠性仍然是一个开放问题——我们如何区分真实的推理过程和事后合理化？
+
+## 参考链接
+
+- arXiv: https://arxiv.org/abs/2506.24044
+- GitHub: https://github.com/JohnsonJiang1996/Awesome-VLA4AD0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"vla-autonomous-driving","title":"自动驾驶中的 VLA 模型综述","originalTitle":"A Survey on Vision-Language-Action Models for Autonomous Driving","excerpt":"来自麦吉尔大学、清华大学、威斯康星大学等机构的首篇 VLA4AD 综述，系统梳理了从传统端到端架构到 VLA 范式的演进，对比了 20+ 代表性模型，并整合了数据集、基准和评估协议。论文指出 VLM 增强了语义推理但留下\"动作鸿沟\"，VLA 是实现感知-推理-控制统一闭环的关键。","date":"2026-06-29","architectureImage":"/images/papers/vla-autonomous-driving/architecture.png","featured":false,"draft":false,"authors":["Sicong Jiang","Zilin Huang","Kangan Qian","Ziang Luo","Kun Jiang","Diange Yang","Lijun Sun"],"year":2025,"venue":"arXiv 2506.24044","tags":["AI解读","自动驾驶","VLA","多模态","安全"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"三步演进从-e2e-到-vla","text":"三步演进：从 E2E 到 VLA","level":2},{"id":"第一阶段传统端到端驾驶","text":"第一阶段：传统端到端驾驶","level":3},{"id":"第二阶段vlm-增强式感知推理","text":"第二阶段：VLM 增强式感知推理","level":3},{"id":"第三阶段vla-统一架构","text":"第三阶段：VLA 统一架构","level":3},{"id":"数据集与评估","text":"数据集与评估","level":2},{"id":"核心挑战","text":"核心挑战","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"5 min read"}}],[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}],"$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le"],"$Lf"]}],"loading":null,"isPartial":false}
+4:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+5:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+6:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+7:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+8:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+9:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+a:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+b:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+c:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+d:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+e:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+f:["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]
+12:null

@@ -1,0 +1,117 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/e97fad7d2b974016.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"8Uj8xnCv0CtSEh_jjSoVc","c":["","papers","foundation-models-robotics-ijrr",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","foundation-models-robotics-ijrr","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/e97fad7d2b974016.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/92af3790b5b31134.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T1a1d,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+这篇综述汇聚了来自 Stanford、Google DeepMind、Princeton、UT Austin、NVIDIA、上海交大等机构的顶尖研究者，其作者阵容本身就反映了领域内最活跃的研究群体。论文以 33 页的篇幅提供了基础模型在机器人学中应用的完整版图。
+
+论文的核心特色是**系统性的技术细节覆盖**——与其他综述更多停留在概念层面不同，这篇从 Tokenization、Embedding、Attention 机制等数学基础讲起，逐步构建到 LLM、Vision Transformer、VLM 和 Embodied Multimodal Language Models 的完整技术栈。对于希望从底层理解基础模型如何增强机器人能力的读者而言，这是极为宝贵的系统性资源。
+
+主要贡献可概括为：
+1. **从基础理论到上层应用的完整管线**：覆盖 Tokenization 到 Embodied AI 的全技术链路
+2. **四维应用分类法**：策略学习、任务规划、感知与具身 AI
+3. **六大挑战的系统分析**：数据、实时性、多模态、不确定性、安全、评估
+
+## 技术基础：从 Token 到 Foundation Model
+
+论文的一个独特价值在于其数学基础部分。它从 Tokenization（字符序列到 Token 的切分过程）开始，逐步介绍 GPT-3（50,257 词汇量、12,288 嵌入维度）等模型的技术细节。这种从底层构建理解的方式使读者不仅能知道"LLM 可以做 X"，还能理解"为什么 LLM 能做 X 以及能力从何而来"。
+
+Vision Transformer、CLIP、DALL-E、PaLM-E 等模型的演变被清晰地联结到机器人学需求——开放词汇物体识别需要 CLIP 的对齐表示，多模态推理需要 PaLM-E 的统一架构。
+
+## 四大应用维度
+
+### 机器人策略学习
+
+论文覆盖了从语言条件模仿学习（CLIPort、PerAct、Play-LMP）到语言辅助强化学习（利用 LLM 提供奖励塑形和反馈）的完整谱系。RT-1 和 RT-2 作为 Robot Transformer 的代表，展示了将大规模预训练视觉-语言表示直接用于机器人控制的可行性。
+
+一个关键的技术观察是**语言-图像目标条件价值学习**——使用 VLM 的视觉问答能力来定义和评估任务完成的价值函数。这为 RL 中传统上极其困难的奖励函数设计提供了新的范式。
+
+### 任务规划
+
+LLM 在机器人任务规划中的应用从三个层面展开：**语言指令规范**（将自然语言任务转换为结构化计划）、**代码生成**（如 Code-as-Policies 框架）和**上下文学习**（利用 ICL 能力在少量示例情况下快速适应新任务）。
+
+Code-as-Policies 方法特别值得关注——LLM 生成可执行的 Python 代码来编排感知 API、运动原语和逻辑控制。这种方法的一个关键优势是可调试性：人类可以检查生成的代码、发现错误、并在执行前进行修正。
+
+### 感知
+
+基础模型在机器人感知中的应用最为成熟。从开放词汇目标检测（识别训练中未见过的物体类别）、语义分割（对所有像素进行语义标注）到 3D 场景的语言基础（将自然语言描述锚定到 3D 空间中的具体位置和物体），VLMs 正从根本上改变机器人感知的方式。
+
+论文特别讨论了**可供性学习**——利用 VLMs 预测物体上可交互的区域（如杯子的把手、抽屉的拉手）。这种语义层面的感知超越了简单的物体识别，直接服务于操作规划。
+
+### 具身 AI 与通用智能体
+
+论文将具身 AI 定位为机器人学与基础模型交汇的前沿方向。从 PaLM-E 的统一感知-推理-行动模型到多机器人协作系统，基础模型正在推动从单一任务机器人向通用具身智能体的转变。仿真器（如 Isaac Sim、Habitat）在这一进程中扮演着关键角色——它们为训练提供了可扩展、安全的虚拟环境。
+
+## 六大挑战的深度分析
+
+### 数据稀缺
+
+机器人学面临的根本性困境是：LLM 可以依赖互联网规模的文本（万亿级 Token），但机器人操作数据仅以百万级轨迹计。论文提出了多条路径：利用非结构化玩耍数据和未标注的人类视频、通过仿真生成合成数据、以及基于 VLMs 的数据增强。
+
+### 实时性能
+
+GPT-4 的一次推理可能需要数秒，但机器人控制通常需要毫秒级响应。这个张力是基础模型驱动的机器人学面临的核心工程挑战。论文讨论了模型蒸馏、边缘部署和异步推理架构等缓解策略。
+
+### 多模态表征的局限
+
+当前的 VLMs 主要处理视觉和语言，但机器人依赖的触觉、力反馈、音频、本体感受等模态在大规模对齐数据上的缺失构成了基础性瓶颈。
+
+### 不确定性量化
+
+LLM 幻觉在文本领域可能只是"给出了错误信息"，但在物理操作中可能造成物理损坏。论文区分了三种不确定性：实例级（语言歧义、单一推理错误）、分布级（域外数据）和分布偏移（闭环操作中的反馈偏差）。
+
+### 安全与可靠性
+
+这是论文中与我的研究最相关的部分。基础模型驱动的机器人引入了传统机器人安全框架无法覆盖的新型风险——LLM 可能被对抗性提示操纵、VLM 的误分类可能导致危险操作。论文呼吁建立新的安全验证机制。
+
+### 标准化评估
+
+机器人学缺乏类似 ImageNet 那样的统一评估基准，这阻碍了不同方法之间的系统比较。每个实验室使用不同的机器人、任务和环境，使得"哪个方法更好"成为一个难以回答的问题。
+
+## 启示与思考
+
+这篇综述出版于 2025 年（尽管 arXiv 版本可追溯到 2023 年底），其核心挑战至今仍然有效。对我而言最有启发的是**不确定性量化**部分——它指出了当前 AI 安全评估的一个盲区：我们对 LLM 输出的不确定性有统计度量，但对 VLM 在物理操作场景中的不确定性几乎没有系统化的研究方法。
+
+论文关于数据稀缺的讨论也揭示了 AI 安全研究中的一个结构性困难：如果最强大的基础模型需要的数据类型（互联网文本和图像）与确保机器人安全所需的数据类型（物理交互数据）之间存在根本性的不匹配，那么仅靠数据驱动的方法可能永远无法在物理安全上达到足够的可靠性。
+
+论文配套的 GitHub 仓库（Awesome-Robotics-Foundation-Models）持续追踪该领域的新进展，是保持与前沿同步的宝贵资源。
+
+## 参考链接
+
+- arXiv: https://arxiv.org/abs/2312.07843
+- GitHub: https://github.com/robotics-survey/Awesome-Robotics-Foundation-Modelsa:["$","$L1b",null,{"paper":{"slug":"foundation-models-robotics-ijrr","title":"机器人学中的基础模型：应用、挑战与未来","originalTitle":"Foundation Models in Robotics: Applications, Challenges, and the Future","excerpt":"来自 Stanford、Google DeepMind、Princeton 等顶级机构的 33 页综述，全面梳理了 LLM、VLM、VNM 等基础模型在机器人感知、决策、任务规划和具身 AI 中的应用。论文覆盖 200+ 篇参考文献，从技术细节到宏观挑战进行了系统性分析，并指出了数据稀缺、实时性、安全评估等关键瓶颈。","date":"2026-06-29","coverImage":"$undefined","architectureImage":"/images/papers/foundation-models-robotics-ijrr/architecture.png","featured":false,"draft":false,"authors":["Roya Firoozi","Johnathan Tucker","Stephen Tian","Anirudha Majumdar","Jiajun Wu","Karol Hausman","Brian Ichter","Danny Driess","Mac Schwager"],"year":2025,"venue":"IJRR 2025 / arXiv 2312.07843","tags":["AI解读","基础模型","机器人学","LLM","Stanford"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"技术基础从-token-到-foundation-model","text":"技术基础：从 Token 到 Foundation Model","level":2},{"id":"四大应用维度","text":"四大应用维度","level":2},{"id":"机器人策略学习","text":"机器人策略学习","level":3},{"id":"任务规划","text":"任务规划","level":3},{"id":"感知","text":"感知","level":3},{"id":"具身-ai-与通用智能体","text":"具身 AI 与通用智能体","level":3},{"id":"六大挑战的深度分析","text":"六大挑战的深度分析","level":2},{"id":"数据稀缺","text":"数据稀缺","level":3},{"id":"实时性能","text":"实时性能","level":3},{"id":"多模态表征的局限","text":"多模态表征的局限","level":3},{"id":"不确定性量化","text":"不确定性量化","level":3},{"id":"安全与可靠性","text":"安全与可靠性","level":3},{"id":"标准化评估","text":"标准化评估","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"7 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"机器人学中的基础模型：应用、挑战与未来 | 博客"}],["$","meta","1",{"name":"description","content":"来自 Stanford、Google DeepMind、Princeton 等顶级机构的 33 页综述，全面梳理了 LLM、VLM、VNM 等基础模型在机器人感知、决策、任务规划和具身 AI 中的应用。论文覆盖 200+ 篇参考文献，从技术细节到宏观挑战进行了系统性分析，并指出了数据稀缺、实时性、安全评估等关键瓶颈。"}],["$","meta","2",{"property":"og:title","content":"机器人学中的基础模型：应用、挑战与未来"}],["$","meta","3",{"property":"og:description","content":"来自 Stanford、Google DeepMind、Princeton 等顶级机构的 33 页综述，全面梳理了 LLM、VLM、VNM 等基础模型在机器人感知、决策、任务规划和具身 AI 中的应用。论文覆盖 200+ 篇参考文献，从技术细节到宏观挑战进行了系统性分析，并指出了数据稀缺、实时性、安全评估等关键瓶颈。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/foundation-models-robotics-ijrr/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"机器人学中的基础模型：应用、挑战与未来"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"机器人学中的基础模型：应用、挑战与未来"}],["$","meta","13",{"name":"twitter:description","content":"来自 Stanford、Google DeepMind、Princeton 等顶级机构的 33 页综述，全面梳理了 LLM、VLM、VNM 等基础模型在机器人感知、决策、任务规划和具身 AI 中的应用。论文覆盖 200+ 篇参考文献，从技术细节到宏观挑战进行了系统性分析，并指出了数据稀缺、实时性、安全评估等关键瓶颈。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]

@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T1a1d,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+这篇综述汇聚了来自 Stanford、Google DeepMind、Princeton、UT Austin、NVIDIA、上海交大等机构的顶尖研究者，其作者阵容本身就反映了领域内最活跃的研究群体。论文以 33 页的篇幅提供了基础模型在机器人学中应用的完整版图。
+
+论文的核心特色是**系统性的技术细节覆盖**——与其他综述更多停留在概念层面不同，这篇从 Tokenization、Embedding、Attention 机制等数学基础讲起，逐步构建到 LLM、Vision Transformer、VLM 和 Embodied Multimodal Language Models 的完整技术栈。对于希望从底层理解基础模型如何增强机器人能力的读者而言，这是极为宝贵的系统性资源。
+
+主要贡献可概括为：
+1. **从基础理论到上层应用的完整管线**：覆盖 Tokenization 到 Embodied AI 的全技术链路
+2. **四维应用分类法**：策略学习、任务规划、感知与具身 AI
+3. **六大挑战的系统分析**：数据、实时性、多模态、不确定性、安全、评估
+
+## 技术基础：从 Token 到 Foundation Model
+
+论文的一个独特价值在于其数学基础部分。它从 Tokenization（字符序列到 Token 的切分过程）开始，逐步介绍 GPT-3（50,257 词汇量、12,288 嵌入维度）等模型的技术细节。这种从底层构建理解的方式使读者不仅能知道"LLM 可以做 X"，还能理解"为什么 LLM 能做 X 以及能力从何而来"。
+
+Vision Transformer、CLIP、DALL-E、PaLM-E 等模型的演变被清晰地联结到机器人学需求——开放词汇物体识别需要 CLIP 的对齐表示，多模态推理需要 PaLM-E 的统一架构。
+
+## 四大应用维度
+
+### 机器人策略学习
+
+论文覆盖了从语言条件模仿学习（CLIPort、PerAct、Play-LMP）到语言辅助强化学习（利用 LLM 提供奖励塑形和反馈）的完整谱系。RT-1 和 RT-2 作为 Robot Transformer 的代表，展示了将大规模预训练视觉-语言表示直接用于机器人控制的可行性。
+
+一个关键的技术观察是**语言-图像目标条件价值学习**——使用 VLM 的视觉问答能力来定义和评估任务完成的价值函数。这为 RL 中传统上极其困难的奖励函数设计提供了新的范式。
+
+### 任务规划
+
+LLM 在机器人任务规划中的应用从三个层面展开：**语言指令规范**（将自然语言任务转换为结构化计划）、**代码生成**（如 Code-as-Policies 框架）和**上下文学习**（利用 ICL 能力在少量示例情况下快速适应新任务）。
+
+Code-as-Policies 方法特别值得关注——LLM 生成可执行的 Python 代码来编排感知 API、运动原语和逻辑控制。这种方法的一个关键优势是可调试性：人类可以检查生成的代码、发现错误、并在执行前进行修正。
+
+### 感知
+
+基础模型在机器人感知中的应用最为成熟。从开放词汇目标检测（识别训练中未见过的物体类别）、语义分割（对所有像素进行语义标注）到 3D 场景的语言基础（将自然语言描述锚定到 3D 空间中的具体位置和物体），VLMs 正从根本上改变机器人感知的方式。
+
+论文特别讨论了**可供性学习**——利用 VLMs 预测物体上可交互的区域（如杯子的把手、抽屉的拉手）。这种语义层面的感知超越了简单的物体识别，直接服务于操作规划。
+
+### 具身 AI 与通用智能体
+
+论文将具身 AI 定位为机器人学与基础模型交汇的前沿方向。从 PaLM-E 的统一感知-推理-行动模型到多机器人协作系统，基础模型正在推动从单一任务机器人向通用具身智能体的转变。仿真器（如 Isaac Sim、Habitat）在这一进程中扮演着关键角色——它们为训练提供了可扩展、安全的虚拟环境。
+
+## 六大挑战的深度分析
+
+### 数据稀缺
+
+机器人学面临的根本性困境是：LLM 可以依赖互联网规模的文本（万亿级 Token），但机器人操作数据仅以百万级轨迹计。论文提出了多条路径：利用非结构化玩耍数据和未标注的人类视频、通过仿真生成合成数据、以及基于 VLMs 的数据增强。
+
+### 实时性能
+
+GPT-4 的一次推理可能需要数秒，但机器人控制通常需要毫秒级响应。这个张力是基础模型驱动的机器人学面临的核心工程挑战。论文讨论了模型蒸馏、边缘部署和异步推理架构等缓解策略。
+
+### 多模态表征的局限
+
+当前的 VLMs 主要处理视觉和语言，但机器人依赖的触觉、力反馈、音频、本体感受等模态在大规模对齐数据上的缺失构成了基础性瓶颈。
+
+### 不确定性量化
+
+LLM 幻觉在文本领域可能只是"给出了错误信息"，但在物理操作中可能造成物理损坏。论文区分了三种不确定性：实例级（语言歧义、单一推理错误）、分布级（域外数据）和分布偏移（闭环操作中的反馈偏差）。
+
+### 安全与可靠性
+
+这是论文中与我的研究最相关的部分。基础模型驱动的机器人引入了传统机器人安全框架无法覆盖的新型风险——LLM 可能被对抗性提示操纵、VLM 的误分类可能导致危险操作。论文呼吁建立新的安全验证机制。
+
+### 标准化评估
+
+机器人学缺乏类似 ImageNet 那样的统一评估基准，这阻碍了不同方法之间的系统比较。每个实验室使用不同的机器人、任务和环境，使得"哪个方法更好"成为一个难以回答的问题。
+
+## 启示与思考
+
+这篇综述出版于 2025 年（尽管 arXiv 版本可追溯到 2023 年底），其核心挑战至今仍然有效。对我而言最有启发的是**不确定性量化**部分——它指出了当前 AI 安全评估的一个盲区：我们对 LLM 输出的不确定性有统计度量，但对 VLM 在物理操作场景中的不确定性几乎没有系统化的研究方法。
+
+论文关于数据稀缺的讨论也揭示了 AI 安全研究中的一个结构性困难：如果最强大的基础模型需要的数据类型（互联网文本和图像）与确保机器人安全所需的数据类型（物理交互数据）之间存在根本性的不匹配，那么仅靠数据驱动的方法可能永远无法在物理安全上达到足够的可靠性。
+
+论文配套的 GitHub 仓库（Awesome-Robotics-Foundation-Models）持续追踪该领域的新进展，是保持与前沿同步的宝贵资源。
+
+## 参考链接
+
+- arXiv: https://arxiv.org/abs/2312.07843
+- GitHub: https://github.com/robotics-survey/Awesome-Robotics-Foundation-Models0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"foundation-models-robotics-ijrr","title":"机器人学中的基础模型：应用、挑战与未来","originalTitle":"Foundation Models in Robotics: Applications, Challenges, and the Future","excerpt":"来自 Stanford、Google DeepMind、Princeton 等顶级机构的 33 页综述，全面梳理了 LLM、VLM、VNM 等基础模型在机器人感知、决策、任务规划和具身 AI 中的应用。论文覆盖 200+ 篇参考文献，从技术细节到宏观挑战进行了系统性分析，并指出了数据稀缺、实时性、安全评估等关键瓶颈。","date":"2026-06-29","architectureImage":"/images/papers/foundation-models-robotics-ijrr/architecture.png","featured":false,"draft":false,"authors":["Roya Firoozi","Johnathan Tucker","Stephen Tian","Anirudha Majumdar","Jiajun Wu","Karol Hausman","Brian Ichter","Danny Driess","Mac Schwager"],"year":2025,"venue":"IJRR 2025 / arXiv 2312.07843","tags":["AI解读","基础模型","机器人学","LLM","Stanford"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"技术基础从-token-到-foundation-model","text":"技术基础：从 Token 到 Foundation Model","level":2},{"id":"四大应用维度","text":"四大应用维度","level":2},{"id":"机器人策略学习","text":"机器人策略学习","level":3},{"id":"任务规划","text":"任务规划","level":3},{"id":"感知","text":"感知","level":3},{"id":"具身-ai-与通用智能体","text":"具身 AI 与通用智能体","level":3},{"id":"六大挑战的深度分析","text":"六大挑战的深度分析","level":2},{"id":"数据稀缺","text":"数据稀缺","level":3},{"id":"实时性能","text":"实时性能","level":3},{"id":"多模态表征的局限","text":"多模态表征的局限","level":3},{"id":"不确定性量化","text":"不确定性量化","level":3},{"id":"安全与可靠性","text":"安全与可靠性","level":3},{"id":"标准化评估","text":"标准化评估","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"7 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

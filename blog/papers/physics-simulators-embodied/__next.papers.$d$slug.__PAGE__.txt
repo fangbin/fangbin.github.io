@@ -1,0 +1,62 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T16d2,## 论文概览
+
+导航和操作是具身AI的两大核心能力，但在真实世界中训练这两类智能体既昂贵又耗时，有时甚至存在安全隐患。物理仿真（Physics Simulation）因此成为机器人研究的核心工具——支持可扩展的数据生成、可重复的评估、控制器原型开发、系统调试和安全测试。然而，仿真器与真实世界之间的鸿沟（sim-to-real gap）持续困扰着领域发展。
+
+来自香港城市大学、南洋理工大学和汉堡大学的研究团队在这篇综述中提出并回答了三个关键问题：**哪些仿真器属性对不同具身任务最为关键？哪些sim-to-real鸿沟可以通过不同的仿真器设计来捕捉、缓解或仍未解决？研究者应如何为现代导航和操作任务选择方法和配置仿真器？** 论文涵盖物理引擎层的深入分析（碰撞求解器、摩擦模型、驱动建模）到策略学习中的实际应用（域随机化、系统标定、鲁棒优化），为具身AI研究者和工程师提供了仿真器选择与配置的系统性指南。
+
+![物理仿真器应用全景](/images/papers/physics-simulators-embodied/architecture.png)
+
+## 核心创新
+
+本文的独特贡献在于**以仿真器底层属性为视角**重新审视具身AI研究。大多数现有综述要么宽泛地介绍仿真平台，要么关注特定的方法学（如基础模型），而本文深入剖析了低层仿真器属性——碰撞求解器的选择如何影响导航的sim-to-real相关性、接触引擎如何改变操作精度、驱动时序建模如何决定真实装配成功率——并提供了具体的实验证据支持。
+
+论文将sim-to-real鸿沟系统性地分为两类：**感知鸿沟**（Perception Gap）涵盖传感器观测的差异，包括RGB-D图像、LiDAR、光照、纹理、校准和噪声；**动作动力学鸿沟**（Action-Dynamics Gap）涵盖机器人与环境交互的差异，包括碰撞响应、接触、摩擦、驱动延迟、控制器时序、可变形动力学等。
+
+论文中引用的一条关键实验证据令人印象深刻：在iGibson导航任务中，调优碰撞响应后Sim-to-Real相关系数（SRCC）从默认滑动的**0.603提升至0.875**；在V-REP操作任务中，切换接触引擎（Bullet 2.78 vs Newton 45.46）竟能产生数量级的位姿误差差异；而驱动时序建模的加入使真实装配成功率从**0%跃升至50%**。
+
+## 方法论
+
+### 主流物理引擎与仿真平台
+
+机器人仿真器通常包含两个层级：底层**物理引擎**（Physics Engine）负责计算机器人、物体、接触和环境状态随时间的演化；上层**仿真平台**（Simulation Platform）将物理引擎与场景构建、渲染、传感器仿真、机器人模型、脚本接口和机器人中间件（如ROS）桥接起来。
+
+主流物理引擎包括：**MuJoCo**（高效的接触动力学）、**Bullet**（开源通用）、**PhysX**（GPU加速）、**DART**（机器人学导向）、**ODE**（经典刚体）和**Chrono**（多物理场）。仿真平台则有Gazebo、Isaac Sim（NVIDIA GPU加速）、Habitat（大规模导航）、AirSim、iGibson、Webots和CoppeliaSim等。
+
+### 导航中的仿真器选择
+
+在导航任务中，仿真器需要支持目标驱动（Goal-Driven）和任务驱动（Task-Driven）两种模式。Habitat凭借对HM3D等大规模数据集的支持成为主流选择，AI2-THOR提供多样化的交互式室内场景，iGibson则擅长复杂的物理交互。论文指出，碰撞响应参数对导航预测能力的影响尤为显著——Agent在仿真中可能利用"墙滑"等物理伪影达到高分，但在真实硬件上表现大幅下降。
+
+### 操作中的仿真器选择
+
+操作任务对物理仿真精度的要求更高。刚性物体抓取（如GraspNet）需要精确的碰撞几何和摩擦参数；灵巧操作涉及高自由度手部的精细控制；可变形物体操作（如SoftGym）则需要建模材料的非线性动力学行为。ManiSkill、RLBench等基准测试平台推动了标准化评估的发展。
+
+### 缓解Sim-to-Real鸿沟的三大策略
+
+论文系统总结了三种核心缓解策略。**标定与显式建模**试图通过传感器噪声建模、延迟建模、执行器标定和系统辨识来减小已知差异；**随机化方法**故意在仿真条件的分布上训练策略，包括视觉域随机化（纹理、光照、相机参数）和动力学随机化（接触、摩擦、负载、延迟）；**迁移导向的策略学习**通过鲁棒策略优化、域自适应和在线适应使策略对残差失配具有鲁棒性。
+
+## 启示与思考
+
+这篇综述为具身AI社区提供了极具实操价值的指南。其核心洞察——**"两个方法在仿真中可能看起来相当，但在硬件上迁移效果完全不同"**——应该成为每个使用仿真器的研究者的警示。选择合适的物理引擎和仿真参数不是细节问题，而是决定研究成果可复现性和实用价值的关键因素。
+
+论文对世界模型（World Models）的讨论也值得关注。与传统分析仿真器不同，世界模型从有限数据中学习环境动力学，通常绑定于特定任务分布，缺乏用户可控的几何、动力学和传感器配置能力。这提醒我们，尽管世界模型在策略学习中有重要价值，但对于需要精确物理验证的任务，传统分析仿真器仍不可或缺。
+
+从工程实践角度看，论文提供的"物理引擎-任务匹配"框架尤为实用：室内轮式导航可能只需要刚体碰撞和相机渲染；水下导航则必须考虑流体动力学和能见度退化；接触丰富的操作任务则需要精确的接触求解器和摩擦建模。对于正在进入具身AI领域的研究者和工程师，本文是一份不可多得的技术选型参考。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"physics-simulators-embodied","title":"具身AI时代的物理仿真器：导航与操作综述","originalTitle":"A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI","excerpt":"本文系统分析了物理仿真器在具身AI导航与操作中的关键作用，包括主流物理引擎（MuJoCo、Bullet、PhysX等）的特性对比、仿真平台的选型策略、Sim-to-Real鸿沟的系统性分析，以及缓解策略（域随机化、系统标定、鲁棒优化）的全面梳理。","date":"2026-06-29","architectureImage":"/images/papers/physics-simulators-embodied/architecture.png","featured":false,"draft":false,"authors":["Wong Lik Hang Kenny","Xueyang Kang","Kaixin Bai","Jianwei Zhang"],"year":2025,"venue":"arXiv","tags":["AI解读","具身智能","物理仿真","Sim-to-Real"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"主流物理引擎与仿真平台","text":"主流物理引擎与仿真平台","level":3},{"id":"导航中的仿真器选择","text":"导航中的仿真器选择","level":3},{"id":"操作中的仿真器选择","text":"操作中的仿真器选择","level":3},{"id":"缓解sim-to-real鸿沟的三大策略","text":"缓解Sim-to-Real鸿沟的三大策略","level":3},{"id":"启示与思考","text":"启示与思考","level":2}],"readingTime":"6 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

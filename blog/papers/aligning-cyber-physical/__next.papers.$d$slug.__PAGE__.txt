@@ -1,0 +1,134 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T1cb9,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+《Aligning Cyber Space with Physical World: A Comprehensive Survey on Embodied AI》由中山大学、鹏城实验室、北京大学的研究者联合撰写，发表于 IEEE/ASME Transactions on Mechatronics。这篇综述的核心议题是：**如何让智能体既能理解抽象的数字空间（cyber space），又能可靠地作用于复杂的物理世界（physical world）？**
+
+作者提出，具身 AI 是通往通用人工智能（AGI）的关键路径。不同于仅在虚拟空间中处理文本或图像的"离身 AI"（disembodied AI，如 ChatGPT），具身 AI 需要控制物理实体（机器人、汽车、其他设备）与环境交互。
+
+## 核心创新
+
+论文的主要贡献包括：
+
+1. **提出 ABC 模型**：将具身智能体抽象为 A（AI 大脑）、B（Body，身体）、C（Cross-modal sensors，跨模态传感器）三个核心组件。
+2. **四大研究方向**：系统梳理了具身感知、具身交互、具身智能体和 Sim-to-Real 适配。
+3. **强调世界模型的作用**：分析了生成式、预测式和知识驱动三类世界模型如何帮助智能体理解物理规律。
+4. **丰富的资源汇总**：涵盖了代表性机器人平台、仿真器、数据集和方法。
+
+![ABC 模型架构](/images/papers/aligning-cyber-physical/architecture.png)
+
+## 方法论
+
+### ABC 模型
+
+论文将具身智能体抽象为三个协同工作的模块：
+
+- **A Model（AI 大脑）**：由多模态大模型（MLM）和世界模型（WM）构成，负责理解环境、进行推理和规划。它可以存在于数字空间中，但必须能够对齐物理世界的规律。
+- **B Model（身体）**：指智能体的物理实体，如机械臂、轮式机器人、四足机器人、人形机器人、自动驾驶汽车等。身体决定了智能体能执行的动作类型。
+- **C Model（跨模态传感器）**：包括相机、激光雷达、麦克风、触觉传感器、力觉传感器等，负责从物理世界采集多模态信息并反馈给 AI 大脑。
+
+这三个组件通过感知—规划—执行—反馈的循环，实现数字空间与物理世界的对齐。
+
+### 具身感知
+
+具身感知不同于传统的静态图像识别，要求智能体在三维空间和动态环境中进行主动感知。论文将其分为三个层次：
+
+- **视觉 SLAM**：从 MonoSLAM、ORB-SLAM 到语义 SLAM、GS-SLAM，帮助智能体同时定位与建图。
+- **3D 场景理解**：包括基于投影（MV3D、PointPillars）、体素（VoxNet、MinkowskiNet）和点云（PointNet、PointTransformer、LEO、PointMamba）的方法。
+- **主动探索**：智能体通过与环境交互或改变视角来获取更多信息，例如好奇机器人、NeU-NBV 等方法。
+
+### 具身交互
+
+具身交互关注智能体如何与环境中的物体和人类交互。论文重点讨论了：
+
+- **具身问答（EQA）**：智能体需要通过主动探索环境来回答问题。代表性数据集包括 EQA v1、MP3D-EQA、IQUAD、SQA3D、OpenEQA、EXPRESS-Bench 等。
+- **具身抓取**：从传统的抓取姿态估计发展到语言引导抓取、人机交接、动态物体抓取等更复杂的场景。
+
+### 具身智能体
+
+具身智能体是具身 AI 的核心载体。论文将其工作流程分为：
+
+1. **高层任务规划**：在数字空间中将复杂指令分解为可执行的子任务。
+2. **低层动作规划**：根据感知信息和子任务生成具体动作。
+
+高层规划经历了从传统符号规划（PDDL、MCTS）到基于 LLM 的规划，再到利用视觉信息增强规划的发展历程。代表性工作包括 Inner Monologue、SayPlan、ConceptGraphs、RoboGPT 等。
+
+### Sim-to-Real 适配
+
+这是连接数字空间与物理世界的关键桥梁。论文将相关方法分为三类：
+
+#### 1. 具身世界模型
+
+世界模型帮助智能体预测环境变化，分为：
+- **生成式方法**：如 Sora、Pandora、3D-VLA、DWM，通过生成图像、视频、点云学习物理规律。
+- **预测式方法**：如 I-JEPA、MC-JEPA、iVideoGPT、IRASim，在隐空间中进行预测。
+- **知识驱动方法**：如 real2sim2real、Holodeck、GRUtopia，将人工构建的物理常识注入模型或仿真器。
+
+#### 2. 数据收集与训练方法
+
+包括域随机化、系统辨识、Real2Sim2Real、TRANSIC（人在回路校正）、Lang4Sim2Real 等。
+
+#### 3. 具身控制算法
+
+从传统控制到基于强化学习、模仿学习的策略，再到最新的 VLA 模型。
+
+![Sim-to-Real 方法](/images/papers/aligning-cyber-physical/sim2real.png)
+
+## 实验结果
+
+作为综述，本文通过对比分析揭示了以下趋势：
+
+1. **多模态大模型显著提升智能体能力**：MLM 赋予智能体强大的感知、推理和规划能力，使其能够处理更复杂的指令和环境。
+
+2. **世界模型是 Sim-to-Real 的重要工具**：通过预测未来状态，世界模型可以帮助智能体在仿真中学习物理直觉，并在真实世界中更安全地行动。
+
+3. **3D 场景理解成为关键能力**：在导航、操作等任务中，3D 表示比 2D 图像提供了更丰富的几何和语义信息。
+
+4. **语言作为高层规划的有效接口**：LLM 能够将抽象指令分解为子任务，而 VLM 可以将视觉信息融入规划过程，显著提升任务成功率。
+
+## 启示与思考
+
+![核心挑战](/images/papers/aligning-cyber-physical/challenges.png)
+
+这篇综述的独特价值在于它**从"数字—物理对齐"的视角**重新审视具身 AI。几个深刻的问题值得思考：
+
+### 高质量机器人数据集
+
+真实世界机器人数据收集耗时耗力，而纯仿真数据又会加剧 Sim-to-Real 差距。未来的方向是构建大规模、跨机构协作的真实世界数据集，并利用高质量仿真数据辅助真实数据训练。
+
+### 长程任务执行
+
+像"打扫厨房"这样的指令需要执行一系列低层动作。当前的高层规划器虽然取得初步成功，但缺乏针对具身任务的专门调优。需要开发具备强大感知能力和常识知识的轻量级监控模块，以平衡规划复杂度和实时适应性。
+
+### 因果推理
+
+当前数据驱动的智能体依赖数据中的相关性做决策，难以真正理解知识、行为与环境之间的因果关系。具身智能体需要具备基于世界知识的因果推理能力，通过交互和溯因学习理解世界运作方式。
+
+### 统一评测基准
+
+现有基准在评估技能上差异很大，且场景受仿真器限制。理想的基准应该同时评估高层规划器和低层控制策略，覆盖真实长程任务，并提供超越成功率的细粒度诊断指标。
+
+### 安全与隐私
+
+具身智能体常部署在私密空间，且依赖 LLM 做决策，容易受到后门攻击、场景操纵和知识注入等威胁。需要发展安全提示、状态管理和安全验证机制，确保机器人在物理世界中的行为不会危害人类。
+
+总的来说，这篇综述提醒我们：具身 AI 的真正难点不在于让机器人在仿真中表现良好，而在于如何让它们在开放、动态、不可预测的物理世界中稳定、安全、智能地工作。数字空间与物理世界的对齐，正是这一领域最具挑战也最有价值的方向。0:{"buildId":"8Uj8xnCv0CtSEh_jjSoVc","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"aligning-cyber-physical","title":"对齐数字空间与物理世界：具身人工智能全面综述","originalTitle":"Aligning Cyber Space with Physical World: A Comprehensive Survey on Embodied AI","excerpt":"这篇发表于 IEEE/ASME TMech 的综述提出 ABC 模型（AI 大脑、身体、跨模态传感器）刻画具身智能体，系统梳理了具身感知、具身交互、具身智能体和 Sim-to-Real 适配四大研究方向，探讨了多模态大模型与世界模型在连接数字空间与物理世界中的关键作用。","date":"2026-06-29","architectureImage":"/images/papers/aligning-cyber-physical/architecture.png","featured":false,"draft":false,"authors":["Yang Liu","Weixing Chen","Yongjie Bai","Xiaodan Liang","Guanbin Li","Wen Gao","Liang Lin"],"year":2024,"venue":"IEEE/ASME TMech / arXiv 2407.06886","tags":["AI解读","具身智能","VLA","世界模型","Sim-to-Real"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"abc-模型","text":"ABC 模型","level":3},{"id":"具身感知","text":"具身感知","level":3},{"id":"具身交互","text":"具身交互","level":3},{"id":"具身智能体","text":"具身智能体","level":3},{"id":"sim-to-real-适配","text":"Sim-to-Real 适配","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"高质量机器人数据集","text":"高质量机器人数据集","level":3},{"id":"长程任务执行","text":"长程任务执行","level":3},{"id":"因果推理","text":"因果推理","level":3},{"id":"统一评测基准","text":"统一评测基准","level":3},{"id":"安全与隐私","text":"安全与隐私","level":3}],"readingTime":"7 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null

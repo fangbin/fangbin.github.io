@@ -1,0 +1,142 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/e97fad7d2b974016.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"8Uj8xnCv0CtSEh_jjSoVc","c":["","papers","embodied-multimodal-large-models",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","embodied-multimodal-large-models","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/e97fad7d2b974016.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/92af3790b5b31134.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/92af3790b5b31134.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T1b77,import { resolveImageSrc } from '@/components/PaperMarkdownRenderer'
+
+## 论文概览
+
+《Exploring Embodied Multimodal Large Models: Development, Datasets, and Future Directions》由广东省人工智能与数字经济实验室、深圳大学、中山大学、巴黎理工学院等机构的研究者联合完成。这篇 81 页的综述是**首次系统性回顾具身多模态大模型（EMLMs）**研究进展的工作，分析了超过 300 篇相关论文。
+
+论文的核心定位非常清晰：不同于传统只关注 NLP、CV 或多模态基础模型的综述，本文聚焦于**具身智能体如何与多模态大模型结合**，从基础模型、具身任务、数据集到挑战与未来方向进行了全栈分析。
+
+## 核心创新
+
+本文的贡献可以概括为四点：
+
+1. **首次系统性 EMLM 综述**：填补了该交叉领域缺乏全面综述的空白。
+2. **全栈分析框架**：从底层大模型到上层感知/导航/交互任务，再到仿真平台和数据集，形成完整技术地图。
+3. **数据集详细梳理**：分类整理了真实世界采集与仿真生成的数据集，并比较了其规模、传感器模态和任务覆盖。
+4. **挑战与未来方向**：明确指出跨模态对齐、计算资源、泛化能力、时序推理等关键瓶颈。
+
+![EMLM 全栈架构](/images/papers/embodied-multimodal-large-models/architecture.png)
+
+## 方法论
+
+### 基础模型层
+
+EMLM 的发展离不开三类基础大模型：
+
+- **大语言模型（LLM）**：如 GPT-4、LLaMA、DeepSeek-V3，作为系统的"语言大脑"，负责任务理解、推理和规划。
+- **大视觉模型（LVM）**：从 ResNet、ViT、Swin Transformer 到 SAM，提供视觉感知和世界理解能力。
+- **其他模态模型**：包括视觉-音频模型（如 SoundSpaces）和视觉-触觉模型，扩展机器人对环境的感知维度。
+
+### 具身任务层
+
+论文将 EMLM 的应用分为四大方向：
+
+#### 1. 具身感知（Embodied Perception）
+
+机器人需要理解自身所处环境的语义和几何结构。3D 场景理解、物体检测、语义分割和视觉 grounding 是核心能力。代表性的数据集包括 ScanNet、HM3D、Matterport3D 等。
+
+#### 2. 具身导航（Embodied Navigation）
+
+从早期的点目标导航、物体导航，发展到基于自然语言指令的视觉-语言导航（VLN）。关键模型包括：
+- **NavGPT / NaviLLM / MapGPT**：将 LLM 与视觉信息结合进行导航规划。
+- **VLFM / SoundSpaces**：利用视觉-语言前沿图或音频线索辅助零样本导航。
+- **NoMaD / ViNT**：基于扩散策略和基础模型的通用导航策略。
+
+#### 3. 具身交互（Embodied Interaction）
+
+这是 EMLM 最直接体现"动手能力"的方向。论文将其细分为：
+- **短程动作策略**：如 R3M、RT-1、Octo、OpenVLA，直接根据视觉和语言指令输出机器人动作。
+- **长程任务规划**：如 SayCan、VoxPoser、RT-H、Octopus，利用 LLM 进行高层任务分解，再调用低层技能执行。
+- **3D-VLA / LEO**：将 3D 场景信息融入视觉-语言-动作统一框架。
+
+#### 4. 仿真平台
+
+仿真是 EMLM 数据生成和策略验证的重要基础设施。论文提到的平台包括 Habitat-Sim、Isaac Sim、MuJoCo、Genesis、WonderWorld 等。
+
+### 数据集全景
+
+数据是 EMLM 发展的关键瓶颈。论文系统整理了真实世界与仿真生成的数据集：
+
+- **Open X-Embodiment**：Google 牵头，整合 22 种机器人、100 万场景、150,000 任务、60 个数据集。
+- **ARIO（All Robots in One）**：鹏城实验室开发，超过 300 万样本，涵盖图像、语言、触觉、语音等多模态数据。
+- **RH20T**：超过 11 万条机器人操作序列，包含视觉、力觉、音频、运动轨迹和语言指令。
+- **DROID**：76,000 条演示轨迹，覆盖 564 个场景和 86 个任务。
+- **BridgeData V2**：60,096 条轨迹，来自 24 个环境。
+
+![数据集规模](/images/papers/embodied-multimodal-large-models/datasets.png)
+
+## 实验结果
+
+作为综述，本文并未提出新的统一基准，但通过对已有工作的比较得出了几个重要结论：
+
+1. **预训练视觉编码器至关重要**：R3M 等基于 Ego4D 预训练的视觉表示，相比 CLIP 和 ImageNet 预训练在机器人操作任务上有明显提升；后续工作利用更大规模数据和 MAE 方法，提升幅度可达 75% 以上。
+
+2. **语言作为中间表示增强策略灵活性**：RT-H 先预测"动作语言"再预测机器人动作，实验证明这种层次化设计比直接从远程操作干预中学习更强大、更灵活。
+
+3. **开源 VLA 模型缩小与闭源模型差距**：OpenVLA 基于 Prismatic VLM、DINOv2、SigLIP 和 Llama 2 构建，在任务成功率上比 RT-2-X 高 16.5%，参数量却减少 7 倍。
+
+4. **多模态数据融合仍处早期**：尽管 Open X-Embodiment 和 ARIO 规模庞大，但大多数传感器仍依赖相机，触觉、音频、力觉、LiDAR 等模态的数据相对稀缺。
+
+## 启示与思考
+
+![主要挑战](/images/papers/embodied-multimodal-large-models/challenges.png)
+
+这篇综述最打动我的地方在于它**把 EMLM 当作一个系统工程问题**来看待，而不是简单地讨论某个具体模型。它提醒我们：
+
+### 跨模态对齐是基础
+
+视觉、语言、动作三种模态的语义空间差异巨大。ReKep、SoundSpaces 等方法都依赖于有效的跨模态对齐。如果底层对齐不精确，再强大的模型也会"指鹿为马"。
+
+### 计算效率决定落地速度
+
+当前大多数 EMLM 需要高性能 GPU 才能训练和推理。OpenVLA 展示了 7B 参数模型在视觉-语言任务上的可行性，但加入 LiDAR、音频、压力等额外模态后，模型规模和推理成本会显著上升。模型压缩、蒸馏和硬件协同设计将是未来重点。
+
+### 数据多样性比数据规模更重要
+
+Open X-Embodiment 虽然规模庞大，但主要覆盖家庭厨房等场景。真实世界动态环境、工业场景、户外环境、人机协作场景的数据仍然稀缺。此外，触觉、力觉、音频等多模态传感器的标准化采集也是关键。
+
+### 端到端大模型是趋势
+
+目前感知、导航、交互往往由不同模型负责。但论文指出，未来趋势是走向**端到端大模型**：一个模型从接收自然语言指令到执行最终任务。这能简化系统架构，但也对训练数据、对齐能力和安全性提出了更高要求。
+
+### 伦理与安全不可忽视
+
+随着 EMLM 在自动驾驶、机器人、人机交互中应用，模型的可解释性、公平性、偏见问题都需要认真对待。多模态模型可能从训练数据中继承偏见，导致不公平或歧视性决策。
+
+总的来说，这篇综述为 EMLM 领域绘制了一幅清晰的全景图。它不仅告诉我们"已经做了什么"，更重要的是指出了"还需要解决什么"。对于希望进入具身智能领域的研究者来说，这是一份非常有价值的入门地图。a:["$","$L1b",null,{"paper":{"slug":"embodied-multimodal-large-models","title":"探索具身多模态大模型：发展、数据集与未来方向","originalTitle":"Exploring Embodied Multimodal Large Models: Development, Datasets, and Future Directions","excerpt":"这篇 81 页的综述系统回顾了具身多模态大模型（EMLM）的发展脉络，涵盖大语言模型、大视觉模型及听觉/触觉模型等基础技术，深入分析了具身感知、导航、交互与仿真四大任务方向，并汇总了 Open X-Embodiment、ARIO、RH20T 等关键数据集，最后讨论了跨模态对齐、计算效率、泛化能力等核心挑战。","date":"2026-06-29","coverImage":"$undefined","architectureImage":"/images/papers/embodied-multimodal-large-models/architecture.png","featured":false,"draft":false,"authors":["Shoubin Chen","Zehao Wu","Kai Zhang","Chunyu Li","Baiyang Zhang","Fei Ma","Fei Richard Yu","Qingquan Li"],"year":2025,"venue":"arXiv 2502.15336","tags":["AI解读","具身智能","VLA","多模态大模型"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"方法论","text":"方法论","level":2},{"id":"基础模型层","text":"基础模型层","level":3},{"id":"具身任务层","text":"具身任务层","level":3},{"id":"数据集全景","text":"数据集全景","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"跨模态对齐是基础","text":"跨模态对齐是基础","level":3},{"id":"计算效率决定落地速度","text":"计算效率决定落地速度","level":3},{"id":"数据多样性比数据规模更重要","text":"数据多样性比数据规模更重要","level":3},{"id":"端到端大模型是趋势","text":"端到端大模型是趋势","level":3},{"id":"伦理与安全不可忽视","text":"伦理与安全不可忽视","level":3}],"readingTime":"7 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"探索具身多模态大模型：发展、数据集与未来方向 | 博客"}],["$","meta","1",{"name":"description","content":"这篇 81 页的综述系统回顾了具身多模态大模型（EMLM）的发展脉络，涵盖大语言模型、大视觉模型及听觉/触觉模型等基础技术，深入分析了具身感知、导航、交互与仿真四大任务方向，并汇总了 Open X-Embodiment、ARIO、RH20T 等关键数据集，最后讨论了跨模态对齐、计算效率、泛化能力等核心挑战。"}],["$","meta","2",{"property":"og:title","content":"探索具身多模态大模型：发展、数据集与未来方向"}],["$","meta","3",{"property":"og:description","content":"这篇 81 页的综述系统回顾了具身多模态大模型（EMLM）的发展脉络，涵盖大语言模型、大视觉模型及听觉/触觉模型等基础技术，深入分析了具身感知、导航、交互与仿真四大任务方向，并汇总了 Open X-Embodiment、ARIO、RH20T 等关键数据集，最后讨论了跨模态对齐、计算效率、泛化能力等核心挑战。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/embodied-multimodal-large-models/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"探索具身多模态大模型：发展、数据集与未来方向"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"探索具身多模态大模型：发展、数据集与未来方向"}],["$","meta","13",{"name":"twitter:description","content":"这篇 81 页的综述系统回顾了具身多模态大模型（EMLM）的发展脉络，涵盖大语言模型、大视觉模型及听觉/触觉模型等基础技术，深入分析了具身感知、导航、交互与仿真四大任务方向，并汇总了 Open X-Embodiment、ARIO、RH20T 等关键数据集，最后讨论了跨模态对齐、计算效率、泛化能力等核心挑战。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
