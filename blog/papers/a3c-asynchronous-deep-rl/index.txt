@@ -1,0 +1,185 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/337386043419fc17.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"HtEzQtFrHOgB14yJZHXnW","c":["","papers","a3c-asynchronous-deep-rl",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","a3c-asynchronous-deep-rl","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/337386043419fc17.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/9bd72eaba06a6b29.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T28e4,## 论文概览
+
+这篇 2016 年 ICML 论文是深度强化学习发展史上的一座里程碑。在 DQN（2013/2015）通过 experience replay 成功解决 Atari 游戏之后，整个领域似乎接受了"深度网络 + 在线 RL = 不稳定"这一前提，而稳定化的唯一出路是经验回放。Mnih 等人在这篇论文中提出了一个截然不同的范式：**用异步并行取代经验回放**。
+
+核心思路极其简洁——多个 actor-learner 线程在各自独立的环境副本中同时运行，共享同一组网络参数。由于不同线程在同一时刻探索环境的不同部分，它们产生的梯度更新天然去相关，从而稳定了训练过程。这一洞察使得 on-policy 算法（Sarsa、actor-critic）也能与深度网络有效结合，而不必受限于经验回放所要求的 off-policy 框架。
+
+论文提出了四种异步算法变体，其中 **A3C（Asynchronous Advantage Actor-Critic）** 表现最优：在 57 款 Atari 游戏上，仅用 16 个 CPU 核心训练 4 天，便超越了所有 GPU 方法（包括 DQN、Double DQN、Prioritized DQN），平均人归一化分数达到 623%。更重要的是，A3C 同时适用于离散和连续动作空间，并在 TORCS 赛车、MuJoCo 物理控制和 3D 迷宫导航中均取得成功——作者称之为"迄今为止最通用、最成功的强化学习智能体"。
+
+![A3C 异步框架架构](/images/papers/a3c-asynchronous-deep-rl/architecture.png)
+
+## 核心创新
+
+### 1. 并行去相关取代经验回放
+
+DQN 的经验回放机制通过随机采样历史数据来打破时间相关性，但带来了三个代价：更高的内存消耗、更多的计算开销（每个真实交互需要多次重放），以及——最关键的——只能使用 off-policy 算法。
+
+A3C 的洞察是：**多个并行 agent 在同一时刻经历不同状态，自然产生了去相关的更新**。这不仅省去了经验回放的存储和采样开销，更重要的是打开了 on-policy 算法的大门。Sarsa、n-step 方法、actor-critic 这些原本被认为"无法与深度网络稳定训练"的算法，在并行框架下都变得可行。
+
+### 2. 单机多线程架构
+
+与 Gorila（DeepMind 此前的分布式方案，使用 100 台机器 + 30 个参数服务器）不同，A3C 在单台机器上使用多线程。这一设计带来了三个关键优势：
+
+- **零通信开销**：线程共享内存，梯度传递无需网络
+- **Hogwild! 更新**：线程间无锁，各自异步写入共享参数，利用 SGD 对少量覆写的天然鲁棒性
+- **资源效率**：仅需 16 个 CPU 核心，无需 GPU
+
+### 3. 熵正则化鼓励探索
+
+A3C 在目标函数中加入策略熵项 $H(\pi)$，鼓励策略保持一定的随机性，防止过早收敛到次优确定性策略。这一技巧源自 Williams & Peng (1991)，但在 A3C 中被系统性地应用于深度 RL，效果显著。熵正则化权重 $\beta = 0.01$ 在所有实验中固定使用。
+
+## 方法论详解
+
+### RL 基础
+
+在标准 RL 设定中，agent 在环境 $E$ 中依策略 $\pi$ 选择动作 $a_t$，获得奖励 $r_t$ 和下一状态 $s_{t+1}$。目标是最大化期望回报 $R_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k}$，其中 $\gamma \in (0, 1]$ 为折扣因子。
+
+### A3C 核心更新
+
+A3C 同时维护策略 $\pi(a_t|s_t; \theta)$ 和价值函数 $V(s_t; \theta_v)$。两者共享卷积层和全连接层的参数，仅在输出层分叉——策略用 softmax 输出动作概率，价值函数用线性输出状态值。
+
+更新采用 n-step 前向视角。每 $t_{\max}$ 步（或到达终止状态），算法计算从当前状态到未来 $k$ 步的回报，并以此估计优势函数：
+
+$$A(s_t, a_t; \theta, \theta_v) = \sum_{i=0}^{k-1} \gamma^i r_{t+i} + \gamma^k V(s_{t+k}; \theta_v) - V(s_t; \theta_v)$$
+
+策略梯度和价值函数的梯度分别为：
+
+$$d\theta = \nabla_{\theta'} \log \pi(a_t|s_t; \theta') \cdot A(s_t, a_t)$$
+
+$$d\theta_v = \frac{\partial (R - V(s_t; \theta'_v))^2}{\partial \theta'_v}$$
+
+完整目标函数（含熵正则化）为：
+
+$$L = \log \pi(a_t|s_t; \theta) \cdot A(s_t, a_t) - \beta H(\pi(\cdot|s_t; \theta))$$
+
+### 四种算法变体
+
+![四种异步算法对比](/images/papers/a3c-asynchronous-deep-rl/algorithms.png)
+
+| 算法 | 类型 | 策略 | Target 值 | 特点 |
+|------|------|------|-----------|------|
+| 1-step Q-learning | Off-policy, Value | $\epsilon$-greedy | $r + \gamma \max_{a'} Q(s', a'; \theta^-)$ | 简单稳定，数据效率低 |
+| 1-step Sarsa | On-policy, Value | $\epsilon$-greedy | $r + \gamma Q(s', a'; \theta^-)$ | 更保守，更安全 |
+| n-step Q-learning | Off-policy, Multi-step | $\epsilon$-greedy | $\sum_{i=0}^{n-1} \gamma^i r_i + \gamma^n Q(s_n, a_n)$ | 更快传播奖励 |
+| A3C | On-policy, Policy+Value | $\pi(a\|s)$ | Advantage $A(s,a)$ | 最优，支持连续动作 |
+
+所有方法共享两个设计：**(1)** 使用 target network 稳定训练（值方法每 40000 帧更新）；**(2)** 累积若干步梯度后异步写入共享参数，减少线程间覆写。
+
+### 优化器：Shared RMSProp
+
+论文比较了三种无锁优化器：Momentum SGD、per-thread RMSProp 和 Shared RMSProp。Shared RMSProp 将梯度平方的滑动平均 $g$ 在所有线程间共享，不仅节省内存，还展现出最佳鲁棒性——在 50 组随机学习率实验中，Shared RMSProp 的 rank-score 曲线最平坦，对超参数最不敏感。
+
+## 实验结果
+
+### Atari 2600：全面超越
+
+![Atari 基准测试结果](/images/papers/a3c-asynchronous-deep-rl/results.png)
+
+Table 1 的数据是这篇论文最有说服力的证据：
+
+| 方法 | 训练资源 | 训练时间 | Mean (%) | Median (%) |
+|------|----------|----------|----------|------------|
+| DQN | GPU | 8 天 | 121.9% | 47.5% |
+| Gorila | 100 台机器 | 4 天 | 215.2% | 71.3% |
+| Double DQN | GPU | 8 天 | 332.9% | 110.9% |
+| Dueling D-DQN | GPU | 8 天 | 343.8% | 117.1% |
+| Prioritized DQN | GPU | 8 天 | 463.6% | 127.6% |
+| **A3C FF** | **16 CPU** | **1 天** | **344.1%** | **68.2%** |
+| **A3C FF** | **16 CPU** | **4 天** | **496.8%** | **116.6%** |
+| **A3C LSTM** | **16 CPU** | **4 天** | **623.0%** | **112.6%** |
+
+几个值得注意的点：
+
+1. **A3C 仅训练 1 天**便达到 Double DQN 的水平（8 天 GPU 训练）
+2. **A3C LSTM 训练 4 天**在平均分上超越所有方法 34% 以上，而 Prioritized DQN 需要 8 天 GPU
+3. median 分数上 A3C LSTM 略低于 Prioritized DQN，说明在某些游戏上 A3C 可能表现不如专门优化的方法，但整体均值更高
+
+### 并行加速效果
+
+Table 2 展示了一个出人意料的现象：**1-step 方法表现出超线性加速**。16 线程时，1-step Q-learning 加速比达到 24.1 倍，远超理想的 16 倍。作者认为这是因为更多并行线程减少了 1-step 方法的偏差——多线程同时探索不同区域，等效于更丰富的经验采样。
+
+### 超越 Atari：多领域验证
+
+A3C 的通用性是这篇论文的另一大贡献：
+
+- **TORCS 赛车**：12 小时训练达到人类测试者 75-90% 的水平，A3C 在四种配置中均为最优
+- **MuJoCo 连续控制**：从物理状态或像素输入出发，数小时内找到良好策略；连续动作空间通过输出高斯分布的均值和方差自然处理
+- **Labyrinth 3D 迷宫**：仅用 84x84 RGB 图像输入，LSTM 版 A3C 学会了探索随机生成的 3D 迷宫，平均得分约 50 分（找到苹果得 1 分，进入传送门得 10 分）
+
+### 鲁棒性
+
+Figure 2 的散点图展示了一个令人安心的特性：在合理的学习率范围内（$10^{-3}$ 到 $10^{-2}$），几乎所有随机初始化都能取得好成绩，几乎没有出现训练崩溃或发散的情况。这种鲁棒性在当时的深度 RL 研究中并不常见。
+
+## 启示与思考
+
+### 范式转变的意义
+
+这篇论文的深远影响不在于某个具体算法的性能数字，而在于它改变了深度 RL 的方法论。在 A3C 之前，"稳定训练深度 RL"≈"使用经验回放"。A3C 证明了并行本身就是一种稳定化手段，这为后续工作打开了广阔空间：
+
+- **PPO**（OpenAI, 2017）继承了 on-policy actor-critic 框架，成为工业界标配
+- **IMPALA**（DeepMind, 2018）将异步框架扩展到大规模分布式设定
+- **R2D2**、**Agent57** 等后续工作将异步与经验回放结合，进一步突破性能边界
+
+### 为什么 A3C 最终被 PPO 取代
+
+尽管 A3C 开创了 on-policy 深度 RL 的先河，但它有一个结构性弱点：**Hogwild! 无锁更新在梯度冲突时会导致效率下降**。PPO 通过 clipped objective 避免了 trust region 的复杂计算，同时用 minibatch + multiple epochs 实现了更高效的样本利用。在单机设定下，PPO 通常优于 A3C。但 A3C 的异步并行思想仍然渗透在几乎所有现代 RL 实现中。
+
+### 对 AI Agent 安全的启示
+
+从我的研究视角看，A3C 有一个被忽视的安全维度：**多线程并行探索天然提供了行为多样性**。在 AARM 框架的安全监控设计中，可以借鉴这一思路——多个 agent 实例并行执行时，如果某个实例的行为偏离群体分布（类似 outlier detection），可能指示了 prompt injection 或策略被篡改。A3C 的"并行去相关"思想可以转化为"并行一致性检查"的安全机制。
+
+### 技术细节的持久价值
+
+几个在 2026 年仍然相关的设计选择：
+
+1. **熵正则化**：几乎所有现代策略梯度方法都使用这一技巧，$\beta$ 的选择仍是调参重点
+2. **Shared RMSProp**：虽然 Adam 已成为默认选择，但"共享优化器统计量"的思路在分布式训练中仍然重要
+3. **n-step 前向视角**：GAE（Generalized Advantage Estimation）正是对这一思路的推广
+4. **CNN + LSTM 架构**：这一 "perception + memory" 的范式在 VLA 模型中仍以变体形式存在
+
+### 经典之所以为经典
+
+这篇论文让我想到一个判断标准：好的研究解决一个问题，经典研究重新定义问题。A3C 之前，社区的问题是"如何让经验回放更高效"；A3C 之后，问题变成了"并行性和经验回放如何互补"。这种问题重构的能力，是区分 incremental work 和 seminal work 的关键。
+
+## 参考链接
+
+- 论文 PDF: [arXiv:1602.01783](https://arxiv.org/abs/1602.01783)
+- 发表: ICML 2016
+- 机构: Google DeepMind
+- 后续影响: PPO (Schulman et al., 2017), IMPALA (Espeholt et al., 2018), R2D2 (Kapturowski et al., 2019)a:["$","$L1b",null,{"paper":{"slug":"a3c-asynchronous-deep-rl","title":"异步方法深度强化学习：A3C 的诞生","originalTitle":"Asynchronous Methods for Deep Reinforcement Learning","excerpt":"DeepMind 团队提出的 A3C 框架，用多线程并行取代 experience replay，在单台多核 CPU 上以一半训练时间超越了当时所有 GPU 方法。这是深度强化学习史上最具影响力的工作之一，奠定了后续 PPO、IMPALA 等方法的基础。","date":"2026-07-06","coverImage":"$undefined","architectureImage":"/images/papers/a3c-asynchronous-deep-rl/architecture.png","featured":false,"draft":false,"authors":["Volodymyr Mnih","Adrià Puigdomènech Badia","Mehdi Mirza","Alex Graves","Tim Harley","Timothy P. Lillicrap","David Silver","Koray Kavukcuoglu"],"year":2016,"venue":"ICML 2016","tags":["AI解读","深度强化学习","A3C","经典论文"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-并行去相关取代经验回放","text":"1. 并行去相关取代经验回放","level":3},{"id":"2-单机多线程架构","text":"2. 单机多线程架构","level":3},{"id":"3-熵正则化鼓励探索","text":"3. 熵正则化鼓励探索","level":3},{"id":"方法论详解","text":"方法论详解","level":2},{"id":"rl-基础","text":"RL 基础","level":3},{"id":"a3c-核心更新","text":"A3C 核心更新","level":3},{"id":"四种算法变体","text":"四种算法变体","level":3},{"id":"优化器shared-rmsprop","text":"优化器：Shared RMSProp","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"atari-2600全面超越","text":"Atari 2600：全面超越","level":3},{"id":"并行加速效果","text":"并行加速效果","level":3},{"id":"超越-atari多领域验证","text":"超越 Atari：多领域验证","level":3},{"id":"鲁棒性","text":"鲁棒性","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"范式转变的意义","text":"范式转变的意义","level":3},{"id":"为什么-a3c-最终被-ppo-取代","text":"为什么 A3C 最终被 PPO 取代","level":3},{"id":"对-ai-agent-安全的启示","text":"对 AI Agent 安全的启示","level":3},{"id":"技术细节的持久价值","text":"技术细节的持久价值","level":3},{"id":"经典之所以为经典","text":"经典之所以为经典","level":3},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"10 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"异步方法深度强化学习：A3C 的诞生 | 博客"}],["$","meta","1",{"name":"description","content":"DeepMind 团队提出的 A3C 框架，用多线程并行取代 experience replay，在单台多核 CPU 上以一半训练时间超越了当时所有 GPU 方法。这是深度强化学习史上最具影响力的工作之一，奠定了后续 PPO、IMPALA 等方法的基础。"}],["$","meta","2",{"property":"og:title","content":"异步方法深度强化学习：A3C 的诞生"}],["$","meta","3",{"property":"og:description","content":"DeepMind 团队提出的 A3C 框架，用多线程并行取代 experience replay，在单台多核 CPU 上以一半训练时间超越了当时所有 GPU 方法。这是深度强化学习史上最具影响力的工作之一，奠定了后续 PPO、IMPALA 等方法的基础。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/a3c-asynchronous-deep-rl/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"异步方法深度强化学习：A3C 的诞生"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"异步方法深度强化学习：A3C 的诞生"}],["$","meta","13",{"name":"twitter:description","content":"DeepMind 团队提出的 A3C 框架，用多线程并行取代 experience replay，在单台多核 CPU 上以一半训练时间超越了当时所有 GPU 方法。这是深度强化学习史上最具影响力的工作之一，奠定了后续 PPO、IMPALA 等方法的基础。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
