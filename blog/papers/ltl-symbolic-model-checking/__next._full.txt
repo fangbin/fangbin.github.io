@@ -1,0 +1,590 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/337386043419fc17.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"ZbXYOfR-6uEULPFPaYxqa","c":["","papers","ltl-symbolic-model-checking",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","ltl-symbolic-model-checking","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/337386043419fc17.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/9bd72eaba06a6b29.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T7d5f,## 论文概览
+
+**标题**: Linear Temporal Logic Symbolic Model Checking
+
+**作者**: Kristin Y. Rozier (NASA Ames Research Center)
+
+**发表**: Computer Science Review, Elsevier, 2010
+
+**页数**: 41 页
+
+**论文链接**: [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1574013710000308)
+
+本文是一篇从用户视角出发的 LTL 符号模型检测综述，统合了 1977 年至 2009 年的研究成果。论文以自动化空中交通管制架构为贯穿全文的实例，完整剖析了从系统建模、时序逻辑规范、LTL 到 Büchi 自动机转换、BDD 符号表示，到非空性检查与反例生成的端到端流程，并给出了关键定理的证明。
+
+---
+
+## 一、模型检测的基本框架
+
+模型检测（Model Checking）是一种形式化验证技术，用于检查给定系统（模型 M）是否满足某个行为属性（规范 ϕ）。形式化地，我们检查 **M, s ⊨ ϕ**——即从起始状态 s 出发，模型 M 的所有执行路径是否都满足时序逻辑公式 ϕ。
+
+### 模型检测的三步流程
+
+| 步骤 | 描述 | 实现 |
+|------|------|------|
+| 1. 建立系统模型 | 创建系统的数学模型 | 定义包含命题集合 Prop 上迹的系统模型 M |
+| 2. 编写形式化规范 | 将期望属性编码为形式化规范 | 令规范 ϕ 为 Prop 上的逻辑公式 |
+| 3. 检查满足性 | 验证模型满足规范 | 检查 M ⊨ ϕ：将 ¬ϕ 翻译为 Büchi 自动机 A¬ϕ，与 M 组合成 AM,¬ϕ，检查 AM,¬ϕ 的非空性 |
+
+### 显式 vs 符号模型检测
+
+显式状态模型检测（Explicit-state Model Checking）显式枚举状态空间中的每个状态，当状态空间指数增长时（状态爆炸问题），内存消耗巨大。
+
+符号模型检测（Symbolic Model Checking）由 McMillan 于 1992 年提出，使用二元决策图（BDD）将状态集合和转移关系表示为布尔方程的解——语法上紧凑的方程可以表示相对庞大的状态集合。这一技术被认为是模型检测历史上最大的突破之一。
+
+![LTL Symbolic Model Checking Complete Pipeline](/images/papers/ltl-symbolic-model-checking/architecture.png)
+
+---
+
+## 二、系统建模
+
+### 2.1 状态-转移图
+
+系统模型 M 是一个状态-转移图（即自动机），其中：
+- **状态 S**：每个状态是系统变量的一组赋值。若 Σ 为布尔变量集合，状态数下界为 1，上界为 2^|Σ|。
+- **转移**：当一个或多个系统变量的值从源状态变为目标状态的值时，系统从一状态转移到另一状态。
+
+建模时的关键考量：
+- **定义 Σ**：准确描述系统全部行为所需的最小变量集
+- **抽象层级**：哪些细节与验证相关，哪些只会干扰验证
+- **验证**：系统→模型（是否正确建模？）与 模型→系统（最终实现是否匹配验证过的模型？）
+
+### 2.2 贯穿案例：自动化空中交通管制
+
+论文以 NASA 的自动化空域概念（Automated Airspace Concept）为运行示例。系统包含 5 个布尔变量：
+
+| 变量 | 描述 |
+|------|------|
+| AR_command | 自动解析器是否发出了命令？ |
+| TSAFE_command | TSAFE 是否发出了命令？ |
+| controller_request | 管制员是否发出了请求？ |
+| aircraft_request | 飞机是否发出了请求？ |
+| TSAFE_clear | TSAFE 是否检测到空域无冲突？ |
+
+系统有 7 个状态，状态 1 为起始状态。系统的核心行为：冲突检测 → 忽略自动解析器命令 → TSAFE 发出解决命令 → 执行命令 → 返回无冲突状态。
+
+---
+
+## 三、时序逻辑规范
+
+### 3.1 为什么需要时序逻辑？
+
+命题逻辑无法表达时间概念，而自然语言又过于模糊（论文引用了 Groucho Marx 的笑话和堪萨斯州立法机关的火车法规来说明自然语言的歧义性）。1977 年，Amir Pnueli 提出使用时序逻辑来推理并发系统。
+
+时序逻辑不引入显式时钟，而是描述事件在时间上的偏序关系，这使其特别适合描述并发系统。
+
+### 3.2 LTL 定义与语义
+
+**线性时序逻辑（LTL）** 将每个时间时刻视为只有唯一可能的未来——经典的时间线模型。
+
+**定义 1（LTL 语法）**：给定原子命题集合 Prop，LTL 公式归纳定义为：
+
+$$\varphi ::= p \mid \neg\varphi \mid \varphi \land \psi \mid \varphi \lor \psi \mid \varphi \to \psi \mid X\varphi \mid \varphi \, U \, \psi \mid \varphi \, R \, \psi \mid \Box\varphi \mid \Diamond\varphi$$
+
+其中：
+- **X** (Next, ⃝)：下一时刻
+- **U** (Until)：直到
+- **R** (Release)：释放（U 的对偶）
+- **□** (Globally, G)：始终
+- **◇** (Finally, F)：最终
+
+**定义 2（LTL 语义）**：在计算路径 π : ω → 2^Prop 上，π 在时间 i 满足 ϕ（记为 π, i ⊨ ϕ）定义为：
+
+- π, i ⊨ p 当且仅当 p ∈ π(i)
+- π, i ⊨ ¬ϕ 当且仅当 π, i ⊭ ϕ
+- π, i ⊨ ϕ ∧ ψ 当且仅当 π, i ⊨ ϕ 且 π, i ⊨ ψ
+- π, i ⊨ Xϕ 当且仅当 π, i+1 ⊨ ϕ
+- π, i ⊨ ϕ U ψ 当且仅当 ∃j ≥ i, π, j ⊨ ψ 且 ∀k, i ≤ k < j, π, k ⊨ ϕ
+- π, i ⊨ ϕ R ψ 当且仅当 ∀j ≥ i, 若 π, j ⊭ ψ, 则 ∃k, i ≤ k < j, π, k ⊨ ϕ
+- π, i ⊨ □ϕ 当且仅当 ∀j ≥ i, π, j ⊨ ϕ
+- π, i ⊨ ◇ϕ 当且仅当 ∃j ≥ i, π, j ⊨ ϕ
+
+**算子等价性**：最小 LTL 算子集合为 {¬, ∨, X, U}，其余算子可通过等价式派生：
+- □ϕ ≡ false R ϕ ≡ ¬◇¬ϕ
+- ◇ϕ ≡ true U ϕ
+- ϕ R ψ ≡ ¬(¬ϕ U ¬ψ)
+
+### 3.3 LTL vs CTL vs CTL*
+
+![Temporal Logic Expressiveness Comparison](/images/papers/ltl-symbolic-model-checking/expressiveness.png)
+
+**CTL（计算树逻辑）** 是分支时间逻辑，每个时间时刻可能有多个后继。CTL 算子是路径量词（A=所有路径, E=存在路径）与时序算子的不可分割配对：AX, EX, AU, EU, A□, E□, A◇, E◇。
+
+**表达力关系**：CTL* ⊋ CTL ∪ LTL，且 CTL 和 LTL 不可比——各自能表达对方不能表达的属性。
+
+**复杂度对比**：
+
+| 逻辑 | 模型检测复杂度 | 特点 |
+|------|---------------|------|
+| CTL | O(\|M\|·\|ϕ\|) | 状态基推理，线性时间 |
+| LTL | \|M\| · 2^O(\|ϕ\|) | 路径基推理，PSPACE-complete |
+| CTL* | \|M\| · 2^O(\|ϕ\|) | CTL 和 LTL 的超集 |
+
+LTL 的复杂度瓶颈在于将规范 ¬ϕ 翻译为 Büchi 自动机 A¬ϕ 的步骤；Büchi 自动机非空性检查本身是 NLOGSPACE-complete，可在线性时间内判定。
+
+**实践选择**：LTL 被认为是更直观、更适合规范编写和验证工程师使用的逻辑，尤其在并发软件架构验证中。实践中绝大多数 CTL 规范等价于 LTL 规范。
+
+### 3.4 安全性与活性
+
+**直觉 1（安全性属性）**："坏事永远不会发生。"
+
+安全性属性通常表达为 □good，其中 good 是描述安全行为的时序逻辑公式。安全性推理关于到达特定状态。形式化地，安全性要求每个不满足 ϕ 的有限计算都有一个不满足 ϕ 的有限前缀。
+
+例如，空中交通管制中的安全性规范：
+- □(¬TSAFE_clear → X(TSAFE_command))：每当检测到冲突，TSAFE 在下一步立即发出命令
+- □(¬(AR_command ∧ TSAFE_command))：TSAFE 和自动解析器永远不会同时发出命令
+
+**直觉 2（活性属性）**："好事最终一定会发生。"
+
+活性属性通常表达为 ◇good，推理关于状态间的控制流。形式化定义：对于任何有限计算 α，都存在无限计算 β 使得 α·β ⊨ ϕ。
+
+例如：
+- □(¬TSAFE_clear → ◇TSAFE_command)：每个冲突最终都会被处理
+- □(¬TSAFE_clear → ◇TSAFE_clear)：所有冲突最终都会被解决
+
+**定理（Alpern & Schneider）**：每个 LTL 公式都是安全性和活性的组合。
+
+### 3.5 规范验证
+
+编写规范后需要执行以下检查：
+1. **可满足性检查**：确保 ϕ 和 ¬ϕ 都是可满足的；所有规范的合取是可满足的
+2. **空虚性检测（Vacuity Detection）**：检查规范的子公式是否实际影响满足性——例如 □(req → ◇grant) 在没有请求的模型中被空虚满足
+3. **覆盖率**：确保规范集描述了整个系统状态空间的行为
+
+---
+
+## 四、LTL 到符号广义 Büchi 自动机的转换
+
+![LTL to Symbolic GBA Translation Algorithm](/images/papers/ltl-symbolic-model-checking/ltl_translation.png)
+
+这是 LTL 符号模型检测算法的复杂度瓶颈步骤。给定 LTL 规范 ϕ，模型检测器构造广义 Büchi 自动机 A¬ϕ，精确识别不满足 ϕ 的执行。A¬ϕ 的大小在最坏情况下为 O(2^|ϕ|)，这为使用符号表示提供了动机。
+
+### 4.1 转换算法
+
+所有符号模型检测器（NuSMV、CadenceSMV、SAL-SMC、VIS）都使用 Clarke, Grumberg, Hamaguchi 描述的 LTL 到符号自动机翻译方法。
+
+**输入**：LTL 公式 ϕ
+
+**Step A：否定范式（NNF）**
+将 ¬ 推到命题之前，消除 →、□、◇ 算子：
+- ϕ → ψ ≡ ¬ϕ ∨ ψ
+- □ϕ ≡ false R ϕ
+- ◇ϕ ≡ true U ϕ
+- ¬(ϕ U ψ) ≡ ¬ϕ R ¬ψ
+
+**Step B：计算闭包 cl(ϕ)**
+cl(ϕ) 是 ϕ 的所有子公式及其否定的集合（去除冗余如 ¬¬ϕ）。|cl(ϕ)| = O(|ϕ|)。
+
+闭包的性质：
+- ϕ ∈ cl(ϕ)
+- ¬ψ ∈ cl(ϕ) → ψ ∈ cl(ϕ)
+- ψ ∈ cl(ϕ) → ¬ψ ∈ cl(ϕ)
+- ξ ∧ ψ ∈ cl(ϕ) → ξ, ψ ∈ cl(ϕ)
+- Xψ ∈ cl(ϕ) → ψ ∈ cl(ϕ)
+- ξ U ψ ∈ cl(ϕ) → ξ, ψ ∈ cl(ϕ)
+- ξ R ψ ∈ cl(ϕ) → ξ, ψ ∈ cl(ϕ)
+
+**Step C：构造基本集合（Elementary Sets）**
+cl(ϕ) 的基本集合是满足以下性质的最大一致子集 Ci：
+
+1. **Ci ⊆ cl(ϕ)**
+2. **逻辑一致性**：
+   - ψ ∈ Ci ↔ ¬ψ ∉ Ci
+   - ξ ∧ ψ ∈ Ci ↔ ξ, ψ ∈ Ci
+   - ξ ∨ ψ ∈ Ci ↔ (ξ ∈ Ci) 或 (ψ ∈ Ci)
+3. **时间一致性**：
+   - (ξ U ψ ∈ cl(ϕ)) → [(ψ ∈ Ci) ⇒ (ξ U ψ ∈ Ci)]
+   - [(ξ U ψ ∈ Ci) ∧ (ψ ∉ Ci)] → (ξ ∈ Ci)
+   - (ξ R ψ ∈ cl(ϕ)) → [(ψ ∈ Ci) ⇒ (ξ R ψ ∈ Ci)]
+4. **最大性**：对每个子公式 ψ ∈ cl(ϕ)，要么 ψ ∈ Ci，要么 ¬ψ ∈ Ci
+
+**Step D：计算基本覆盖（Elementary Cover）**
+利用展开律将 ϕ 展开至只含常量、命题和 X-根子公式的命题公式，然后转换为析取范式（DNF），每个析取项即为一个基本集合，所有析取项构成基本覆盖。
+
+展开律：
+- (ξ U ψ) = ψ ∨ [ξ ∧ X(ξ U ψ)]
+- (ξ R ψ) = ψ ∧ [ξ ∨ X(ξ R ψ)]
+
+**Step E：自动机状态**
+每个基本集合 Ci 对应自动机的一个状态 qi。初始状态为覆盖 ϕ 的基本集合。
+
+**Step F：转移关系 δ**
+δ(Ci, σ) = Cj 当且仅当：
+- σ 中的原子命题与 Ci 一致
+- 对于 Ci 中每个 Xψ，ψ ∈ Cj（X-满足性）
+- 对于 Ci 中每个 ξ U ψ：要么 ψ ∈ Ci，要么 (ξ ∈ Ci 且 ξ U ψ ∈ Cj)
+- 对于 Ci 中每个 ξ R ψ：要么 (ξ ∧ ψ) ∈ Ci，要么 (ψ ∈ Ci 且 ξ R ψ ∈ Cj)
+
+**Step G：接受条件**
+对于 cl(ϕ) 中每个 U-子公式 ξ U ψ，定义接受集：
+
+F_{ξ U ψ} = {Ci : (ψ ∈ Ci) ∨ ((ξ U ψ) ∉ Ci)}
+
+这些接受集构成广义 Büchi 接受条件：一条路径被接受当且仅当它无穷多次经过每个 F_{ξ U ψ} 中的某个状态。
+
+**Step H：符号编码**
+将状态编码为布尔向量，转移关系编码为布尔公式，接受条件编码为 BDD 约束。
+
+### 4.2 关键定理
+
+**定理 2**：L(Aϕ) = models(ϕ)，即 Büchi 自动机 Aϕ 接受的语言恰好是满足 ϕ 的计算集合。
+
+**证明思路**（归纳法）：
+- *If 方向*（π ∈ L(Aϕ) → π ⊨ ϕ）：通过接受运行的存在性，利用 U-子公式的接受条件确保 U 语义被满足
+- *Only-if 方向*（π ⊨ ϕ → π ∈ L(Aϕ)）：通过构造性证明，利用 X-满足性和 U-展开律选择转移，利用接受条件确保无穷多次经过满足 U-子公式的状态
+
+这一定理将 LTL 可满足性检查归约为自动机非空性检查。
+
+---
+
+## 五、BDD 符号表示
+
+### 5.1 BDD 定义
+
+**定义 8（二元决策树 BDT）**：有根有向无环图，顶点由 n 个变量标记，每个变量节点有两个子节点（low=0, high=1），终端顶点标记为 0 或 1。
+
+**定义 9（二元决策图 BDD）**：有根有向无环图，内部顶点由变量的充分子集标记，恰好两个终端顶点（0 和 1）。BDD 是**有序的（OBDD）**如果它遵循给定的变量全序；BDD 是**归约的（ROBDD）**如果不含冗余节点（low(v)=high(v)）和同构子图。
+
+两条归约规则：
+1. **冗余消除规则**：删除 low(v) = high(v) 的节点
+2. **同构消除规则**：合并同构子图
+
+**变量排序**：寻找最优 BDD 变量排序是 NP-complete 的。经验法则：将密切相关的变量分组在一起，当前/下一状态变量交替排列（σ₁, σ'₁, σ₂, σ'₂, ...）。
+
+### 5.2 系统模型与规范的组合
+
+构造乘积自动机 AM,¬ϕ = M × A¬ϕ，其语言为 L(AM,¬ϕ) = L(M) ∩ L(A¬ϕ)。
+
+**定理 6**：L(AM,¬ϕ) 是 ω-正则语言，AM,¬ϕ 是 Büchi 自动机。
+
+**证明**：L(M) 和 L(A¬ϕ) 都是 ω-正则语言，ω-正则语言在交集运算下封闭。交集的封闭性由 De Morgan 律和并集/补集的封闭性推出。
+
+AM,¬ϕ 的状态是状态对 (qM, qϕ, t)，其中 t ∈ {0,1} 是轨道标签。运行从 (q0M, q0ϕ, 0) 开始，在 M 和 A¬ϕ 的对应转移上同步前进。
+
+### 5.3 BDD 编码
+
+将自动机编码为 BDD：
+- **状态**：用 |Σ| 个布尔变量编码（加上可选的状态标签）
+- **转移**：用 2|Σ| 个变量——每个变量的当前值 σ₁,...,σn 和下一状态值 σ'₁,...,σ'n
+- **APPLY 算法**：对两个 BDD 施加二元操作（如 ∧），时间复杂度 O(|G1|·|G2|)
+- **SATISFY-ONE 算法**：从根到终端 1 的深度优先搜索，在 O(n) 时间内找到满足赋值（反例迹）
+
+### 5.4 显式 vs 符号方法对比
+
+| 操作 | 显式方法 | 显式复杂度 | 符号方法 | 符号复杂度 |
+|------|---------|-----------|---------|-----------|
+| 翻译 M | 构造 Büchi 自动机 | 取决于 M | 构造 ROBDD | O(2^\|Σ×Σ\|) |
+| 翻译 ϕ→A¬ϕ | 构造 Büchi 自动机 | 2^O(\|ϕ\|) | 构造 ROBDD | O(2^\|el(¬ϕ)\|) |
+| 创建 AM,¬ϕ | 自动机交集 | O(\|M\|×\|A¬ϕ\|) | BDD ∧ 操作 | O(\|ROBDDM\|·\|ROBDD¬ϕ\|) |
+| 非空性检查 | SCC 深度优先搜索 | O(\|AM,¬ϕ\|) | BDD 不动点 | O(\|BDD\|) |
+| 反例构造 | SCC 图中接受环 | O(\|trace\|) | BDD 深度遍历 | O(\|trace\|) |
+
+---
+
+## 六、非空性检查与反例生成
+
+![SCC-Hull Algorithm and Counterexample Construction](/images/papers/ltl-symbolic-model-checking/algorithm_flow.png)
+
+### 6.1 自动机作为图
+
+将 AM,¬ϕ 视为有向图 G = (V, E)，其中 V = Q（状态集），E = 转移关系。
+
+**关键概念**：
+- **前驱集** R ◦ P = {q ∈ Q | (q, q') ∈ R, q' ∈ P}：能到达 P 中状态的所有状态
+- **后继集** P ◦ R = {q ∈ Q | (q̂, q) ∈ R, q̂ ∈ P}：从 P 中状态可达的所有状态
+- **传递闭包** R* ◦ P：有限步（0 步或更多）内能到达 P 的所有状态
+- **强连通分量（SCC）**：最大子图，其中每个顶点都可从其他每个顶点到达
+
+**定理 8**：一个节点的前向集和后向集的交集，要么为空，要么是一个 SCC。
+
+### 6.2 SCC-Hull 算法
+
+由于符号模型检测中图被 BDD 隐式编码，深度优先搜索不适合——需要广度优先、基于集合的算法。
+
+**算法流程**：
+
+```
+Algorithm: SCC-Hull (Fair Cycle Detection)
+Input: BDD for A_{M,¬φ}, transition relation R, fairness conditions F₁,...,Fₖ
+Output: Fair SCC or EMPTY
+
+1. Compute forward set: F(q₀) = q₀ ∘ R*
+   (all states reachable from initial state q₀)
+
+2. For each fairness condition Fᵢ:
+   Compute backward set: B(Fᵢ) = R* ∘ Fᵢ
+   (all states that can reach Fᵢ)
+
+3. Restrict to: S = F(q₀) ∩ (∩ᵢ B(Fᵢ))
+   (states reachable from q₀ AND can reach every Fᵢ)
+
+4. Find SCC within S using Theorem 8:
+   For state q ∈ S:
+   forward = {q} ∘ R* ∩ S    (forward set within S)
+   backward = R* ∘ {q} ∩ S   (backward set within S)
+   SCC = forward ∩ backward
+
+5. Check fairness: SCC ∩ Fᵢ ≠ ∅ for all i?
+
+6. If fair SCC found → return it (for counterexample)
+   Else → return EMPTY (M ⊨ φ)
+```
+
+不动点计算使用 Emerson-Lei 算法（1986），由于双重嵌套不动点算子，运行时间为二次。所有后续算法都以它为基准。
+
+### 6.3 反例构造
+
+反例的形式是**接受套索（Accepting Lasso）**：一条从初始状态 q₀ 到某状态 qi 的前缀路径，加上从 qi 回到 qi 的循环，且循环经过每个接受集 Fi。
+
+```
+Algorithm: Counterexample Construction
+Input: Fair SCC S, initial state q₀, fairness conditions F₁,...,Fₖ
+Output: Counterexample lasso trace
+
+1. Find shortest path from q₀ to S (prefix/stem)
+   Using BFS on BDD representation
+
+2. Pick state s ∈ S, move to initial SCC in quotient graph:
+   While predecessors(s) ⊄ successors(s):
+     s ← choose(predecessors(s))
+
+3. Compute SCC containing s
+
+4. Construct fair cycle through SCC:
+   For each justice requirement Fᵢ:
+     If no state in cycle satisfies Fᵢ:
+       Add shortest path to a state in Fᵢ
+   For each compassion requirement (Fᵢ, Fⱼ):
+     Add shortest path as needed
+
+5. Complete cycle: shortest path back to cycle start
+
+6. Return: prefix + cycle = counterexample lasso
+```
+
+寻找最短反例是 NP-complete 的，实践中依赖启发式。
+
+### 6.4 算法分类
+
+**符号 SCC 检测算法分两类**：
+
+1. **SCC-Hull 算法**：通过前向/后向搜索提取包含公平 SCC 的"壳"，逐步缩小范围。在实践中性能更优。
+
+2. **SCC 枚举算法**：递归分区 GAM,¬ϕ，迭代应用可达性分析来逐个隔离 SCC。理论上最坏情况复杂度更好，但实践中性能较差——尤其在无公平 SCC 或存在大量非公平 SCC 时。
+
+---
+
+## 七、完整算法流程汇总
+
+将上述所有步骤整合，LTL 符号模型检测的完整算法如下：
+
+```
+Algorithm: LTL Symbolic Model Checking
+Input: System model M (in NuSMV/SMV syntax), LTL specification φ
+Output: TRUE (M ⊨ φ) or Counterexample trace
+
+Phase 1: System Modeling
+  1.1 Define system variables Σ (Boolean-valued propositions)
+  1.2 Encode state-transition graph as NuSMV model
+  1.3 Choose abstraction level (include only relevant details)
+
+Phase 2: Specification Processing
+  2.1 Parse LTL formula φ
+  2.2 Negate: ψ = ¬φ  (constant time)
+  2.3 Convert to Negation Normal Form (NNF)
+  2.4 Compute closure cl(ψ)
+  2.5 Construct elementary sets from cl(ψ)
+  2.6 Compute elementary cover via expansion laws + DNF
+  2.7 Build Symbolic GBA A_ψ:
+      - States = elementary sets
+      - Transitions δ (Boolean formula)
+      - Acceptance F₁,...,Fₖ (generalized Büchi)
+  2.8 Encode A_ψ as ROBDD
+
+Phase 3: Product Construction
+  3.1 Encode M as ROBDD
+  3.2 Compute A_{M,¬φ} = M × A_ψ via APPLY(∧, ROBDD_M, ROBDD_ψ)
+  3.3 Product states: (q_M, q_ψ, track_label)
+
+Phase 4: Nonemptiness Check
+  4.1 Compute forward set F(q₀) = q₀ ∘ R*  (fixpoint)
+  4.2 For each Fᵢ: compute backward set B(Fᵢ) = R* ∘ Fᵢ  (fixpoint)
+  4.3 Restrict: S = F(q₀) ∩ (∩ᵢ B(Fᵢ))
+  4.4 Find SCC in S via forward ∩ backward intersection
+  4.5 Check fairness: SCC ∩ Fᵢ ≠ ∅ ∀i
+
+Phase 5: Result
+  IF no fair SCC found:
+    Return TRUE  (M ⊨ φ)
+  ELSE:
+    5.1 Find shortest path q₀ → fair SCC  (prefix)
+    5.2 Construct fair cycle through SCC
+    5.3 Complete lasso: prefix + cycle
+    Return counterexample trace
+```
+
+---
+
+## 八、工业应用与扩展
+
+### 8.1 成功验证案例
+
+- **TCAS II**（空中交通警报与防撞系统）：使用 SMV 验证了无不良非确定性、互斥、终止性等属性
+- **A-7E 飞机软件需求**：验证内部飞机模式的一致启用
+- **SATS**（小型飞机运输系统）：验证无死锁、飞机间距保持、面对罕见事件的鲁棒性
+- **TSAFE 组件**：通过组合验证技术验证无同步故障
+
+### 8.2 算法扩展
+
+- **组合验证（Compositional Verification）**：将系统子单元及其交互分别验证
+- **有界模型检测（Bounded Model Checking）**：用 SAT 求解器替代 BDD，限制反例长度 ≤ k
+- **偏序归约（Partial Order Reduction）**：识别并发进程的不同交错对属性 ϕ 有相同效果时，只检查一个序列
+- **LTL 扩展**：ETL（扩展时序逻辑）、QPTL（量化命题时序逻辑）、ForSpec（Intel）、PSL（IEEE 标准）
+
+### 8.3 关键挑战
+
+1. **可扩展性**：提高模型检测工具能处理的模型规模和时间/空间效率
+2. **LTL 到自动机翻译**：这是复杂度瓶颈，需要更高效的翻译算法
+3. **BDD 变量排序**：NP-complete，需要更好的启发式
+4. **反例质量**：最短反例 NP-complete，需要更好的启发式
+5. **规范覆盖率度量**：如何量化规范集对系统行为的描述完整度
+
+---
+
+## 九、启示与思考
+
+### 9.1 形式化方法与 AI Agent 安全的映射
+
+这篇 2010 年的综述虽然聚焦于传统软硬件验证，但其方法论框架对当前的 AI Agent 安全验证具有深刻启示：
+
+- **规范即安全边界**：LTL 的安全性与活性二分法可直接映射到 Agent 行为约束——安全性属性（Agent 永远不会执行危险动作）和活性属性（Agent 最终会完成任务）
+- **状态空间爆炸与 Agent 复杂性**：符号模型检测通过 BDD 将状态爆炸问题从状态空间大小转移到 BDD 表示大小；类似地，Agent 行为空间爆炸也可通过符号化抽象来缓解
+- **反例驱动调试**：模型检测返回的反例（接受套索）为系统设计者提供了精确的调试路径；Agent 安全验证同样需要可解释的违规轨迹
+
+### 9.2 从模型检测到运行时验证
+
+论文指出，模型检测验证的是模型 M 而非最终实现。这一鸿沟在 Agent 系统中更为显著——Agent 的行为在运行时才展开，难以预先建模全部状态空间。运行时验证（Runtime Verification）和在线监控成为弥补这一鸿沟的关键技术。
+
+### 9.3 组合验证与多 Agent 系统
+
+论文提到的组合验证技术——将系统子单元及其交互分别验证——直接适用于多 Agent 系统的安全验证。每个 Agent 可独立验证其安全属性，然后验证 Agent 间交互协议的安全性。
+
+### 9.4 BDD 与神经符号方法
+
+BDD 的核心思想——用紧凑的符号表示编码大规模状态空间——与当前神经符号 AI 的研究方向有异曲同工之妙。如何在神经网络的连续表示与 BDD 的离散符号表示之间建立桥梁，是一个值得探索的方向。
+
+---
+
+## 附录：关键章节中文翻译
+
+### A.1 摘要全文翻译
+
+我们正看到在实践中，形式化验证技术在安全关键软件和硬件中的使用日益推进。形式化验证已成功用于验证空中交通管制、飞机间隔保障、自动驾驶仪、CPU 设计、生命维持系统、医疗设备（如放射治疗设备）以及许多其他保障人类安全的系统。本综述从用户视角提供了线性时序逻辑（LTL）符号模型检测这一形式化验证技术的全景，涵盖其历史演变和最新进展。我们统合了 1977 年至 2009 年的研究成果，通过将每个步骤应用于真实的航空航天实例，提供完整的端到端分析。我们深入检查了符号模型检测过程底层的算法，展示了重要定理的证明，并指出了正在进行的研究方向。本文的主要焦点是使用 LTL 规范的模型检测，但也简要讨论和比较了其他方法。
+
+### A.2 引言核心段落翻译
+
+> 软件或硬件系统的验证涉及检查该系统是否按照设计预期的方式运行。设计验证涉及检查系统设计是否满足系统需求。（如果不满足，最好在设计过程的早期就发现！）这两项任务——系统验证和设计验证——都可以通过形式化方法（如模型检测）来彻底而可靠地完成。模型检测是一个形式化过程，通过它，一个期望的行为属性（规范）被验证在给定系统（模型）中成立，验证方式是对所有可达系统状态及导致系统在状态间转移的行为进行穷举枚举（显式或符号式）。如果发现规范在并非所有系统执行中成立，则产生一个反例，由从起始状态到错误状态的模型迹组成，在该错误状态中规范被违反，为调试系统设计提供了非常有用的工具。
+
+> 时间悠久的仿真和测试技术——都涉及在大量预期输入上检查系统行为——也解决类似问题，并且是系统设计和验证早期阶段极其有用的调试工具。然而，测试和仿真无法用于在任何现实时间段内保证超高水平的可靠性。对于安全关键系统，或其他可靠性至关重要的系统（如金融系统），我们要求通过检查所有可能行为（包括意外或非预期的行为）来绝对保证系统遵循其规范。这一保证由模型检测提供。
+
+### A.3 LTL 语义定义完整翻译
+
+**定义 2**：我们在形如 π : ω → 2^Prop 的计算上解释 LTL 公式，其中 ω 以标准方式表示非负整数集合。我们也用 iff 缩写"当且仅当"。定义 π, i ⊨ ϕ（计算 π 在时间瞬间 i ∈ ω 满足，或"建模"，LTL 公式 ϕ）如下：
+
+- π, i ⊨ p（p ∈ Prop）当且仅当 p ∈ π(i)
+- π, i ⊨ ¬ϕ 当且仅当 π, i ⊭ ϕ
+- π, i ⊨ ϕ ∧ ψ 当且仅当 π, i ⊨ ϕ 且 π, i ⊨ ψ
+- π, i ⊨ ϕ ∨ ψ 当且仅当 π, i ⊨ ϕ 或 π, i ⊨ ψ
+- π, i ⊨ Xϕ 当且仅当 π, i+1 ⊨ ϕ
+- π, i ⊨ ϕ U ψ 当且仅当存在 j ≥ i，使得 π, j ⊨ ψ 且对所有 k，i ≤ k < j，有 π, k ⊨ ϕ
+- π, i ⊨ ϕ R ψ 当且仅当对所有 j ≥ i，若 π, j ⊭ ψ，则存在 k，i ≤ k < j，使得 π, k ⊨ ϕ
+- π, i ⊨ □ϕ 当且仅当对所有 j ≥ i，π, j ⊨ ϕ
+- π, i ⊨ ◇ϕ 当且仅当存在 j ≥ i，使得 π, j ⊨ ϕ
+
+我们取 ⊨ϕ 为在时间 0 满足 ϕ 的计算集合，即 {π : π, 0 ⊨ ϕ}。我们将无限计算 π 的前缀定义为从第 0 时间步开始的有限序列 π₀, π₁, ..., πᵢ（某个 i ≥ 0）。
+
+现在重述模型检测问题：程序 M 满足（"建模"）公式 ϕ 当且仅当从 M 的初始状态 q 出发的每条路径 π 都满足 ϕ，记为 M, q ⊨ ϕ。
+
+### A.4 安全性与活性定义翻译
+
+**直觉 1（安全性属性）**表达"坏事永远不会发生"的情感。
+
+安全性属性通常表达为 □good，其中 good 同样是描述良好系统行为的时序逻辑公式。安全性属性推理关于到达特定状态。常见的安全性属性包括：部分正确性（程序永远不会以错误答案终止）、互斥（多个进程不能同时使用同一资源）、事件排序（如先到先服务）、无死锁（系统永远不会到达无法继续前进的停顿状态）。
+
+在我们的空中交通管制示例中，想要检查的安全性属性是：没有冲突被忽视。更具体地说，每当检测到冲突时，TSAFE 立即发出解决命令。在 LTL 中，我们将其表达为 □(¬TSAFE_clear → X(TSAFE_command))。另一个安全性属性是不存在冲突命令：□(¬(AR_command ∧ TSAFE_command))。
+
+**直觉 2（活性属性）**表达"好事最终一定会发生"的情感。
+
+活性属性通常表达为 ◇good，推理关于状态间的控制流。活性的形式化定义基本上与安全性相反定义：简而言之，不存在无法扩展为满足 ϕ 的无限计算的有限前缀。直观上，这对应于满足属性的"好事"在任何有限执行之后仍然可以发生。
+
+### A.5 BDD 定理翻译
+
+**定理 6**：L(AM,¬ϕ) 是 ω-正则语言，AM,¬ϕ 是 Büchi 自动机。
+
+**证明**：回顾 LM = L(M) 是 ω-正则语言（因为它是由 Büchi 自动机接受的语言），Lϕ = L(A¬ϕ) 也是 ω-正则语言（因为 ¬ϕ 是 LTL 公式，描述一个无 * 的 ω-正则表达式）。我们知道 L(AM,¬ϕ) = LM ∩ Lϕ 是 ω-正则语言，因此 AM,¬ϕ 是 Büchi 自动机，因为 ω-正则语言在交集运算下封闭。
+
+首先，我们证明并集的封闭性；交集的封闭性由并集和补集的封闭性推出。
+
+根据 ω-正则语言的定义，存在描述语言 LM 和 Lϕ 的 ω-正则表达式 rM 和 rϕ。根据 ω-正则表达式的定义，rM + rϕ 是表示语言 LM ∪ Lϕ 的 ω-正则表达式，这证明了并集的封闭性。
+
+交集的封闭性现在由德摩根律推出：LM ∩ Lϕ = ¬(¬LM ∪ ¬Lϕ)。根据补集的封闭性，¬LM 和 ¬Lϕ 都是 ω-正则语言。根据并集的封闭性，¬LM ∪ ¬Lϕ 是 ω-正则语言。再次根据补集的封闭性，¬(¬LM ∪ ¬Lϕ) = LM ∩ Lϕ 是 ω-正则语言。根据 ω-正则语言的定义，AM,¬ϕ 是 Büchi 自动机。
+
+### A.6 SCC-Hull 算法关键段落翻译
+
+> 标准的在有向图中寻找强连通分量的算法是深度优先搜索。确实，这就是显式状态模型检测中用于查找和返回反例的算法。然而，在符号模型检测中，我们使用的不是显式自动机图；我们的图反而是使用 BDD 简洁封装的。我们以状态集合和转移集合的形式编码了图，改变了遍历图的问题。由于这种编码的性质，深度优先方法——虽然在检查个别状态时是最优的——不适合符号循环检测。相反，我们采用更适合在特征函数 Sh 上搜索的广度优先、基于集合的循环检测算法。
+
+> 我们的目标是定位 GAM,¬ϕ 的一个公平子图，因为根据定理 9，这将允许我们构造一个反例，即 AM,¬ϕ 的一个计算。这个搜索是一个迭代过程。本质上，我们将计算 AM,¬ϕ 转移关系的传递闭包的某一部分，即 R* ◦ P 或 P ◦ R*，最好不要产生计算整个传递闭包的计算开销。为此，符号算法利用了处理基于集合的图编码的元策略，如智能分区 GAM,¬ϕ 和在 GAM,¬ϕ 的 SCC 商图上进行推理。
+
+### A.7 讨论部分翻译
+
+> 虽然这里提出的完整算法构成了工业中执行的 LTL 符号模型检测的基础，但在实践中，该算法的扩展更为常用。我们展示了更专业化和可扩展的变体所建立的基础。工业应用经常需要提供额外可扩展性的扩展，如组合验证——其中系统 M 的子单元及这些子单元间的交互分别被模型检测。由于整个自动化空域概念极其庞大，我们运行示例的完整版本涉及将 TSAFE 和自动解析器等组件作为独立子单元验证，然后验证它们的交互，即通过我们展示的高级架构。此外，有界模型检测依赖命题 SAT 求解器来替代经典符号模型检测的 BDD 操作，并将任何可能反例的长度限制在某个常数 k 以下。虽然这种变体不再提供不存在任意长度反例的保证，但它极大地增加了我们能够验证的系统规模，提供了在合理时间范围内终止的更好保证。
+
+> LTL 符号模型检测理想适用于反应式系统的验证——即在动态环境中运行的系统，如并发程序、嵌入式和过程控制程序以及操作系统。LTL 允许我们以其持续行为的方式自然有机地规范反应式系统。通过将状态爆炸问题的焦点从状态空间大小（如显式状态模型检测中）转移到 BDD 表示大小，符号模型检测可用于验证更大的系统。
+
+---
+
+## 参考链接
+
+- **论文原文**: [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1574013710000308)
+- **NuSMV**: [https://nusmv.fbk.eu/](https://nusmv.fbk.eu/)
+- **Cadence SMV**: [http://www.cadence.com/](http://www.cadence.com/)
+- **VIS**: [https://vlsi.colorado.edu/~vis/](https://vlsi.colorado.edu/~vis/)
+- **Bryant BDD 论文**: Bryant, R.E., "Symbolic Boolean Manipulation with Ordered Binary Decision Diagrams", ACM Computing Surveys, 1992
+- **Pnueli LTL 原始论文**: Pnueli, A., "The Temporal Logic of Programs", FOCS 1977
+- **McMillan 符号模型检测**: McMillan, K.L., "Symbolic Model Checking", PhD Thesis, CMU, 1992a:["$","$L1b",null,{"paper":{"slug":"ltl-symbolic-model-checking","title":"线性时序逻辑符号模型检测：从理论到实践的完整剖析","originalTitle":"Linear Temporal Logic Symbolic Model Checking","excerpt":"NASA Ames Research Center 的 Kristin Y. Rozier 于 2010 年发表的综述论文，系统梳理了 LTL 符号模型检测从 1977 年到 2009 年的完整发展脉络，涵盖系统建模、时序逻辑规范、LTL 到 Büchi 自动机转换、BDD 符号表示、非空性检查与反例生成的全流程算法，并以自动化空中交通管制系统为贯穿全文的真实案例。","date":"2026-07-10","coverImage":"$undefined","architectureImage":"/images/papers/ltl-symbolic-model-checking/architecture.png","featured":false,"draft":false,"authors":["Kristin Y. Rozier"],"year":2010,"venue":"Computer Science Review (Elsevier)","tags":["形式化验证","Model Checking","LTL","BDD","Büchi Automaton","Formal Methods"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"一模型检测的基本框架","text":"一、模型检测的基本框架","level":2},{"id":"模型检测的三步流程","text":"模型检测的三步流程","level":3},{"id":"显式-vs-符号模型检测","text":"显式 vs 符号模型检测","level":3},{"id":"二系统建模","text":"二、系统建模","level":2},{"id":"21-状态-转移图","text":"2.1 状态-转移图","level":3},{"id":"22-贯穿案例自动化空中交通管制","text":"2.2 贯穿案例：自动化空中交通管制","level":3},{"id":"三时序逻辑规范","text":"三、时序逻辑规范","level":2},{"id":"31-为什么需要时序逻辑","text":"3.1 为什么需要时序逻辑？","level":3},{"id":"32-ltl-定义与语义","text":"3.2 LTL 定义与语义","level":3},{"id":"33-ltl-vs-ctl-vs-ctl","text":"3.3 LTL vs CTL vs CTL*","level":3},{"id":"34-安全性与活性","text":"3.4 安全性与活性","level":3},{"id":"35-规范验证","text":"3.5 规范验证","level":3},{"id":"四ltl-到符号广义-büchi-自动机的转换","text":"四、LTL 到符号广义 Büchi 自动机的转换","level":2},{"id":"41-转换算法","text":"4.1 转换算法","level":3},{"id":"42-关键定理","text":"4.2 关键定理","level":3},{"id":"五bdd-符号表示","text":"五、BDD 符号表示","level":2},{"id":"51-bdd-定义","text":"5.1 BDD 定义","level":3},{"id":"52-系统模型与规范的组合","text":"5.2 系统模型与规范的组合","level":3},{"id":"53-bdd-编码","text":"5.3 BDD 编码","level":3},{"id":"54-显式-vs-符号方法对比","text":"5.4 显式 vs 符号方法对比","level":3},{"id":"六非空性检查与反例生成","text":"六、非空性检查与反例生成","level":2},{"id":"61-自动机作为图","text":"6.1 自动机作为图","level":3},{"id":"62-scc-hull-算法","text":"6.2 SCC-Hull 算法","level":3},{"id":"63-反例构造","text":"6.3 反例构造","level":3},{"id":"64-算法分类","text":"6.4 算法分类","level":3},{"id":"七完整算法流程汇总","text":"七、完整算法流程汇总","level":2},{"id":"八工业应用与扩展","text":"八、工业应用与扩展","level":2},{"id":"81-成功验证案例","text":"8.1 成功验证案例","level":3},{"id":"82-算法扩展","text":"8.2 算法扩展","level":3},{"id":"83-关键挑战","text":"8.3 关键挑战","level":3},{"id":"九启示与思考","text":"九、启示与思考","level":2},{"id":"91-形式化方法与-ai-agent-安全的映射","text":"9.1 形式化方法与 AI Agent 安全的映射","level":3},{"id":"92-从模型检测到运行时验证","text":"9.2 从模型检测到运行时验证","level":3},{"id":"93-组合验证与多-agent-系统","text":"9.3 组合验证与多 Agent 系统","level":3},{"id":"94-bdd-与神经符号方法","text":"9.4 BDD 与神经符号方法","level":3},{"id":"附录关键章节中文翻译","text":"附录：关键章节中文翻译","level":2},{"id":"a1-摘要全文翻译","text":"A.1 摘要全文翻译","level":3},{"id":"a2-引言核心段落翻译","text":"A.2 引言核心段落翻译","level":3},{"id":"a3-ltl-语义定义完整翻译","text":"A.3 LTL 语义定义完整翻译","level":3},{"id":"a4-安全性与活性定义翻译","text":"A.4 安全性与活性定义翻译","level":3},{"id":"a5-bdd-定理翻译","text":"A.5 BDD 定理翻译","level":3},{"id":"a6-scc-hull-算法关键段落翻译","text":"A.6 SCC-Hull 算法关键段落翻译","level":3},{"id":"a7-讨论部分翻译","text":"A.7 讨论部分翻译","level":3},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"10 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"线性时序逻辑符号模型检测：从理论到实践的完整剖析 | 博客"}],["$","meta","1",{"name":"description","content":"NASA Ames Research Center 的 Kristin Y. Rozier 于 2010 年发表的综述论文，系统梳理了 LTL 符号模型检测从 1977 年到 2009 年的完整发展脉络，涵盖系统建模、时序逻辑规范、LTL 到 Büchi 自动机转换、BDD 符号表示、非空性检查与反例生成的全流程算法，并以自动化空中交通管制系统为贯穿全文的真实案例。"}],["$","meta","2",{"property":"og:title","content":"线性时序逻辑符号模型检测：从理论到实践的完整剖析"}],["$","meta","3",{"property":"og:description","content":"NASA Ames Research Center 的 Kristin Y. Rozier 于 2010 年发表的综述论文，系统梳理了 LTL 符号模型检测从 1977 年到 2009 年的完整发展脉络，涵盖系统建模、时序逻辑规范、LTL 到 Büchi 自动机转换、BDD 符号表示、非空性检查与反例生成的全流程算法，并以自动化空中交通管制系统为贯穿全文的真实案例。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/ltl-symbolic-model-checking/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"线性时序逻辑符号模型检测：从理论到实践的完整剖析"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"线性时序逻辑符号模型检测：从理论到实践的完整剖析"}],["$","meta","13",{"name":"twitter:description","content":"NASA Ames Research Center 的 Kristin Y. Rozier 于 2010 年发表的综述论文，系统梳理了 LTL 符号模型检测从 1977 年到 2009 年的完整发展脉络，涵盖系统建模、时序逻辑规范、LTL 到 Büchi 自动机转换、BDD 符号表示、非空性检查与反例生成的全流程算法，并以自动化空中交通管制系统为贯穿全文的真实案例。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
