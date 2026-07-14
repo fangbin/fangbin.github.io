@@ -1,0 +1,156 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/337386043419fc17.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"wHrPzTE97OL0zFiTQWpXv","c":["","papers","automatically-engineering-trusted-software",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","automatically-engineering-trusted-software","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/337386043419fc17.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/9bd72eaba06a6b29.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T2732,## 论文概览
+
+这篇发表于 ACM TOSEM 的论文由 UMass、Microsoft、CMU 和 MPI-SWS 的研究者联合撰写，提出了一个大胆的愿景：**利用基础模型的进步，自动化构建具有形式化正确性保证的可信软件**。
+
+论文指出一个核心矛盾：GitHub Copilot、Cursor 等工具正在革命性地改变代码生成方式，但 LLM 生成的代码经常包含幻觉——虚构不存在的 API、语义错误甚至安全漏洞。与此同时，形式化方法虽然能提供数学级别的正确性保证（如 CompCert 编译器、seL4 微内核），却因极高的专业门槛和人力成本而难以普及。论文提出的解法是：**用同一个 AI 技术栈同时自动化规约生成、代码合成和证明构造三个环节**，形成闭环。
+
+![三叉戟架构：规约合成、代码合成与证明合成的迭代闭环](/images/papers/automatically-engineering-trusted-software/architecture.png)
+
+## 核心愿景：三叉戟架构
+
+论文的核心贡献是一个三阶段的自动化流水线，每个阶段都由 AI 驱动，并通过反例反馈形成闭环：
+
+**阶段 1 — 规约合成（Specification Synthesis）**：将人类用自然语言、文档、示例表达的不精确意图，通过 LLM 交互式地转化为形式化规约（LTL/CTL 时序逻辑、Hoare 前置/后置条件等）。关键工具包括 TiCoder（通过测试用例交互式澄清意图）和 SpecRover（从 GitHub issue 推断规约）。
+
+**阶段 2 — 代码合成（Code Synthesis）**：基于形式化或部分规约自动生成源代码。论文区分了三类方法：经典演绎/归纳合成（SyGuS）、神经统计方法（GPT-4、DeepSeek-Coder）以及面向证明的编程（Proof-Oriented Programming, PoP），后者使用 Verus、Dafny、F*、Rocq、Lean 等验证友好语言。
+
+**阶段 3 — 证明合成（Verification Proof Synthesis）**：自动生成机器可检查的形式化证明，验证代码满足规约。涵盖模型检测（完全自动化但受状态爆炸限制）和演绎验证（可建立无界正确性但需大量人力）两条路径。
+
+三个阶段不是线性流水线，而是通过**反例驱动的迭代闭环**相互反馈：验证失败产生的反例可以同时指导代码修复和规约细化。
+
+## 规约合成：从模糊意图到精确规约
+
+### 规约的光谱
+
+论文将软件规约分为三个层次：
+
+| 层次 | 形式 | 特点 | 示例 |
+|------|------|------|------|
+| 隐式/非正式 | 自然语言、注释、文档 | 人类直觉友好，机器难以验证 | "系统不应崩溃" |
+| 功能性部分规约 | 测试用例、输入-输出对 | 可执行，但覆盖不完整 | TDD 中的测试集 |
+| 完全形式化规约 | 谓词逻辑、时序逻辑、SMT | 无歧义，支持穷尽验证 | LTL 公式 □(request → ◇response) |
+
+核心挑战在于：**编写完整的形式化规约往往比编写实现代码本身更困难**。CompCert 编译器的形式化规约就是典型案例——需要大量专业知识和时间。
+
+### AI 辅助规约形式化
+
+LLM 在规约合成中扮演多重角色：
+
+- **意图澄清**：通过 Q&A 交互逐步精化用户意图（TiCoder 模式）
+- **测试生成**：从 docstring 自动生成测试用例，部分形式化规约
+- **自然语言翻译**：将函数文档翻译为形式化后置条件（GPT-4 已展示可行性）
+- **规约推断**：从代码和 issue 文本推断预期行为（SpecRover）
+
+论文强调**迭代与反馈**是关键——最好的结果不是一次性生成，而是 LLM 提出候选、人类或分析工具验证、再修正的循环过程。
+
+## 代码合成：规模与可信度的博弈
+
+### 神经方法的突破与局限
+
+LLM 将代码合成的规模提升到了前所未有的水平，但论文明确指出其根本局限：
+
+> "在极限情况下，统计方法甚至无法保证生成的代码能编译，更不用说行为正确。"
+
+典型失败模式包括：虚构不存在的 API、语法正确但语义错误的解决方案、通过测试但含有安全漏洞的代码。且由于采样非确定性，重复查询可能产生功能差异巨大的方案，进一步复杂化了验证工作。
+
+### 神经符号方法与面向证明的编程
+
+论文提出两条弥合路径：
+
+**神经符号编程**（Neurosymbolic Programming）：将神经网络的可扩展性与符号推理的正确性保证结合。LLM 提出候选方案，SMT 求解器、类型系统或程序分析工具过滤和排序。CrossBeam 等工作展示了在保持形式化保证的同时用神经引导搜索的可能性。
+
+**面向证明的编程**（PoP）：在 Verus、Dafny 等支持内置规约的语言中生成代码。Clover 尝试用 LLM 生成和修复 Dafny 代码，形成"生成-验证-修复"循环。关键洞察是：**如果代码从一开始就在验证友好的语言中生成，后续的证明合成会容易得多**。
+
+## 证明合成：让形式化方法走向大众
+
+### 模型检测 + LLM
+
+论文描绘了一个愿景：从自然语言描述同时生成系统模型和时序逻辑规约，然后用模型检测器验证。一个有前景的路径是先翻译为中间表示（如结构化自然语言），再自动转化为 LTL/CTL。验证失败时，反例驱动模型和规约的迭代精化。
+
+### 神经符号证明合成
+
+这是论文最具技术深度的部分。核心思路是：**用预测模型（LLM/GNN）建议下一个证明步骤（tactic），用定理证明器剪枝搜索树**。
+
+![神经符号证明合成流程：预测模型建议 tactic，定理证明器剪枝搜索树](/images/papers/automatically-engineering-trusted-software/proof_synthesis.png)
+
+关键进展包括：
+
+- **Rango**：用 LLM 捕获更广泛的上下文（相关引理及其证明），提升预测精度
+- **Thor**：将 LLM（规划）与 Sledgehammer（前提选择）解耦
+- **集成方法**：多个模型并行搜索，定理证明器作为 oracle，只需一个正确证明即可成功
+- 当前基准测试成功率已达 **50-60%**
+
+核心挑战是**预测部分证明是否在向完整证明推进**——中间 tactic 往往会增加目标数量，使进度评估困难。强化学习在此方向显示了潜力。
+
+## 集成挑战与软件演化
+
+![三阶段关键挑战与技术前沿全景图](/images/papers/automatically-engineering-trusted-software/challenges.png)
+
+论文的 Section 7 讨论了三个阶段集成的独特挑战，这些是单纯优化单个阶段无法解决的：
+
+1. **反例驱动的迭代闭环**：验证失败不仅指导代码修复，还能反过来细化规约，形成三层反馈循环
+2. **代码与证明的协同合成**：某些代码结构比其他更容易验证，可以同时合成多个版本选择最易验证的
+3. **语言鸿沟**：Python/Java 等流行语言训练数据丰富但缺乏验证支持；Rocq/Lean 等验证友好语言数据稀缺。代码翻译和多语言同时合成是潜在解法
+4. **非功能属性**：公平性、隐私、性能等属性需要概率验证方法，编码方式与功能属性截然不同
+5. **模块化与组合验证**：将大问题分解为组件，分别验证再组合证明
+
+在软件演化方面（Section 6），论文指出一个有趣的悖论：传统上最小化变更被视为降低风险的关键，但如果变更可以被完全自动验证，变更大小的重要性可能降低——因为可以对新规约重新验证，同时检查旧规约是否仍然满足。
+
+## 启示与思考
+
+这篇论文的最大价值不在于提出某个具体技术，而在于**将分散的研究方向整合为一个连贯的愿景**。规约合成、代码合成、证明合成各自都有大量工作，但很少被放在同一个闭环中思考。
+
+从形式化验证的实践角度看，论文的判断是准确的：CompCert 需要 10 万行 Rocq 证明验证 4.2 万行编译器代码，Amazon S3 团队也只验证了关键组件——这种成本结构注定了形式化方法只能在航空航天、密码学等极端场景使用。如果 AI 能将证明成本降低一个数量级，形式化验证的适用范围将大幅扩展。
+
+但我也注意到论文对几个关键困难处理得比较轻描淡写：
+
+**规约正确性问题**。论文承认"证明的正确性是相对于规约的"，但如果 LLM 生成的规约本身有误，整个闭环都在验证错误的性质。论文寄望于人类在交互中把关，但这恰恰回到了形式化方法的人力瓶颈。
+
+**数据稀缺的恶性循环**。验证友好语言（Rocq、Lean）的训练数据稀缺，而数据稀缺又限制了 AI 在这些语言上的表现。论文提到 CoqGym 有数十万条定理，但与 Python/Java 的语料量相比仍是数量级的差距。
+
+**概率性质与确定性证明的张力**。论文提到用概率方法验证公平性等属性，但形式化方法的核心价值在于确定性保证。如果证明步骤本身是概率性的（LLM 预测 tactic），"证明"的含义就发生了本质变化——它不再是数学意义上的必然正确，而是"有较高概率正确"。
+
+这些挑战恰恰说明，论文提出的路线图是一个 5-10 年的研究议程，而非近期的工程方案。对于正在设计 AARM 框架的实践者来说，论文提供了两个直接可用的洞察：第一，规约合成与代码合成的分离是有价值的架构决策——先从意图生成可检查的规约，再基于规约合成代码，比直接从意图到代码更可控；第二，反例驱动的闭环设计是连接验证与修复的关键模式，值得在 agent 安全框架中借鉴。
+
+## 参考链接
+
+- **论文原文**：[Brun et al., "Automatically Engineering Trusted Software: A Research Roadmap", ACM TOSEM, 2026](https://people.cs.umass.edu/~brun/pubs/pubs/Brun26tosem.pdf)
+- **DOI**：[10.1145/3779132](https://doi.org/10.1145/3779132)
+- **作者主页**：[Yuriy Brun (UMass)](https://people.cs.umass.edu/~brun/)
+- **Shonan Meeting #217**：Trusted Automatic Programming (2025 年 1 月)a:["$","$L1b",null,{"paper":{"slug":"automatically-engineering-trusted-software","title":"自动化构建可信软件：三叉戟研究路线图","originalTitle":"Automatically Engineering Trusted Software: A Research Roadmap","excerpt":"本文解读 Brun 等人发表于 ACM TOSEM 的研究路线图，提出利用 AI 自动化构建可信软件的三叉戟方法：规约合成、代码合成与证明合成。论文系统梳理了从自然语言意图到形式化规约、从规约到可验证代码、从代码到机器可检查证明的完整链条，并指出了各阶段及集成层面的关键挑战。","date":"2026-07-14","coverImage":"$undefined","architectureImage":"/images/papers/automatically-engineering-trusted-software/architecture.png","featured":false,"draft":false,"authors":["Yuriy Brun","Saikat Chakraborty","Claire Le Goues","Corina Păsăreanu","Adish Singla"],"year":2026,"venue":"ACM Transactions on Software Engineering and Methodology (TOSEM)","tags":["AI解读","形式化验证","自动程序合成","可信软件","神经符号方法"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心愿景三叉戟架构","text":"核心愿景：三叉戟架构","level":2},{"id":"规约合成从模糊意图到精确规约","text":"规约合成：从模糊意图到精确规约","level":2},{"id":"规约的光谱","text":"规约的光谱","level":3},{"id":"ai-辅助规约形式化","text":"AI 辅助规约形式化","level":3},{"id":"代码合成规模与可信度的博弈","text":"代码合成：规模与可信度的博弈","level":2},{"id":"神经方法的突破与局限","text":"神经方法的突破与局限","level":3},{"id":"神经符号方法与面向证明的编程","text":"神经符号方法与面向证明的编程","level":3},{"id":"证明合成让形式化方法走向大众","text":"证明合成：让形式化方法走向大众","level":2},{"id":"模型检测--llm","text":"模型检测 + LLM","level":3},{"id":"神经符号证明合成","text":"神经符号证明合成","level":3},{"id":"集成挑战与软件演化","text":"集成挑战与软件演化","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"9 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"自动化构建可信软件：三叉戟研究路线图 | 博客"}],["$","meta","1",{"name":"description","content":"本文解读 Brun 等人发表于 ACM TOSEM 的研究路线图，提出利用 AI 自动化构建可信软件的三叉戟方法：规约合成、代码合成与证明合成。论文系统梳理了从自然语言意图到形式化规约、从规约到可验证代码、从代码到机器可检查证明的完整链条，并指出了各阶段及集成层面的关键挑战。"}],["$","meta","2",{"property":"og:title","content":"自动化构建可信软件：三叉戟研究路线图"}],["$","meta","3",{"property":"og:description","content":"本文解读 Brun 等人发表于 ACM TOSEM 的研究路线图，提出利用 AI 自动化构建可信软件的三叉戟方法：规约合成、代码合成与证明合成。论文系统梳理了从自然语言意图到形式化规约、从规约到可验证代码、从代码到机器可检查证明的完整链条，并指出了各阶段及集成层面的关键挑战。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/automatically-engineering-trusted-software/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"自动化构建可信软件：三叉戟研究路线图"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"自动化构建可信软件：三叉戟研究路线图"}],["$","meta","13",{"name":"twitter:description","content":"本文解读 Brun 等人发表于 ACM TOSEM 的研究路线图，提出利用 AI 自动化构建可信软件的三叉戟方法：规约合成、代码合成与证明合成。论文系统梳理了从自然语言意图到形式化规约、从规约到可验证代码、从代码到机器可检查证明的完整链条，并指出了各阶段及集成层面的关键挑战。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
