@@ -1,0 +1,183 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T2daf,## 论文概览
+
+**论文标题**: Polar: Agentic RL on Any Harness at Scale
+
+**作者**: Binfeng Xu, Hao Zhang, Shaokun Zhang, Songyang Han, Mingjie Liu, Jian Hu, Shizhe Diao, Zhenghui Jin, Yunheng Zou, Michael Demoret, Jan Kautz, Yi Dong (NVIDIA)
+
+**发表**: arXiv:2605.24220, 2026年5月
+
+**代码**: https://github.com/NVIDIA-NeMo/ProRL-Agent-Server
+
+**数据集**: https://huggingface.co/datasets/nvidia/polar-swegym-pi-qwen35-122b-a10b-trajectories
+
+大语言模型的强化学习正从单步任务转向需要持续环境交互的 Agentic 场景——代码仓库修复、浏览器操作、操作系统控制等。这些场景的"训练目标"本身是一个复杂软件系统（如 Claude Code、Codex CLI），可能包含异构环境、外部工具、长时工作流，甚至以闭源二进制形式分发。传统 RL 假设训练目标可通过标准化接口暴露，但在 Agentic RL 中，将 harness 移植到 RL 环境接口既困难又会丢失训练信号。
+
+Polar 的核心洞察是：**虽然 agent 内部实现千差万别，但每个 LLM-based agent 都必须与模型通信**。这个 model API 边界提供了一个存在于 agent 之外的公共接口。Polar 不修改 harness，而是在 LLM API 边界放置代理，监听并记录 token 级别的模型交互，将其重建为训练可用的轨迹。
+
+## 核心创新
+
+### 1. Proxy-based Rollout：以 LLM API 流量作为 RL 接口
+
+Polar 的根本设计选择是将集成边界从 agent framework 移到 model endpoint。传统方式要求将 agent 逻辑重写为框架拥有的 environment API，导致 trainer 依赖 harness 特定的集成代码。Polar 则保持 harness 完全不变，在 LLM API 边界放置一个 provider-compatible proxy：
+
+- **检测 Provider API**：通过请求路径和头部区分 Anthropic Messages、OpenAI Chat Completions、OpenAI Responses、Google generateContent
+- **归一化请求**：将各 provider 格式统一转换为 OpenAI Chat Completions 形式，注入 `logprobs=true` 等训练所需字段
+- **捕获 token 级数据**：存储请求消息、响应消息、prompt token IDs、采样响应 token IDs、finish reason、log probabilities
+- **返回 provider 形态**：将响应转回 harness 期望的格式（包括合成 SSE 流）
+
+这个 proxy 边界故意位于 agent framework 之下——它不需要理解 harness 如何规划、管理工具或决定何时停止，只需保持 API 兼容性并记录足够信息来重建训练样本。
+
+### 2. Rollout-as-a-Service：异步分离架构
+
+Polar 将 rollout 与 training 完全解耦，通过异步服务边界实现独立扩展：
+
+**Rollout Server** 负责任务调度：接收 TaskRequest，展开为 `num_samples` 个独立 session，分发到 gateway 节点，持久化结果，提供状态轮询和回调。
+
+**Gateway Node** 负责会话生命周期管理，包含三个隔离的 worker pool：
+
+| 阶段 | 职责 | 特点 |
+|------|------|------|
+| INIT | 启动 runtime，执行 prepare 动作 | CPU 密集，不阻塞 GPU |
+| READY | 缓冲已初始化的 runtime | 等待运行槽位 |
+| RUNNING | 执行 harness | GPU-bound agent 执行 |
+| POSTRUN | 重建轨迹，运行评估器，发送回调，清理资源 | 可与下一轮并行 |
+
+关键设计：runtime 预热和 evaluator 预热在 agent 运行期间后台进行，使 CPU 密集的 runtime 准备和长尾评估不阻塞 GPU-bound 的 agent 执行。即使 harness 超时，已捕获的 model 调用仍可在 POSTRUN 阶段恢复为部分轨迹。
+
+### 3. Token-Faithful Trajectory Reconstruction
+
+Polar 提供两种轨迹重建策略：
+
+**Per Request（保守基线）**：每个 completion 成为一条独立 trace。对单个 call 是无损的，但会将一个连贯的多轮 agent session 碎片化为大量短样本。复杂 coding harness 解决一个问题可能产生数百条 trace，增加 trainer 负担。
+
+**Prefix Merging（token-faithful 合并）**：当 harness session 的部分对话历史保持 append-only 性质时，重建更长的 trace。核心算法：
+
+对于一个 session 的 completions $C_1, \ldots, C_T$，其中 $C_i$ 有 prompt token 序列 $p_i$、采样响应 token 序列 $a_i$、log probabilities $\ell_i$，Polar 将其划分为有序链：
+
+$$\mathcal{G} = \{G_1, \ldots, G_J\}, \quad G_j = (C_{i_1^j}, C_{i_2^j}, \ldots, C_{i_{K_j}^j})$$
+
+新 completion 加入已有链的条件是：消息级 grouping key 识别为候选延续，且严格 token-prefix 关系成立：
+
+$$p_{i_{m+1}}[1:|p_{i_m}|] = p_{i_m}$$
+
+合并后的 token 序列为：
+
+$$z^{(j)} = p_1 \| a_1 \| u_1 \| a_2 \| u_2 \| \cdots \| a_K$$
+
+其中 $u_m$ 是 harness 在两轮生成之间插入的 canonical interstitial tokens。**Loss mask 对采样响应 $a_m$ 的 token 标记为 1（可训练），对 interstitial $u_m$ 的 token 标记为 0（不可训练）**。
+
+这给出了一个简洁的正确性不变量：**每条 emitted trace 中，每个可训练 token 都与 rollout 时的 behavior policy 一致，非生成 token 全部被 mask**。
+
+![Polar 轨迹重建策略对比](/images/papers/polar-agentic-rl/trajectory_reconstruction.png)
+
+## 系统架构
+
+![Polar 系统架构总览](/images/papers/polar-agentic-rl/architecture.png)
+
+Polar 的架构围绕"黑盒训练"理念展开。Trainer（如 Slime 异步 GRPO）与 Rollout Server 通过异步 API 交互：提交任务、轮询状态、接收回调。Rollout Server 将任务分发到 Gateway Node，后者在隔离的 runtime（Docker 或 rootless Apptainer）中执行未修改的 agent harness。
+
+Gateway 内部同时托管 Model API Proxy——harness 的所有 LLM 调用都经过这个 proxy，proxy 将请求转发到推理服务器（SGLang/vLLM），同时记录 token 级数据。执行完成后，POSTRUN 阶段从捕获的 completions 重建轨迹、运行评估器、通过异步回调将结果返回给 trainer。
+
+这种设计使 Polar 对 agent harness（CLI 程序、包管理工具、甚至二进制文件）、训练基础设施（Slime、Megatron 等）和 RL 算法（GRPO、PPO 等）三者完全无关。
+
+## 实验结果
+
+### SWE-Gym GRPO 训练
+
+以 Qwen3.5-4B 为基础 checkpoint，在 SkyRL-v0-293-data SWE-Gym 数据集上使用标准 GRPO 训练，在 SWE-Bench Verified 上评估：
+
+| Harness | Base pass@1 | Polar RL | 提升 |
+|---------|------------|----------|------|
+| Codex | 3.8% | 26.4% | **+22.6** |
+| Claude Code | 29.8% | 34.6% | +4.8 |
+| Qwen Code | 34.6% | 35.2% | +0.6 |
+| Pi | 34.2% | 40.4% | +6.2 |
+
+最大增益出现在 Codex harness 上：4B base model 仅达 3.8% pass@1，但 Polar 训练后达到 26.4%。这是因为 Codex 对 Qwen 模型呈现了陌生的 action protocol、context policy 和 patch-submission 风格。Polar 保持 harness 不变并将 reward 附加到实际采样的 token 上，使 GRPO 优化模型在评估时必须使用的行为。
+
+在 native Qwen Code harness 上，base model 本已很强（34.6%），Polar 仍提升至 35.2%。这表明 harness-native RL 对陌生执行路径能带来大幅适应增益，同时对已对齐的 checkpoint 仍保持正向收益。
+
+### 轨迹重建策略消融
+
+在相同模型、硬件和拓扑下，仅改变轨迹重建策略：
+
+| 指标 | Per Request | Prefix Merging | 提升 |
+|------|------------|----------------|------|
+| Trainer updates | 1,185 | 218 | 5.4x 减少 |
+| Wall-clock 时间 | 189.5 min | 35.2 min | **5.39x 加速** |
+| GPU 利用率 | 20.4% | 87.7% | 4.3x 提升 |
+
+Per Request 方式还出现了显著的 reward hacking 问题：request-level trace 接收 session-level credit 而缺乏适当的 session normalization，导致信用分配噪声过大。
+
+![实验结果对比](/images/papers/polar-agentic-rl/results.png)
+
+### 离线数据生成
+
+Polar 还可作为分布式离线数据生成服务。使用 Qwen3.5-122B-A10B 驱动 pi-coding-agent harness，在 1,638 个 SWE-Gym 实例上生成 SFT 语料：
+
+| 仓库 | 尝试次数 | 接受数 | 接受率 |
+|------|---------|--------|--------|
+| getmoto/moto | 343 | 184 | 53.6% |
+| python/mypy | 257 | 101 | 39.3% |
+| conan-io/conan | 71 | 27 | 38.0% |
+| pydantic/pydantic | 81 | 24 | 29.6% |
+| iterative/dvc | 219 | 45 | 20.5% |
+| pandas-dev/pandas | 477 | 98 | 19.7% |
+| dask/dask | 141 | 25 | 17.7% |
+| **总计** | **1,638** | **504** | **30.8%** |
+
+接受标准为 SWE-Bench 评估器报告 patch 通过所有 FAIL_TO_PASS 测试且不破坏任何 PASS_TO_PASS 测试。总成本约 64 GPU-hours，数据集已以 Apache-2.0 许可在 HuggingFace 发布。
+
+## 框架对比
+
+论文附录提供了与现有系统的系统对比：
+
+| 系统 | 异步 RL | 异步 Rollout 分级 | Rollout as Service | Harness 无关 |
+|------|--------|------------------|-------------------|-------------|
+| **Polar** | ✓ | ✓ | ✓ | ✓ |
+| ProRL Agent | ✓ | ✓ | ✓ | ✗ |
+| SkyRL-Agent | ✓ | ✓ | ✗ | ● |
+| PRIME-RL | ✓ | ✗ | ✗ | ✗ |
+| Agent Lightning | ● | ✗ | ● | ● |
+| rLLM | ● | ✗ | ✗ | ✗ |
+| OpenClaw-RL | ✓ | ✗ | ✗ | ● |
+
+Polar 是唯一在四个维度上全部获得一等支持（✓）的系统。其关键差异在于：其他系统要么要求 agent 符合框架接口（SkyRL、Agent Lightning），要么不提供 native harness 作为 rollout 默认单元（PRIME-RL、rLLM），要么不将 rollout 作为独立服务（PRIME-RL、Agent Lightning）。
+
+## 启示与思考
+
+Polar 的设计哲学可以浓缩为一个问题：**能否在不打开黑盒的情况下训练 agent？** 答案是肯定的——关键在于找到正确的观测点。
+
+**model API 边界是最可靠的集成点**。对于 coding agent 和 terminal agent，最可靠的接口不是 SDK callback graph，而是 harness 已经使用的 provider API endpoint。这个选择比通用 observability instrumentation 更窄，但对以 CLI 程序、包管理工具或二进制形式实现的 harness 极其稳健。
+
+**token fidelity 是 agent RL 的根基**。provider API 可能返回文本、tool-call JSON、reasoning field 或 streamed events，而非推理后端使用的精确 token IDs 和 log probabilities。解码再编码（retokenization）会产生与原始生成不同的 token IDs，导致训练信号错误地附着在错误的 token 上。Polar 的 prefix merging 通过直接复制推理响应中的采样 token、使用 canonical prompt tokenization 填充 interstitial token，并用 loss mask 精确标记可训练 token，从架构层面解决了这个问题。
+
+**异步分离是长尾 rollout 的必要条件**。Agentic rollout 混合了多种成本：runtime 启动、依赖准备、harness 执行、评估器设置、测试执行、资源清理。将这些阶段隔离到独立 worker pool，使 CPU 密集的准备工作不阻塞 GPU-bound 的 agent 执行，是提升计算利用率的关键——prefix merging 将 GPU 利用率从 20.4% 提升到 87.7% 就是明证。
+
+从工程实践看，Polar 的"黑盒训练"范式对整个 Agent RL 生态有深远意义：研究者不再需要为每个新 harness 编写框架特定的集成代码，harness 开发者也不需要暴露内部实现。只要 harness 通过标准 model API 通信，就能被训练。这降低了 Agent RL 的门槛，也为闭源 harness（如 Claude Code）的训练提供了可行路径。
+
+## 参考链接
+
+- **论文**: [arXiv:2605.24220](https://arxiv.org/abs/2605.24220)
+- **代码**: [GitHub: NVIDIA-NeMo/ProRL-Agent-Server](https://github.com/NVIDIA-NeMo/ProRL-Agent-Server)
+- **数据集**: [HuggingFace: polar-swegym-pi-qwen35-122b-a10b-trajectories](https://huggingface.co/datasets/nvidia/polar-swegym-pi-qwen35-122b-a10b-trajectories)
+- **NeMo Gym**: [GitHub: NVIDIA-NeMo/Gym](https://github.com/NVIDIA-NeMo/Gym)0:{"buildId":"4OgZKj2wkSwxSO9D365SI","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"polar-agentic-rl","title":"Polar：将任意 Agent Harness 作为黑盒进行大规模强化学习","originalTitle":"Polar: Agentic RL on Any Harness at Scale","excerpt":"NVIDIA 提出的 Polar 框架，通过在 LLM API 边界放置代理，将任意 Agent Harness 作为黑盒进行强化学习训练，无需修改 harness 内部代码。在 SWE-Bench Verified 上使用简单 GRPO 即可将 Qwen3.5-4B 在 Codex harness 上的 pass@1 从 3.8% 提升至 26.4%。","date":"2026-07-20","featured":false,"draft":false,"authors":["Binfeng Xu","Hao Zhang","Shaokun Zhang","Songyang Han","Mingjie Liu","Jian Hu","Shizhe Diao","Zhenghui Jin","Yunheng Zou","Michael Demoret","Jan Kautz","Yi Dong"],"year":2026,"venue":"arXiv (NVIDIA)","tags":["AI解读","Agent 架构设计","Reinforcement Learning","Agent Framework","RL Infrastructure"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-proxy-based-rollout以-llm-api-流量作为-rl-接口","text":"1. Proxy-based Rollout：以 LLM API 流量作为 RL 接口","level":3},{"id":"2-rollout-as-a-service异步分离架构","text":"2. Rollout-as-a-Service：异步分离架构","level":3},{"id":"3-token-faithful-trajectory-reconstruction","text":"3. Token-Faithful Trajectory Reconstruction","level":3},{"id":"系统架构","text":"系统架构","level":2},{"id":"实验结果","text":"实验结果","level":2},{"id":"swe-gym-grpo-训练","text":"SWE-Gym GRPO 训练","level":3},{"id":"轨迹重建策略消融","text":"轨迹重建策略消融","level":3},{"id":"离线数据生成","text":"离线数据生成","level":3},{"id":"框架对比","text":"框架对比","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"10 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
