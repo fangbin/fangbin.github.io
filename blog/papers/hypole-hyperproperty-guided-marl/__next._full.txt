@@ -1,0 +1,136 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/337386043419fc17.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"8Vtp3X5jEtaILOIDkAXvX","c":["","papers","hypole-hyperproperty-guided-marl",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","hypole-hyperproperty-guided-marl","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/337386043419fc17.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/9bd72eaba06a6b29.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T1ecd,## 论文概览
+
+多智能体强化学习（MARL）面临一个根本性挑战：如何让智能体团队满足具有相互依赖关系的目标和约束？现有方法主要依赖奖励塑形，但奖励塑形在表达智能体间的**关系型目标**（relational objectives）时力不从心。更关键的是，现有方法的奖励塑形隐含了**全称量化**（∀∀）语义——即目标必须对每一对智能体行为都成立——这种过度严格的约束限制了策略搜索空间。
+
+Michigan State University 的 Borzoo Bonakdarpour 团队提出 **HyPOLE**（Hyperproperties for Partially Observable Learning Environments），首次将**超性质**（hyperproperties）和时序逻辑 **HyperLTL** 引入部分可观测 MARL，通过 ∀∃ 量化表达智能体间的依赖关系，在 SMAC、MessySMAC 和 WildFire 基准上展现出显著优势。
+
+![HyPOLE 框架总览](/images/papers/hypole-hyperproperty-guided-marl/architecture.png)
+
+## 核心问题：∀∀ vs ∀∃
+
+论文的核心洞察可以用一个简单的逻辑类比说明：
+
+- $\varphi_1 = \forall x. \forall y. (x < y)$ ——显然为假，因为不可能所有 $x$ 都小于所有 $y$
+- $\varphi_2 = \forall x. \exists y. (x < y)$ ——有效，因为对任意 $x$，总存在 $y = x+1$ 使其成立
+
+在 MARL 中，几乎所有现有方法都试图搜索满足 ∀∀ 形式目标的策略，而许多真实的多智能体需求实际上是 ∀∃ 形式：**对于智能体 A 的每一个行为，存在智能体 B 的某个行为使得目标成立**。例如，在火灾救援场景中，"对于消防无人机的每个行动路线，存在医疗无人机的一个响应路线，使得两者始终保持通信距离"就是一个典型的 ∀∃ 规约。
+
+![Skolemization 与 ∀∀ vs ∀∃ 语义](/images/papers/hypole-hyperproperty-guided-marl/skolemization.png)
+
+## 方法论：三步求解
+
+HyPOLE 的求解流程分为三个步骤，将符号化的 HyperLTL 满足问题转化为可优化的 MARL 问题。
+
+### 步骤一：Skolemization 消除量词交替
+
+给定 HyperLTL 公式 $\varphi = Q_1\tau_1 \ldots Q_n\tau_n. \psi(\tau_1, \ldots, \tau_n)$，对每个存在量词 $\exists\tau_i$，引入 Skolem 函数 $f_i: T^{|Q_\forall^i|} \to T$，将存在量词替换为依赖于前置全称量词的函数：
+
+$$\mathrm{Skolem}(\varphi) = \exists f_i. \forall\tau_j. \mathrm{Skolem}(\psi)$$
+
+其中 $Q_\forall^i$ 是 $\tau_i$ 之前所有全称量词的索引集合。Skolem 函数 $f_i$ 见证了存在量词的满足——即给定前序全称变量的轨迹，$f_i$ 产生一个响应轨迹使 $\psi$ 成立。
+
+### 步骤二：鲁棒性函数量化满足度
+
+将符号化的 HyperLTL 满足问题转化为连续优化问题。定义鲁棒性函数 $\rho: \mathrm{Traces}(\mathcal{Z}^*) \times \Psi \to \mathbb{R}$，为有限轨迹和 LTL 公式赋予实值分数。通过 **zip 操作**将多个轨迹组合为联合轨迹：
+
+$$\mathrm{zip}(\langle t_\ell \rangle_{\ell \in \{1,\ldots,n\}}) \triangleq \langle t_\ell(0) \rangle \cdots \langle t_\ell(k) \rangle$$
+
+优化目标为最大化鲁棒性值收敛到 $\rho_{\max}$ 的概率。**定理 5.1** 证明：若 $\Phi$ 是路径一致的，则优化 Skolem 化公式同样优化原始公式 $\varphi$ 的满足概率。
+
+### 步骤三：CTDE 学习去中心化策略
+
+将共享 POMDP 提升为 Dec-POMDP，使用鲁棒性值作为奖励信号，通过 CTDE 算法（VDN、QMIX、QTRAN）学习去中心化策略：
+
+- **全称量词策略** $\langle\pi_j\rangle_{j \in Q_\forall}$：直接基于局部观测历史 $h_j$ 决策
+- **存在量词策略** $\langle\pi_i\rangle_{i \in Q_\exists}$：输入为 Skolem 函数 $f_i$ 诱导的历史，需要训练编码器-解码器模型 $f_{\mathrm{enc\text{-}dec}}: \mathcal{H} \to \mathcal{Z}^{|Q_\forall^i|}$ 来预测前序全称变量的路径
+
+**定理 5.3** 证明：若 CTDE 算法学到的最优联合 $Q^\star$ 满足 IGM（Individual-Global-Max）性质，则诱导的策略元组优化 $\mathrm{Skolem}(\varphi)$ 的满足概率。
+
+## 实验结果
+
+实验在三大基准上进行：SMAC（9个场景）、MessySMAC（5个场景，含观测随机性）和 WildFire（4个场景），与 VDN、QMIX、QTRAN、IQL 四种基线对比。
+
+![实验结果](/images/papers/hypole-hyperproperty-guided-marl/results.png)
+
+### HyPOLE vs 基线方法
+
+| 场景 | 规约 | HyPOLE 最佳 | 基线最佳 | 提升 |
+|------|------|------------|---------|------|
+| SMAC corridor (super-hard) | $\varphi_{\mathrm{corridor}}$ | ~60% (QMIX) | <5% (QMIX) | **+55%** |
+| MessySMAC 8m | $\varphi_{\mathrm{focus\text{-}fire}}$ | ~25% (QTRAN) | ~0% | **+25%** |
+| MessySMAC MMM | $\varphi_{\mathrm{medivac}}$ | ~35% (VDN) | <10% (VDN) | **+25%** |
+| SMAC 3s5z | $\varphi_{\mathrm{focus\text{-}fire}}$ | ~80% (QMIX) | ~65% (QMIX) | **+15%** |
+
+在 corridor 地图上，HyPOLE+QMIX 的智能体在咽喉点形成防线保持阵型，而原始 QMIX 的智能体阵型崩溃被分割包围。
+
+### ∀∃ vs ∀∀ 规约对比
+
+在 MMM 场景（Medivac 与其他智能体存在依赖关系）中，将 Medivac 的量词从 ∀ 改为 ∃ 后：
+
+- **SMAC MMM**：∀∃+QMIX 胜率从 ~75% 提升至 ~90%
+- **MessySMAC MMM**：∀∃+QMIX 超越 ∀∀+QMIX 和原始基线
+- **WildFire 8P_3F2V**：∀∃+VDN 在 500K 步收敛，∀∀+VDN 需 800K 步
+
+### 战术表达能力
+
+HyperLTL 可以优雅地编码多种战术：
+
+- **集中火力**（$\varphi_{\mathrm{focus\text{-}fire}}$）：鼓励友军集中攻击同一敌人
+- **风筝战术**（$\varphi_{\mathrm{kite}}$）：仅在武器就绪时攻击
+- **防御战术**（$\varphi_{\mathrm{defense}}$）：鼓励友军后撤，实现零伤亡
+- **医疗支援**（$\varphi_{\mathrm{medivac}}$）：Medivac 向低血量友军移动治疗
+
+论文还发现，削弱规约（移除 $\varphi_{\mathrm{focus\text{-}fire}}$ 中的射击约束得到 $\varphi_{\mathrm{bad}}$）导致胜率接近零，说明**规约质量对 HyPOLE 性能至关重要**。
+
+## 启示与思考
+
+**超性质在 MARL 中的价值**体现在三个维度：数学严谨性避免了奖励塑形的模糊性；表达力可以同时定义目标和约束；战术可编码性使智能体行为可解释、可验证。∀∃ 量化捕获的智能体间依赖关系，是传统 ∀∀ 方法无法表达的关键语义。
+
+**Skolemization 的桥接作用**值得深思。将存在量词替换为 Skolem 函数，本质上是在说"存在一个策略可以响应任何对手行为"——这与博弈论中的反应策略概念相通。编码器-解码器模型在训练阶段预测对手路径、在执行阶段仅依赖局部观测的设计，巧妙地解决了去中心化执行与集中训练之间的信息不对称问题。
+
+**局限性同样显著**：撰写精确的 HyperLTL 规约是主要门槛，低质量规约会阻碍学习；当前仅支持离散动作空间（因依赖值函数 CTDE 的 IGM 性质）；对于无关系型依赖的简单任务，标准奖励设计可能更高效。
+
+**对形式化方法与 RL 融合的启示**：HyPOLE 代表了"规约引导学习"范式在多智能体部分可观测设定下的重要进展。与 ACC-MARL 使用 DFA 表示任务不同，HyPOLE 使用 HyperLTL 表达**多轨迹间的关系约束**——前者关注任务的条件化执行，后者关注智能体间的行为协调。两者互补，共同指向一个趋势：形式化规约正从 RL 的"约束"转变为"引导信号"，在保持数学严谨性的同时提升学习效率。
+
+## 参考链接
+
+- **论文**：[arXiv:2606.30966](https://arxiv.org/abs/2606.30966)
+- **作者**：Arshia Rafieioskouei, Tzu-Han Hsu, Matthew Lucas, Borzoo Bonakdarpour (Michigan State University)
+- **前序工作 HYPRL**：Hsu et al., "HYPRL: Reinforcement Learning of Control Policies for Hyperproperties", ICML 2025
+- **代码基础**：基于 PyMARL 框架实现a:["$","$L1b",null,{"paper":{"slug":"hypole-hyperproperty-guided-marl","title":"超性质引导的部分可观测多智能体强化学习","originalTitle":"HyPOLE: Hyperproperty-Guided Multi-Agent Reinforcement Learning under Partial Observation","excerpt":"Michigan State University 团队提出 HyPOLE 框架，利用 HyperLTL 超性质作为规约语言引导部分可观测多智能体强化学习。通过 Skolemization 消除量词交替、鲁棒性函数量化规约满足度、CTDE 算法学习去中心化策略，在 SMAC、MessySMAC 和 WildFire 基准上显著优于基线方法。","date":"2026-07-20","coverImage":"$undefined","architectureImage":"/images/papers/hypole-hyperproperty-guided-marl/architecture.png","featured":false,"draft":false,"authors":["Arshia Rafieioskouei","Tzu-Han Hsu","Matthew Lucas","Borzoo Bonakdarpour"],"year":2026,"venue":"arXiv preprint (2026)","tags":["AI解读","多智能体强化学习","形式化方法","超性质","HyperLTL","部分可观测"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心问题-vs-","text":"核心问题：∀∀ vs ∀∃","level":2},{"id":"方法论三步求解","text":"方法论：三步求解","level":2},{"id":"步骤一skolemization-消除量词交替","text":"步骤一：Skolemization 消除量词交替","level":3},{"id":"步骤二鲁棒性函数量化满足度","text":"步骤二：鲁棒性函数量化满足度","level":3},{"id":"步骤三ctde-学习去中心化策略","text":"步骤三：CTDE 学习去中心化策略","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"hypole-vs-基线方法","text":"HyPOLE vs 基线方法","level":3},{"id":"-vs--规约对比","text":"∀∃ vs ∀∀ 规约对比","level":3},{"id":"战术表达能力","text":"战术表达能力","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"1 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"超性质引导的部分可观测多智能体强化学习 | 博客"}],["$","meta","1",{"name":"description","content":"Michigan State University 团队提出 HyPOLE 框架，利用 HyperLTL 超性质作为规约语言引导部分可观测多智能体强化学习。通过 Skolemization 消除量词交替、鲁棒性函数量化规约满足度、CTDE 算法学习去中心化策略，在 SMAC、MessySMAC 和 WildFire 基准上显著优于基线方法。"}],["$","meta","2",{"property":"og:title","content":"超性质引导的部分可观测多智能体强化学习"}],["$","meta","3",{"property":"og:description","content":"Michigan State University 团队提出 HyPOLE 框架，利用 HyperLTL 超性质作为规约语言引导部分可观测多智能体强化学习。通过 Skolemization 消除量词交替、鲁棒性函数量化规约满足度、CTDE 算法学习去中心化策略，在 SMAC、MessySMAC 和 WildFire 基准上显著优于基线方法。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/hypole-hyperproperty-guided-marl/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"超性质引导的部分可观测多智能体强化学习"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"超性质引导的部分可观测多智能体强化学习"}],["$","meta","13",{"name":"twitter:description","content":"Michigan State University 团队提出 HyPOLE 框架，利用 HyperLTL 超性质作为规约语言引导部分可观测多智能体强化学习。通过 Skolemization 消除量词交替、鲁棒性函数量化规约满足度、CTDE 算法学习去中心化策略，在 SMAC、MessySMAC 和 WildFire 基准上显著优于基线方法。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
