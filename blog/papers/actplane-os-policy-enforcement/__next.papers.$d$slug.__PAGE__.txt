@@ -1,0 +1,172 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T22ed,## 论文概览
+
+AI Agent 的能力边界正在从纯文本交互扩展到文件系统操作、进程执行、网络通信等系统级动作。当前主流的 Agent 安全方案依赖 LLM 自审或应用层 Guardrail，但这些方法存在两个结构性缺陷：一是 LLM 的决策过程对系统层不可见，Guardrail 无法感知 Agent 已执行的副作用；二是跨事件的因果追踪缺失——Agent 在第 N 步读取了敏感文件，第 M 步才发起危险操作，两者之间的数据流关系在现有框架中无从表达。
+
+ActPlane 来自 UC Santa Cruz、Virginia Tech、HKUST 和阿里巴巴的研究团队（与 [AgentSight](/blog/papers/agentsight-ebpf-observability) 同一作者群），提出了一个三层方案：先用实证研究刻画 Agent 安全策略的真实形态，再设计一套可编程 DSL 将策略编译到 eBPF 内核钩子，最后通过信息流控制（IFC）标签实现跨事件追踪。
+
+![ActPlane 实证研究数据](/images/papers/actplane-os-policy-enforcement/empirical_study.png)
+
+## 核心创新
+
+### 1. 64 项目实证研究：策略的结构性特征
+
+论文的第一个贡献不是系统设计，而是一份覆盖 64 个真实 Agent 项目的策略实证研究。研究团队从 GitHub、论文和产品文档中收集了 2,116 条自然语言安全策略语句，逐一标注其执行层级、上下文依赖和跨事件需求。
+
+关键发现：
+
+| 维度 | 结果 | 含义 |
+|------|------|------|
+| 策略占比 | 64% 的语句是策略性约束 | Agent 文档中超过一半内容涉及行为约束 |
+| OS 可观测性 | 83% 可由操作系统层观测 | 绝大多数策略映射到 exec/open/read/write/connect 等系统调用 |
+| 跨事件追踪 | 16% 需要跨事件因果推理 | 单事件检查不够，需要数据流追溯 |
+| 非自包含 | 73.6% 需要运行时上下文 | 策略无法静态判定，必须依赖运行时状态 |
+
+这组数据的核心启示是：Agent 安全策略的主要观测面在操作系统层，而非 LLM 内部。这为 eBPF 方案提供了实证基础。同时，73.6% 的非自包含率意味着策略引擎不能是简单的规则匹配器——它必须维护运行时状态。
+
+### 2. Source-to-Target 策略 DSL
+
+ActPlane 的策略 DSL 采用 `source -> target` 约束模型，支持 per-event（单事件）和 cross-event（跨事件）两种规则模式：
+
+```
+# Per-event: 直接拦截
+kill exec "git" "commit" if AGENT
+
+# Cross-event: 带条件追溯
+kill exec "git" "commit" if AGENT
+  unless after exec "go" "test" exits 0
+  since write "**/*.go"
+```
+
+上述规则表示：当 Agent 尝试执行 `git commit` 时，除非此前执行过 `go test` 且退出码为 0，且在此期间有过对 `.go` 文件的写操作，否则终止该进程。
+
+DSL 支持三种执行效果：
+- **Block**：同步拒绝，返回错误码给调用方
+- **Kill**：终止整个进程树，防止级联副作用
+- **Notify**：不阻止执行，但将检测结果转化为语义反馈引导 Agent 调整行为
+
+### 3. eBPF + IFC 标签传播引擎
+
+![ActPlane 系统架构](/images/papers/actplane-os-policy-enforcement/architecture.png)
+
+ActPlane 的执行引擎由 Rust 编译器（3.2K LoC）和 eBPF 内核程序（1.8K LoC BPF C）组成。编译器将 DSL 规则编译为两组产物：BPF-LSM 钩子程序（挂载到 exec、open、read、write、unlink、connect、fork、exit 八个钩子点）和用户空间策略状态机。
+
+信息流控制（IFC）是跨事件追踪的核心机制。ActPlane 使用 64 位位掩码（bitmask）作为标签，当数据从 source 流向 target 时标签单调递增——即 target 的标签是 source 标签的超集。这意味着：
+
+- Agent 读取的文件被标记为 `AGENT_READ`
+- 该数据通过管道传递给子进程时，子进程继承 `AGENT_READ` 标签
+- 当子进程尝试网络连接时，策略引擎可以检查标签是否包含受限标记
+
+此外，ActPlane 引入了**层级策略域（Hierarchical Policy Domains）**机制：子域继承父域的所有规则，且不可削弱继承的约束。这类似于 Linux 的 capabilities 继承模型，确保安全策略在 Agent 委托任务给子 Agent 时不会降级。
+
+## 方法论
+
+### 策略编译流程
+
+```
+DSL 规则文本
+    |
+    v
+[词法/语法分析] -- Rust 编译器
+    |
+    v
+[AST -> 中间表示]
+    |
+    +---> BPF C 代码 (内核钩子程序)
+    |         |
+    |         v
+    |     [Clang 编译为 BPF 字节码]
+    |         |
+    |         v
+    |     [挂载到 BPF-LSM 钩子点]
+    |
+    +---> Rust 用户空间模块 (状态管理 + 语义反馈)
+```
+
+编译器需要处理的关键挑战是跨事件规则的**时间窗口管理**。`since` 和 `after` 子句要求引擎维护一个时间衰减的状态缓存。ActPlane 使用环形缓冲区存储最近的事件序列，通过 IFC 标签的位掩码匹配来判断当前事件是否满足条件链。
+
+### 语义反馈机制
+
+Notify 效果是 ActPlane 区别于传统 OS 安全方案的关键创新。当检测到策略违规但未达到需要 kill 的严重程度时，ActPlane 将内核检测结果转化为 Agent 可理解的自然语言反馈：
+
+```
+[内核检测] exec "rm" "/etc/passwd" 被 Block
+    |
+    v
+[语义转换] "尝试删除系统文件 /etc/passwd 被拒绝。
+            该操作不在当前任务授权范围内。"
+    |
+    v
+[注入 Agent] Agent 收到反馈，调整后续行为
+```
+
+这种机制将内核层的硬约束与 Agent 层的软引导结合，实验证明语义反馈能将合规率从 75.8% 提升至 97.7%。
+
+## 实验结果
+
+![ActPlane 实验结果](/images/papers/actplane-os-policy-enforcement/results.png)
+
+论文围绕 5 个研究问题（RQ1-RQ5）进行评估：
+
+### RQ1: DSL 表达能力
+
+607 条 OS 可执行策略全部被成功翻译为 ActPlane DSL，翻译成本约 $0.028/策略（使用 GPT-4o 辅助翻译）。这验证了 DSL 的表达完备性。
+
+### RQ2: 决策合规率
+
+| 方法 | DCR (%) |
+|------|---------|
+| ActPlane + 语义反馈 | **97.7** |
+| ActPlane (基础) | **75.8** |
+| Naive Guardrail | 53.7 |
+| Prompt Only | 45.3 |
+
+ActPlane 基础模式已比最强基线高 22pp，加上语义反馈后接近 98%。间接路径（通过子进程或管道间接触发违规）的检测率为 77.2%，这在传统应用层方案中几乎不可能实现。
+
+### RQ3: 性能开销
+
+Agent 工作负载的开销仅 1.9%，内核构建场景为 8.4%。系统调用（exec）增加约 2.3% 延迟，文件 I/O 约 1.5%。考虑到这是一套内核级实时策略引擎，该开销水平在可接受范围内。
+
+### RQ4: 编码任务质量
+
+使用 OctoBench（21 个编码任务）评估，ActPlane 管控下的 Agent 在 user-query reward 指标上提升了 9.9 个百分点。这表明安全策略不会显著损害 Agent 的任务完成质量，反而在某些场景下通过约束 Agent 行为边界提升了产出质量。
+
+### RQ5: 安全防护
+
+在 OpenAgentSafety 基准的 361 个安全测试任务中，ActPlane 防止了 74% 的不安全行为。剩余 26% 主要是需要语义理解才能判定的高阶攻击（如通过合法工具组合实现非法目的），这些场景需要更强的 LLM 推理能力与内核检测的协同。
+
+## 启示与思考
+
+### OS 层 vs LLM 层的分工
+
+ActPlane 的实证研究给出了一个清晰的数据：83% 的策略可由 OS 观测。但这不意味着 LLM 层不重要——恰恰相反，剩余 17% 不可观测的策略（涉及推理意图、内容理解）需要 LLM 层的补充。ActPlane 的语义反馈机制正是连接两层的桥梁：OS 层负责精确的执行拦截，LLM 层负责意图理解和行为调整。
+
+### IFC 标签的扩展性
+
+当前 64 位位掩码设计在理论上支持 64 个独立标签源。对于大多数 Agent 场景这已足够，但随着多租户 Agent 系统的普及（一个 Agent 可能同时处理多个用户的敏感数据），标签空间可能成为瓶颈。论文未讨论标签回收或压缩策略，这是一个值得后续探索的方向。
+
+### 与 AARM 框架的互补性
+
+从 Agent 安全架构设计角度看，ActPlane 实现的正是 AARM 三层架构中的**执行隔离**层——通过 OS 级策略引擎确保 Agent 的执行行为不超出授权边界。其 IFC 标签传播机制与 AgentMoss 的污点分析 + 数据血缘追踪在理念上高度一致，区别在于 ActPlane 将追踪下沉到内核层，具有更强的不可绕过性。语义反馈机制则与 AARM 的**副作用验证**层互补——将检测结果反馈给 Agent 进行自我修正。
+
+### 局限性
+
+论文坦承了几点局限：一是 DSL 目前不支持时间窗口的嵌套表达式；二是策略域的继承模型尚未在大规模多 Agent 系统中验证；三是 26% 的未防止不安全行为暴露了纯系统调用级检测在语义理解上的天花板。这些问题指向一个明确的方向：OS 级硬约束 + LLM 级软推理的深度融合。0:{"buildId":"Tk968QLbIhGxr47w2ycYE","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"actplane-os-policy-enforcement","title":"ActPlane: 基于 eBPF 的 OS 级 Agent 策略可编程执行框架","originalTitle":"ActPlane: Programmable OS-Level Policy Enforcement for Agent Harnesses","excerpt":"ActPlane 通过对 64 个真实 Agent 项目的实证研究揭示了 Agent 安全策略的结构性特征——83% 的策略可由操作系统层面观测，但 73.6% 需要运行时上下文。基于此，论文设计了一套 source-to-target 的策略 DSL，经 Rust 编译器编译为 eBPF/BPF-LSM 内核钩子程序，结合信息流控制标签实现跨事件数据流追踪。在 5 个研究问题中，ActPlane 实现了 75.8% 的决策合规率（基线仅 45.3%-53.7%），语义反馈将合规率推至 97.7%，而 Agent 工作负载开销仅 1.9%。","date":"2026-07-13","architectureImage":"/images/papers/actplane-os-policy-enforcement/architecture.png","featured":false,"draft":false,"authors":["Yusheng Zheng (UC Santa Cruz)","Yuchen Zhang (Virginia Tech)","Tong Yu (eunomia-bpf)","Xiao Zheng (HKUST)","Andi Quinn (UC Santa Cruz)","Wenwen Wang (Virginia Tech)","Xiaowei Huang (HKUST)","Shiqing Ma (UC Santa Cruz)","Weiheng Tang (Alibaba Group)"],"year":2026,"venue":"arXiv 2606.25189","tags":["AI解读","Agent 规范与安全","Agent 架构设计","eBPF","Runtime Security","Information Flow Control"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-64-项目实证研究策略的结构性特征","text":"1. 64 项目实证研究：策略的结构性特征","level":3},{"id":"2-source-to-target-策略-dsl","text":"2. Source-to-Target 策略 DSL","level":3},{"id":"3-ebpf--ifc-标签传播引擎","text":"3. eBPF + IFC 标签传播引擎","level":3},{"id":"方法论","text":"方法论","level":2},{"id":"策略编译流程","text":"策略编译流程","level":3},{"id":"语义反馈机制","text":"语义反馈机制","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"rq1-dsl-表达能力","text":"RQ1: DSL 表达能力","level":3},{"id":"rq2-决策合规率","text":"RQ2: 决策合规率","level":3},{"id":"rq3-性能开销","text":"RQ3: 性能开销","level":3},{"id":"rq4-编码任务质量","text":"RQ4: 编码任务质量","level":3},{"id":"rq5-安全防护","text":"RQ5: 安全防护","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"os-层-vs-llm-层的分工","text":"OS 层 vs LLM 层的分工","level":3},{"id":"ifc-标签的扩展性","text":"IFC 标签的扩展性","level":3},{"id":"与-aarm-框架的互补性","text":"与 AARM 框架的互补性","level":3},{"id":"局限性","text":"局限性","level":3}],"readingTime":"8 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
