@@ -1,0 +1,140 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/9bd72eaba06a6b29.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T2f99,## 论文概览
+
+当 AI Agent 自主替用户执行任务时——订机票、查日历、管理财务——它需要访问各种用户数据。问题在于：谁来决定 Agent 能访问什么数据？现有的权限模型从移动平台继承而来，分为安装时权限（假设资源需求预先已知）和运行时权限（每次访问弹出请求）。这两种模型都无法适配 Agent 的自动化执行范式：Agent 的行为由 LLM 动态决定，数据需求在运行时才能确定，而频繁弹窗会彻底破坏自动化体验。
+
+这篇被 IEEE S&P 2026 录用的论文提出了一个直接的问题：能否让一个"权限助手"学习用户的权限偏好，然后自动替用户做出数据访问决策？答案是肯定的，但前提是先理解用户的决策过程。
+
+论文的核心贡献分三步：首先，设计了一个情境化用户研究（205 名参与者，8 个领域，21 个工具，20 个权限问题），系统性地识别影响用户权限决策的因素；其次，从用户研究中提炼出关键洞察——用户的权限偏好在上下文内保持一致、跨上下文可迁移、且与其他用户相似；最后，将这些洞察转化为一个混合机器学习框架（LLM 上下文学习 + 协同过滤），实现了 85.1% 的整体准确率和 94.4% 的高置信预测准确率。
+
+## 核心创新
+
+### 情境化用户研究：从理解到预测
+
+![AI Agent 自动化权限管理架构](/images/papers/automating-data-access-permissions-ai-agents/architecture.png)
+
+论文的设计思路是"先理解，再预测"。用户研究采用情境化方法（vignette-based study），让参与者沉浸在一个"训练未来个人助手"的场景中。每个场景包含三个步骤：(1) 选择正确的工具集、(2) 选择正确的数据集、(3) 做出数据共享权限决策。权限选项有四个级别——总是允许、允许但下次询问、拒绝但下次询问、从不分享——与 OpenAI Custom GPTs 的权限模型对齐。
+
+研究涵盖 8 个领域（娱乐、健康健身、智能家居、旅行、购物、工作效率、社交、金融）和 21 个工具，还故意在 25% 的权限问题中混入不必要的敏感数据类型，以测试用户能否识别 Agent 的"错误"。
+
+### 三大关键发现
+
+![用户研究结果](/images/papers/automating-data-access-permissions-ai-agents/user_study.png)
+
+**发现一：过度授权远比欠授权普遍。** 90% 的参与者存在过度授权行为，而仅 15.4% 存在欠授权。这与移动平台的经验一致——用户因决策疲劳或理解不足而过度授权。但当 Agent 混入不必要的敏感数据时，用户能够识别并纠正：从不表达"从不分享"的参与者从 32% 降至 21.2%。
+
+**发现二：偏好在上下文内保持一致，跨上下文可迁移。** 46.3% 的参与者在所有测试领域中的权限标准差低于 0.1（高度一致），73.4% 低于 0.2（基本一致）。69.7% 的用户对在 60% 以上的数据类型上偏好相似。这意味着即使用户只在少数几个领域提供了权限历史，也有可能预测其在其他领域的行为。
+
+**发现三：偏好因领域和数据类型而异。** 娱乐领域有 55.6% 的"总是允许"率，而金融领域仅 22.2%。高方差数据类型包括账户凭据、就业信息、驾照号码（标准差约 0.49）；低方差数据类型包括音乐收听历史、兴趣爱好（标准差约 0.12）。金融领域的"从不分享"率（16.9%）远高于娱乐领域（2.9%），说明用户对敏感数据保持高度警惕。
+
+### 混合预测模型：IC 学习 + 协同过滤
+
+基于上述发现，论文设计了一个混合框架，结合两种互补的技术：
+
+**LLM 上下文学习（IC）**：使用 OpenAI o3-mini 推理模型，通过角色提示、用户人口统计信息（年龄、教育、性别）、自我报告指标（AI 熟悉度、隐私意识）和权限历史来条件化 LLM。选择上下文学习的理由是：(1) 每个用户的权限历史有限，LLM 在少样本场景下表现优异；(2) 权限决策需要覆盖未见过的数据类型，LLM 无需重训练即可泛化。
+
+**协同过滤（CF）**：使用 LightGCN 图卷积网络，将用户-权限偏好建模为邻接矩阵。用户和数据权限请求（含上下文）作为节点，观察到的偏好作为边。通过迭代聚合邻居信息学习嵌入，最终用用户和请求嵌入的点积预测偏好。选择协同过滤是因为它可以从相似用户的偏好中学习，弥补单个用户历史稀疏的问题。
+
+## 方法论
+
+### 威胁模型
+
+论文假设权限助手本身是可信的（属于可信计算基 TCB），攻击面来自不可信的第三方工具、LLM 的错误或幻觉、以及用户的隐私意识不足。权限助手的部署安全（沙箱/TEE）、恶意数据流检测和 LLM 指令控制生成不在本文范围内，但论文指出这些可以基于已有工作扩展。
+
+### 权限选项设计
+
+| 选项 | 含义 | 对应行为 |
+|------|------|---------|
+| 总是允许 | 自动共享此数据类型 | 学习用户偏好 |
+| 允许但询问 | 本次共享，下次再问 | 不学习 |
+| 拒绝但询问 | 本次不共享，下次再问 | 不学习 |
+| 从不分享 | 自动拒绝此数据类型 | 学习用户偏好 |
+
+只有"总是允许"和"从不分享"两种极端决策被用于学习用户偏好，中间两种被视为不确定性表达。
+
+### 评估方法
+
+采用五折交叉验证，每折包含一组权限问题，确保测试数据从未在训练中使用。评估指标包括准确率、精确率、召回率、F1、假正率（FPR）和假负率（FNR）。关键概念"覆盖率"（coverage）指模型能以高于阈值置信度做出预测的权限请求比例——覆盖率越低，需要用户手动决策的场景就越多。
+
+## 实验结果
+
+![模型性能结果](/images/papers/automating-data-access-permissions-ai-agents/results.png)
+
+### 模型对比
+
+| 模型 | 准确率 | 精确率 | 召回率 | F1 | FPR | FNR |
+|------|--------|--------|--------|-----|-----|-----|
+| 协同过滤 (CF) | 83.3% | 91.9% | 83.3% | 87.4% | 16.7% | 16.7% |
+| 上下文学习 (IC) | 84.4% | 91.5% | 85.4% | 88.3% | 17.9% | 14.6% |
+| **混合 (IC+CF)** | **85.1%** | **92.8%** | **85.2%** | **88.8%** | **15.2%** | **14.8%** |
+
+混合模型在所有指标上均优于单一模型。在高置信阈值下（0.91），混合模型达到 94.4% 准确率，但覆盖率降至 25.9%——即仅对约四分之一的权限请求自动决策，其余仍需用户介入。
+
+### 权限历史的影响
+
+| 历史比例 | 查询数 | 准确率 | F1 |
+|----------|--------|--------|-----|
+| 0% | 0 | 66.9% | 73.4% |
+| 25% | 1-4 | 77.7% | 83.1% |
+| 50% | 2-8 | 82.1% | 86.6% |
+| 75% | 3-12 | 83.7% | 87.8% |
+| 100% | 4-16 | 85.1% | 88.8% |
+
+从零历史到 1-4 条历史，准确率跃升 10.8 个百分点——这是最关键的实践洞察。它意味着权限助手在冷启动阶段就有可用性：即使用户刚注册只做过几次权限决策，模型就已经能提供有意义的预测。随着用户自然积累更多历史，模型持续自我改善。
+
+### 用户级性能分析
+
+35.4% 的用户达到 90% 以上准确率，12.7% 达到完美准确率。70.4% 的用户精确率不低于 90%，说明模型在预测"允许共享"时相当可靠。但召回率方面，仅 34.8% 的用户达到 90% 以上——模型倾向于保守，宁可误拒也不误允。
+
+底 20% 用户的准确率（69.7%）与顶 20%（97.6%）差距显著。分析发现，高准确率用户报告略低的 AI 信任、更高的 AI 使用频率和略低的隐私关注，但这些差异在统计上不显著（Mann-Whitney U 检验 p 值 0.07-0.95）。真正影响的是权限历史数量和 CF 推荐质量。
+
+### 上下文级性能
+
+| 领域 | 准确率 | 特征 |
+|------|--------|------|
+| 工作效率 | 87.4% | 偏好方差低 |
+| 健康健身 | 87.1% | 偏好方差低 |
+| 娱乐 | 86.8% | 偏好方差低 |
+| 购物 | 84.3% | 中等方差 |
+| 金融 | 81.5% | FNR 最高(28.3%)，模型最保守 |
+| 智能家居 | 80.1% | 偏好方差最高 |
+
+金融领域的 FNR 高达 28.3%，说明模型在敏感领域倾向于"宁可误拒"——这是一个安全友好的偏差。相比之下，社交领域的 FPR 最高（23.3%），模型在低敏感领域更宽松。
+
+## 启示与思考
+
+**权限管理需要为 Agent 重新设计。** 这篇论文的核心论点不是说现有权限模型不好，而是说它们不够用。移动平台的权限模型假设应用行为是可预测的（权限在安装时或首次使用时确定），但 Agent 的行为由 LLM 动态生成，数据需求在运行时才确定。传统的"弹窗-决策"模型在 Agent 场景下会导致两种极端：要么用户被频繁打断（破坏自动化体验），要么用户一次性授权所有数据（丧失控制）。论文提出的"学习+预测"范式提供了一条中间路径：从用户少量决策中学习偏好，然后自动处理大部分请求，仅在高不确定性时才询问用户。
+
+**上下文完整性理论的延续。** 论文的用户研究设计深受上下文完整性理论（Contextual Integrity）影响——隐私期望取决于数据发送者、数据接收者、数据类型和信息使用目的的特定组合。研究发现用户在金融领域比娱乐领域更保守、对账户凭据比对音乐历史更谨慎，这些都验证了上下文敏感性的核心地位。但论文的新贡献在于量化了这种上下文敏感性的可预测性：73.4% 的用户跨领域偏好标准差低于 0.2，69.7% 的用户对在 60% 以上数据类型上偏好相似。这些数字说明，尽管用户的偏好因上下文而异，但这种"异"是有规律可循的。
+
+**冷启动问题的实用解法。** 1-4 条权限历史就能提升 10.8% 准确率，这个发现对实际部署极为重要。它意味着权限助手不需要等待用户积累大量历史才能开始工作——在用户的前几次交互中就已经能提供有意义的预测。这与 [Cognitive Firewall](/papers/cognitive-firewall-llm-safety/) 的"升级决策规则"形成互补：Cognitive Firewall 在生成前用多门控判断请求是否安全，而权限助手在安全的前提下判断用户是否愿意共享——前者解决"应不应该"，后者解决"愿不愿意"。
+
+**局限性与未来方向。** 论文坦诚地列出了几个关键限制。首先，所有数据来自情境化研究而非真实部署，用户在受控环境中的行为可能与实际使用不同。其次，权限助手本身是 8B 级别的 LLM，可能受到提示注入攻击——虽然论文指出协同过滤对确定性数据类型提供了一定的鲁棒性，但一旦请求被映射到错误的标准标签，预测就会失效。第三，用户偏好会随时间变化（信任关系变化、生活情境变化），论文的模型尚未设计偏好漂移检测和更新机制。最后，论文将 UI/UX 设计（如何呈现权限请求、如何允许用户撤销和反馈）留给未来工作，但这些对于实际可用性至关重要。
+
+**与 Agent 安全生态的关联。** 这篇论文填补了 Agent 安全研究中的一个重要缺口。已有工作如 [ActPlane](/papers/actplane-os-policy-enforcement/) 关注的是 OS 层的策略执行（Agent 能做什么），[AgentFlow](/papers/agentflow-adg-static-analysis/) 关注的是静态分析（Agent 会做什么），而本文关注的是一个更细粒度的问题：在 Agent 决定要访问某项数据时，用户是否同意？三者构成了从静态分析到运行时执行再到用户授权的完整安全链。
+
+## 参考链接
+
+- 论文原文：[arXiv 2511.17959](https://arxiv.org/abs/2511.17959)
+- 代码与数据：[github.com/llm-platform-security/ai-agent-permissions](https://github.com/llm-platform-security/ai-agent-permissions)
+- 关联论文：[Cognitive Firewall](/papers/cognitive-firewall-llm-safety/) — 生成前安全门控
+- 关联论文：[ActPlane](/papers/actplane-os-policy-enforcement/) — OS 层策略执行
+- 关联论文：[AgentFlow](/papers/agentflow-adg-static-analysis/) — Agent 程序静态分析0:{"buildId":"E57wpfpQPX91eHw1wjbmG","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"automating-data-access-permissions-ai-agents","title":"AI Agent 数据访问权限的自动化管理","originalTitle":"Towards Automating Data Access Permissions in AI Agents","excerpt":"AI Agent 自主访问用户数据带来透明度与控制问题。本文通过对 205 名用户的情境化研究，发现用户权限偏好在上下文内保持一致、跨上下文可迁移、且与其他用户相似。基于此构建混合权限预测模型（LLM 上下文学习 + 协同过滤），整体准确率 85.1%，高置信预测达 94.4%，仅需 1-4 条权限历史即可显著提升 10.8%。","date":"2026-07-25","architectureImage":"/images/papers/automating-data-access-permissions-ai-agents/architecture.png","featured":false,"draft":false,"authors":["Yuhao Wu","Ke Yang","Franziska Roesner","Tadayoshi Kohno","Ning Zhang","Umar Iqbal"],"year":2026,"venue":"IEEE S&P 2026","tags":["AI解读","AI Agent","权限管理","隐私安全","用户研究","访问控制"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"情境化用户研究从理解到预测","text":"情境化用户研究：从理解到预测","level":3},{"id":"三大关键发现","text":"三大关键发现","level":3},{"id":"混合预测模型ic-学习--协同过滤","text":"混合预测模型：IC 学习 + 协同过滤","level":3},{"id":"方法论","text":"方法论","level":2},{"id":"威胁模型","text":"威胁模型","level":3},{"id":"权限选项设计","text":"权限选项设计","level":3},{"id":"评估方法","text":"评估方法","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"模型对比","text":"模型对比","level":3},{"id":"权限历史的影响","text":"权限历史的影响","level":3},{"id":"用户级性能分析","text":"用户级性能分析","level":3},{"id":"上下文级性能","text":"上下文级性能","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"12 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
