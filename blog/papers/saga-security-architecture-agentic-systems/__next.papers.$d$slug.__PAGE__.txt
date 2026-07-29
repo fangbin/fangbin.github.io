@@ -1,0 +1,158 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T2595,## 论文概览
+
+| 项目 | 内容 |
+|------|------|
+| **标题** | SAGA: A Security Architecture for Governing AI Agentic Systems |
+| **作者** | Georgios Syros, Anshuman Suri, Jacob Ginesin, Cristina Nita-Rotaru, Alina Oprea |
+| **机构** | Northeastern University |
+| **会议** | NDSS 2026 |
+| **PDF** | [NDSS 2026 s869](https://www.ndss-symposium.org/wp-content/uploads/2026-s869-paper.pdf) |
+| **代码** | [github.com/gsiros/saga](https://github.com/gsiros/saga) |
+
+随着 LLM Agent 从单一工具调用走向跨系统、跨组织的协同，OpenAI 等机构的治理白皮书已经把"身份、认证、授权、发现、用户可控"列为 Agentic 系统的基础安全需求。SAGA 这篇工作的价值在于：它不只是提出一个安全概念，而是给出了**完整的协议规范、形式化证明和可运行的实现**，并把 Provider 中心治理、密码学访问控制令牌、细粒度 Contact Policy 三者整合起来。
+
+## 核心创新
+
+### 1. Provider 治理的三层身份模型
+
+SAGA 把系统参与者明确划分为 **User（用户） / Agent（代理） / Provider（治理中心）** 三层：
+
+- User 通过 OpenID Connect 等机制向 Provider 注册，拥有自己名下所有 Agent 的生命周期控制权；
+- Agent 作为运行在用户设备上的自治软件实体，既可以是通信的发起方，也可以是接收方；
+- Provider 维护 **User Registry $D_U$** 与 **Agent Registry $D_A$**，负责身份绑定、发现、策略存储和一次性密钥 (OTK) 分发。
+
+这一设计的关键是：用户始终掌握自己 Agent 的注册、策略更新与撤销权，而不是把 Agent 交给某个平台任意管理。
+
+### 2. 基于 OTK 与 DH 的访问控制令牌
+
+SAGA 的访问控制不是简单白名单，而是一个带预算的密码学令牌机制。每个接收方 Agent 上传一批一次性公钥 $OTK_i^A$ 给 Provider；当发起方 Agent B 想联系接收方 Agent A 时，从 Provider 取走一个 OTK，然后双方通过 Diffie-Hellman 协商出共享密钥：
+
+$$
+DH_A = DH(SOTK_i^A, PAC_B), \quad DH_B = DH(SAC_B, OTK_i^A)
+$$
+
+$$
+SDHK = KDF(DH_A) = KDF(DH_B)
+$$
+
+接收方用这个共享密钥加密 Access Control Token 并发给发起方。Token 里带有过期时间戳和最大请求次数 $Q_{\max}$，发起方之后把它附加在 TLS 消息上即可与接收方直接通信，不必再经过 Provider。这种"重注册、轻通信"的架构把安全和性能做了一个显式 trade-off。
+
+### 3. 形式化验证与真实部署评估
+
+论文用 **PROVERIF** 在 Dolev-Yao 模型下证明了三个关键性质：Access Token 的机密性、Agent 与 Provider 之间的认证、Agent 与 Agent 之间的认证。同时作者实现了完整原型，在 Calendar、Email、Writing 三类真实 Agent 任务上，使用 GPT-4.1-mini、GPT-4.1 和本地 Qwen-2.5 72B 三种后端，并在 US-East / US-West / Europe / Asia 多个地理位置之间部署测试。
+
+## 系统架构与协议流程
+
+![SAGA 系统架构总览](/images/papers/saga-security-architecture-agentic-systems/architecture.png)
+
+上图展示了 SAGA 的宏观流程。用户首先在 Provider 注册，再为自己的 Agent 注册并提交 TLS 证书、长期访问控制密钥 $PAC_A/SAC_A$ 和一批一次性公钥 $OTK_i^A$ 以及 Contact Policy $CP_A$。之后两 Agent 的通信遵循"查询—协商—令牌—直连"四步：
+
+![SAGA Agent 间通信协议流程](/images/papers/saga-security-architecture-agentic-systems/protocol-flow.png)
+
+1. 发起方从 Provider 请求接收方的元数据和一个未使用的 OTK；
+2. Provider 返回元数据、签名、Contact Policy，并扣除对应 OTK 预算；
+3. 双方建立 TLS，完成 DH 密钥交换，接收方用共享密钥加密 Access Token；
+4. 发起方附带 Token 与接收方直接 TLS 通信；Token 过期或达到 $Q_{\max}$ 后，重新向 Provider 申请 OTK。
+
+Contact Policy 采用**最具体规则优先**的匹配策略。例如一条策略可以先给 `alice@company.com:calendar_agent` 分配 15 个 OTK，再给 `*@company.com:calendar_agent` 分配 10 个 OTK。当发起方匹配多条规则时，取最具体那条的预算。用户也可以随时把某条规则设为 $-1$ 来直接阻断某个 Agent。
+
+![Access Control Token 生命周期](/images/papers/saga-security-architecture-agentic-systems/token-lifecycle.png)
+
+Token 的生命周期是 SAGA 安全与性能的调节旋钮。$Q_{\max}$ 越大、生命周期 $L$ 越长，发起方与 Provider 的交互越少、系统容量越高，但 Agent 被攻陷后可被恶意利用的窗口也越大。
+
+## 威胁模型
+
+论文定义了 6 类攻击场景，基本覆盖了当前 Agent 生态的主要风险：
+
+| 编号 | 威胁 | 说明 |
+|------|------|------|
+| C1 | 冒名注册 | 攻击者伪装成其他用户注册 Agent |
+| C2 | 合法 Agent 被攻陷 | Agent 与外部资源交互时被植入恶意行为 |
+| C3 | 自我复制 | 恶意 Agent 未经 Provider 注册就在新设备上复制子 Agent |
+| C4 | 密钥/Token 共享 | 恶意 Agent 把密钥或 Token 分享给另一个受控 Agent |
+| C5 | Sybil 攻击 | 攻击者创建大量身份 |
+| C6 | 网络中间人 | 攻击者可监听、拦截、重放、合成消息 |
+
+SAGA 通过 X.509 证书、用户签名、Provider 侧 OTK 计数器、DH 共享密钥、Token 过期与请求限制等机制分别应对。形式化验证覆盖了 Dolev-Yao 攻击者模型，相当于把 C6 的能力编码进了证明。
+
+## 实验与评估
+
+### 任务完成开销
+
+论文在三种常见 Agent 任务上测量了 SAGA 引入的额外开销（Agent A 位于亚洲、Agent B 位于欧洲、Provider 位于 US-West，$Q_{\max}=10$）：
+
+| 任务 | LLM 后端 | 标准耗时 (s) | SAGA 开销 (s) |
+|------|----------|--------------|---------------|
+| Calendar | GPT-4.1-mini | 0.001 | 0.165 |
+| Email | GPT-4.1 | 26.862 | 0.165 |
+| Writing | Qwen-2.5 72B | 363.563 | 0.165 |
+
+这里的"标准耗时"包含 LLM 推理与网络延迟，SAGA 开销仅指协议本身。对于动辄数秒乃至数分钟的任务，0.165 秒基本可忽略。
+
+### 协议开销随 $Q_{\max}$ 变化
+
+论文给出的摊销协议开销模型为：
+
+$$
+\bar{c}_{proto}(m) = \frac{(RTT_{B,P} + t_{crypto}) \cdot m}{Q_{\max}}
+$$
+
+其中 $RTT_{B,P}$ 是发起方与 Provider 的往返延迟，$t_{crypto}$ 是证书验证、DH 交换、签名验证等本地密码学操作。下图展示了不同地理位置下，每请求摊销开销随 $Q_{\max}$ 下降的趋势，以及系统容量随 Sharder 数量线性扩展的结果：
+
+![SAGA 评估结果](/images/papers/saga-security-architecture-agentic-systems/evaluation-results.png)
+
+### Provider 可扩展性与容错
+
+Provider 采用 **RAFT 共识** 实现容错，并通过 **Sharding** 横向扩展：
+
+- OTK Request：单节点 242K req/min，3 节点 RAFT 212K，5 节点 204K，吞吐下降 12–15%；
+- 在 7 个 Sharder、24 小时 Token 生命周期配置下，系统可支持约 **2.6 亿并发 Agent**；
+- Sharder 数量增加时，容量接近线性增长。
+
+这意味着 SAGA 不只是实验室原型，而是可以直接面向大规模 Agent 生态部署。
+
+### A2A 兼容性
+
+论文还展示了 SAGA 与 Google A2A 协议的集成：把 A2A 的 Agent Card 存进 Agent Registry，用 SAGA 的访问控制策略保护卡片的读取；把标准 A2A Request 的消息字段包装成 `\langle token, A2ARequest(msg) \rangle`，在 SAGA 层完成 Token 验证后再交给 A2A 栈。这样 SAGA 不会破坏现有 Agent 框架，而是作为一个安全中间层存在。
+
+## 启示与思考
+
+SAGA 最有价值的不是某个单独的技术点，而是它把"Agent 治理"从口号变成了**可验证、可部署的系统设计**。Provider 中心化的选择是一个务实的取舍：虽然去中心化听起来更符合 Web3 叙事，但在当前阶段，一个可审计、可撤销、可扩展的中心治理实体更契合企业和监管需求。
+
+我觉得 SAGA 还留下几个值得追问的方向：
+
+1. **跨域信任**：当多个 Provider 并存时，Agent 如何跨 Provider 认证？论文假设所有参与者使用同一个 Provider 或同一个 CA，现实里多云、多厂商场景会需要联盟式身份模型。
+
+2. **动态策略的粒度**：Contact Policy 目前主要按 Agent ID 通配符和 OTK 预算控制。如果未来 Agent 调用涉及敏感数据分级、时间窗口、上下文条件，策略语言可能需要从简单规则升级为更丰富的授权语言（如 Rego / OPA 风格）。
+
+3. **用户侧密钥管理负担**：Agent 需要长期保存 TLS 私钥、访问控制私钥和一次性私钥。普通用户如何安全生成、备份、轮换这些密钥，仍是一个用户体验和安全的双重挑战。
+
+4. **与 MCP 的融合**：论文提到可与 MCP 集成，但没有深入展开。MCP 作为工具侧协议，SAGA 作为 Agent 间通信协议，两者如何统一地表达"谁能调用哪个工具的哪个功能"，是接下来亟需标准化的课题。
+
+总体而言，SAGA 为 Agentic 系统的安全治理提供了一个坚实的基线。在行业还没有统一答案之前，这种"身份 + 策略 + 密码学访问控制"的组合，很可能是大规模 Agent 互联的必由之路。
+
+## 参考链接
+
+- 论文 PDF：[NDSS 2026 s869](https://www.ndss-symposium.org/wp-content/uploads/2026-s869-paper.pdf)
+- 代码与形式化模型：[github.com/gsiros/saga](https://github.com/gsiros/saga)
+- arXiv 版本：[2504.21034](https://arxiv.org/abs/2504.21034)
+- Google A2A 协议：[A2A 公告](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)0:{"buildId":"En3ASV7tb_LU5rfEs-3MC","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"saga-security-architecture-agentic-systems","title":"SAGA：面向 AI Agentic 系统的可扩展安全治理架构","originalTitle":"SAGA: A Security Architecture for Governing AI Agentic Systems","excerpt":"SAGA 是首个面向 AI Agentic 系统的完整安全治理架构，通过 Provider 中心实体管理用户与 Agent 身份，使用一次性密钥 (OTK) 与访问控制令牌 (Access Token) 实现细粒度的跨 Agent 通信访问控制。论文在 PROVERIF 中形式化证明了令牌机密性与认证属性，并在多地理位置、多 LLM 后端下完成评估，证明其几乎不影响任务完成且具备良好的可扩展性。","date":"2026-07-29","architectureImage":"/images/papers/saga-security-architecture-agentic-systems/architecture.png","featured":false,"draft":false,"authors":["Georgios Syros","Anshuman Suri","Jacob Ginesin","Cristina Nita-Rotaru","Alina Oprea"],"year":2026,"venue":"NDSS","tags":["AI解读","Agent 规范与安全","AI Agent","多 Agent 系统","运行时安全"],"content":"$3","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-provider-治理的三层身份模型","text":"1. Provider 治理的三层身份模型","level":3},{"id":"2-基于-otk-与-dh-的访问控制令牌","text":"2. 基于 OTK 与 DH 的访问控制令牌","level":3},{"id":"3-形式化验证与真实部署评估","text":"3. 形式化验证与真实部署评估","level":3},{"id":"系统架构与协议流程","text":"系统架构与协议流程","level":2},{"id":"威胁模型","text":"威胁模型","level":2},{"id":"实验与评估","text":"实验与评估","level":2},{"id":"任务完成开销","text":"任务完成开销","level":3},{"id":"协议开销随-q_max-变化","text":"协议开销随 $Q_{\\max}$ 变化","level":3},{"id":"provider-可扩展性与容错","text":"Provider 可扩展性与容错","level":3},{"id":"a2a-兼容性","text":"A2A 兼容性","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"9 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
