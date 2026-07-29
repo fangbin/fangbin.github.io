@@ -1,0 +1,212 @@
+1:"$Sreact.fragment"
+2:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+12:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+3:T3ad3,> 本文梳理了 [humanclaw.me/blog/papers/](https://humanclaw.me/blog/papers/) 上同时涉及形式化验证与 AI Agent 的 **15 篇**论文，按 5 个研究方向分类，并提供全量对比总表与技术路线分析。
+
+## 总体概览
+
+形式化验证与 Agent 的结合是 2025-2026 年最活跃的研究方向之一。这 15 篇论文覆盖了两个互补的维度：
+
+- **「形式化方法 → Agent」**（10 篇）：用形式化方法保障 Agent 的安全与可靠性
+- **「Agent → 形式化方法」**（3 篇）：用 AI Agent 自动化/规模化形式化验证
+- **「双向融合」**（2 篇）：形式化规约引导多智能体学习
+
+![五大研究方向总览](/images/papers/fv-agent-survey/overview.png)
+
+---
+
+## 五大研究方向分类
+
+### 方向 A：运行时安全约束与执行（Runtime Safety Enforcement）
+
+核心理念：在 Agent 执行过程中插入形式化或半形式化的检查点，实时拦截不安全行为。
+
+| # | 论文 | 年份 | 技术路线 | 核心机制 | 拦截率 | 开销 |
+|---|------|------|---------|---------|--------|------|
+| 1 | **ShieldAgent** | 2025 (ICML) | 概率规则电路 | 再造一个 Agent 用形式化规则电路盯着主 Agent | — | — |
+| 2 | **Agent Behavioral Contracts** | 2026 | 设计契约 (DbC) | 四元组 (P, I, G, R)：前置条件+不变量+治理+恢复，OU 过程漂移控制 | D* < 0.27 | < 10ms |
+| 3 | **AgentSpec** | 2026 (ICSE) | DSL 运行时引擎 | trigger-check-enforce 三段式规则，拦截关键执行点 | > 90% | 毫秒级 |
+| 4 | **Agent-C** | 2026 | SMT 求解器 | DSL 表达时序属性 → 一阶逻辑 → SMT 检查 | 100% 合规，0% 伤害 | — |
+| 5 | **ActPlane** | 2026 | eBPF 内核级 | 策略 DSL 编译为 eBPF/BPF-LSM 钩子 + 信息流控制 | 97.7%（语义反馈） | 1.9% |
+
+**共同特征**：都强调轻量级（毫秒级开销）、可定制（DSL/合约）、与模型无关（不修改 LLM 本身）。
+
+---
+
+### 方向 B：语义框架与安全属性形式化（Formal Semantic Frameworks）
+
+核心理念：为 Agent 系统建立形式化的语义模型，用数学语言定义"什么是安全的"。
+
+| # | 论文 | 年份 | 技术路线 | 核心贡献 | 形式化工具 |
+|---|------|------|---------|---------|-----------|
+| 6 | **Formalizing Agentic AI Safety** | 2026 | 双模型统一语义框架 | 宿主智能体模型 + 任务生命周期模型，定义 30 个形式化属性 | CTL/LTL 时序逻辑 |
+| 7 | **Intent-to-Execution Integrity** | 2026 | CompCert 风格语义保持 | Agent 安全 = intent-to-execution integrity，4 条完整性性质 | 借鉴 CompCert |
+| 8 | **Formalizing LLM Agent Security** | 2026 | 情境属性四维框架 | 4 安全性质 + 5 Oracle 函数，重新形式化 9 类攻击 | 形式化 Oracle 函数 |
+| 9 | **SENTINEL** | 2025 | 时态逻辑三级验证 | 语义层→计划层→轨迹层，LTL/CTL 评估具身智能体 | LTL/CTL + VirtualHome/AI2-THOR |
+
+**共同特征**：偏理论，为工程实践奠定基础；都使用时序逻辑（LTL/CTL）作为形式化语言；揭示了现有防御的结构性盲点。
+
+---
+
+### 方向 C：Agent 驱动形式化验证（Agent-Driven Formal Verification）
+
+核心理念：反过来，用 AI Agent 的能力去自动化传统形式化验证中繁琐的部分——写规约、做证明、发现 bug。
+
+| # | 论文 | 年份 | 验证方法 | 核心创新 | 规模/效果 |
+|---|------|------|---------|---------|----------|
+| 10 | **SPDDWL** | 2026 | 交互式定理证明 (Rocq/Coq) | 三阶段流水线：需求→编码计划→证明状态驱动修复 | 1,859 行受验证代码，全测试通过 |
+| 11 | **FM-Agent** | 2026 | Hoare 式自然语言推理 | 自顶向下规格推导 + 分层并行 + 自动 Bug 验证 | 277k LoC，发现 522 个新 bug |
+| 12 | **ProofWright** | 2026 (J. ACM) | Agent 驱动 CUDA 验证 | 用 AI Agent 为 LLM 生成的 GPU 内核代码做形式化验证 | CUDA 内核安全验证 |
+
+**共同特征**：颠覆了"规格先行"的传统范式，让 LLM 从调用点反推规格；利用 Agent 的代码理解和推理能力，替代人工写证明/写规格。
+
+---
+
+### 方向 D：形式化方法引导多智能体学习（Formal Methods for MARL）
+
+核心理念：用形式化规约语言（HyperLTL、DFA）作为奖励信号或约束条件，引导多智能体强化学习的策略学习。
+
+| # | 论文 | 年份 | 规约语言 | 核心机制 | 实验环境 |
+|---|------|------|---------|---------|---------|
+| 13 | **HyPOLE** | 2026 | HyperLTL 超性质 | Skolemization 消除量词交替 + 鲁棒性函数量化满足度 + CTDE 算法 | SMAC, MessySMAC, WildFire |
+| 14 | **ACC-MARL** | 2026 (ICML) | DFA 确定性有限自动机 | 马尔可夫化重构 + 势函数奖励塑形 + 预训练 RAD Embeddings | 协作多智能体任务 |
+
+**共同特征**：将形式化语言转化为可微分的训练信号；解决的是协作策略学习中对历史依赖和全局约束的表达难题。
+
+---
+
+### 方向 E：位置论文与愿景（Position Papers & Grand Challenges）
+
+| # | 论文 | 年份 | 核心论点 |
+|---|------|------|---------|
+| 15 | **Intent Formalization** | 2026 (微软研究院) | AI 代码生成时代，核心挑战是将模糊的人类意图转化为可检查的正式规约，提出从测试到 DSL 的四层谱系。 |
+
+---
+
+## 全量对比总表
+
+| # | 论文简称 | 年份 | 来源 | 研究方向 | 形式化方法 | 应用层面 | 关键指标 |
+|---|---------|------|------|---------|-----------|---------|---------|
+| 1 | ShieldAgent | 2025 | ICML | 运行时安全 | 概率规则电路 | 单 Agent 安全 | — |
+| 2 | Agent Behavioral Contracts | 2026 | arXiv | 运行时安全 | Design by Contract + OU 过程 | 单/多 Agent | D*<0.27, <10ms |
+| 3 | AgentSpec | 2026 | ICSE | 运行时安全 | DSL + Runtime Enforcement | 代码/具身/自动驾驶 | >90% 拦截率 |
+| 4 | Agent-C | 2026 | arXiv | 运行时安全 | DSL + SMT 求解器 | 单 Agent 时序约束 | 100% 合规率 |
+| 5 | ActPlane | 2026 | arXiv | 运行时安全 | eBPF + 信息流控制 | OS 级 Agent 策略 | 97.7% 合规, 1.9% 开销 |
+| 6 | Formalizing Agentic AI Safety | 2026 | arXiv | 语义框架 | CTL/LTL + 状态机 | 多 Agent 协议层 | 30 个形式化属性 |
+| 7 | Intent-to-Execution Integrity | 2026 | arXiv | 语义框架 | 语义保持 (CompCert 风格) | 端到端 Agent 安全 | 4 条完整性性质 |
+| 8 | Formalizing LLM Agent Security | 2026 | arXiv | 语义框架 | Oracle 函数 + 情境属性 | 9 类攻击形式化 | 4 安全性质 |
+| 9 | SENTINEL | 2025 | arXiv | 语义框架 | LTL/CTL 三级验证 | 具身智能体 | VirtualHome + AI2-THOR |
+| 10 | SPDDWL | 2026 | arXiv | Agent 驱动验证 | 交互式定理证明 (Rocq) | 代码生成正确性 | 1,859 行受验证代码 |
+| 11 | FM-Agent | 2026 | arXiv | Agent 驱动验证 | Hoare 式自然语言推理 | 大规模代码验证 | 277k LoC, 522 bugs |
+| 12 | ProofWright | 2026 | J. ACM | Agent 驱动验证 | Agent 驱动 CUDA 验证 | GPU 内核安全 | — |
+| 13 | HyPOLE | 2026 | arXiv | 形式化引导 MARL | HyperLTL 超性质 | 多智能体 RL | SMAC 等基准 |
+| 14 | ACC-MARL | 2026 | ICML | 形式化引导 MARL | DFA 确定性有限自动机 | 多智能体协作 | — |
+| 15 | Intent Formalization | 2026 | arXiv | 愿景 | 意图形式化四层谱系 | AI 代码生成 | 微软研究院 |
+
+---
+
+## 关键洞察与趋势
+
+### 1. 「反馈质量 > 验证能力」
+
+SPDDWL 的 Rocq vs. Dafny 对比实验揭示：当验证后端由 LLM Agent 操作时，**反馈信息的粒度和可操作性比验证引擎本身的能力更重要**。Dafny 的 SMT 求解器超时只返回"未知"，而 Rocq 返回的显式证明状态（"当前子目标是什么"）恰好是 LLM 最擅长消费的结构化反馈格式。
+
+### 2. 漂移是本质属性，不是 bug
+
+Agent Behavioral Contracts 将 LLM 的行为漂移建模为 Ornstein-Uhlenbeck 随机过程，承认了重要认知：行为漂移不是模型缺陷，而是 LLM 非确定性的必然结果。正确的目标不是消除漂移，而是将漂移控制在可接受边界内（D* = α/γ）。
+
+### 3. 多 Agent 系统的可靠性退化是数学事实
+
+Agent Behavioral Contracts 证明了复合定理：N 个 Agent 串联时，可靠性以乘积方式退化（~p^N）。10 个各自 95% 可靠的 Agent 串联，整体可靠性仅约 60%。这意味着多 Agent 系统的设计必须考虑链长度和中间检查点。
+
+### 4. 从「提示词工程」到「行为规格工程」
+
+多篇论文不约而同地指向同一个趋势：AI Agent 正在从"写提示词 + 运气"进化到"写形式化行为规格 + 运行时强制执行"。这与软件工程从"写代码"到"契约驱动开发"的进化路径高度相似。
+
+### 5. 形式化验证正在因 Agent 而 Scale
+
+传统形式化验证的最大瓶颈是"谁来写规格"，而 FM-Agent 和 SPDDWL 证明了：当 LLM 生成代码时，规格和代码可以一起"涌现"——从调用点反推被调者的契约，而不是先有规格后有代码。这打破了数十年来"规格先行"的范式。
+
+### 6. 运行时安全是当前最务实的路径
+
+15 篇论文中，5 篇（33%）聚焦于运行时安全约束，而仅 4 篇（27%）是纯理论语义框架。社区共识倾向于 **先落地再完备**——在无法做到完全形式化验证之前，轻量级运行时检查是最可行的折中方案。
+
+---
+
+## 按技术路线的横向对比
+
+### 形式化工具选择
+
+| 形式化工具 | 使用论文 | 适用场景 | 特点 |
+|-----------|---------|---------|------|
+| CTL/LTL 时序逻辑 | #6, #9 | 安全属性定义、状态机约束 | 成熟，有 NuSMV/UPPAAL 工具支持 |
+| SMT 求解器 | #4 | 一阶逻辑约束求解 | 全自动，但超时问题显著 |
+| 交互式定理证明 (Rocq/Coq) | #10 | 代码级正确性证明 | 证明状态反馈质量高，适合 LLM 驱动 |
+| Hoare 逻辑 | #11 | 程序验证 | 传统方法，FM-Agent 将其泛化到自然语言 |
+| HyperLTL 超性质 | #13 | 多智能体全局性质 | 能表达"所有 Agent 都不..."类超性质 |
+| DFA 确定有限自动机 | #14 | 协作任务规约 | 直观，可嵌入为奖励信号 |
+| Design by Contract | #2 | 运行时行为约束 | 工程性好，轻量 |
+| eBPF/BPF-LSM | #5 | 内核级策略执行 | OS 级可见性，83% 策略可观测 |
+| 概率规则电路 | #1 | Agent 安全判定 | 可解释，有形式化保证 |
+
+### 验证层面
+
+| 层面 | 论文 | 说明 |
+|------|------|------|
+| OS 内核级 | #5 (ActPlane) | 最底层，eBPF 钩子拦截系统调用 |
+| 协议/通信层 | #6 | MCP + A2A 协议统一语义 |
+| 运行时执行层 | #1, #2, #3, #4 | 在 Agent 每步执行前后插入检查 |
+| 代码/语义层 | #10, #11, #12 | 对生成的代码做形式化证明 |
+| 策略学习层 | #13, #14 | 形式化规约嵌入 RL 训练 |
+| 概念/框架层 | #7, #8, #15 | 定义问题和研究议程 |
+
+---
+
+## 总结
+
+这 15 篇论文共同描绘了一幅清晰的图景：**形式化验证与 AI Agent 正从两个独立领域走向深度融合**。
+
+- **短期（现在）**：运行时安全约束是最务实的切入点——轻量、可部署、模型无关。ABC、AgentSpec、Agent-C 已经给出了可落地的方案。
+- **中期（1-2 年）**：语义框架（四维安全属性、30 个形式化属性）将逐步从学术论文走向工程标准，成为 Agent 安全评估的基准。
+- **长期（2-5 年）**：FM-Agent 和 SPDDWL 所示的"Agent 驱动形式化验证"可能彻底改变软件验证的范式。
+
+推荐阅读的三篇核心论文：
+1. **Agent Behavioral Contracts** — 工程可用性最强，已有开源库（AgentAssert）
+2. **FM-Agent** — 展示 Agent 驱动验证的规模化潜力（522 个 bug）
+3. **Formalizing Agentic AI Safety** — 为多 Agent 系统安全定义完整形式化框架
+
+---
+
+## 参考文献
+
+1. Zhaorun Chen, Mintong Kang, Bo Li. "ShieldAgent: Shielding Agents via Verifiable Safety Policy Reasoning." ICML 2025, arXiv:2503.22738. [解读](https://humanclaw.me/blog/papers/shieldagent/)
+2. Varun Pratap Bhardwaj. "Agent Behavioral Contracts: Formal Specification and Runtime Enforcement for Reliable Autonomous AI Agents." arXiv, 2026. [解读](https://humanclaw.me/blog/papers/agent-fm-contract/)
+3. Haoyu Wang, Christopher M. Poskitt, Jun Sun. "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents." ICSE 2026. 新加坡管理大学. [解读](https://humanclaw.me/blog/papers/agentspec/)
+4. Adharsh Kamath et al. "Enforcing Temporal Constraints for LLM Agents." arXiv:2512.23738, 2026. [解读](https://humanclaw.me/blog/papers/agent-c-temporal-constraints/)
+5. Yusheng Zheng et al. "ActPlane: Programmable OS-Level Policy Enforcement for Agent Harnesses." arXiv:2606.25189, 2026. UC Santa Cruz. [解读](https://humanclaw.me/blog/papers/actplane-os-policy-enforcement/)
+6. Edoardo Allegrini, Ananth Shreekumar, Z. Berkay Celik. "Formalizing the Safety, Security, and Functional Properties of Agentic AI Systems." arXiv:2510.14133, 2026. [解读](https://humanclaw.me/blog/papers/formalizing-agentic-ai-safety/)
+7. Wenjie Qu et al. "Securing LLM Agents Need Intent-to-Execution Integrity." arXiv, 2026. NUS / UCLA / UC Berkeley. [解读](https://humanclaw.me/blog/papers/intent-to-execution-integrity/)
+8. Vincent Siu et al. "A Framework for Formalizing LLM Agent Security." arXiv, 2026. UC Santa Cruz / UC Berkeley / Duke. [解读](https://humanclaw.me/blog/papers/agent-security-framework/)
+9. Simon Sinong Zhan et al. "SENTINEL: A Multi-Level Formal Framework for Safety Evaluation of Foundation Model-based Embodied Agents." arXiv:2510.12985, 2025. [解读](https://humanclaw.me/blog/papers/sentinel-embodied-safety/)
+10. Jian Fang, Yingfei Xiong. "Trustworthy Software Project Generation: a Case Study with an Interactive Theorem Prover." arXiv:2605.26017, 2026. 北京大学. [解读](https://humanclaw.me/blog/papers/spddwl-verified-project-generation/)
+11. Haoran Ding, Zhaoguo Wang, Haibo Chen. "FM-Agent: Scaling Formal Methods to Large Systems via LLM-Based Hoare-Style Reasoning." arXiv:2604.11556, 2026. 上海交通大学. [解读](https://humanclaw.me/blog/papers/fm-agent/)
+12. Bodhisatwa Chatterjee et al. "ProofWright: Towards Agentic Formal Verification of CUDA." J. ACM, 2026. Georgia Tech / NVIDIA / Stanford. [解读](https://humanclaw.me/blog/papers/proofwright/)
+13. Arshia Rafieioskouei et al. "HyPOLE: Hyperproperty-Guided Multi-Agent Reinforcement Learning under Partial Observation." arXiv, 2026. MSU. [解读](https://humanclaw.me/blog/papers/hypole-hyperproperty-guided-marl/)
+14. Beyazit Yalcinkaya et al. "Automata-Conditioned Cooperative Multi-Agent Reinforcement Learning." ICML 2026, PMLR 306. UC Berkeley. [解读](https://humanclaw.me/blog/papers/acc-marl-cooperative-multi-agent-rl/)
+15. Shuvendu K. Lahiri. "Intent Formalization: A Grand Challenge for Reliable Coding in the Age of AI Agents." arXiv, 2026. 微软研究院. [解读](https://humanclaw.me/blog/papers/intent-formalization/)0:{"buildId":"6imCYL4A3Sr1mdzIUEbtd","rsc":["$","$1","c",{"children":[["$","$L2",null,{"paper":{"slug":"fv-agent-survey","title":"形式化验证与 AI Agent 结合：工作分类与总结","originalTitle":"Formal Verification Meets AI Agents: A Survey and Taxonomy","excerpt":"系统梳理 2025-2026 年形式化验证与 AI Agent 交叉领域的 15 篇代表性工作，按五大研究方向分类：运行时安全约束、语义框架与安全属性、Agent 驱动形式化验证、形式化方法引导多智能体学习、愿景与挑战。揭示「反馈质量大于验证能力」「行为漂移是本质属性」「多 Agent 可靠性乘积退化」等关键洞察。","date":"2026-07-29","architectureImage":"/images/papers/fv-agent-survey/overview.png","featured":false,"draft":false,"authors":[],"year":2026,"venue":"Survey","tags":["AI解读","形式化验证","AI Agent","Survey","Agent 安全"],"content":"$3","headings":[{"id":"总体概览","text":"总体概览","level":2},{"id":"五大研究方向分类","text":"五大研究方向分类","level":2},{"id":"方向-a运行时安全约束与执行runtime-safety-enforcement","text":"方向 A：运行时安全约束与执行（Runtime Safety Enforcement）","level":3},{"id":"方向-b语义框架与安全属性形式化formal-semantic-frameworks","text":"方向 B：语义框架与安全属性形式化（Formal Semantic Frameworks）","level":3},{"id":"方向-cagent-驱动形式化验证agent-driven-formal-verification","text":"方向 C：Agent 驱动形式化验证（Agent-Driven Formal Verification）","level":3},{"id":"方向-d形式化方法引导多智能体学习formal-methods-for-marl","text":"方向 D：形式化方法引导多智能体学习（Formal Methods for MARL）","level":3},{"id":"方向-e位置论文与愿景position-papers--grand-challenges","text":"方向 E：位置论文与愿景（Position Papers & Grand Challenges）","level":3},{"id":"全量对比总表","text":"全量对比总表","level":2},{"id":"关键洞察与趋势","text":"关键洞察与趋势","level":2},{"id":"1-反馈质量--验证能力","text":"1. 「反馈质量 > 验证能力」","level":3},{"id":"2-漂移是本质属性不是-bug","text":"2. 漂移是本质属性，不是 bug","level":3},{"id":"3-多-agent-系统的可靠性退化是数学事实","text":"3. 多 Agent 系统的可靠性退化是数学事实","level":3},{"id":"4-从提示词工程到行为规格工程","text":"4. 从「提示词工程」到「行为规格工程」","level":3},{"id":"5-形式化验证正在因-agent-而-scale","text":"5. 形式化验证正在因 Agent 而 Scale","level":3},{"id":"6-运行时安全是当前最务实的路径","text":"6. 运行时安全是当前最务实的路径","level":3},{"id":"按技术路线的横向对比","text":"按技术路线的横向对比","level":2},{"id":"形式化工具选择","text":"形式化工具选择","level":3},{"id":"验证层面","text":"验证层面","level":3},{"id":"总结","text":"总结","level":2},{"id":"参考文献","text":"参考文献","level":2}],"readingTime":"12 min read"}}],["$L4","$L5","$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"loading":null,"isPartial":false}
+4:["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true}]
+5:["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true}]
+6:["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true}]
+7:["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true}]
+8:["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true}]
+9:["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true}]
+a:["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true}]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true}]
+11:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
