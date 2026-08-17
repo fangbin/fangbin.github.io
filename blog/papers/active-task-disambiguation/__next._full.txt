@@ -1,0 +1,173 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/dc989e85f284b426.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"Q0TAWLloy8t6GWQjDuDWm","c":["","papers","active-task-disambiguation",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","active-task-disambiguation","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/dc989e85f284b426.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/b9abeb77bbedd679.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T2017,## 论文概览
+
+**论文**: *Active Task Disambiguation with LLMs*
+**作者**: Katarzyna Kobalczyk, Nicolás Astorga, Tennison Liu, Mihaela van der Schaar
+**机构**: DAMTP, University of Cambridge
+**发表**: ICLR 2025
+**arXiv**: [2502.04485](https://arxiv.org/abs/2502.04485)
+
+这篇论文关注一个实际但容易被忽视的问题：当用户给 LLM 的指令存在歧义时，Agent 该如何主动提问来消除歧义？作者将这个问题形式化为贝叶斯实验设计（Bayesian Experimental Design, BED）框架下的信息增益最大化问题，提出了一套"采样解空间 → 估计问题效用 → 选择最优问题"的 Active Task Disambiguation 方法。
+
+核心思路很直接：与其指望 LLM 直接"想出"一个好的澄清问题（隐式推理），不如让 LLM 先采样多个候选解，然后基于这些解来显式估计每个候选问题能带来多少信息增益。这是一种将推理负荷从问题空间转移到解空间的策略。
+
+## 问题定义：任务歧义
+
+论文首先给出了任务歧义的形式化定义。设问题陈述 $S = (R, C)$，其中 $R$ 是需求集合（任何合格解都应满足），$C$ 是上下文信息。设 $H := \{h : h \vdash R\}$ 为满足需求的解空间，$H^* \subset H$ 为真正可接受的解集合。
+
+**定义 1（任务歧义）**: 当 $H \supset H^*$ 时，即满足需求的解空间严格大于可接受的解空间，问题陈述 $S$ 是歧义的。
+
+这个定义的关键在于区分了**客观的需求满足**（$h \vdash R$）和**主观的偏好分布**（$\tilde{p}^*(h|R,C)$）。需求满足是客观的——代码是否通过测试用例、函数是否实现了指定功能；而偏好是主观的——不同的用户可能对同一需求有不同的期望。
+
+论文对比了两种解决路径：
+1. **偏好优化**（如 RLHF/DPO）：让 $p_\phi^h$ 对齐总体人群的平均偏好。但当个体用户偏离平均值时，这种方法可能失败。
+2. **迭代任务引出**：通过交互对话获取额外规格，逐步缩小解空间。本文聚焦于后者。
+
+## 核心方法：EIG 估计
+
+### 贝叶斯实验设计视角
+
+在 BED 框架下，每个问题 $q$ 就是一个"实验"，回答 $a$ 是实验结果，生成的解 $h$ 是感兴趣的未知量。信息增益定义为：
+
+$$IG(q, a) := H[p^*(h|S)] - H[p^*(h|S \cup (q, a))]$$
+
+由于提问时回答 $a$ 未知，需要取期望信息增益（EIG）：
+
+$$EIG(q) := \mathbb{E}_{p^*(a|q,S)}[IG(q, a)]$$
+
+### 均匀性假设与等分原理
+
+由于真实分布 $p^*$ 未知，且 LLM 的生成分布 $p_\phi^h$ 可能有偏，作者采用了一个关键假设：将 $p^*$ 近似为解空间上的均匀分布。在此假设下推导得到：
+
+$$\mathbb{E}_{p^*(a|q,S)}[H[p^*(h|S \cup (q,a))]] = \frac{1}{|H|} \sum_{a \in \mathcal{A}_q} |H_{(q,a)}| \log(|H_{(q,a)}|)$$
+
+这个量在 $H_{(q,a)}$ 等大时最小，即最优问题是将解空间等分为 $n$ 份的问题。对于二元问题（yes/no），最优问题是将解空间一分为二的问题。
+
+![EIG 等分原理](/images/papers/active-task-disambiguation/eig_partitioning.png)
+
+### 算法流程
+
+![Active Task Disambiguation 工作流](/images/papers/active-task-disambiguation/architecture.png)
+
+在每一轮交互 $t$：
+
+1. 从 $p_\phi^h(\cdot|S_t)$ 采样 $N$ 个候选解 $\{h_i^t\}$
+2. 从 $p_\phi^q(\cdot|S_t)$ 采样 $M$ 个候选问题 $\{q_j^t\}$
+3. 对每个问题 $q_j$ 关于每个解 $h_i$ 生成伪回答 $a_{i,j}^t$
+4. 用 Algorithm 1 估计每个问题的 EIG
+5. 选择 $q^* = \arg\max_{q \in \{q_j^t\}} U(q)$
+6. 获取真实回答 $a^*$，更新 $S_{t+1} = S_t \cup (q^*, a^*)$
+
+EIG 的估计（Algorithm 1）本质上是计算回答分布的负熵：
+
+```
+Algorithm 1: estimate EIG(q_j, {a_{i,j}})
+  {a_1, ..., a_n} ← Unique answers in {a_{i,j}}
+  for k in {1, ..., n}:
+    n_k ← |{i : a_{i,j} = a_k}|
+    p_k ← n_k / n
+  return -Σ p_k log(p_k)
+```
+
+当所有解给出相同的回答时，EIG = 0（问题无区分力）；当回答均匀分布在多个类别上时，EIG 最大（问题区分力最强）。
+
+## 实验结果
+
+### 实验 1：20 问答游戏
+
+在动物类别的 20 问答游戏中，玩家 B（LLM）需要在 10 轮内猜出玩家 A（GPT-4o-mini）心中的动物。比较了四种策略：
+
+| 策略 | 描述 |
+|------|------|
+| implicit | 直接提示生成一个问题 |
+| implicit-ToT | 采样 5 个问题，让 LLM 自选最佳 |
+| EIG-uniform | 采样 5 个问题，用均匀假设估计 EIG 选最优 |
+| EIG-logprobs | 同上，但用 LLM 的 logprobs 估计 |
+
+![20 问答结果](/images/papers/active-task-disambiguation/results_20questions.png)
+
+EIG-uniform 显著优于其他所有策略。几个关键发现：
+
+- **EIG-uniform 远超 implicit 和 implicit-ToT**，验证了 H1：LLM 隐式推理"最好问什么"的能力不足
+- **EIG-logprobs 表现差于 EIG-uniform**，说明 LLM 的生成分布有偏，logprobs 不能很好反映真实解空间的均匀性
+- 对于更强的模型（GPT-4o-mini vs GPT-3.5），EIG 与基线的差距缩小——更强的模型在隐式推理上也有改善
+
+论文还做了三个消融实验：
+1. **问题效用**：用 500 个动物的大列表验证，EIG-uniform 生成的问题确实导致更小的兼容解集
+2. **解的多样性**：加入"diverse and representative"提示显著提升样本多样性（互信息分数从 0.46→0.57）
+3. **需求兼容性**：通过 self-critic 过滤不满足需求的采样解至关重要，2 次过滤步骤效果最佳
+
+### 实验 2：主动代码生成
+
+在代码生成场景中，问题被定义为测试用例：
+
+- **Binary (B)**: 生成一个断言语句，Oracle 确认 True/False
+- **Open (O)**: 生成一个函数输入，Oracle 返回期望输出
+
+在 HumanEval 和 APPS 基准上，仅提问 4 轮后：
+
+![代码生成结果](/images/papers/active-task-disambiguation/results_codegen.png)
+
+| 模型 | HumanEval base(B) | HumanEval EIG(O) | APPS base(B) | APPS EIG(O) |
+|------|:---:|:---:|:---:|:---:|
+| Llama3-8B | 35% | 55% | 15% | 28% |
+| GPT-3.5 | 48% | 68% | 25% | 42% |
+| Llama3-70B | 62% | 78% | 35% | 48% |
+| GPT-4o-mini | 70% | 83% | 35% | 48% |
+
+EIG 策略在所有模型和两个基准上都优于基线。Open 类型问题比 Binary 类型信息增益更大（符合理论预期：更多可能的回答意味着更大的 EIG 上界）。代码生成实验的关键优势是外部工具（Python 解释器）可以提供近乎无噪声的 EIG 估计。
+
+## 启示与思考
+
+### 元认知能力的缺口
+
+这篇论文最深刻的洞察是：LLM 在"生成解"和"生成关于解的好问题"之间存在能力缺口。后者需要一种元认知能力——审视自己的生成分布，识别能区分不同解的特征。论文通过将这种隐式推理转化为显式的解空间采样+ EIG 估计，巧妙地绕过了这个缺口。
+
+这启示我们，在构建 Agent 系统时，与其依赖 LLM 的"自省"能力，不如通过外部化的采样和计算来替代。类似思路在 self-consistency、Tree of Thoughts 等方法中也有体现——用采样+聚合替代单次推理。
+
+### 实际应用考量
+
+在真实场景中应用这种方法需要注意几点：
+
+1. **LLM 调用成本**：每轮交互需要 $N \times M$ 次额外的 LLM 调用来生成伪回答。论文认为这相对于获取 Oracle 回答的成本可以忽略，但在实际部署中可能是一个瓶颈。
+2. **噪声控制**：在无外部验证工具的场景（如 20 问答），需要通过 self-critic 等方式控制 LLM 幻觉。代码生成场景因为有解释器，EIG 估计更可靠。
+3. **停止条件**：论文承认何时停止提问是一个未解决的问题。在实际应用中，可能需要结合 ambiguity 检测或设定信息增益阈值。
+
+### 更广的视角
+
+从更广的视角看，这篇工作连接了两个领域：传统的实验设计理论（BED）和现代 LLM Agent 的交互设计。它提醒我们，LLM Agent 不应该只是被动地接受指令然后输出——主动提问、主动获取信息是一个更负责任、更鲁棒的交互范式。随着 Agent 在医疗诊断、法律咨询等高风险场景的部署，这种主动消歧能力将变得越来越重要。a:["$","$L1b",null,{"paper":{"slug":"active-task-disambiguation","title":"LLM 主动消歧：从贝叶斯实验设计看 Agent 如何提问","originalTitle":"Active Task Disambiguation with LLMs","excerpt":"剑桥大学团队提出将 LLM 任务消歧问题框架化为贝叶斯实验设计，通过采样解空间直接估计问题的信息增益（EIG），绕过 LLM 元认知能力的短板。在 20 问答和代码生成两个实验中验证了方法的有效性。","date":"2025-02-06","coverImage":"$undefined","architectureImage":"/images/papers/active-task-disambiguation/architecture.png","featured":false,"draft":false,"authors":["Katarzyna Kobalczyk","Nicolás Astorga","Tennison Liu","Mihaela van der Schaar"],"year":2025,"venue":"ICLR 2025","tags":["AI解读","LLM Agent","贝叶斯实验设计","任务消歧","信息增益"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"问题定义任务歧义","text":"问题定义：任务歧义","level":2},{"id":"核心方法eig-估计","text":"核心方法：EIG 估计","level":2},{"id":"贝叶斯实验设计视角","text":"贝叶斯实验设计视角","level":3},{"id":"均匀性假设与等分原理","text":"均匀性假设与等分原理","level":3},{"id":"算法流程","text":"算法流程","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"实验-120-问答游戏","text":"实验 1：20 问答游戏","level":3},{"id":"实验-2主动代码生成","text":"实验 2：主动代码生成","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"元认知能力的缺口","text":"元认知能力的缺口","level":3},{"id":"实际应用考量","text":"实际应用考量","level":3},{"id":"更广的视角","text":"更广的视角","level":3}],"readingTime":"8 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"LLM 主动消歧：从贝叶斯实验设计看 Agent 如何提问 | 博客"}],["$","meta","1",{"name":"description","content":"剑桥大学团队提出将 LLM 任务消歧问题框架化为贝叶斯实验设计，通过采样解空间直接估计问题的信息增益（EIG），绕过 LLM 元认知能力的短板。在 20 问答和代码生成两个实验中验证了方法的有效性。"}],["$","meta","2",{"property":"og:title","content":"LLM 主动消歧：从贝叶斯实验设计看 Agent 如何提问"}],["$","meta","3",{"property":"og:description","content":"剑桥大学团队提出将 LLM 任务消歧问题框架化为贝叶斯实验设计，通过采样解空间直接估计问题的信息增益（EIG），绕过 LLM 元认知能力的短板。在 20 问答和代码生成两个实验中验证了方法的有效性。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/active-task-disambiguation/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"LLM 主动消歧：从贝叶斯实验设计看 Agent 如何提问"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"LLM 主动消歧：从贝叶斯实验设计看 Agent 如何提问"}],["$","meta","13",{"name":"twitter:description","content":"剑桥大学团队提出将 LLM 任务消歧问题框架化为贝叶斯实验设计，通过采样解空间直接估计问题的信息增益（EIG），绕过 LLM 元认知能力的短板。在 20 问答和代码生成两个实验中验证了方法的有效性。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
