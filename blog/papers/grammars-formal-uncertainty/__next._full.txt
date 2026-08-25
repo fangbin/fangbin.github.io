@@ -1,0 +1,181 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/8e1c9e3bdedf992c.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"Gei1aKLUgtbyYaX5PGDmo","c":["","papers","grammars-formal-uncertainty",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","grammars-formal-uncertainty","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/8e1c9e3bdedf992c.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/b9abeb77bbedd679.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T249f,## 论文概览
+
+**标题**: Grammars of Formal Uncertainty: When to Trust LLMs in Automated Reasoning Tasks  
+**作者**: Debargha Ganguly, Vikash Singh, Sreehari Sankar, Biyao Zhang, Xuecen Zhang (Case Western Reserve University); Srinivasan Iyengar, Shivkumar Kalyanaraman (Microsoft Corporation); Amit Sharma (Microsoft Research); Xiaotian Han, Vipin Chaudhary (CWRU)  
+**arXiv**: [2505.20047](https://arxiv.org/abs/2505.20047)  
+**发布日期**: 2025年5月26日
+
+这篇论文击中了一个我长期思考的根本张力：**LLM 是概率性的，而形式验证要求确定性保证**。两者之间的认识论鸿沟不是工程问题，而是哲学问题。论文的核心论点是——LLM 在形式推理任务中输出的固有概率不确定性，特别是生成 SMT-LIB 程序等形式产物时，不是单纯的干扰，而是**指导验证的有价值信息源**。
+
+![PCFG 不确定性量化框架总览](/images/papers/grammars-formal-uncertainty/architecture.png)
+
+## 核心贡献
+
+### 1. 系统评估：SMT 自动形式化的双刃剑
+
+论文在四个形式推理数据集上评估了五个前沿 LLM（o3-mini、DeepSeek-R1、DeepSeek-v3、Gemini Flash 2.0、Gemini Flash 2.0 Lite），发现基于 SMT 的自动形式化对准确率的影响是**领域特定的**：
+
+| 数据集 | 任务类型 | Text vs SMT 准确率变化 | 核心原因 |
+|--------|---------|----------------------|---------|
+| ProofWriter | 符号逻辑推理 | **+34.8%** | 精度和召回同时提高 |
+| StrategyQA | 知识密集型推理 | 混合结果 | SMT 以精度换召回 |
+| ProntoQA | 算术链式推理 | SMT 不一致 | 文本推理多数更优 |
+| FOLIO | 事实型一阶逻辑 | **-44.5%** | SMT 召回率严重降低 |
+
+> **[译注]**：ProofWriter 的提升源于其任务与符号逻辑密切相关——前提显式给出，推理路径清晰。而 FOLIO 需要世界知识辅助，SMT 自动形式化在此反而引入噪声。
+
+![SMT vs Text 准确率对比](/images/papers/grammars-formal-uncertainty/smt_vs_text.png)
+
+更关键的是，论文证明**已知的不确定性量化技术（如 token 概率的熵）无法捕获足够信息来识别形式验证产物中的错误**。这意味着传统 UQ 方法在形式推理场景中存在根本性的盲区。
+
+### 2. PCFG 框架：用文法建模 LLM 输出分布
+
+论文的理论核心是使用**概率上下文无关文法（PCFG）**来近似 LLM 生成 SMT-LIB 程序的内部概率分布。形式化设定如下：
+
+- 设 $\Sigma$ 为有限字母表，SMT-LIB 语言 $L_{SMT} \subseteq \Sigma^{*}$
+- 对于任务 $T$ 和参数为 $\theta$ 的 LLM，LLM 在 $(\Sigma^{*}, \mathcal{F})$ 上诱导概率测度 $\mu_{T,\theta}$
+- 有效 SMT-LIB 程序上的条件测度：
+
+$$\mu_{T,\theta,SMT}(A) = \frac{\mu_{T,\theta}(A \cap L_{SMT})}{\mu_{T,\theta}(L_{SMT})}$$
+
+PCFG 是五元组 $G = (V, \Sigma, R, S, p)$，推导 $\pi$ 的概率为 $p(\pi) = \prod_{i=1}^{k} p(r_i)$。通过从 LLM 生成 $N$ 个 SMT-LIB 程序样本，用 SMT-LIB v2 文法解析，然后用最大似然估计（MLE）计算规则概率：
+
+$$\hat{p}_{MLE}(r) = \frac{C(r)}{C(A)}$$
+
+论文还证明了**覆盖保证定理**（Theorem 1）：对于任何质量为 $\epsilon$ 的可测子集 $A$，$N$ 个样本全部缺失 $A$ 的概率至多为 $\exp(-N\epsilon / 2^{H(\mu)})$，其中 $H(\mu)$ 是 Shannon 熵。这为采样充分性提供了理论保证。
+
+### 3. 25 个不确定性指标与四分类体系
+
+论文开发了 25 个 PCFG 派生指标，并提出了超越传统认知/偶然（Epistemic/Aleatoric）二分法的精细化四分类：
+
+| 不确定性类型 | 核心特征 | 主导任务 | 最佳指标 | AUROC |
+|-------------|---------|---------|---------|-------|
+| 认知-知识型 | 世界知识不确定性 | StrategyQA | 跨模态一致性 | 0.74-0.78 |
+| 认知-程序型 | 形式规则应用 | ProofWriter | 文法熵 | >0.93 |
+| 递归-复杂度型 | 过度递归结构 | ProntoQA | 谱半径 | 0.64 |
+| 容量受限型 | 模型容量限制 | ProofWriter (Lite) | 规则分布峰度 | 0.87 |
+
+> **[译注]**：四分类体系中最深刻的发现是"容量受限型"——模型在最小和冗长 SMT 模式之间切换，产生双峰重尾分布。这不是知识或程序问题，而是模型容量本身导致的风格振荡，是一种全新的不确定性类型。
+
+![不确定性分类与错误减少效果](/images/papers/grammars-formal-uncertainty/taxonomy_reduction.png)
+
+### 4. 任务依赖性与融合方法
+
+论文最重要的实践发现是**形式推理不确定性是任务依赖的**：
+
+- **知识密集型任务（StrategyQA）**：跨模态一致性指标一致主导，表明世界知识中的认知不确定性是主要瓶颈
+- **前提显式推理任务（ProofWriter）**：PCFG 派生指标展现出色判别力，文法熵 AUROC=0.9301，确认程序性认知不确定性占主导
+
+![任务依赖的不确定性信号](/images/papers/grammars-formal-uncertainty/task_dependent_uq.png)
+
+轻量级、模型无关的多信号融合方法（Ensemble ML）在所有设置中优于单一指标，实现了选择性验证——**在最小弃权的情况下将错误率降低 14-100%**。
+
+## 方法论详解
+
+### PCFG 近似流程
+
+```
+1. 使用 SMT-LIB v2 文法 G_SMT 作为结构基础
+2. 从目标 LLM 生成 N 个 SMT-LIB 程序样本 P_N = {P_1, ..., P_N}
+3. 用 G_SMT 解析，得到解析树集合 Π(P_N)
+4. 从每个解析树中识别并记录每条应用的产生式规则
+5. 用 MLE 估计规则概率: p_hat(r) = C(r) / C(A)
+6. 计算 25 个不确定性指标
+7. 融合信号实现选择性验证
+```
+
+### 关键指标
+
+**信息论度量**：
+
+- 每非终结符 Shannon 熵：$H(A) = -\sum_{A \to \beta \in R_A} p(A \to \beta) \log_2 p(A \to \beta)$
+- 整体文法熵：$H(G) = \sum_{A \in V_{SMT}} \pi(A) H(A)$
+- 困惑度：$PP(G) = 2^{H(G)}$
+
+**NSUI（归一化结构不确定性指标）**：
+
+$$NSUI(G) = E_{ratio} \times S_{factor} = \frac{H(G)}{H_{max}(G)} \times \frac{\rho(B)}{1 + \rho(B)}$$
+
+其中 $\rho(B)$ 是文法均值矩阵的谱半径，$\rho(B) \geq 1$ 指示潜在无界推导。
+
+**谱性质**：均值矩阵 $B \in \mathbb{R}^{|V| \times |V|}$ 的元素 $B_{ji}$ 表示非终结符 $A_j$ 在 $A_i$ 的产生式右侧出现的期望次数。谱半径反映递归复杂度。
+
+## 实验结果
+
+### Token 级 UQ 的局限
+
+传统指标（Entropy、Perplexity、Kurtosis）在四个数据集上 AUROC 普遍在 0.51-0.70 之间，**不足以捕获形式化与推理过程中独特的认知不确定性**。没有 UQ 方法在所有任务上一致出色。
+
+### PCFG 指标的卓越表现
+
+| 模型-数据集组合 | 最佳 PCFG 指标 | AUROC | AURC | 错误减少 |
+|---------------|-------------|-------|------|---------|
+| o3-mini / ProofWriter | 文法熵 | 0.9301 | 0.0008 | ~100% |
+| o3-mini / StrategyQA | Ensemble ML | 0.7850 | 0.1013 | ~85% |
+| DeepSeek-R1 / StrategyQA | 文本一致性 | 0.7835 | 0.0983 | ~75% |
+| Gemini Lite / ProofWriter | SMT 一致性 | 0.7364 | 0.1031 | ~60% |
+
+### 不对称自一致性
+
+论文发现了一个有趣现象：**LLM 可能使用不同的、未完美对齐的形式与文本推理路径**。例如在 Gemini/ProntoQA 上，SMT 一致性 AUROC=0.9291 而文本一致性仅 0.5108。这暗示神经符号设计应从"翻译焦点"转向"路径对齐和接地"。
+
+## 启示与思考
+
+### 对 AARM 框架的直接启示
+
+这篇论文与 AARM 三层架构中的**副作用验证层**高度契合。论文的核心洞见——**LLM 生成形式产物的句法非典型性作为语义错误的强大信号**——可以转化为 AgentMonitor 的检测规则：
+
+1. **句法指纹检测**：当 LLM 正确理解逻辑关系时，一致产生高概率规则序列；语义误解表现为统计异常，创造独特的"推理失败的句法指纹"
+2. **任务感知 UQ 策略**：不同 Agent 任务类型需要不同的不确定性信号——知识密集型任务需要跨模态一致性，程序推理型任务需要 PCFG 结构指标
+3. **选择性验证架构**：不是所有 Agent 输出都需要完整验证，通过 UQ 信号融合可以在最小弃权下大幅减少错误
+
+### 局限性与未来方向
+
+论文的一个隐含局限是：PCFG 近似的准确性依赖于**采样数量 N 和 SMT-LIB 文法的完整性**。覆盖保证定理给出了理论边界，但在实践中，对于高熵分布（如复杂形式化任务），可能需要不切实际的大量样本。
+
+此外，论文聚焦于 SMT-LIB 作为中间表示，但 Agent 工作流中的形式产物可能涉及更丰富的类型系统（如 Lean4 的依赖类型）。将 PCFG 框架扩展到依赖类型语言是一个有价值的未来方向。
+
+我觉得这篇论文最深刻的贡献不是任何单一指标，而是**将 LLM 输出的概率性从"缺陷"重新定位为"信息源"**这一认识论转向。在形式验证领域，概率性传统上被视为需要消除的噪声；而论文证明，通过恰当的文法建模，这种概率性可以成为指导验证的信号。这种思维转换对整个神经符号系统领域都有深远影响。
+
+## 参考链接
+
+- **arXiv**: [https://arxiv.org/abs/2505.20047](https://arxiv.org/abs/2505.20047)
+- **HTML 全文**: [https://arxiv.org/html/2505.20047v1](https://arxiv.org/html/2505.20047v1)
+- **代码**: 未公开
+- **相关数据集**: StrategyQA, ProntoQA, ProofWriter, FOLIOa:["$","$L1b",null,{"paper":{"slug":"grammars-formal-uncertainty","title":"形式不确定性的文法：何时信任 LLM 的自动推理","originalTitle":"Grammars of Formal Uncertainty: When to Trust LLMs in Automated Reasoning Tasks","excerpt":"Case Western Reserve University 与 Microsoft 联合工作，首次用概率上下文无关文法（PCFG）建模 LLM 生成的 SMT-LIB 程序分布，提出 25 个不确定性指标和精细化四分类体系，实现选择性验证使错误率降低 14-100%。","date":"2025-05-26","coverImage":"$undefined","architectureImage":"/images/papers/grammars-formal-uncertainty/architecture.png","featured":false,"draft":false,"authors":["Debargha Ganguly","Vikash Singh","Sreehari Sankar","Biyao Zhang","Xuecen Zhang","Srinivasan Iyengar","Xiaotian Han","Amit Sharma","Shivkumar Kalyanaraman","Vipin Chaudhary"],"year":2025,"venue":"arXiv (cs.CL, cs.AI, cs.LO, cs.SE)","tags":["AI解读","形式化验证","不确定性量化","SMT","PCFG","LLM"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心贡献","text":"核心贡献","level":2},{"id":"1-系统评估smt-自动形式化的双刃剑","text":"1. 系统评估：SMT 自动形式化的双刃剑","level":3},{"id":"2-pcfg-框架用文法建模-llm-输出分布","text":"2. PCFG 框架：用文法建模 LLM 输出分布","level":3},{"id":"3-25-个不确定性指标与四分类体系","text":"3. 25 个不确定性指标与四分类体系","level":3},{"id":"4-任务依赖性与融合方法","text":"4. 任务依赖性与融合方法","level":3},{"id":"方法论详解","text":"方法论详解","level":2},{"id":"pcfg-近似流程","text":"PCFG 近似流程","level":3},{"id":"关键指标","text":"关键指标","level":3},{"id":"实验结果","text":"实验结果","level":2},{"id":"token-级-uq-的局限","text":"Token 级 UQ 的局限","level":3},{"id":"pcfg-指标的卓越表现","text":"PCFG 指标的卓越表现","level":3},{"id":"不对称自一致性","text":"不对称自一致性","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"对-aarm-框架的直接启示","text":"对 AARM 框架的直接启示","level":3},{"id":"局限性与未来方向","text":"局限性与未来方向","level":3},{"id":"参考链接","text":"参考链接","level":2}],"readingTime":"8 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"形式不确定性的文法：何时信任 LLM 的自动推理 | 博客"}],["$","meta","1",{"name":"description","content":"Case Western Reserve University 与 Microsoft 联合工作，首次用概率上下文无关文法（PCFG）建模 LLM 生成的 SMT-LIB 程序分布，提出 25 个不确定性指标和精细化四分类体系，实现选择性验证使错误率降低 14-100%。"}],["$","meta","2",{"property":"og:title","content":"形式不确定性的文法：何时信任 LLM 的自动推理"}],["$","meta","3",{"property":"og:description","content":"Case Western Reserve University 与 Microsoft 联合工作，首次用概率上下文无关文法（PCFG）建模 LLM 生成的 SMT-LIB 程序分布，提出 25 个不确定性指标和精细化四分类体系，实现选择性验证使错误率降低 14-100%。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/grammars-formal-uncertainty/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"形式不确定性的文法：何时信任 LLM 的自动推理"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"形式不确定性的文法：何时信任 LLM 的自动推理"}],["$","meta","13",{"name":"twitter:description","content":"Case Western Reserve University 与 Microsoft 联合工作，首次用概率上下文无关文法（PCFG）建模 LLM 生成的 SMT-LIB 程序分布，提出 25 个不确定性指标和精细化四分类体系，实现选择性验证使错误率降低 14-100%。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
