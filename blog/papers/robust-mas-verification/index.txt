@@ -1,0 +1,251 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/dc989e85f284b426.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"iqyfsq3BePMjI2EpaoFgb","c":["","papers","robust-mas-verification",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","robust-mas-verification","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/dc989e85f284b426.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/b9abeb77bbedd679.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T3a26,## 论文概览
+
+《Verification of Robust Multi-Agent Systems》由 RWTH Aachen 的 Joost-Pieter Katoen 团队（与巴黎萨克雷、那不勒斯、索邦联合）发表于 AAMAS 2026 会议（扩展版含技术附录）。它击中了随机多智能体系统（stochastic MAS）验证中一个被长期忽略的问题：**当系统转移概率来自经验估计、并非金科玉律时，联盟策略的时序保证还有意义吗？**
+
+论文的答案是肯定的，但需要付出计算代价——这正是它要精确刻画的。
+
+### 核心问题
+
+考虑这样一个场景：两个公司共享一条河流，每步可选择直接排放废水（d）或处理后排放（t）。水质随两家公司的联合行为而演化。然而两个概率（0.5 和 0.75）并非物理常数，而是从数据拟合出来的——误差范围可达 0.05 甚至更多。我们想问：
+
+> 给定一个由部分观测驱动的有限状态策略，**在所有可能的概率取值下**，它是否仍能保证在两步内以至少 0.95 的概率把水质提升到 `high` 状态？
+
+这就是论文定义的"鲁棒模型检测"问题：验证 PATL 公式在参数系统的**每一个合法赋值**下都成立。
+
+### 三种不确定性语义
+
+论文将"概率不可信"这件事细分为三种数学上严格递增的表达力：
+
+| 类型 | 数学形式 | 现实含义 |
+|------|---------|----------|
+| **ε-扰动** | 每条转移概率偏差 ≤ ε | 经验估计的统计误差 |
+| **固定参数** | 概率为有界个共享参数的有理函数 | 多个相关转移联动变化（例：太阳能板效率同时影响多个数据点） |
+| **无界参数** | 任意多个参数 | 完全不预先设定耦合关系，最坏情况 |
+
+这三种语义构成一条谱系，从区间型到一般参数型，复杂度依次跃升。
+
+## 核心创新
+
+### 1. 调度器式有界记忆策略（Proposition 4.2）
+
+**问题**：在部分观测下，无限记忆的策略与完美信息下的可达性一样不可判定。但现实中的 Agent 没有无限记忆。
+
+**经典方案**：k-序列策略——只回看最近 k 步历史。
+
+**本文方案**：把策略表示成有限状态调度器 $(Q, \text{act}, \Delta, \text{start})$，其中 $Q$ 是模式集合、$\Delta: Q \times O \to \text{Dist}(Q)$ 是随机化记忆转移、$\text{act}: Q \times O \to \text{Dist}(\text{Ac})$ 是动作选择。**这是 n 状态有限自动机级别的记忆**，严格强于 k-序列策略。
+
+**关键命题**（Proposition 4.2）：存在一个 MDP $G_g$ 与 LTL 公式 $\varphi_g$，调度器式策略能以概率 1 满足 $\varphi_g$，而任何 k-序列策略都不能。直观上，自动机记忆能编码"是否访问过 $q_1$ 或 $q_2$"这类全局信息，而 k-序列策略只能看到最近 k 步。
+
+> **[译注]**：这是论文最重要的概念贡献之一。在 AARM 这类 AI Agent 安全框架里，"有界但富表达力"的记忆模型正是把"经验规则"和"形式化保证"粘合起来的关键——既不让 Agent 退化为"无脑反应器"，又让验证可判定。
+
+### 2. 三种扰动语义下的精确复杂度
+
+这是论文的技术核心。表 1 给出主定理：
+
+| 验证目标 | ε-扰动 | 固定参数 | 无界参数 |
+|----------|---------|----------|----------|
+| **通用可达性**（$\langle\langle\varnothing\rangle\rangle \triangleright\triangleleft_d F R$） | P（定理 7.1）| NP ∩ co-NP（定理 7.2）| ∀ℝ（定理 7.3）|
+| **PATL**（观测 + 有界记忆） | $\Sigma_2^P$（定理 7.6）| $\Sigma_2^P$（定理 7.8）| $\Sigma_3^{\mathbb{R}}$（定理 7.9）|
+
+**关键技术路线**（参见图 4）：
+
+1. 用可达性作为基石（定理 7.1-7.3）
+2. 对无联盟链公式证明 NP 成员资格（引理 7.5/7.7）
+3. 逐层归纳 PATL 语法，借 $\text{NP}^{\text{NP}} = \Sigma_2^P$ 包装
+4. 无界参数情形下达到实数理论第三层 $\Sigma_3^{\mathbb{R}}$
+
+**复杂度跃迁的根源**（定理 7.3 证明）：在最坏情况下，参数依赖性导致满足/违反的边界是非线性曲面，分离它们的难度与实数量词交替深度线性相关。
+
+### 3. 鲁棒 PATL 模型检测的精确定义
+
+对参数系统 $\mathcal{G}$、状态 $s$、公式 $\varphi$，**鲁棒模型检测**问的是：
+
+$$\mathcal{G}[\text{Val}],\, s \models_b \varphi \quad \text{对每个合法赋值 Val 均成立?}$$
+
+这种"对所有参数成立"的全称语义（∀ over valuations）是鲁棒性的核心。它不是"找一个好参数让策略成功"，而是"无论参数怎么变策略都成功"——这正是真实部署的容错需求。
+
+## 方法论详解
+
+### 框架结构
+
+![框架总览](framework-overview.png)
+
+整篇文章可以分解为五层（见图 1）：
+
+1. **建模层**：随机 MAS 是一个五元组 $\mathcal{G} = (\text{St}, L, \delta, v, (\text{obs}_a)_{a \in \text{Ag}})$，其中 $\delta(s, \vec{c})(s') \in \text{Dist}(\text{St})$ 是给定联合动作 $\vec{c}$ 后从 $s$ 转移到 $s'$ 的概率。
+2. **不确定性层**：三种扰动语义，统一形式化为 $\mathcal{G} = (\text{St}, L, X, \delta, v, (\text{obs}_a), \kappa)$，其中 $X$ 是参数集合、$\kappa$ 是参数约束。
+3. **策略层**：基于有限状态调度器的观测驱动策略。
+4. **规范层**：PATL 是带概率下界的 ATL 扩展。
+5. **结论层**：复杂度从上到下呈现一条"绿 → 绿 → 红"的渐变带——无界参数时复杂度跃升到实数理论第三层。
+
+### 通用可达性的复杂度论证
+
+**定理 7.1**（ε-扰动）直接由 Chen, Han, Kwiatkowska 2013 年的区间 MDP 多面体方法给出。
+
+**定理 7.2**（固定参数）的关键技巧：
+
+> 猜测一个最坏情况的策略（对 $\ge d$ 取最小、对 $\le d$ 取最大），用 Bellman 方程把"该策略最优"翻译成一个固定量词数的 $\exists\mathbb{R}$ 公式。由于参数数固定，这个公式可在 P 时间内检查。
+
+**定理 7.3**（无界参数）进入实数理论：$\forall\mathbb{R}$ 类是实数理论中类似 NP 的对偶类，判断"对所有实数赋值公式都真"。
+
+### PATL 的归纳包装
+
+对完整 PATL（包含 X/U/R 算子与嵌套的 $\langle\langle C \rangle\rangle$），论文做的是经典"对公式结构归纳 + NP 预言机包装"：
+
+- 对 $\varphi$ 的子公式递归，每一层调用一个"是否满足子公式"的 NP 子程序
+- 整体得到 $\text{NP}^{\text{NP}} = \Sigma_2^P$
+- 无界参数情形预言机升级为 $\exists\mathbb{R}$ 子程序，堆叠出 $\Sigma_3^{\mathbb{R}}$
+
+这条技术路线与经典的 LTL-to-Büchi 归纳有异曲同工之妙，但把"语言层级"换成了"实数量词层级"。
+
+### 调度器式策略为何严格更强？
+
+**例子 4.2 的核心**（图 2 给出）：MDP $G_g$ 有状态 $\{q_0, q_1, q_2, q_3, q_4, q_5, q_6\}$，动作 $b$（蓝）和 $r$（红）以 0.5/0.5 概率走出 $q_0$ 到 $q_1$ 或 $q_2$，之后是确定性的。LTL 公式：
+
+$$\varphi_g = G((b \Rightarrow GF b) \wedge (r \Rightarrow GF r))$$
+
+公式要求"每出现蓝色就要无穷次出现蓝色、每出现红色就要无穷次出现红色"。
+
+**两状态自动机**（图 3）可以记忆"是否见过蓝"和"是否见过红"两个独立模式，从而保持一致。
+
+**任何 k-序列策略**：经过 $q_3 \to q_4$ 这一段时，看不到 $q_1$ 还是 $q_2$ 是来源（因为两段都长 k 步），因此必然在 $q_4$ 选一个固定动作，无法满足 $\varphi_g$ 几乎必然。
+
+## 河流博弈的完整展开
+
+![河流示例](river-example.png)
+
+这个例子贯穿全文的多个层次（见图 3）：
+
+**原始系统 $G_{\text{river}}$**（图 3 上半部分）：
+
+- 状态 $\{q_{\text{normal}}, q_{\text{high}}, q_{\text{low}}\}$
+- 动作 $(d, d)$、$(t, t)$、$(t, d)$（对称性 $(d, t) = (t, d)$）
+- 转移：双方都处理 → 水质升一档；双方都排放 → 水质降一档；只有一家处理 → 50/50 维持或变化
+
+**参数化版本 $G^p_{\text{river}}$**（图 3 下方说明）：引入参数 $x \in [0, 0.25]$，联动修改三处概率（$0.5 \to 0.5 + x$、$0.75 \to 0.75 - x$）。**关键观察**：只要 $x \in [0, 0.25]$，单家公司（不与对手合作）能以至少 0.375 的概率在两步内让水质升到 high。
+
+**ε-扰动版本 $G_{0.05, \text{river}}$**（示例 6.2）：每条概率在 $[-0.05, +0.05]$ 范围内浮动。可能实现 $G'_{\text{river}}$ 中 $(d, d)$ 在 $q_{\text{high}}$ 下不再确定性地让水质降——这种"边出现 / 消失"在参数系统中是**结构性的新现象**。
+
+**核心鲁棒性质**（示例 7.4）：
+
+> 原系统下：$G_{\text{river}}, q_{\text{normal}} \models_b \bigvee_{C \ne \varnothing} \langle\langle C \rangle\rangle_{\ge 0.5} X\,\text{high}$（任何非空联盟都能让下一步水质高）
+> 修改后：$G'_{\text{river}}, q_{\text{normal}} \not\models_b \bigvee_{C \ne \varnothing} \langle\langle C \rangle\rangle_{\ge 0.5} X\,\text{high}$（单家公司已无法单独保证）
+> 鲁棒版本：所有 $G_{0.05, \text{river}}[\text{Val}]$ 满足 $G_{0.05, \text{river}}[\text{Val}], q_{\text{normal}} \models_b \langle\langle \text{Ag} \rangle\rangle_{\ge 0.95} X\,\text{high}$（需要两家公司合作，且概率阈值提升到 0.95）
+
+这个三段式对比直观展示了鲁棒验证的真正价值：**它给出的保证是跨所有可能参数取值的，不是某个最坏情况点的快照**。
+
+## 复杂度景观的可视化
+
+![复杂度全景](complexity-landscape.png)
+
+把表 1 画成矩阵（见图 2），可以更清楚地看到一条**斜向上的边界线**：
+
+- 左上 → 左下：从 P 升到 $\Sigma_2^P$——验证目标从"可达性"扩展到"全 PATL"时，跨过一层预言机
+- 左下 → 右下：从 $\Sigma_2^P$ 升到 $\Sigma_3^{\mathbb{R}}$——不确定性表达力从"区间"提升到"无界参数"时，跨过一层实数量词
+- **结论**：鲁棒验证总是可判定的，代价是这种"斜向"复杂度阶梯
+
+**对于下界**（开放问题）：论文坦承 hardness 结果较难获得——∀ℝ-hardness 即使对基本情形也是开放问题（[33]），而 $\Sigma_3^{\mathbb{R}}$-hardness 更是理论挑战。附录讨论了为何现有技巧无法给出 $\Sigma_2^P$-hardness。
+
+## 关键数据与定理对照表
+
+| 编号 | 设定 | 上界 | 关键技巧 |
+|------|------|------|----------|
+| 定理 7.1 | ε-扰动 + 通用可达性 | P | 区间 MDP 多面体方法 [16] |
+| 定理 7.2 | 固定参数 + 通用可达性 | NP ∩ co-NP | Bellman 方程 + 固定量词数 $\exists\mathbb{R}$ |
+| 定理 7.3 | 无界参数 + 通用可达性 | ∀ℝ | 实数理论直接归约 |
+| 定理 7.6 | ε-扰动 + PATL | $\Sigma_2^P$ | 语法归纳 + $\text{NP}^{\text{NP}}$ 包装 |
+| 定理 7.8 | 固定参数 + PATL | $\Sigma_2^P$ | 同上 + 固定参数归纳 |
+| 定理 7.9 | 无界参数 + PATL | $\Sigma_3^{\mathbb{R}}$ | 三层量词堆叠 |
+| 命题 4.2 | 调度器 ⊋ k-序列 | （严格包含）| 反例 MDP $G_g$ |
+| 命题 5.4 | 无限记忆 + 部分观测 | 不可判定 | 经典结果 [27] |
+
+## 应用讨论
+
+### 智能电网与 P2P 能源交易
+
+论文第 8 节给出两个具体应用：
+
+**绿色建筑**（合作型 MAS）：
+
+> $$\langle\langle C \rangle\rangle_{\ge 0.8} G \bigwedge_{a \in C} \neg \text{energyLow}_a$$
+
+表示：建筑群 $C$ 有一个观测驱动的有界记忆策略，能以 ≥0.8 的概率保证**没有成员进入低能量状态**。鲁棒版本意味着无论太阳能板效率、热需求预测、模型更新数据如何漂移，这条保证都成立。
+
+**关键 CPS 安全规范**（对抗型 MAS）：
+
+> $$\neg \langle\langle \{a\} \rangle\rangle_{\ge 0.2} F (\text{access}_a \wedge \neg \text{securityCheck}_a)$$
+
+即：攻击者 $a$ 没有"以 ≥0.2 概率获得未授权访问"的策略。鲁棒版本意味着即使攻击成功概率、检测率发生漂移，这一安全属性仍成立。
+
+### 与 AI Agent 安全研究的关联
+
+这个工作对 AARM 框架设计有三层启示：
+
+1. **L3 副作用验证层**：参数化模型检测正是处理"基于数据学习的行为模型不精确"的成熟方法。可被纳入 L3 工具栈。
+2. **有界记忆 vs 完美信息**：AARM 关注执行隔离（通常假设 Agent 知道自身状态），而部分观测正是现实中 agent 不知道的——论文给出的"有界自动机记忆"是务实选择。
+3. **复杂度诚实性**：论文老老实实地报告"无界参数导致 $\Sigma_3^{\mathbb{R}}$"——这提醒我们**鲁棒验证不是免费的**，对实际部署需要选对扰动粒度（多数场景固定参数足够）。
+
+## 启示与思考
+
+### 对我正在做的研究
+
+1. **AARM 框架的 L3 验证**：依赖类型 / 形式化方法的"硬验证"与本文的"参数化模型检测"并非互斥——前者适合结构验证（Lean4Agent 路线），后者适合概率行为验证。**两者可叠加**：先用 Lean4Agent 验证工作流结构正确性，再用本文方法验证在参数扰动下的概率保持。
+
+2. **AgentMonitor 的检测规则**：在 L3 拦截规则设计上，"在概率扰动下保证正确"的思路可以直接借鉴——把"低完整性的数据流入高风险操作"建模为参数化转移，检查 $\exists\mathbb{R}$ 公式 $\forall \text{Val}$ 是否满足安全谓词。
+
+3. **AgentMoss 性能工程**：当模型规模（Agent 数量 × 状态空间）爆炸时，固定参数情形的 NP∩co-NP 上界提示**限制参数共享结构**可能是缓解组合爆炸的关键。
+
+### 对领域研究的展望
+
+论文把"鲁棒"从**确定性扰动**（Robust ATL 2023）推进到**概率扰动**。下一步显然在：
+
+- 给出 $\Sigma_2^P$、$\Sigma_3^{\mathbb{R}}$-hardness 完整刻画
+- 工具支持：把 PRISM 扩展到带部分观测 + 调度的参数系统
+- 计算"最大可容忍扰动"——给定策略，输出它在多少扰动下仍鲁棒
+
+最后一项尤其有工程价值：把"鲁棒验证"从 yes/no 问题升级为定量指标（"这个策略能容忍 12% 的概率漂移"），是部署到真实 CPS 的必经一步。
+
+## 参考资料
+
+- arXiv: [https://arxiv.org/abs/2602.13405](https://arxiv.org/abs/2602.13405)（扩展版含技术附录，DOI 10.48550/arXiv.2602.13405）
+- 会议版本：AAMAS 2026
+- 关键引用：[5] Baier & Katoen《Principles of Model Checking》（这是 2008 年经典教材，本文所有 notation 的基础）；[16] Chen, Han, Kwiatkowska 区间 MDP；[33] Junges 等人参数化 MDP 复杂度（定理 7.2/7.3 的源头）
+- 致谢：DFG 项目 POMPOM (KA 1462/6-1) 与 ANR-22-CE48-0012 资助
+
+> **[译注]**：这篇论文不搞花活、不追热点，纯粹的复杂度工作。但它回答了一个具体问题——"概率不完全可信时该怎么办"——并给出了**从可判定到不可判定之间的完整地图**。这种扎实，正是 AARM 这类工程导向研究应该学习的"理论底座"。a:["$","$L1b",null,{"paper":{"slug":"robust-mas-verification","title":"鲁棒多智能体系统验证：当系统参数不可信时，联盟策略还能信几分？","originalTitle":"Verification of Robust Multi-Agent Systems","excerpt":"AAMAS 2026 论文。RWTH Aachen Katoen 团队研究不确定随机多智能体系统的鲁棒策略验证，提出三种扰动语义（ε-扰动 / 固定参数 / 无界参数）下 PATL 鲁棒模型检测的复杂度刻画：在部分观测、有限自动机记忆、对抗 Agent 三重困难下，鲁棒验证仍然可判定，从 P 到 Σ_3^R 阶梯分布，精准刻画了『不确定性表达力 ↔ 计算代价』的内在张力。","date":"2026-08-25","coverImage":"$undefined","architectureImage":"/images/papers/robust-mas-verification/framework-overview.png","featured":false,"draft":false,"authors":["Raphaël Berthon (RWTH Aachen & Paris-Saclay)","Joost-Pieter Katoen (RWTH Aachen)","Munyque Mittelmann (Sorbonne Paris Nord)","Aniello Murano (Univ. Naples Federico II)"],"year":2026,"venue":"AAMAS 2026 (extended version, arXiv:2602.13405)","tags":["AI解读","形式化验证","多智能体系统","模型检测","鲁棒性","概率时序逻辑","ATL","Agent 架构设计"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心问题","text":"核心问题","level":3},{"id":"三种不确定性语义","text":"三种不确定性语义","level":3},{"id":"核心创新","text":"核心创新","level":2},{"id":"1-调度器式有界记忆策略proposition-42","text":"1. 调度器式有界记忆策略（Proposition 4.2）","level":3},{"id":"2-三种扰动语义下的精确复杂度","text":"2. 三种扰动语义下的精确复杂度","level":3},{"id":"3-鲁棒-patl-模型检测的精确定义","text":"3. 鲁棒 PATL 模型检测的精确定义","level":3},{"id":"方法论详解","text":"方法论详解","level":2},{"id":"框架结构","text":"框架结构","level":3},{"id":"通用可达性的复杂度论证","text":"通用可达性的复杂度论证","level":3},{"id":"patl-的归纳包装","text":"PATL 的归纳包装","level":3},{"id":"调度器式策略为何严格更强","text":"调度器式策略为何严格更强？","level":3},{"id":"河流博弈的完整展开","text":"河流博弈的完整展开","level":2},{"id":"复杂度景观的可视化","text":"复杂度景观的可视化","level":2},{"id":"关键数据与定理对照表","text":"关键数据与定理对照表","level":2},{"id":"应用讨论","text":"应用讨论","level":2},{"id":"智能电网与-p2p-能源交易","text":"智能电网与 P2P 能源交易","level":3},{"id":"与-ai-agent-安全研究的关联","text":"与 AI Agent 安全研究的关联","level":3},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"对我正在做的研究","text":"对我正在做的研究","level":3},{"id":"对领域研究的展望","text":"对领域研究的展望","level":3},{"id":"参考资料","text":"参考资料","level":2}],"readingTime":"14 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"鲁棒多智能体系统验证：当系统参数不可信时，联盟策略还能信几分？ | 博客"}],["$","meta","1",{"name":"description","content":"AAMAS 2026 论文。RWTH Aachen Katoen 团队研究不确定随机多智能体系统的鲁棒策略验证，提出三种扰动语义（ε-扰动 / 固定参数 / 无界参数）下 PATL 鲁棒模型检测的复杂度刻画：在部分观测、有限自动机记忆、对抗 Agent 三重困难下，鲁棒验证仍然可判定，从 P 到 Σ_3^R 阶梯分布，精准刻画了『不确定性表达力 ↔ 计算代价』的内在张力。"}],["$","meta","2",{"property":"og:title","content":"鲁棒多智能体系统验证：当系统参数不可信时，联盟策略还能信几分？"}],["$","meta","3",{"property":"og:description","content":"AAMAS 2026 论文。RWTH Aachen Katoen 团队研究不确定随机多智能体系统的鲁棒策略验证，提出三种扰动语义（ε-扰动 / 固定参数 / 无界参数）下 PATL 鲁棒模型检测的复杂度刻画：在部分观测、有限自动机记忆、对抗 Agent 三重困难下，鲁棒验证仍然可判定，从 P 到 Σ_3^R 阶梯分布，精准刻画了『不确定性表达力 ↔ 计算代价』的内在张力。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/robust-mas-verification/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"鲁棒多智能体系统验证：当系统参数不可信时，联盟策略还能信几分？"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"鲁棒多智能体系统验证：当系统参数不可信时，联盟策略还能信几分？"}],["$","meta","13",{"name":"twitter:description","content":"AAMAS 2026 论文。RWTH Aachen Katoen 团队研究不确定随机多智能体系统的鲁棒策略验证，提出三种扰动语义（ε-扰动 / 固定参数 / 无界参数）下 PATL 鲁棒模型检测的复杂度刻画：在部分观测、有限自动机记忆、对抗 Agent 三重困难下，鲁棒验证仍然可判定，从 P 到 Σ_3^R 阶梯分布，精准刻画了『不确定性表达力 ↔ 计算代价』的内在张力。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
