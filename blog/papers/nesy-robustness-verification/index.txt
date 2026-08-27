@@ -1,0 +1,244 @@
+1:"$Sreact.fragment"
+2:I[300055,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"ThemeProvider"]
+3:I[26362,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"LanguageProvider"]
+4:I[949708,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+5:I[161302,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+6:I[999693,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+7:I[917688,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"default"]
+8:I[6936,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+9:I[912386,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js"],"default"]
+13:I[966732,[],"default"]
+:HL["/blog/_next/static/chunks/42d0e3116377f4b8.css","style"]
+:HL["/blog/_next/static/chunks/dc989e85f284b426.css","style"]
+:HL["/blog/_next/static/media/Inter_Bold-s.p.68b4977b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/Inter_Regular-s.p.ef73b2a5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Bold-s.p.283f75be.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Italic-s.p.9d621d1c.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/LibreBaskerville_Regular-s.p.ca8624a4.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/blog/_next/static/media/jinhuafont-s.p.cc6aa8da.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+0:{"P":null,"b":"YRsdOePxLJWAqJMLGKlL7","c":["","papers","nesy-robustness-verification",""],"q":"","i":false,"f":[[["",{"children":["papers",{"children":[["slug","nesy-robustness-verification","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog/_next/static/chunks/42d0e3116377f4b8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/blog/_next/static/chunks/dc989e85f284b426.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog/_next/static/chunks/b9abeb77bbedd679.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/aef63fa2037c1212.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh","suppressHydrationWarning":true,"children":["$","body",null,{"className":"inter_aaef74ca-module__AKYmma__variable baskerville_10c8a009-module__xOS08a__variable jinhua_268e46f8-module__cmpybG__variable font-sans min-h-screen transition-colors duration-300","data-palette":"default","suppressHydrationWarning":true,"children":[["$","a",null,{"href":"#main-content","className":"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2","children":"Skip to main content"}],["$","$L2",null,{"children":["$","$L3",null,{"children":[["$","div",null,{"className":"selection:bg-accent/20 selection:text-accent dark:selection:bg-accent/30 dark:selection:text-accent min-h-screen flex flex-col","children":[["$","$L4",null,{"seriesList":[],"booksList":[]}],["$","main",null,{"id":"main-content","className":"pt-16 flex-grow","children":[["$","$L5",null,{"updateUrl":"https://browsehappy.com/"}],["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L8",null,{}]]}],["$","$L9",null,{}]]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$La",[["$","script","script-0",{"src":"/blog/_next/static/chunks/41517dddc5bf1f98.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/blog/_next/static/chunks/b555f15d2fc972d9.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/blog/_next/static/chunks/d219943f0c38e436.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/blog/_next/static/chunks/53b4e4ee47441a7b.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/blog/_next/static/chunks/677eab8f02355603.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/blog/_next/static/chunks/0ada055b956424bd.js","async":true,"nonce":"$undefined"}],["$","script","script-6",{"src":"/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","async":true,"nonce":"$undefined"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$L12",false]],"m":"$undefined","G":["$13",[]],"S":true}
+14:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"OutletBoundary"]
+15:"$Sreact.suspense"
+17:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"ViewportBoundary"]
+19:I[796464,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"MetadataBoundary"]
+b:["$","script","script-7",{"src":"/blog/_next/static/chunks/ab1d7af420d9090e.js","async":true,"nonce":"$undefined"}]
+c:["$","script","script-8",{"src":"/blog/_next/static/chunks/c4349fc3c4c7cffb.js","async":true,"nonce":"$undefined"}]
+d:["$","script","script-9",{"src":"/blog/_next/static/chunks/e6304cd10ee4e15d.js","async":true,"nonce":"$undefined"}]
+e:["$","script","script-10",{"src":"/blog/_next/static/chunks/d84f551a534a34f9.js","async":true,"nonce":"$undefined"}]
+f:["$","script","script-11",{"src":"/blog/_next/static/chunks/e35730516b96fe21.js","async":true,"nonce":"$undefined"}]
+10:["$","script","script-12",{"src":"/blog/_next/static/chunks/ba2c631539156b7c.js","async":true,"nonce":"$undefined"}]
+11:["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]
+12:["$","$1","h",{"children":[null,["$","$L17",null,{"children":"$L18"}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$15",null,{"name":"Next.Metadata","children":"$L1a"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+1b:I[976668,["/blog/_next/static/chunks/b9abeb77bbedd679.js","/blog/_next/static/chunks/aef63fa2037c1212.js","/blog/_next/static/chunks/41517dddc5bf1f98.js","/blog/_next/static/chunks/b555f15d2fc972d9.js","/blog/_next/static/chunks/d219943f0c38e436.js","/blog/_next/static/chunks/53b4e4ee47441a7b.js","/blog/_next/static/chunks/677eab8f02355603.js","/blog/_next/static/chunks/0ada055b956424bd.js","/blog/_next/static/chunks/8d4627ce3cb2dd7d.js","/blog/_next/static/chunks/ab1d7af420d9090e.js","/blog/_next/static/chunks/c4349fc3c4c7cffb.js","/blog/_next/static/chunks/e6304cd10ee4e15d.js","/blog/_next/static/chunks/d84f551a534a34f9.js","/blog/_next/static/chunks/e35730516b96fe21.js","/blog/_next/static/chunks/ba2c631539156b7c.js"],"default"]
+1c:T3693,## 论文概览
+
+神经符号（NeSy）AI 把神经网络感知和符号推理结合起来，在自动驾驶、医疗等关键领域被视为"既能泛化又能解释"的希望之星。但**概率型 NeSy 系统**——神经网络先从图像中抽取离散概念，概率逻辑推理层再基于这些概念做推理——的鲁棒性验证一直是个硬骨头。本文研究的核心问题是：
+
+> 给定一个概率 NeSy 系统和一个输入扰动 $\epsilon$，如何形式化地验证：所有 $\epsilon$-邻域内的输入都不会改变系统的概率推理输出？
+
+Lomuscio 团队（Imperial + NCSR Demokritos）给出的回答分三步：
+
+1. **理论分析**：精确求解的核心计算 E-WMC 是 **NP^PP-完备**（复杂度类在多线性多项式顶点展开与 #P 计数预言机之间），因此精确验证不可行；
+2. **方法突破**：把整个 NeSy 系统（NN + 算术电路形式的概率逻辑）编译成**单一可微计算图**，导出 ONNX，直接喂给现成的 NN 验证器（autoLiRPA），用 **IBP（区间传播）** 在端到端层面做松弛近似；
+3. **实验验证**：在多位数 MNIST 加法基准上比求解器方法指数级更快；在 ROAD-R 自动驾驶真实数据集上成功验证了一个由两个 6 层 CNN 构成的安全系统，3×240×320 行车记录仪图像，验证耗时仅 ~0.09 s/样本。
+
+> **[译注]**：Lomuscio 是 NN 验证领域的资深学者（Reluplex、VeriNet 等都出自其组），与 AARM 框架关注的形式化保证方向高度契合。本文最值得玩味的不是又一个验证工具，而是它揭示的"NeSy 系统的精确验证天然 NP^PP 难"——这是该方向第一个正式的复杂度上界。
+
+## 核心贡献
+
+| 贡献 | 内容 |
+|------|------|
+| **复杂度刻画** | 证明 E-WMC 决策问题是 NP^PP-完备（上界来自多线性多项式极值在区间端点取得 + #P 预言机；下界从 E-MAJSAT 归约）|
+| **首个松弛验证框架** | 把"知识编译 + 算术电路 + 神经网络"统一编为可微计算图，输出 ONNX，复用 autoLiRPA/Marabou |
+| **多位数 MNIST 基准** | #digits∈{2,3,4,5,6}，ε∈{10⁻²,10⁻³,10⁻⁴}，E2E-R 指数级优于 R+SLV（混合 Gurobi）与 Marabou（精确 SMT）|
+| **自动驾驶真实部署** | 在 ROAD-R 数据集上验证"红灯/前车 → 刹车"安全规则，2×6 层 CNN，输入 3×240×320，鲁棒性从 96.82% (ε=1e-5) 降到 0% (ε=1e-3)|
+
+## 概率 NeSy 系统：背景与问题
+
+一个概率 NeSy 系统分两步工作（Marconato et al. 2024）：
+
+1. **感知层**：神经网络 $p_\theta(c \mid x)$ 从输入 $x \in \mathbb{R}^n$ 抽取 $k$ 个潜在概念的离散概率；
+2. **推理层**：用符号知识 $K$（一般是概率逻辑公式）做推理，得到 $p(y \mid c; K)$。
+
+输出 $y$ 是查询的概率。系统的关键特征是**整个计算图是可微的**——这是把松弛传播推过去的代数基础。
+
+### 鲁棒性定义
+
+给定输入 $x$ 与扰动半径 $\epsilon$，鲁棒性即要求所有 $x' \in \mathbb{B}_\epsilon(x)$ 都保持相同输出。形式化上要计算：
+
+$$\left[ \min_{x'}\, p(y_i \mid x'),\ \max_{x'}\, p(y_i \mid x') \right]\quad \forall x' \text{ s.t. } \|x' - x\| \leq \epsilon \tag{2}$$
+
+> **[译注]**：式 (2) 是松弛验证的"目标函数"——只要每个输出类的概率区间都和真实标签保持一致，且最小值仍大于阈值 $T$，实例就鲁棒。本文取 $T=0.5$。
+
+## 知识编译 + WMC：NeSy 推理的算术化
+
+概率 NeSy 系统的推理通常用**加权模型计数（WMC）** 归约：
+
+$$\mathrm{WMC}(\varphi, p) = \sum_{\omega \models \varphi} \prod_{i \in \omega} p_i \prod_{i \notin \omega} (1 - p_i) \tag{1}$$
+
+- $\varphi$ 是命题逻辑公式；
+- $p_i$ 是变量 $v_i$ 为真的概率；
+- $\omega$ 是满足 $\varphi$ 的世界（赋值）。
+
+WMC 通过**知识编译（KC）** 高效求解：先把 $\varphi$ 编译成**决定性图（SDD）** 等"易处理表示"，再在推理阶段用**算术电路（AC）** 把布尔运算转成算术运算：
+
+| 布尔运算 | 算术运算 |
+|----------|----------|
+| AND ($\wedge$) | × |
+| OR ($\vee$) | + |
+| $\neg$ | $1 - x$ |
+
+这就是所谓的 **NAT 半环**（Maene and De Raedt 2025）。编译一次后可摊销大量查询——这是 NeSy 系统运行时高效的根源。
+
+## E-WMC：精确求解为什么 NP^PP 难？
+
+要把 NN 输出（已经被 IBP 推成概率区间）传到符号层，核心问题是 **E-WMC**（"存在" WMC）：
+
+> **定义 1（E-WMC）** 给定布尔公式 $\varphi(v)$、变量概率区间 $I_i = [l_i, u_i] \subseteq [0,1]$、阈值 $T$，是否存在 $w \in I_1 \times \dots \times I_k$ 使 $\mathrm{WMC}(\varphi, w) \geq T$？
+
+**命题 2**：E-WMC 是 **NP^PP-完备**。
+
+- **上界（NP 成员）**：算术电路是变量的多线性多项式（Choi et al. 2020），多线性多项式在闭区间上极值在顶点取得（Laneve et al. 2010），所以搜索空间是 $2^n$ 个顶点组合，每次检查是 #P 查询。组合搜索（NP 部分）+ #P 预言机 = NP^#P = NP^PP（Monniaux 2022）。
+- **下界（NP 困难）**：从 E-MAJSAT 归约——这是概率规划的 SAT 完备问题。
+
+> **[译注]**：NP^PP 比 NP 高一阶（含 #P 计数），比 PSPACE 低（包含 PP）。它的直观含义是"在组合空间里搜，每次搜都要做计数查询"——NeSy 验证天生落在这里。
+
+![E-WMC 复杂度](./images/papers/nesy-robustness-verification/ewmc-complexity.png)
+
+## 框架总览：端到端松弛传播
+
+精确传播不可行 → 论文的解法是把 NeSy 系统的**神经部分**和**算术电路部分**统一编为**单一可微计算图**，再导出 ONNX：
+
+![框架总览](./images/papers/nesy-robustness-verification/framework-overview.png)
+
+整个流程（左→右）：
+
+1. **输入层**：$x \in \mathbb{R}^n$，扰动 $\|x' - x\| \leq \varepsilon$；
+2. **神经感知层**（可多个）：$p_\theta(c \mid x)$ → 概率向量；
+3. **概率逻辑层**：知识编译（SDD）→ 算术电路（AC）→ $\mathrm{WMC}(\varphi, p)$；
+4. **整体编译**：把 NN+AC 编为单一 ONNX 图；
+5. **验证器复用**：autoLiRPA（IBP 松弛）/ Marabou（SMT 精确）/ R+SLV（混合）；
+6. **输出**：$\left[\min\,p(y \mid x'), \max\,p(y \mid x')\right]$；实例鲁棒当且仅当 $\min > 0.5$。
+
+### 关键洞察
+
+- **代数一致性**：算术电路只是多线性多项式，与 NN 的代数结构天然兼容，可以端到端反向传播；
+- **摊销开销**：编译一次（KC）→ 多次区间查询 → 适合大规模数据集；
+- **工具复用**：导出 ONNX 直接对接所有主流 NN 验证器，避免重复造轮子。
+
+## 实验 1：多位数 MNIST 加法
+
+**任务**：每个样本是若干张 MNIST 数字图像，系统把它们加起来求和（参见 Manhaeve et al. 2018 的 DeepProbLog 设置）。CNN 识别单数字（98% 准确率），逻辑层用 KC 编译多位数加法规则。**#digits 越大，符号电路越复杂**。
+
+**基线**：
+- **E2E-R**：本文方法，端到端 autoLiRPA+IBP；
+- **R+SLV**：混合方法——NN 部分用 IBP，符号部分把 AC 转多项式交给 Gurobi 解约束优化；
+- **Marabou**：精确 SMT 验证器，但**当前版本不支持 Softmax 与张量索引**——所以只能验证 CNN 子任务。
+
+**可扩展性**（图 2，对数坐标）：
+
+![MNIST 可扩展性对比](./images/papers/nesy-robustness-verification/mnist-scalability.png)
+
+观察：
+- R+SLV 在 $\epsilon = 10^{-2}$ 下，#digits=5、6 时**全部超时**（72h 单样本），#digits=6、$\epsilon = 10^{-3}$ 时<5% 样本在超时内完成；
+- E2E-R 三种 $\epsilon$ 下的运行时间都在 0.01–0.3 s 量级，**与 R+SLV 差距随 #digits 增大呈指数级扩大**；
+- Marabou 仅 CNN 子任务（不包含符号层）即需 **314 s/样本**——比 E2E-R 慢 4 个数量级。
+
+**结果质量**（表 1，$\epsilon = 0.001$）：
+
+| 方法 | 2 位 | 3 位 | 4 位 | 5 位 |
+|------|------|------|------|------|
+| R+SLV 区间 | 0.871–0.981 | 0.815–0.972 | 0.764–0.962 | 0.731–0.928 |
+| E2E-R 区间 | 0.871–0.982 | 0.815–0.974 | 0.763–0.965 | 0.716–0.958 |
+| R+SLV 鲁棒率 (%) | 90.60 | 86.17 | 81.33 | 78.31 |
+| E2E-R 鲁棒率 (%) | 90.60 | 86.11 | 81.21 | 76.67 |
+
+> **[译注]**：E2E-R 区间略宽（误差累积在端到端图上传播），但**鲁棒率几乎与 R+SLV 重合**——说明在工程意义上，松弛带来的精度损失可以忽略。这是松弛验证的核心价值：极少精度的代价，换来指数级的可扩展性。
+
+## 实验 2：ROAD-R 自动驾驶
+
+把方法搬到真实场景。**ROAD-R**（Giunchiglia et al. 2023）是 22 段行车记录仪视频的逐帧标注（边界框）。**安全属性**：
+
+$$\phi_1: \text{red light} \lor \text{car in front} \Rightarrow \text{brake}, \quad \phi_2: \text{accelerate} \Leftrightarrow \neg \text{brake}$$
+
+实验选 3143 帧，标签为 4 个二值量（红灯/前车/停车/前进）。**系统结构**：
+- **目标检测 CNN**：6 层卷积（4 conv + max-pool + 2 linear + sigmoid），准确率 97.2%；
+- **动作选择 CNN**：6 层卷积（4 conv + max-pool + 2 linear + softmax），准确率 96.3%；
+- **输入**：3×240×320 图像（标准行车记录仪分辨率）。
+
+**结果**（表 2）：
+
+![自动驾驶鲁棒性验证](./images/papers/nesy-robustness-verification/autonomous-driving.png)
+
+| 扰动 $\epsilon$ | 鲁棒率 | 单样本耗时 |
+|----------------|---------|------------|
+| 1e-5 | 96.82% | 0.091 s |
+| 5e-5 | 92.68% | 0.092 s |
+| 1e-4 | 82.64% | 0.091 s |
+| 5e-4 | 6.21% | 0.092 s |
+| 1e-3 | 0.00% | 0.092 s |
+
+观察：
+- 鲁棒率随扰动增长**急剧下降**——这正是神经网络易受攻击的体现；
+- **验证耗时几乎与扰动大小无关**（~0.09 s），证明松弛传播的计算开销主要花在网络层数上，而不是扰动范围；
+- E2E-R 与 R+SLV 在此任务上**结果几乎相同**（论文省略）——因为符号电路小、神经部分占主导，松弛在 NN 层已有控制。
+
+> **[译注]**：这个"**验证耗时与扰动无关**"的现象很重要。工程上意味着一旦模型部署上线，验证预算就基本固定——不像求解器方法那样被扰动大小严重影响。
+
+## 相关工作对比
+
+| 方法 | 知识表示 | 概率语义 | 求解器 | 可扩展性 |
+|------|----------|----------|--------|----------|
+| Akintunde et al. 2020 | 时序逻辑（受限于表达力）| 无 | 定制 MILP（Gurobi）| 中等 |
+| Xie et al. 2022 | Hoare 风格逻辑 | 无 | Marabou (SMT) | 差 |
+| Daggitt et al. 2024 | 函数式语言 | 无 | Marabou (SMT) | 差 |
+| **本文** | **任意 KC 编译框架** | **概率逻辑（WMC）** | **autoLiRPA (IBP)** | **指数级更优** |
+
+核心差异：本文**第一个支持概率逻辑语义的 NeSy 验证**——之前的工具只能验证确定性逻辑。代价是松弛（不完备），但通过 KC 把 WMC 嵌进 AC，再把 AC 视作多线性多项式，与 NN 的代数流无缝衔接。
+
+## 启示与思考
+
+### 1. 复杂度诚实性比"看起来完整"更重要
+
+NP^PP-完备的判据让"完整验证 NeSy"在理论层面**被宣判死刑**。这个判据不是工程限制，而是结构性障碍。承认这一点，论文才有底气转向松弛并讨论精度权衡。
+
+### 2. 知识编译是 NeSy 系统的"系统边界"
+
+KC 的核心价值是把"模型"和"查询"分离——编译一次、查询 N 次。这与 AARM 框架的"意图授权 / 执行隔离 / 副作用验证"分层思想同构：编译产物是**可重用的中间表示**，对应 AARM 里的规范层。
+
+### 3. 松弛的工程意义远超理论
+
+E2E-R 的鲁棒率与 R+SLV 几乎一致（差距<2%），但速度指数级快。这意味着在自动驾驶这种实时性约束的场景，**松弛验证是唯一可行的工程路径**。
+
+### 4. 对 AARM 框架的潜在价值
+
+- **WMC 形式化**可作为"数据学习行为模型"的形式化底座——L3 副作用验证若用概率逻辑约束表达，复杂度就锁定在 NP^PP 这一类；
+- **可微计算图 + IBP** 与 AgentMonitor 的"事件溯源 + 区间传播"思路同构；
+- **AC → ONNX 编译** 模式可作为"工具链适配"的方法论——不要为新逻辑重写验证器，让主流工具直接消费。
+
+## 参考
+
+- 论文：Manginas et al. *A Scalable Approach to Probabilistic Neuro-Symbolic Robustness Verification*. NeSy 2025, PMLR.
+- arXiv：[2502.03274v2](https://arxiv.org/abs/2502.03274v2) (29 Jul 2025)
+- 代码：<https://github.com/EVENFLOW-project-EU/nesy-veri>
+- 资助：EU Horizon EVENFLOW (101070430) + Royal Academy of Engineering Chair
+
+### 关键参考文献
+
+- Chavira & Darwiche (2008). *On probabilistic inference by weighted model counting*. AIJ.
+- Choi, Vergari, Van den Broeck (2020). *Probabilistic circuits: A unifying framework*. UCLA Tech Report.
+- Darwiche & Marquis (2002). *A knowledge compilation map*. JAIR.
+- Ehlers (2017). *Formal verification of piece-wise linear feed-forward neural networks*. ATVA.
+- Giunchiglia et al. (2023). *ROAD-R: the autonomous driving dataset with logical requirements*. Machine Learning.
+- Henriksen & Lomuscio (2020). *Efficient neural network verification via adaptive refinement and adversarial search*. ECAI.
+- Katz et al. (2017). *Reluplex: An efficient SMT solver for verifying deep neural networks*. CAV.
+- Katz et al. (2019). *The Marabou framework for verification and analysis of deep neural networks*. CAV.
+- Littman, Goldsmith, Mundhenk (1998). *The computational complexity of probabilistic planning*. JAIR.
+- Manhaeve et al. (2018). *DeepProbLog: Neural probabilistic logic programming*. NeurIPS.
+- Monniaux (2022). *NP^#P = ∃PP and other remarks about maximized counting*.
+- Wong et al. (2018). *Scaling provable adversarial defenses*. NeurIPS.
+- Xu et al. (2020). *Automatic perturbation analysis on general computational graphs (autoLiRPA)*. arXiv:2002.12920.a:["$","$L1b",null,{"paper":{"slug":"nesy-robustness-verification","title":"概率神经符号系统的可扩展鲁棒性验证：松弛近似的胜利","originalTitle":"A Scalable Approach to Probabilistic Neuro-Symbolic Robustness Verification","excerpt":"Manginas 等人给出了概率神经符号系统鲁棒性验证的首个松弛近似框架。核心发现：精确求解 E-WMC 决策问题是 NP^PP-完备，因此只能通过编译整个 NeSy 系统为可微计算图，再借用 autoLiRPA 等 NN 验证器做区间传播。实验显示该方法比 Marabou 快数个数量级，并在 ROAD-R 自动驾驶数据集上验证了 6 层 CNN 组合的安全属性。","date":"2026-08-27","coverImage":"$undefined","architectureImage":"/images/papers/nesy-robustness-verification/framework-overview.png","featured":false,"draft":false,"authors":["Vasileios Manginas","Nikolaos Manginas","Edward Stevinson","Sherwin Varghese","Nikos Katzouris","Georgios Paliouras","Alessio Lomuscio"],"year":2026,"venue":"NeSy 2025 (PMLR vol xxx) / arXiv:2502.03274","tags":["AI解读","形式化验证","神经符号系统","NN验证","鲁棒性","自动驾驶"],"doi":"$undefined","pdfUrl":"$undefined","content":"$1c","headings":[{"id":"论文概览","text":"论文概览","level":2},{"id":"核心贡献","text":"核心贡献","level":2},{"id":"概率-nesy-系统背景与问题","text":"概率 NeSy 系统：背景与问题","level":2},{"id":"鲁棒性定义","text":"鲁棒性定义","level":3},{"id":"知识编译--wmcnesy-推理的算术化","text":"知识编译 + WMC：NeSy 推理的算术化","level":2},{"id":"e-wmc精确求解为什么-nppp-难","text":"E-WMC：精确求解为什么 NP^PP 难？","level":2},{"id":"框架总览端到端松弛传播","text":"框架总览：端到端松弛传播","level":2},{"id":"关键洞察","text":"关键洞察","level":3},{"id":"实验-1多位数-mnist-加法","text":"实验 1：多位数 MNIST 加法","level":2},{"id":"实验-2road-r-自动驾驶","text":"实验 2：ROAD-R 自动驾驶","level":2},{"id":"相关工作对比","text":"相关工作对比","level":2},{"id":"启示与思考","text":"启示与思考","level":2},{"id":"1-复杂度诚实性比看起来完整更重要","text":"1. 复杂度诚实性比\"看起来完整\"更重要","level":3},{"id":"2-知识编译是-nesy-系统的系统边界","text":"2. 知识编译是 NeSy 系统的\"系统边界\"","level":3},{"id":"3-松弛的工程意义远超理论","text":"3. 松弛的工程意义远超理论","level":3},{"id":"4-对-aarm-框架的潜在价值","text":"4. 对 AARM 框架的潜在价值","level":3},{"id":"参考","text":"参考","level":2},{"id":"关键参考文献","text":"关键参考文献","level":3}],"readingTime":"11 min read"}}]
+18:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1d:I[491142,["/blog/_next/static/chunks/655a359a8659a84f.js","/blog/_next/static/chunks/90ee6cab3e335c4a.js"],"IconMark"]
+16:null
+1a:[["$","title","0",{"children":"概率神经符号系统的可扩展鲁棒性验证：松弛近似的胜利 | 博客"}],["$","meta","1",{"name":"description","content":"Manginas 等人给出了概率神经符号系统鲁棒性验证的首个松弛近似框架。核心发现：精确求解 E-WMC 决策问题是 NP^PP-完备，因此只能通过编译整个 NeSy 系统为可微计算图，再借用 autoLiRPA 等 NN 验证器做区间传播。实验显示该方法比 Marabou 快数个数量级，并在 ROAD-R 自动驾驶数据集上验证了 6 层 CNN 组合的安全属性。"}],["$","meta","2",{"property":"og:title","content":"概率神经符号系统的可扩展鲁棒性验证：松弛近似的胜利"}],["$","meta","3",{"property":"og:description","content":"Manginas 等人给出了概率神经符号系统鲁棒性验证的首个松弛近似框架。核心发现：精确求解 E-WMC 决策问题是 NP^PP-完备，因此只能通过编译整个 NeSy 系统为可微计算图，再借用 autoLiRPA 等 NN 验证器做区间传播。实验显示该方法比 Marabou 快数个数量级，并在 ROAD-R 自动驾驶数据集上验证了 6 层 CNN 组合的安全属性。"}],["$","meta","4",{"property":"og:url","content":"https://fangbin.github.io/blog/papers/nesy-robustness-verification/"}],["$","meta","5",{"property":"og:site_name","content":"博客"}],["$","meta","6",{"property":"og:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","meta","7",{"property":"og:image:width","content":"1200"}],["$","meta","8",{"property":"og:image:height","content":"630"}],["$","meta","9",{"property":"og:image:alt","content":"概率神经符号系统的可扩展鲁棒性验证：松弛近似的胜利"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary"}],["$","meta","12",{"name":"twitter:title","content":"概率神经符号系统的可扩展鲁棒性验证：松弛近似的胜利"}],["$","meta","13",{"name":"twitter:description","content":"Manginas 等人给出了概率神经符号系统鲁棒性验证的首个松弛近似框架。核心发现：精确求解 E-WMC 决策问题是 NP^PP-完备，因此只能通过编译整个 NeSy 系统为可微计算图，再借用 autoLiRPA 等 NN 验证器做区间传播。实验显示该方法比 Marabou 快数个数量级，并在 ROAD-R 自动驾驶数据集上验证了 6 层 CNN 组合的安全属性。"}],["$","meta","14",{"name":"twitter:image","content":"https://fangbin.github.io/blog/og-image.png"}],["$","link","15",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}],["$","$L1d","16",{}]]
