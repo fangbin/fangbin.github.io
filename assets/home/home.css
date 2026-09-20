@@ -1,0 +1,393 @@
+/* ============================================================
+   Home visual — "Proof Constellation"
+   Shared by index.html / index-en.html
+   Palette mirrors the Gallery theme used by /blog/
+   ============================================================ */
+
+:root {
+  --bg: #04070b;
+  --bg-2: #07111a;
+  --grid: rgba(80, 220, 180, 0.09);
+  --grid-strong: rgba(80, 220, 180, 0.22);
+  --node: 62, 224, 176;
+  --edge: rgba(62, 224, 176, 0.16);
+  --pulse: #9ff5d6;
+  --wire: #d8b45a;
+  --wire-2: #3ee0b0;
+  --text: #cfe9e0;
+  --text-dim: rgba(207, 233, 224, 0.42);
+  --hair: rgba(216, 180, 90, 0.28);
+  --halo: rgba(62, 224, 176, 0.10);
+  --vig: rgba(4, 7, 11, 0.88);
+}
+
+html[data-theme='light'] {
+  --bg: #fbfaf6;
+  --bg-2: #f3f1e9;
+  --grid: rgba(12, 107, 79, 0.10);
+  --grid-strong: rgba(12, 107, 79, 0.2);
+  --node: 12, 107, 79;
+  --edge: rgba(12, 107, 79, 0.18);
+  --pulse: #b9932f;
+  --wire: #b9932f;
+  --wire-2: #0c6b4f;
+  --text: #232f2a;
+  --text-dim: rgba(35, 47, 42, 0.5);
+  --hair: rgba(185, 147, 47, 0.38);
+  --halo: rgba(12, 107, 79, 0.07);
+  --vig: rgba(251, 250, 246, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Layers ---------- */
+
+#bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* soft radial falloff toward the edges — keeps focus on the core */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 78% 62% at 50% 46%,
+    transparent 0%,
+    transparent 42%,
+    var(--vig) 100%
+  );
+}
+
+/* faint horizontal scanlines — CRT undertone, very restrained */
+.scan {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.32;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--grid) 0px,
+    var(--grid) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: normal;
+}
+
+html[data-theme='light'] .scan {
+  opacity: 0.25;
+}
+
+/* ---------- Core composition ---------- */
+
+main {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+#core {
+  width: min(46vmin, 360px);
+  height: min(46vmin, 360px);
+  display: block;
+  opacity: 0;
+  animation: core-in 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+@keyframes core-in {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* hairline rule with a travelling highlight */
+.rule {
+  position: relative;
+  width: min(30vw, 220px);
+  height: 1px;
+  margin: 2.4vmin 0 2.6vmin;
+  background: linear-gradient(90deg, transparent, var(--hair), transparent);
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-up 1.4s ease 0.85s forwards;
+}
+
+.rule::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--pulse), transparent);
+  animation: sweeper 4.2s cubic-bezier(0.65, 0, 0.35, 1) 1.4s infinite;
+}
+
+@keyframes sweeper {
+  0% {
+    left: -30%;
+  }
+  60%,
+  100% {
+    left: 100%;
+  }
+}
+
+.tagline {
+  font-size: clamp(9px, 1.05vw, 11.5px);
+  letter-spacing: 0.46em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding-left: 0.46em; /* optically recentre the tracked text */
+  opacity: 0;
+  animation: fade-up 1.4s ease 1s forwards;
+}
+
+.enter {
+  pointer-events: auto;
+  margin-top: 5.2vmin;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 0.95em 2.3em;
+  font-size: clamp(9px, 1.05vw, 11.5px);
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--hair);
+  background: transparent;
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-up 1.4s ease 1.15s forwards;
+  transition: border-color 0.45s ease, color 0.45s ease, letter-spacing 0.45s ease;
+}
+
+.enter span {
+  position: relative;
+  z-index: 1;
+  padding-left: 0.38em;
+}
+
+.enter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, var(--halo), transparent);
+  transform: translateX(-101%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.enter:hover::before,
+.enter:focus-visible::before {
+  transform: translateX(0);
+}
+
+.enter:hover,
+.enter:focus-visible {
+  border-color: var(--pulse);
+  letter-spacing: 0.5em;
+  outline: none;
+}
+
+.enter::after {
+  content: '';
+  position: absolute;
+  right: 1.1em;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.6;
+  animation: nudge 2.4s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(45deg);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Corner marks ---------- */
+
+.mark {
+  position: fixed;
+  top: 26px;
+  left: 28px;
+  z-index: 4;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+  animation: fade-up 1.6s ease 1.5s forwards;
+}
+
+.mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mark path,
+.mark circle {
+  fill: none;
+  stroke: var(--wire);
+  stroke-width: 0.9;
+  vector-effect: non-scaling-stroke;
+}
+
+.coord {
+  position: fixed;
+  bottom: 26px;
+  right: 28px;
+  z-index: 4;
+  font-size: 9.5px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-up 1.6s ease 1.6s forwards;
+  user-select: none;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  right: 26px;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text-dim);
+  cursor: pointer;
+  opacity: 0;
+  animation: fade-up 1.6s ease 1.55s forwards;
+  transition: color 0.4s ease, border-color 0.4s ease, transform 0.6s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--text);
+  border-color: var(--hair);
+  outline: none;
+}
+
+.theme-toggle:active {
+  transform: rotate(180deg);
+}
+
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+}
+
+.theme-toggle .half {
+  fill: currentColor;
+}
+
+.theme-toggle .ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .tagline {
+    letter-spacing: 0.3em;
+    font-size: 9px;
+  }
+  .enter {
+    letter-spacing: 0.28em;
+    padding: 0.9em 1.8em;
+  }
+  .coord {
+    display: none;
+  }
+  #core {
+    width: min(62vmin, 300px);
+    height: min(62vmin, 300px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #core,
+  .rule,
+  .tagline,
+  .enter,
+  .mark,
+  .coord,
+  .theme-toggle {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    opacity: 1;
+    transform: none;
+  }
+  .rule::after,
+  .enter::after {
+    animation: none;
+  }
+}
