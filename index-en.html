@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <!--
-  Landing page — "Proof Constellation"
-  Static file: no front matter, Jekyll copies it through untouched.
+  Landing visual — "Event Horizon"
+  Static file: no front matter, so Jekyll copies it through untouched.
   Content pages live at /blog/ (left as-is).
   Keep index-en.html in sync with this file.
 -->
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-lock="0">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#04070b">
-  <title>Formal Verification · AI Safety</title>
-  <meta name="description" content="Signals, proofs and boundaries.">
-  <link rel="stylesheet" href="/assets/home/home.css">
+  <meta name="theme-color" content="#03060c">
+  <title>Event Horizon</title>
+  <meta name="description" content="Interactive field visual.">
+  <link rel="stylesheet" href="/assets/home/home.css?v=6">
 </head>
 <body>
 
-  <canvas id="bg" aria-hidden="true"></canvas>
-  <div class="vignette" aria-hidden="true"></div>
-  <div class="scan" aria-hidden="true"></div>
+  <div class="cosmos" aria-hidden="true"></div>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <canvas id="flow" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="fringe" aria-hidden="true"></div>
+
+  <div class="ruler ruler--l" aria-hidden="true"></div>
+  <div class="ruler ruler--r" aria-hidden="true"></div>
+  <div class="ruler ruler--b" aria-hidden="true"></div>
+  <div class="ruler ruler--t" aria-hidden="true"></div>
 
   <div class="mark" aria-hidden="true">
     <svg viewBox="0 0 24 24">
       <path d="M12 1.4 L22.6 12 L12 22.6 L1.4 12 Z"></path>
       <circle cx="12" cy="12" r="4.1"></circle>
-      <circle cx="12" cy="12" r="0.9"></circle>
+      <circle class="dot" cx="12" cy="12" r="1"></circle>
     </svg>
   </div>
 
@@ -37,14 +44,46 @@
   </button>
 
   <main>
-    <canvas id="core" aria-hidden="true"></canvas>
+    <div class="stage">
+      <canvas id="core" aria-hidden="true"></canvas>
+    </div>
     <div class="rule" aria-hidden="true"></div>
-    <p class="tagline">Formal Verification — AI Safety</p>
-    <a class="enter" href="/blog/"><span>Enter</span></a>
+    <a class="enter" href="/blog/">
+      <i></i><i></i><i></i><i></i>
+      <span class="enter-label">Enter</span>
+    </a>
   </main>
 
-  <div class="coord" aria-hidden="true">T+00:00</div>
+  <div class="hud hud--bl" aria-hidden="true">
+    <div><span class="k">FIELD</span><span class="val" id="h-flow">0000</span></div>
+    <div><span class="k">FLUX</span><span class="val" id="h-flux">0.00</span></div>
+    <div><span class="k">PHASE</span><span class="val" id="h-phase">DRIFT</span></div>
+  </div>
 
-  <script src="/assets/home/home.js"></script>
+  <div class="hud hud--br" aria-hidden="true">
+    <div>
+      <span class="k">X</span><span class="val" id="h-x">0000</span>
+      <span class="k">Y</span><span class="val" id="h-y">0000</span>
+    </div>
+    <div>
+      <span class="k">VEL</span><span class="val" id="h-vel">0.00</span>
+      <span class="k">LOCK</span><span class="val lock" id="h-lock">—</span>
+    </div>
+  </div>
+
+  <div class="reticle" id="reticle" aria-hidden="true">
+    <div class="rt-precise"><span class="rt-dot"></span></div>
+    <div class="rt-trail">
+      <span class="rt-ring"></span>
+      <span class="rt-ring rt-ring--dash"></span>
+      <span class="rt-arm rt-arm--n"></span>
+      <span class="rt-arm rt-arm--s"></span>
+      <span class="rt-arm rt-arm--w"></span>
+      <span class="rt-arm rt-arm--e"></span>
+      <span class="rt-tag">DRIFT</span>
+    </div>
+  </div>
+
+  <script src="/assets/home/home.js?v=6"></script>
 </body>
 </html>
